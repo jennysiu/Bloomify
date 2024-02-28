@@ -1,3 +1,4 @@
+import SearchBar from "../SearchBar/index";
 
 
 function AddPlantModal() {
@@ -24,6 +25,7 @@ return (
     </Button>
     <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
       {/* insert SEARCH BAR here */}
+      <SearchBar />
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>
