@@ -1,11 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// import { useState } from 'react'
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './components/Pages'
-import './App.css'
-import Navbar from './components/Navbar'
-
-function App() {
-
+import React, { useState } from 'react';
+import {
+  UserOutlined,
+  HomeOutlined,
+  SearchOutlined,
+  CalendarOutlined,
+  SettingOutlined,
+  SoundOutlined,
+  LogoutOutlined,
+} from '@ant-design/icons';
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
+function getItem(label, key, icon, children) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+  };
+}
+const items = [
+  getItem('Home', '1', <HomeOutlined />),
+  getItem('My Plants', '2', <UserOutlined />),
+  getItem('Explore', '3', <SearchOutlined />),
+  getItem('Watering Log', '4', <CalendarOutlined />),
+  getItem('Settings', '5', <SettingOutlined />),
+  getItem('FAQ', '6', <SoundOutlined />),
+  getItem('Sign Out', '7', <LogoutOutlined />),
+];
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
   return (
     <Layout
       style={{
@@ -38,7 +64,7 @@ function App() {
               margin: '16px 0',
             }}
           >
-            <Breadcrumb.Item>Welcome back, Joan!</Breadcrumb.Item>
+            <Breadcrumb.Item>User</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
@@ -56,7 +82,7 @@ function App() {
             textAlign: 'center',
           }}
         >
-          Bloomify ©{new Date().getFullYear()} Created by Adrianna Derkacz, Ahmed Ibrahim, Davou Jobbi, Laura Kane and Jenny Siu.
+          Ant Design ©{new Date().getFullYear()} Created by Ant UED
         </Footer>
       </Layout>
     </Layout>
