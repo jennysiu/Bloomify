@@ -64,7 +64,7 @@ const App = () => {
               margin: '16px 0',
             }}
           >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
+            <Breadcrumb.Item>Welcome back, Joan!</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
