@@ -1,37 +1,11 @@
-import React, { useState } from 'react';
-import {
-  UserOutlined,
-  HomeOutlined,
-  SearchOutlined,
-  CalendarOutlined,
-  SettingOutlined,
-  SoundOutlined,
-  LogoutOutlined,
-} from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
-const items = [
-  getItem('Home', '1', <HomeOutlined />),
-  getItem('My Plants', '2', <UserOutlined />),
-  getItem('Explore', '3', <SearchOutlined />),
-  getItem('Watering Log', '4', <CalendarOutlined />),
-  getItem('Settings', '5', <SettingOutlined />),
-  getItem('FAQ', '6', <SoundOutlined />),
-  getItem('Sign Out', '7', <LogoutOutlined />),
-];
-const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import { useState } from 'react'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './components/Pages'
+import './App.css'
+import Navbar from './components/Navbar'
+
+function App() {
+
   return (
     <Layout
       style={{
