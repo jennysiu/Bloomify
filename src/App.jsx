@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { useState } from 'react'
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './components/Pages'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
 import './App.css'
 import Navbar from './components/Navbar'
 
