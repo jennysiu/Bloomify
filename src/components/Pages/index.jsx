@@ -1,0 +1,5 @@
+export { default as Dashboard } from './Dashboard.jsx'
+export { default as Explore } from './Explore.jsx'
+export { default as MyPlants } from './MyPlants.jsx'
+export { default as WateringLog } from './WateringLog.jsx'
+export { default as Custom404 } from './Custom404.jsx'
