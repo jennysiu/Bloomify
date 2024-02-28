@@ -1,8 +1,8 @@
 import './index.css'
-import '../Pages/Dashboard'
-import '../Pages/Explore'
-import '../Pages/MyPlants'
-import '../Pages/WateringLog'
+import '../../Pages/Dashboard'
+import '../../Pages/Explore'
+import '../../Pages/MyPlants'
+import '../../Pages/WateringLog'
 import PlantCard from '../PlantCard'
 
 function Navbar() {
