@@ -52,7 +52,7 @@ const App = () => {
     justifyContent: 'center',
   }}
 >
-  <h1 style={{ color: 'white', textAlign: 'center' }}>My Plant App</h1> {/* Add a title with styling */}
+  <h1 style={{ color: 'white', textAlign: 'center' }}>Bloomify</h1> {/* Add a title with styling */}
 </Header>
         <Content
           style={{
@@ -64,8 +64,7 @@ const App = () => {
               margin: '16px 0',
             }}
           >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>Welcome back, Joan!</Breadcrumb.Item>
           </Breadcrumb>
           <div
             style={{
@@ -75,7 +74,7 @@ const App = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            Bill is a cat.
+            My plants
           </div>
         </Content>
         <Footer
@@ -83,7 +82,7 @@ const App = () => {
             textAlign: 'center',
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Bloomify ©{new Date().getFullYear()} Created by Adrianna Derkacz, Ahmed Ibrahim, Davou Jobbi, Laura Kane and Jenny Siu.
         </Footer>
       </Layout>
     </Layout>
