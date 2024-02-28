@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
 import './App.css'
 import Navbar from './components/Navbar'
+import SearchBar from './components/SearchBar'
 
 function App() {
 
@@ -19,7 +20,6 @@ function App() {
           <Route path='/watering-log' element={< WateringLog />} />
           <Route path='/404' element={< Custom404 />} />
         </Routes>
-
       </Router>
     </>
   )
