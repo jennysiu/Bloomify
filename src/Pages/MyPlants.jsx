@@ -2,24 +2,49 @@ import React, { useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Button, Flex } from 'antd';
 import { Avatar, Space } from 'antd';
+import { Card } from 'antd';
 
 function MyPlants() {
     // plants array for development testing:
     const initialPlants = [
-        { id: 1, name: 'Fern', type: 'Indoor', wateringFrequency: 'Weekly' },
-        { id: 2, name: 'Cactus', type: 'Indoor', wateringFrequency: 'Monthly' },
-        { id: 3, name: 'Monstera', type: 'Indoor', wateringFrequency: 'Weekly' }
+        { id: 1, name: 'Fern', type: 'Indoor', wateringFrequency: 'Weekly', image: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'},
+        { id: 2, name: 'Cactus', type: 'Indoor', wateringFrequency: 'Monthly', image: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'},
+        { id: 3, name: 'Monstera', type: 'Indoor', wateringFrequency: 'Weekly', image: 'https://pcfb.gumlet.io/images/articles/small-monstera-in-pot.png?w=640&h=426&mode=crop&crop=smart&s=362b2438ad2bd22d5826fe12b96adf88' }
     ];
     
     // use state for plants collection array of Objects
-    const [myPlants, setMyPlants] = useState([initialPlants]);
+    const [myPlants, setMyPlants] = useState(initialPlants);
+
+    // todo: function to add new plant to collection
 
     // todo: function to dynamically render plant cards here
-    // for loop to go through array of plant objects
+    // map() to go through array of plant objects
+    // return a card for each plant object
+    // card will have image, name, type, watering frequency
+    // card will have button to view plant profile
+    function renderPlantCards() {
+        
+
+        return (
+            <>
+            {myPlants.map((plant, index) => {
+                return (
+                <Card bordered={false} style={{ width: 300 }}>
+                <img src={plant.image} alt={plant.name} style={{ width: 200, height: 200 }} />
+                <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.name}</div>
+                </Card>
+                );
+
+            })}
+
+            
+            </>
+        )
+    }
 
     return (
         <>
-        <h1>My Plants Page!</h1>
+        <h1>My Plant Sanctuary</h1>
         {/* BUTTON HERE - add new plant*/}
 
         <Flex gap="small" wrap="wrap">
@@ -33,12 +58,10 @@ function MyPlants() {
         {/* plant crads - col of three */}
         {/* dynamically render? */}
 
+
         <Space direction="vertical" size={16}>
             <Space wrap size={16}>
-            <Avatar shape="square" size={200} icon={<UserOutlined />} />
-            <Avatar shape="square" size={200} icon={<UserOutlined />} />
-            <Avatar shape="square" size={200} icon={<UserOutlined />} />
-
+                {renderPlantCards()}
             </Space>
         </Space>
 
