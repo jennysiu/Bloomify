@@ -7,6 +7,8 @@ function MyPlants() {
     // use state for plants collection 
     const [myPlants, setMyPlants] = useState([]);
 
+    // dynamically render plant cards here
+
     return (
         <>
         <h1>My Plants Page!</h1>
