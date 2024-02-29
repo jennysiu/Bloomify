@@ -3,13 +3,7 @@ import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 
 import { Typography } from 'antd';
 
 // set initial task list array with blank values for task & date
-const TaskList = () => {
-    const [toDos, setToDos] = useState([
-        {
-        task: '', 
-        date: null,
-        }
-    ]);
+const TaskList = ({ toDos, setToDos }) => {
 
     // set state for user input value and date selected value
     const [inputValue, setInputValue] = useState('');
@@ -42,9 +36,9 @@ const TaskList = () => {
     return (
         <>
             <Divider orientation="left">Plant Tasks</Divider>
-            <Space.Compact style={{ width: '100%' }}>
+            <Space.Compact style={{ width: '40%' }}>
                 <Input
-                    addonAfter={<DatePicker placeholder="Deadline date" onChange={handleDateChange} style={{width: 200}}/>}
+                    addonAfter={<DatePicker placeholder="Deadline date" onChange={handleDateChange} style={{width: 150}}/>}
                     placeholder="Add a task here..."
                     type="text"
                     value={inputValue}
@@ -55,7 +49,7 @@ const TaskList = () => {
                 </Button>
             </Space.Compact>
             <List
-                style={{ width: '100%' }}
+                style={{ width: '40%' }}
                 bordered
                 dataSource={toDos}
                 renderItem={(item, index) => (

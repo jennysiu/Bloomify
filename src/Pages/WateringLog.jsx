@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import TaskList from '../components/TaskList';
-import { DatePicker, Space } from 'antd';
+import Calendar from '../components/Calendar';
 
 function WateringLog() {
+
+    const [toDos, setToDos] = useState([
+        {
+            task: '',
+            date: null,
+        }
+    ]);
+
 return (
     <>
-    <TaskList />
+    <TaskList toDos={toDos} setToDos={setToDos}/>
+    <Calendar toDos={toDos} setToDos={setToDos} />
     </>
 )
 }

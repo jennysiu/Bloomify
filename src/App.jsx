@@ -5,11 +5,8 @@ import { Layout } from 'antd';
 import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
 import './App.css'
 import Navbar from './components/Navbar'
+import Header from './components/Header'
 import Footer from './components/Footer'
-
-// commented out as wont work until merge request approved for below:
-// import Header from './components/Header'
-// import Footer from './components/Footer'
 
 function App() {
   const [collapsed, setCollapsed] = useState(false); 
@@ -40,7 +37,7 @@ const { Header, Content, Footer, Sider } = Layout;
             </Routes>
           </Content>
 
-          {/* <Footer /> */}
+          <Footer />
         </Layout>
       </Layout>
     </Router>
@@ -50,4 +47,3 @@ const { Header, Content, Footer, Sider } = Layout;
 }
 
 export default App
-
