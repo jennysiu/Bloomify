@@ -2,7 +2,7 @@
   "name": "project-2",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "antd": "^5.14.2",
+    "axios": "^1.6.7",
     "dayjs": "^1.11.10",
+    "jsdoc": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.2"

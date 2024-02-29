@@ -1,0 +1,599 @@
+{
+	"data": [
+		{
+			"id": 40,
+			"common_name": "Beni Otake Japanese Maple",
+			"scientific_name": [
+				"Acer palmatum 'Beni Otake'"
+			],
+			"other_name": [
+				"Big Red Bamboo"
+			],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"full sun",
+				"part shade"
+			],
+			"default_image": {
+				"license": 45,
+				"license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+				"license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+				"original_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/og/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/regular/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/medium/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+				"small_url": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/small/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/40_acer_palmatum_beni_otake/thumbnail/Acer_palmatum_27Oshio_beni27_-_JPG2.jpg"
+			}
+		},
+		{
+			"id": 77,
+			"common_name": "Linearilobum Japanese Maple",
+			"scientific_name": [
+				"Acer palmatum 'Linearilobum'"
+			],
+			"other_name": [
+				"Bamboo-Leaf Japanese Maple"
+			],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"full sun",
+				"part shade"
+			],
+			"default_image": {
+				"license": 4,
+				"license_name": "Attribution License",
+				"license_url": "https://creativecommons.org/licenses/by/2.0/",
+				"original_url": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/og/3466572143_4470363413_b.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/regular/3466572143_4470363413_b.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/medium/3466572143_4470363413_b.jpg",
+				"small_url": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/small/3466572143_4470363413_b.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/77_acer_palmatum_linearilobum/thumbnail/3466572143_4470363413_b.jpg"
+			}
+		},
+		{
+			"id": 998,
+			"common_name": "bamboo orchid",
+			"scientific_name": [
+				"Arundina graminifolia"
+			],
+			"other_name": [],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"Part shade"
+			],
+			"default_image": {
+				"license": 6,
+				"license_name": "Attribution-NoDerivs License",
+				"license_url": "https://creativecommons.org/licenses/by-nd/2.0/",
+				"original_url": "https://perenual.com/storage/species_image/998_arundina_graminifolia/og/27347429227_11fd47bde8_b.jpg"
+			}
+		},
+		{
+			"id": 999,
+			"common_name": "giant cane bamboo",
+			"scientific_name": [
+				"Arundinaria gigantea"
+			],
+			"other_name": [],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"full sun"
+			],
+			"default_image": {
+				"license": 4,
+				"license_name": "Attribution License",
+				"license_url": "https://creativecommons.org/licenses/by/2.0/",
+				"original_url": "https://perenual.com/storage/species_image/999_arundinaria_gigantea/og/24505585774_54c8864f95_b.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/999_arundinaria_gigantea/regular/24505585774_54c8864f95_b.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/999_arundinaria_gigantea/medium/24505585774_54c8864f95_b.jpg",
+				"small_url": "https://perenual.com/storage/species_image/999_arundinaria_gigantea/small/24505585774_54c8864f95_b.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/999_arundinaria_gigantea/thumbnail/24505585774_54c8864f95_b.jpg"
+			}
+		},
+		{
+			"id": 1164,
+			"common_name": "Buddha belly bamboo",
+			"scientific_name": [
+				"Bambusa ventricosa"
+			],
+			"other_name": [],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"Full sun",
+				"part shade"
+			],
+			"default_image": {
+				"license": 4,
+				"license_name": "Attribution License",
+				"license_url": "https://creativecommons.org/licenses/by/2.0/",
+				"original_url": "https://perenual.com/storage/species_image/1164_bambusa_ventricosa/og/5690344982_ab2d5ae605_b.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/1164_bambusa_ventricosa/regular/5690344982_ab2d5ae605_b.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/1164_bambusa_ventricosa/medium/5690344982_ab2d5ae605_b.jpg",
+				"small_url": "https://perenual.com/storage/species_image/1164_bambusa_ventricosa/small/5690344982_ab2d5ae605_b.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/1164_bambusa_ventricosa/thumbnail/5690344982_ab2d5ae605_b.jpg"
+			}
+		},
+		{
+			"id": 1822,
+			"common_name": "bamboo palm",
+			"scientific_name": [
+				"Chamaedorea seifrizii"
+			],
+			"other_name": [],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"part shade"
+			],
+			"default_image": {
+				"license": 45,
+				"license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+				"license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+				"original_url": "https://perenual.com/storage/species_image/1822_chamaedorea_seifrizii/og/2560px-Chamaedorea_seifrizii-2-JNTBGRI-kerala-India.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/1822_chamaedorea_seifrizii/regular/2560px-Chamaedorea_seifrizii-2-JNTBGRI-kerala-India.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/1822_chamaedorea_seifrizii/medium/2560px-Chamaedorea_seifrizii-2-JNTBGRI-kerala-India.jpg",
+				"small_url": "https://perenual.com/storage/species_image/1822_chamaedorea_seifrizii/small/2560px-Chamaedorea_seifrizii-2-JNTBGRI-kerala-India.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/1822_chamaedorea_seifrizii/thumbnail/2560px-Chamaedorea_seifrizii-2-JNTBGRI-kerala-India.jpg"
+			}
+		},
+		{
+			"id": 2568,
+			"common_name": "bamboo palm",
+			"scientific_name": [
+				"Dypsis lutescens"
+			],
+			"other_name": [],
+			"cycle": "Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"part sun/part shade",
+				"part shade"
+			],
+			"default_image": {
+				"license": 5,
+				"license_name": "Attribution-ShareAlike License",
+				"license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+				"original_url": "https://perenual.com/storage/species_image/2568_dypsis_lutescens/og/4630882967_d9c40b00de_b.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/2568_dypsis_lutescens/regular/4630882967_d9c40b00de_b.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/2568_dypsis_lutescens/medium/4630882967_d9c40b00de_b.jpg",
+				"small_url": "https://perenual.com/storage/species_image/2568_dypsis_lutescens/small/4630882967_d9c40b00de_b.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/2568_dypsis_lutescens/thumbnail/4630882967_d9c40b00de_b.jpg"
+			}
+		},
+		{
+			"id": 2933,
+			"common_name": "hardy bamboo",
+			"scientific_name": [
+				"Fargesia rufa"
+			],
+			"other_name": [],
+			"cycle": "Herbaceous Perennial",
+			"watering": "Average",
+			"sunlight": [
+				"full sun"
+			],
+			"default_image": {
+				"license": 45,
+				"license_name": "Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)",
+				"license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+				"original_url": "https://perenual.com/storage/species_image/2933_fargesia_rufa/og/Fargesia_nitida_MUN.jpg",
+				"regular_url": "https://perenual.com/storage/species_image/2933_fargesia_rufa/regular/Fargesia_nitida_MUN.jpg",
+				"medium_url": "https://perenual.com/storage/species_image/2933_fargesia_rufa/medium/Fargesia_nitida_MUN.jpg",
+				"small_url": "https://perenual.com/storage/species_image/2933_fargesia_rufa/small/Fargesia_nitida_MUN.jpg",
+				"thumbnail": "https://perenual.com/storage/species_image/2933_fargesia_rufa/thumbnail/Fargesia_nitida_MUN.jpg"
+			}
+		},
+		{
+			"id": 4432,
+			"common_name": "bamboo iris",
+			"scientific_name": [
+				"Iris wattii"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5301,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Aka' BLUSH PINK"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5302,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Emerald Sea'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5303,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Fire Power'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5304,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Harbour Dwarf'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5305,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Lemon-Lime'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5306,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Monfar' SIENNA SUNRISE"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5307,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Monum' PLUM PASSION"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5308,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Moon Bay'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5309,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Murasaki' FLIRT"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5310,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Pygmaea'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5311,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Seika' OBSESSION"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5312,
+			"common_name": "heavenly bamboo",
+			"scientific_name": [
+				"Nandina domestica 'Tuscan Flame'"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5962,
+			"common_name": "yellow groove bamboo",
+			"scientific_name": [
+				"Phyllostachys aureosulcata"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 5963,
+			"common_name": "moso bamboo",
+			"scientific_name": [
+				"Phyllostachys edulis"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 6208,
+			"common_name": "dwarf fern-leaf bamboo",
+			"scientific_name": [
+				"Pleioblastus pygmaeus"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 6400,
+			"common_name": "arrow bamboo",
+			"scientific_name": [
+				"Pseudosasa japonica"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 8549,
+			"common_name": "ribbon plant",
+			"scientific_name": [
+				"Dracaena braunii"
+			],
+			"other_name": [
+				"lucky bamboo"
+			],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		},
+		{
+			"id": 8687,
+			"common_name": "blackstem bamboo",
+			"scientific_name": [
+				"Phyllostachys nigra"
+			],
+			"other_name": [],
+			"cycle": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"watering": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"sunlight": "Upgrade Plans To Premium/Supreme - https://perenual.com/subscription-api-pricing. I'm sorry",
+			"default_image": {
+				"license": 451,
+				"license_name": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+				"license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+				"original_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"regular_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"medium_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"small_url": "https://perenual.com/storage/image/upgrade_access.jpg",
+				"thumbnail": "https://perenual.com/storage/image/upgrade_access.jpg"
+			}
+		}
+	],
+	"to": 27,
+	"per_page": 30,
+	"current_page": 1,
+	"from": 1,
+	"last_page": 1,
+	"total": 27
+}
