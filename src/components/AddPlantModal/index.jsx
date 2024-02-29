@@ -1,37 +1,51 @@
-import SearchBar from "../SearchBar/index";
+import { Modal, DatePicker, Space } from 'antd';
 
+// internal imports
+import SearchBar from "../SearchBar";
+import PlantCard from '../PlantCard';
 
-function AddPlantModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+function AddPlantModal( {isModalOpen, toggleModal} ) {
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
+  // plant variable for dev testing
+  const plant = {
+    name: "Fiddle Leaf Fig Tree",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
+  } 
 
   const handleOk = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
 
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
+
+  return (
+    <>
+      <Modal title="Basic Modal" 
+      open={isModalOpen} 
+      onOk={handleOk} 
+      onCancel={handleCancel}
+      okText="Add Plant">
+        {/* insert SEARCH BAR here */}
+        <SearchBar />
+
+        <p>Date of collection</p>
+        <Space direction="vertical">
+          <DatePicker onChange={onChange} />
+        </Space>
+
+        <PlantCard plant={plant} key="1" />
+
+      </Modal>
+    </>
+  );
+
 }
-
-return (
-  <>
-    <Button type="primary" onClick={showModal}>
-      Add New Plant
-    </Button>
-    <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-      {/* insert SEARCH BAR here */}
-      <SearchBar />
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-    </Modal>
-  </>
-);
-
 
 export default AddPlantModal;
