@@ -47,4 +47,3 @@ const { Header, Content, Footer, Sider } = Layout;
 }
 
 export default App
-
