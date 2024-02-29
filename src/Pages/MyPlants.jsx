@@ -4,6 +4,9 @@ import { Button, Flex } from 'antd';
 import { Avatar, Space } from 'antd';
 import { Card } from 'antd';
 
+// internal component imports
+import AddPlantModal from '../components/AddPlantModal';
+
 function MyPlants() {
     // plants array for development testing:
     const initialPlants = [
@@ -14,13 +17,15 @@ function MyPlants() {
     
     // use state for plants collection array of Objects
     const [myPlants, setMyPlants] = useState(initialPlants);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
     // todo: function to add new plant to collection
 
     // todo: function to dynamically render plant cards here
     // map() to go through array of plant objects
     // return a card for each plant object
-    // card will have image, name, type, watering frequency
+    // card will have image, name
     // card will have button to view plant profile
     function renderPlantCards() {
         
@@ -34,7 +39,6 @@ function MyPlants() {
                 <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.name}</div>
                 </Card>
                 );
-
             })}
 
             
@@ -42,23 +46,24 @@ function MyPlants() {
         )
     }
 
+    function toggleModal(newState) {
+        setIsModalOpen(newState);
+    }
+
     return (
         <>
         <h1>My Plant Sanctuary</h1>
-        {/* BUTTON HERE - add new plant*/}
 
+        {/* new plant button */}
         <Flex gap="small" wrap="wrap">
-            <Button>Add New Plant</Button>
+            <Button onClick={() => toggleModal(true)} >Add New Plant</Button>
         </Flex>
 
         {/* ADD MODAL */}
+        <AddPlantModal isModalOpen={isModalOpen} toggleModal={toggleModal}/>
 
         
-
-        {/* plant crads - col of three */}
-        {/* dynamically render? */}
-
-
+        {/* dynamically render cards here */}
         <Space direction="vertical" size={16}>
             <Space wrap size={16}>
                 {renderPlantCards()}

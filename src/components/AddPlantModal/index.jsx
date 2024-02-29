@@ -1,29 +1,26 @@
+import React, { useState } from 'react';
 import SearchBar from "../SearchBar/index";
+import { Modal, Button } from 'antd';
 
 
-function AddPlantModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
+function AddPlantModal( {isModalOpen, toggleModal} ) {
 
   const handleOk = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
 
-}
+
 
 return (
   <>
-    <Button type="primary" onClick={showModal}>
-      Add New Plant
-    </Button>
-    <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+    <Modal title="Basic Modal" 
+    open={isModalOpen} 
+    onOk={handleOk} 
+    onCancel={handleCancel}>
       {/* insert SEARCH BAR here */}
       <SearchBar />
       <p>Some contents...</p>
@@ -33,5 +30,6 @@ return (
   </>
 );
 
+}
 
 export default AddPlantModal;
