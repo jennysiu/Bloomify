@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import SearchBar from "../SearchBar/index";
-import { Modal, Button } from 'antd';
+import { Modal, DatePicker, Space } from 'antd';
 
 
 function AddPlantModal( {isModalOpen, toggleModal} ) {
@@ -13,6 +12,9 @@ function AddPlantModal( {isModalOpen, toggleModal} ) {
     toggleModal(false);
   };
 
+  const onChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
 
 
 return (
@@ -20,12 +22,18 @@ return (
     <Modal title="Basic Modal" 
     open={isModalOpen} 
     onOk={handleOk} 
-    onCancel={handleCancel}>
+    onCancel={handleCancel}
+    okText="Add Plant">
       {/* insert SEARCH BAR here */}
       <SearchBar />
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
+
+      <
+
+      <p>Date of collection</p>
+      <Space direction="vertical">
+        <DatePicker onChange={onChange} />
+      </Space>
+
     </Modal>
   </>
 );

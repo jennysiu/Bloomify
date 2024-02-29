@@ -6,6 +6,7 @@ import { Card } from 'antd';
 
 // internal component imports
 import AddPlantModal from '../components/AddPlantModal';
+import PlantCard from '../components/PlantCard';
 
 function MyPlants() {
     // plants array for development testing:
@@ -29,15 +30,11 @@ function MyPlants() {
     // card will have button to view plant profile
     function renderPlantCards() {
         
-
         return (
             <>
             {myPlants.map((plant, index) => {
                 return (
-                <Card bordered={false} style={{ width: 300 }}>
-                <img src={plant.image} alt={plant.name} style={{ width: 200, height: 200 }} />
-                <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.name}</div>
-                </Card>
+                 <PlantCard myPlants={myPlants} />
                 );
             })}
 
@@ -59,23 +56,21 @@ function MyPlants() {
             <Button onClick={() => toggleModal(true)} >Add New Plant</Button>
         </Flex>
 
-        {/* ADD MODAL */}
+        {/* add new plant modal */}
         <AddPlantModal isModalOpen={isModalOpen} toggleModal={toggleModal}/>
 
         
-        {/* dynamically render cards here */}
+        {/* dynamically render plant cards here */}
         <Space direction="vertical" size={16}>
             <Space wrap size={16}>
                 {renderPlantCards()}
             </Space>
         </Space>
 
-        {/* side widget - todays weather , himidity , sunlight? */}
-        
-
         {/* plant profile hidden - can be modal or separate page */}
 
-
+        {/* side widget - todays weather , humidity , sunlight? */}
+        
         </>
     )
 }
