@@ -44,23 +44,23 @@ const App = () => {
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
             </Sider>
             <Layout>
-                <Header
+                {/* <Header
                     style={{
                         padding: 0,
-                        background: '#1DA57A', // Change the background color here
+                        background: '#1DA57A', 
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}
                 >
-                    <h1 style={{ color: 'white', textAlign: 'center' }}>Bloomify</h1> {/* Add a title with styling */}
+                    <h1 style={{ color: 'white', textAlign: 'center' }}>Bloomify</h1> 
                 </Header>
                 <Content
                     style={{
                         margin: '0 16px',
                     }}
-                >
-                    <Breadcrumb
+                > */}
+                    {/* <Breadcrumb
                         style={{
                             margin: '16px 0',
                         }}
@@ -76,15 +76,9 @@ const App = () => {
                         }}
                     >
                         My plants
-                    </div>
-                </Content>
-                <Footer
-                    style={{
-                        textAlign: 'center',
-                    }}
-                >
-                    Ant Design ©{new Date().getFullYear()} Created by Ant UED
-                </Footer>
+                    </div> */}
+                {/* </Content> */}
+
             </Layout>
         </Layout>
     );
