@@ -4,10 +4,18 @@ import { Button, Flex } from 'antd';
 import { Avatar, Space } from 'antd';
 
 function MyPlants() {
-    // use state for plants collection 
-    const [myPlants, setMyPlants] = useState([]);
+    // plants array for development testing:
+    const initialPlants = [
+        { id: 1, name: 'Fern', type: 'Indoor', wateringFrequency: 'Weekly' },
+        { id: 2, name: 'Cactus', type: 'Indoor', wateringFrequency: 'Monthly' },
+        { id: 3, name: 'Monstera', type: 'Indoor', wateringFrequency: 'Weekly' }
+    ];
+    
+    // use state for plants collection array of Objects
+    const [myPlants, setMyPlants] = useState([initialPlants]);
 
-    // dynamically render plant cards here
+    // todo: function to dynamically render plant cards here
+    // for loop to go through array of plant objects
 
     return (
         <>
@@ -15,10 +23,11 @@ function MyPlants() {
         {/* BUTTON HERE - add new plant*/}
 
         <Flex gap="small" wrap="wrap">
-            <Button>Default Button</Button>
+            <Button>Add New Plant</Button>
         </Flex>
 
         {/* ADD MODAL */}
+
         
 
         {/* plant crads - col of three */}
