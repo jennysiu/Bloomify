@@ -13,7 +13,7 @@ function WateringLog() {
 
 return (
     <>
-    <TaskList toDos={toDos} setToDos={setToDos}/>
+    <TaskList toDos={toDos} setToDos={setToDos} />
     <Calendar toDos={toDos} setToDos={setToDos} />
     </>
 )

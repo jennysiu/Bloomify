@@ -35,17 +35,17 @@ const TaskList = ({ toDos, setToDos }) => {
 
     return (
         <>
-            <Divider orientation="left">Plant Tasks</Divider>
+            <Divider orientation="left">Plants to Water</Divider>
             <Space.Compact style={{ width: '40%' }}>
                 <Input
-                    addonAfter={<DatePicker placeholder="Deadline date" onChange={handleDateChange} style={{width: 150}}/>}
-                    placeholder="Add a task here..."
+                    addonAfter={<DatePicker placeholder="When?" onChange={handleDateChange} style={{width: 150}}/>}
+                    placeholder="Which plant?"
                     type="text"
                     value={inputValue}
                     onChange={handleInputChange}
                 />
                 <Button type="primary" onClick={handleSave}>
-                    Save task
+                    Save
                 </Button>
             </Space.Compact>
             <List
@@ -58,14 +58,14 @@ const TaskList = ({ toDos, setToDos }) => {
                             {/* Ternary operator so it only displays 'date:' 'task:' and 'checkbox:' if there is a task submitted */}
                             {item.task ? (
                                 <>
-                                    <Typography.Text strong>Task to do: </Typography.Text>
+                                    <Typography.Text strong>Plant to water: </Typography.Text>
                                     {item.task}
                                 </>
                             ) : null}
                             <br></br>
                             {item.date ? (
                                 <>
-                                    <Typography.Text strong>Date to complete: </Typography.Text>
+                                    <Typography.Text strong>Date to water: </Typography.Text>
                                     {item.date.format('DD-MM-YYYY')} 
                                     <br />
                                 </>
@@ -74,7 +74,7 @@ const TaskList = ({ toDos, setToDos }) => {
                         {item.task ? (
                             <>
                                 <Flex align="flex-end" justify="center">
-                                    <Checkbox onChange={() => handleRemove(index)}>Complete</Checkbox>
+                                    <Checkbox onChange={() => handleRemove(index)}>Watered?</Checkbox>
                                 </Flex>
                             </>
                         ) : null}

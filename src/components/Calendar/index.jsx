@@ -11,7 +11,7 @@ const getListData = ({ toDos }) => {
 const App = ({ toDos }) => {
 
     const dateCellRender = (value) => {
-
+        
         const listData = getListData({ toDos });
 
         const tasksForDate = listData.filter(item => {
@@ -34,7 +34,9 @@ const App = ({ toDos }) => {
         return info.originNode;
     };
 
-    return <Calendar cellRender={cellRender} />;
+    return (
+    <Calendar cellRender={cellRender} />
+    )
 };
 
 export default App;
