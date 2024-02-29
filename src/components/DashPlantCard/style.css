@@ -1,0 +1,10 @@
+.dash-plant-scroll-container {
+    width: 60vw;
+    height: 35vh;
+    max-width: 60vw;
+    display: flex;
+    white-space: nowrap; /* Keep items in a single line */
+    padding: 12px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
