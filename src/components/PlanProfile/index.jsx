@@ -1,10 +1,19 @@
-function PlantProfile() {
+function PlantProfile(name) {
   const plantName = "Monstera";
   
   return (
-    <div>
-      <h1>{plantName}</h1>
-    </div>
+    <Tabs
+    defaultActiveKey="1"
+    centered
+    items={new Array(3).fill(null).map((_, i) => {
+      const id = String(i + 1);
+      return {
+        label: `Tab ${id}`,
+        key: id,
+        children: `Content of Tab Pane ${id}`,
+      };
+    })}
+  />
   );
 
 }

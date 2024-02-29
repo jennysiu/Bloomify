@@ -21,8 +21,6 @@ function MyPlants() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-    // todo: function to add new plant to collection
-
     // todo: function to dynamically render plant cards here
     // map() to go through array of plant objects
     // return a card for each plant object
@@ -70,7 +68,6 @@ function MyPlants() {
         {/* plant profile hidden - can be modal or separate page */}
 
         {/* side widget - todays weather , humidity , sunlight? */}
-        
         </>
     )
 }
