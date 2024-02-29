@@ -1,62 +1,94 @@
-import { React, useState } from 'react';
-import { Button, Input, Select, Space } from 'antd';
-import { Divider, List, Typography, Checkbox } from 'antd';
+import React, { useState } from 'react';
+import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
+import { Typography } from 'antd';
 
+// set initial task list array with blank values for task & date
 const TaskList = () => {
-
     const [toDos, setToDos] = useState([
-        'Re-pot pothos',
-        'Clean dust off leaves of weeping fig tree',
-        'Give peace lily fertilizer'
+        {
+        task: '', 
+        date: null,
+        }
     ]);
 
-const [inputValue, setInputValue] = useState('');
+    // set state for user input value and date selected value
+    const [inputValue, setInputValue] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
 
-const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-}
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
 
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
+
+    // take the user input, trim it, and if it's not blank, add the value as a task and the date as a date (if one has been selected) to the toDos array (add to state). Then reset the user input value and date back to nothing.
     const handleSave = () => {
         if (inputValue.trim() !== '') {
-            setToDos([...toDos, inputValue]);
-            setInputValue('')
-        }
-    }
-
-    const onChange = (e, i) => {
-        if (e.target.checked === true) {
-            const updatedToDos = [...toDos];
-            updatedToDos.splice(i, 1);
-            setToDos(updatedToDos);
-            checked === false;
+            setToDos([...toDos, { task: inputValue, date: selectedDate }]);
+            setInputValue('');
+            setSelectedDate(null);
         }
     };
 
-return (
-<>
-        <Divider orientation="left">Plant Tasks</Divider>
-        <Space.Compact style={{ width: '100%' }}>
+    // Take the index of the item that had the corresponding checkbox checked, and remove that item from state therefore removing it from the list
+    const handleRemove = (index) => {
+        const updatedToDos = [...toDos];
+        updatedToDos.splice(index, 1);
+        setToDos(updatedToDos);
+    };
 
-            <Input 
-            placeholder="Add a task here..." 
-            type="text" 
-            value={inputValue}
-            onChange={handleInputChange}/>
+    return (
+        <>
+            <Divider orientation="left">Plant Tasks</Divider>
+            <Space.Compact style={{ width: '100%' }}>
+                <Input
+                    addonAfter={<DatePicker placeholder="Deadline date" onChange={handleDateChange} style={{width: 200}}/>}
+                    placeholder="Add a task here..."
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                />
+                <Button type="primary" onClick={handleSave}>
+                    Save task
+                </Button>
+            </Space.Compact>
+            <List
+                style={{ width: '100%' }}
+                bordered
+                dataSource={toDos}
+                renderItem={(item, index) => (
+                    <List.Item>
+                        <span>
+                            {/* Ternary operator so it only displays 'date:' 'task:' and 'checkbox:' if there is a task submitted */}
+                            {item.task ? (
+                                <>
+                                    <Typography.Text strong>Task to do: </Typography.Text>
+                                    {item.task}
+                                </>
+                            ) : null}
+                            <br></br>
+                            {item.date ? (
+                                <>
+                                    <Typography.Text strong>Date to complete: </Typography.Text>
+                                    {item.date.format('DD-MM-YYYY')} 
+                                    <br />
+                                </>
+                            ) : null}
+                        </span>
+                        {item.task ? (
+                            <>
+                                <Flex align="flex-end" justify="center">
+                                    <Checkbox onChange={() => handleRemove(index)}>Complete</Checkbox>
+                                </Flex>
+                            </>
+                        ) : null}
+                    </List.Item>
+                )}
+            />
+        </>
+    );
+};
 
-            <Button type="primary" onClick={handleSave}>Save task</Button>
-        </Space.Compact>
-        <List style={{width: '100%'}}
-            bordered
-            dataSource={toDos}
-            renderItem={(item, i) => (
-                <List.Item>
-                    <Typography.Text mark>- </Typography.Text> {item}
-                    <Checkbox value={item} onChange={(e) => onChange(e, i)} />
-                </List.Item>
-            )}
-        />
-</>
-)
-}
-
-export default TaskList
+export default TaskList;
