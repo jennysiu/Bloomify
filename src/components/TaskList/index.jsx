@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { Button, Input, Select, Space } from 'antd';
-import { Divider, List, Typography } from 'antd';
+import { Divider, List, Typography, Checkbox } from 'antd';
 
 const TaskList = () => {
 
@@ -23,6 +23,15 @@ const handleInputChange = (e) => {
         }
     }
 
+    const onChange = (e, i) => {
+        if (e.target.checked === true) {
+            const updatedToDos = [...toDos];
+            updatedToDos.splice(i, 1);
+            setToDos(updatedToDos);
+            checked === false;
+        }
+    };
+
 return (
 <>
         <Divider orientation="left">Plant Tasks</Divider>
@@ -39,9 +48,10 @@ return (
         <List style={{width: '100%'}}
             bordered
             dataSource={toDos}
-            renderItem={(item) => (
+            renderItem={(item, i) => (
                 <List.Item>
                     <Typography.Text mark>- </Typography.Text> {item}
+                    <Checkbox value={item} onChange={(e) => onChange(e, i)} />
                 </List.Item>
             )}
         />
