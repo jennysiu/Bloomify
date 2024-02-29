@@ -1,8 +1,16 @@
-import SearchBar from "../SearchBar/index";
 import { Modal, DatePicker, Space } from 'antd';
 
+// internal imports
+import SearchBar from "../SearchBar";
+import PlantCard from '../PlantCard';
 
 function AddPlantModal( {isModalOpen, toggleModal} ) {
+
+  // plant variable for dev testing
+  const plant = {
+    name: "Fiddle Leaf Fig Tree",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
+  } 
 
   const handleOk = () => {
     toggleModal(false);
@@ -17,26 +25,26 @@ function AddPlantModal( {isModalOpen, toggleModal} ) {
   };
 
 
-return (
-  <>
-    <Modal title="Basic Modal" 
-    open={isModalOpen} 
-    onOk={handleOk} 
-    onCancel={handleCancel}
-    okText="Add Plant">
-      {/* insert SEARCH BAR here */}
-      <SearchBar />
+  return (
+    <>
+      <Modal title="Basic Modal" 
+      open={isModalOpen} 
+      onOk={handleOk} 
+      onCancel={handleCancel}
+      okText="Add Plant">
+        {/* insert SEARCH BAR here */}
+        <SearchBar />
 
-      <
+        <p>Date of collection</p>
+        <Space direction="vertical">
+          <DatePicker onChange={onChange} />
+        </Space>
 
-      <p>Date of collection</p>
-      <Space direction="vertical">
-        <DatePicker onChange={onChange} />
-      </Space>
+        <PlantCard plant={plant} key="1" />
 
-    </Modal>
-  </>
-);
+      </Modal>
+    </>
+  );
 
 }
 

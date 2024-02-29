@@ -1,11 +1,13 @@
-function PlantCard(myPlants) {
+function PlantCard( {plant, index} ) {
+    if (!plant) {
+        console.error('Plant data is undefined.', { index });
+        return null; // Or render some placeholder
+    }
 
     return (
         <>
-            <Card bordered={false} style={{ width: 300 }}>
-                <img src={plant.image} alt={plant.name} style={{ width: 200, height: 200 }} />
-                <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.name}</div>
-            </Card>            
+            <img src={plant.image} alt={plant.name} style={{ width: 200, height: 200 }} />
+            <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.name}</div>
         </>
     )
 }

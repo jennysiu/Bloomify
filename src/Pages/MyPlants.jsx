@@ -34,7 +34,7 @@ function MyPlants() {
             <>
             {myPlants.map((plant, index) => {
                 return (
-                 <PlantCard myPlants={myPlants} />
+                <PlantCard plant={plant} key={index}/>
                 );
             })}
 
