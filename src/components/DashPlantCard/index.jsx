@@ -8,9 +8,10 @@ return (
     <div className="dash-plant-scroll-container">
         {images.map((image, index) => (
         <Card
+            title=" My Plant"
             key={index}
             hoverable
-            style={{ width: 240, display: 'inline-block', marginRight: 12 }}
+            style={{ width: 300, display: 'inline-block', marginRight: 12 }}
             cover={<img alt={`Plant ${index}`} src={image} />}
         >
             {/*TODO: Additional content for each card if any*/}
