@@ -11,7 +11,7 @@ return (
             title=" My Plant"
             key={index}
             hoverable
-            style={{ width: 300, display: 'inline-block', marginRight: 12 }}
+            style={{ width: 150, display: 'inline-block', marginRight: 12 }}
             cover={<img alt={`Plant ${index}`} src={image} />}
         >
             {/*TODO: Additional content for each card if any*/}
