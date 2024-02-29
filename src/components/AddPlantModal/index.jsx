@@ -4,7 +4,7 @@ import { Modal, DatePicker, Space } from 'antd';
 import SearchBar from "../SearchBar";
 import PlantCard from '../PlantCard';
 
-function AddPlantModal( {isModalOpen, toggleModal} ) {
+function AddPlantModal( {addPlantModal, toggleModal} ) {
 
   // plant variable for dev testing
   const plant = {
@@ -31,7 +31,7 @@ function AddPlantModal( {isModalOpen, toggleModal} ) {
   return (
     <>
       <Modal title="Add New Plant" 
-      open={isModalOpen} 
+      open={addPlantModal} 
       onOk={handleOk} 
       onCancel={handleCancel}
       okText="Add Plant">
