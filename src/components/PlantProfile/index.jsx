@@ -1,72 +1,32 @@
 import React, { useState } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
-// things to render
-  // name
-  // scientific name
-  // image
-  // description
-  // hardiness
-  // water
-  // type
-  // sunlight
-
-  // cycle
-
-  // tab with extra info (care details in more depth)
-  // tab with care instructionsbest time to water\
-  // watering_period
-  //   "watering_general_benchmark": {
-    // "value": 5-7,
-    // "unit": "days"
-  //   "pruning_month": [
-  //     "March",
-  //     "April"
-  // ],
-  //       "propagation":[
-//     "seed",
-//     "cutting"
-// ],
-// "propagation":[
-//   "seed",
-//   "cutting"
-// ],
-// "tropical": false,
-// "poisonous_to_pets": false,
-// "growth_rate": "High",
-
-
+// todo: capitalise name of plant
 
 
 function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
   console.log(selectedPlantModalVisible)
   console.log(selectedPlantModalPlant)
-
+  
   let plantData = selectedPlantModalPlant;
-
-  const [open, setOpen] = useState(false); 
+  
+  // const [open, setOpen] = useState(false); 
   const isIndoor = "Indoor";
   
-  const handleOk = () => {
-    onClose();
-    // todo: function to add new plant to collection
-
+  const handleClose = () => {
+    onClose();    
   };
-
-  const handleCancel = () => {
-    onClose();
-  };
-
+  
   // const onChange = (date, dateString) => {
-  //   console.log(date, dateString);
-  // };
-
-  // todo: render water levels
-  // todo: function to render   "maintenance": "Low", tag
-  // todo: function to render indoor/outdoor tag - magenta
-  function renderIsIndoorTag() {
-    return (
-      <Tag bordered={false} color="success">
+    //   console.log(date, dateString);
+    // };
+    
+    // todo: function to render   "maintenance": "Low", tag
+    // todo: function to render indoor/outdoor tag - magenta
+    // todo: function to render is pet friendly tag
+    function renderIsIndoorTag() {
+      return (
+        <Tag bordered={false} color="success">
       {isIndoor}
       </Tag>
     )
@@ -80,12 +40,16 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     title={plantData.common_name}
     centered
     open={selectedPlantModalVisible}
-    onOk={handleOk} 
-    onCancel={handleCancel}
+    onCancel={handleClose}
     width={1000}
+    footer={[
+      <Button key="submit" type="primary" onClick={handleClose}>
+        Close
+      </Button>,
+    ]}
     >
 
-{/* <img src={plantData.default_image.regular_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} /> */}
+    <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} />
 
     <Tabs
         defaultActiveKey="1"
@@ -94,49 +58,71 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
           {
             label: 'Basic Overview',
             key: '1',
-            children: 'Content of Tab Pane Overview',
+            children: 
+            (<div>
+              <p>Indoor: {plantData.indoor}</p> 
+              <p>Maintennace: {plantData.maintenance}</p> 
+              <p>Watering: {plantData.watering}, every {plantData.watering_general_benchmark.value} {plantData.watering_general_benchmark.unit}</p>
+              <p>Sunlight: {plantData.sunlight}</p> 
+              <p>Cycle: {plantData.cycle}</p> 
+              <p>Origin: {plantData.origin}</p>
+              <p>Description: {plantData.description}</p>
+            </div>),
           },
           {
-            label: 'Extra Care',
+            label: 'Growth & care',
             key: '2',
-            children: 'Content of Tab Pane Care',
+            children: (
+              <div>
+                <h4>Care</h4>
+                <p>Hardiness: {plantData.hardiness.min} - {plantData.hardiness.max}</p>
+                <p>Best watering period: {plantData.watering_period ? plantData.watering_period : "n/a"}</p>
+                <p>Tropical: {plantData.tropical}</p>
+
+                <h4>Growth</h4>
+                <p>Cycle: {plantData.cycle}</p> 
+                <p>Flowering season: {plantData.flowering_season}</p>
+                <p>Growth rate: {plantData.growth_rate}</p>
+
+                <p>Recommended pruning month: {plantData.pruning_month}</p> 
+                <p>Proppogationg: {plantData.propagation} </p> 
+              </div>
+            )
           },
           {
-            label: 'Growth',
+            label: 'Additional info',
             key: '3',
-            children: 'Content of Tab Pane Gallery',
+            children: (
+              <div>
+                <p>Scientific name: {plantData.scientific_name}</p> 
+                <p>Family: {plantData.family}</p>
+                <p>Type: {plantData.type}</p> 
+
+
+              </div>
+            )
           }
         ]}
-      />
+        />
+      <p></p>
 
-      <p>some contents...</p>
-      <p>some contents...</p>
-      <p>some contents...</p>
+
     </Modal>
+    
+    <Divider />
+    <Space size={[0, 'small']} wrap>
 
+      <Tag bordered={false} color="magenta">
+        magenta
+      </Tag>
+      <Tag bordered={false} color="geekblue">
+        geekblue
+      </Tag>
 
+    </Space>
+    </>
 
-  <Divider />
-
-  <Space size={[0, 'small']} wrap>
-
-
-    <Tag bordered={false} color="magenta">
-      magenta
-    </Tag>
-    <Tag bordered={false} color="geekblue">
-      geekblue
-    </Tag>
-
-  </Space>
-
-  </>
-
-  
   );
-
-  
-
 }
 
 export default PlantProfile;
