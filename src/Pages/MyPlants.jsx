@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Button, Flex } from 'antd';
-import { Avatar, Space } from 'antd';
-import { Card } from 'antd';
+import { Avatar, Space, Card, Button, Flex } from 'antd';
 
 // internal component imports
 import AddPlantModal from '../components/AddPlantModal';
@@ -129,7 +127,6 @@ function MyPlants() {
     //     setaddPlantModal(newState);
     // }
 
-    // todo: when card is clicked on - display plant profile with that data
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
     };
