@@ -4,7 +4,7 @@ import { Modal, DatePicker, Space } from 'antd';
 import SearchBar from "../SearchBar";
 import PlantCard from '../PlantCard';
 
-function AddPlantModal( {isModalOpen, toggleModal} ) {
+function AddPlantModal( {addPlantModal, toggleModal} ) {
 
   // plant variable for dev testing
   const plant = {
@@ -12,8 +12,11 @@ function AddPlantModal( {isModalOpen, toggleModal} ) {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
   } 
 
+
   const handleOk = () => {
     toggleModal(false);
+    // todo: function to add new plant to collection
+
   };
 
   const handleCancel = () => {
@@ -27,8 +30,8 @@ function AddPlantModal( {isModalOpen, toggleModal} ) {
 
   return (
     <>
-      <Modal title="Basic Modal" 
-      open={isModalOpen} 
+      <Modal title="Add New Plant" 
+      open={addPlantModal} 
       onOk={handleOk} 
       onCancel={handleCancel}
       okText="Add Plant">
