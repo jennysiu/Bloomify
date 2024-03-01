@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
-import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
+import { Tabs, Divider, Space, Tag, Button, Modal, Result } from 'antd';
 
 import "./style.css"
 
 // dont think the pet-friendly property renders correctly
+// todo: add remove button
+// todo: add pop up to ask if user is sure she wants to remove this plant 
+// think about how to add plant button on profile modal
 
 function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
   let plantData = selectedPlantModalPlant;
   
-  const isIndoor = "Indoor";
+  const [showConfirmation, setShowConfirmation] = useState(false)
   
   const handleClose = () => {
     onClose();    
   };
+
+  const handleRemovePlant = () => {
+      setShowConfirmation(true);
+  };
+
+  const removePlant = () => {
+    setShowConfirmation(false)
+    onclose();
+
+
+      // remove plant from collection
+      // close modal
+      // toggle visibility of confirmation alert
+
+  }
   
   return (
     <>
@@ -24,17 +42,17 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     onCancel={handleClose}
     width={1000}
     footer={[
-      <Button key="submit" type="primary" onClick={handleClose}>
-        Close
+      <Button type="primary" danger onClick={handleRemovePlant}>
+      Remove Plant
       </Button>,
+      <Button key="submit" type="primary" onClick={handleClose}>
+      Close
+      </Button>
     ]}
     >
 
     <div className='plant-profile-modal-content'>
-
-    
     <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} />
-
     <Tabs
         defaultActiveKey="1"
         centered
@@ -136,10 +154,29 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
           }
         ]}
     />
-
     </div>
     </Modal>
+    
+    {showConfirmation && (
+      <Result className='confirmation-alert'
+        status="success"
+        title="Are you sure?"
+        subTitle="This will remove the plant from your santuary."
+        extra={[
+          <Button 
+          type="primary" 
+          key="console" 
+          onClick={() => removePlant()}
+          >Yes, remove plant
+          </Button>,
 
+          <Button 
+          key="buy"
+          onClick={() => setShowConfirmation(false)}
+          >Cancel</Button>,
+        ]}
+      />
+    )}
     </>
   );
 }

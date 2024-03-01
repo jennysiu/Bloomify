@@ -1,5 +1,5 @@
 //import 'regenerator-runtime/runtime';
-import axios from 'axios';
+// import axios from 'axios';
 
 const API_KEY = `sk-2KiZ65dfa09c6ebac4396`
 
@@ -17,7 +17,6 @@ export default {
     console.log(`search for ${search}`);
     //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
         
-    
 }
 
 }

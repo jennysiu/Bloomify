@@ -4,3 +4,10 @@
   overflow-y: auto;
 }
 
+.ant-result {
+  z-index: 10000; /* Ensure this is higher than the modal's z-index */
+  position: relative; 
+
+  background-color: rgba(250, 255, 251, 0.669);
+  border-radius: 1em;
+}
