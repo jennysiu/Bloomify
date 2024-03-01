@@ -125,29 +125,28 @@ function MyPlants() {
 
 
   
-    function toggleAddPlantModal(newState) {
-        setaddPlantModal(newState);
-    }
+    // function toggleAddPlantModal(newState) {
+    //     setaddPlantModal(newState);
+    // }
 
     // todo: when card is clicked on - display plant profile with that data
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
-
-        console.log('plant clicked', plant)
     };
+
     return (
         <>
         <h1>My Plant Sanctuary</h1>
 
         {/* new plant button */}
-        <Flex gap="small" wrap="wrap">
+        {/* <Flex gap="small" wrap="wrap">
             <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
-        </Flex>
+        </Flex> */}
 
         {/* add new plant modal */}
-        <AddPlantModal 
+        {/* <AddPlantModal 
         addPlantModal={addPlantModal} 
-        toggleAddPlantModal={toggleAddPlantModal}/>
+        toggleAddPlantModal={toggleAddPlantModal}/> */}
         {/* if no plants in collection then add button to click here to add new plants */}
 
         
@@ -159,15 +158,14 @@ function MyPlants() {
         </Space>
 
         {/* plant profile hidden - can be modal or separate page */}
-        <PlantProfile 
-        selectedPlantModalVisible={selectedPlantModal.isVisible}
-        selectedPlantModalPlant={selectedPlantModal.plant}
-        toggleAddPlantModal={toggleAddPlantModal}
-        
-        // isVisible={selectedPlantModal.isVisible}
-        // plant={selectedPlantModal.plant}
-        // onClose={() => setSelectedPlantModal({isVisible: false, plant: null})}
-        />
+        {selectedPlantModal.isVisible && selectedPlantModal.plant && (
+            <PlantProfile 
+            selectedPlantModalVisible={selectedPlantModal.isVisible}
+            selectedPlantModalPlant={selectedPlantModal.plant}
+            onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
+            />
+        )
+        }
 
         {/* side widget - todays weather , humidity , sunlight? */}
         </>

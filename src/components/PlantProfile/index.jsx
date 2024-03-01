@@ -38,7 +38,7 @@ import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
 
 
-function PlantProfile({ selectedPlantModalVisible, toggleAddPlantModal, selectedPlantModalPlant }) {
+function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
   console.log(selectedPlantModalVisible)
   console.log(selectedPlantModalPlant)
 
@@ -48,13 +48,13 @@ function PlantProfile({ selectedPlantModalVisible, toggleAddPlantModal, selected
   const isIndoor = "Indoor";
   
   const handleOk = () => {
-    toggleAddPlantModal(false);
+    onClose();
     // todo: function to add new plant to collection
 
   };
 
   const handleCancel = () => {
-    toggleAddPlantModal(false);
+    onClose();
   };
 
   // const onChange = (date, dateString) => {
@@ -75,18 +75,13 @@ function PlantProfile({ selectedPlantModalVisible, toggleAddPlantModal, selected
   return (
     <>
 
-    <Button type="primary" onClick={() => setOpen(true)}>
-      Open Modal of 1000px width
-    </Button>
-
-
     <Modal
     
-    title="Modal 1000px width"
+    title={plantData.common_name}
     centered
     open={selectedPlantModalVisible}
-    onOk={() => setOpen(false)}
-    onCancel={() => setOpen(false)}
+    onOk={handleOk} 
+    onCancel={handleCancel}
     width={1000}
     >
 
