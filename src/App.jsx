@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-
 import { Layout } from 'antd';
+
 import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
 import SearchResults from "../src/Pages/SearchResults"
 import './App.css'
@@ -9,6 +9,9 @@ import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToDoProvider } from './contexts/ContextsToDos';
+
+// can uncomment after merge request has been approved
+// import { MyPlantsProvider } from './contexts/ContextsMyPlants';
 
 function App() {
 
