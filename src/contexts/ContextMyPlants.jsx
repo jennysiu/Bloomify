@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-// CODE TO CREATE 'MyPlantsContext' so that the toDos array can be accessed across the application
+// 'MyPlantsContext' so that the toDos array can be accessed across the application
 
 const MyPlantsContext = createContext();
 
