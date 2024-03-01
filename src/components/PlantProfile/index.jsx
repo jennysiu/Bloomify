@@ -40,11 +40,15 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             children: 
             (<div>
               {/* indoor tag */}
-              {plantData.indoor && (
-                <Tag bordered={false} color="green">
-                  {isIndoor}
-                </Tag>
-              )}
+              {plantData.indoor === true ? (
+              <Tag bordered={false} color="green">
+                Indoor
+              </Tag>) 
+              : plantData.indoor === false ? (
+              <Tag bordered={false} color="magenta">
+                Outdoor
+              </Tag>)
+              : null}
               {/* maintenance tags */}
               {plantData.maintenance === "Low" ? (
                 <Tag bordered={false} color="green">
