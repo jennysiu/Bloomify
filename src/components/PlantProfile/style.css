@@ -6,8 +6,19 @@
 
 .ant-result {
   z-index: 10000; /* Ensure this is higher than the modal's z-index */
-  position: relative; 
+  position: fixed; 
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to truly center based on element's size */
+  width: auto; /* Or specify a width */
+  min-width: 70vw; /* Minimum width, adjust as needed */
+  height: auto; /* Or specify a height */
+  min-height: 50vw; /* Minimum height, adjust as needed */
 
-  background-color: rgba(250, 255, 251, 0.669);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  background-color: rgb(250, 255, 251);
   border-radius: 1em;
 }

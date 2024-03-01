@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Divider, Space, Tag, Button, Modal, Result } from 'antd';
+import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
 import "./style.css"
 
@@ -8,29 +8,18 @@ import "./style.css"
 // todo: add pop up to ask if user is sure she wants to remove this plant 
 // think about how to add plant button on profile modal
 
-function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
+function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant }) {
   let plantData = selectedPlantModalPlant;
-  
-  const [showConfirmation, setShowConfirmation] = useState(false)
-  
+    
   const handleClose = () => {
-    onClose();    
+    togglePlantProfileVisibility(false);
   };
 
   const handleRemovePlant = () => {
-      setShowConfirmation(true);
+    togglePlantProfileVisibility(false);
   };
 
-  const removePlant = () => {
-    setShowConfirmation(false)
-    onclose();
 
-
-      // remove plant from collection
-      // close modal
-      // toggle visibility of confirmation alert
-
-  }
   
   return (
     <>
@@ -42,12 +31,21 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     onCancel={handleClose}
     width={1000}
     footer={[
-      <Button type="primary" danger onClick={handleRemovePlant}>
-      Remove Plant
-      </Button>,
+      <Popconfirm
+      key="remove-plant"
+      title="Remove plant"
+      description="Are you sure to remove this plant from your sanctuary?"
+      onConfirm={handleRemovePlant}
+      onCancel={() => console.log("Canceled removal")}
+      okText="Yes, remove plant"
+      cancelText="No"
+      >
+      <Button key="popconfirm" danger>Remove Plant</Button>
+      </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
       Close
       </Button>
+
     ]}
     >
 
@@ -156,27 +154,8 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     />
     </div>
     </Modal>
-    
-    {showConfirmation && (
-      <Result className='confirmation-alert'
-        status="success"
-        title="Are you sure?"
-        subTitle="This will remove the plant from your santuary."
-        extra={[
-          <Button 
-          type="primary" 
-          key="console" 
-          onClick={() => removePlant()}
-          >Yes, remove plant
-          </Button>,
+ 
 
-          <Button 
-          key="buy"
-          onClick={() => setShowConfirmation(false)}
-          >Cancel</Button>,
-        ]}
-      />
-    )}
     </>
   );
 }
