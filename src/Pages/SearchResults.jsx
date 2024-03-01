@@ -20,6 +20,18 @@ function SearchResults() {
   return (
     <div>
       <h1>Search Page</h1>
+      <h2>Search Results For:</h2>
+      <ul>
+        <li>
+          Search = N/A
+        </li>
+        <li>
+          Hardiness = N/A
+        </li>
+        <li>
+          Indoor or Outdoor/N/A
+        </li>
+      </ul>
       <SearchResultsPage searchResults={searchResults} />
     </div>
   );
