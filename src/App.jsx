@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import { Layout } from 'antd';
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages'
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { ToDoProvider } from './contexts/ContextsToDos';
 
 function App() {
 
@@ -18,7 +19,8 @@ const { Header, Content, Footer, Sider } = Layout;
   return (
     <>
       <Router basename={'/'}>
-
+        {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
+        <ToDoProvider>
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
           <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
@@ -41,6 +43,7 @@ const { Header, Content, Footer, Sider } = Layout;
           <Footer />
         </Layout>
       </Layout>
+        </ ToDoProvider>
     </Router>
     
     </>

@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import Calendar from '../components/Calendar'
 import TaskList from '../components/TaskList';
-// import Calendar from '../components/Calendar';
+import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
 
 function WateringLog() {
 
+    const { toDos, setToDos } = useContext(ToDoContext); 
+
 return (
     <>
-    <TaskList />
-    {/* <Calendar toDos={toDos} setToDos={setToDos} /> */}
-
-    {/* TO DO: add calendar component in to this page (if possible with state) */}
-
+    {/* Wrap the components in the ToDoProvider so that toDos can be passed down as props to TaskList and Calendar */}
+    <ToDoProvider>
+        <TaskList toDos={toDos} setToDos={setToDos} />
+        <Calendar toDos={toDos} setToDos={setToDos} />
+    </ToDoProvider>
     </>
 )
 }

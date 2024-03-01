@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DashPlantCard from '../components/DashPlantCard';
+import TaskList from '../components/TaskList';
+import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
 
 const Dashboard = () => {
   const images = [
@@ -13,11 +15,17 @@ const Dashboard = () => {
     'https://media.self.com/photos/614387f179b69b63faf9ea2c/3:4/w_960,c_limit/pepperomiasill23.png',
   ];
 
+  const { toDos, setToDos } = useContext(ToDoContext); 
+
   return (
     <div>
       <h1>Welcome back, Joan!</h1>
       <DashPlantCard images={images} />
-      {/*TODO: Add other dashboard content*/}
+
+      <ToDoProvider>
+        <TaskList toDos={toDos} setToDos={setToDos} />
+      </ToDoProvider>
+      
     </div>
   );
 };
