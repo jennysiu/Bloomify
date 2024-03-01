@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import { Layout } from 'antd';
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'

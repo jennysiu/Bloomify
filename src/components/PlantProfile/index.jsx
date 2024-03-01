@@ -93,14 +93,44 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             </div>),
           },
           {
-            label: 'Growth & care',
+            label: 'Care & growth',
             key: '2',
             children: (
               <div>
                 <h4>Care</h4>
                 <p>Hardiness: {plantData.hardiness.min} - {plantData.hardiness.max}</p>
                 <p>Best watering period: {plantData.watering_period ? plantData.watering_period : "n/a"}</p>
-                <p>Tropical: {plantData.tropical}</p>
+                <p>Tropical: {plantData.tropical === "true" ? (
+                  <Tag>
+                    Yes
+                  </Tag>
+                  ) : 
+                  (<Tag>
+                    No
+                  </Tag>
+                )}</p>
+
+
+{/* {plantData.maintenance === "Low" ? (
+                <Tag bordered={false} color="green">
+                  Low maintenance
+                </Tag>
+              ) : plantData.maintenance === "Moderate" ? (
+                <Tag bordered={false} color="orange"> 
+                  Moderate maintenance 
+                </Tag> 
+              ) : plantData.maintenance === "High" ? (
+                <Tag bordered={false} color="red"> 
+                  High maintenance
+                </Tag>
+              ) : null}    */}
+
+
+                {/* {plantData.indoor && (
+                <Tag bordered={false} color="green">
+                  {isIndoor}
+                </Tag>
+              )} */}
 
                 <h4>Growth</h4>
                 <p>Cycle: {plantData.cycle}</p> 
