@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { Layout } from 'antd';
 import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
+import SearchResults from "../src/Pages/SearchResults"
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
@@ -36,6 +37,7 @@ const { Header, Content, Footer, Sider } = Layout;
               <Route path='/explore' element={< Explore />} />
               <Route path='/my-plants' element={< MyPlants />} />
               <Route path='/watering-log' element={< WateringLog />} />
+              <Route path='/search-results' element={< SearchResults/>} />
               <Route path='/404' element={< Custom404 />} />
             </Routes>
           </Content>
