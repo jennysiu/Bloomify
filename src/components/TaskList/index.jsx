@@ -1,62 +1,97 @@
-import { React, useState } from 'react';
-import { Button, Input, Select, Space } from 'antd';
-import { Divider, List, Typography, Checkbox } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
+import { Typography } from 'antd';
 
 const TaskList = () => {
+    const [toDos, setToDos] = useState([]);
+    const [inputValue, setInputValue] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
 
-    const [toDos, setToDos] = useState([
-        'Re-pot pothos',
-        'Clean dust off leaves of weeping fig tree',
-        'Give peace lily fertilizer'
-    ]);
+    useEffect(() => {
+        // render existing todos from local storage/state
+        const storedToDos = JSON.parse(localStorage.getItem('toDos')) || [];
+        setToDos(storedToDos);
+    }, []);
 
-const [inputValue, setInputValue] = useState('');
+    // handle user's inputs
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
 
-const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-}
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
 
+    // save user inputs to toDos array in local storage & state, then empty out the input & date fields
     const handleSave = () => {
         if (inputValue.trim() !== '') {
-            setToDos([...toDos, inputValue]);
-            setInputValue('')
-        }
-    }
-
-    const onChange = (e, i) => {
-        if (e.target.checked === true) {
-            const updatedToDos = [...toDos];
-            updatedToDos.splice(i, 1);
-            setToDos(updatedToDos);
-            checked === false;
+            const newToDos = [...toDos, { task: inputValue, date: selectedDate }];
+            setToDos(newToDos);
+            localStorage.setItem('toDos', JSON.stringify(newToDos));
+            setInputValue('');
+            setSelectedDate(null);
         }
     };
 
-return (
-<>
-        <Divider orientation="left">Plant Tasks</Divider>
-        <Space.Compact style={{ width: '100%' }}>
+    // when box is checked, remove the relevant task from the toDos array (local storage & state)
+    const handleRemove = (index) => {
+        const updatedToDos = [...toDos];
+        updatedToDos.splice(index, 1);
+        setToDos(updatedToDos);
+        localStorage.setItem('toDos', JSON.stringify(updatedToDos));
+    };
 
-            <Input 
-            placeholder="Add a task here..." 
-            type="text" 
-            value={inputValue}
-            onChange={handleInputChange}/>
+    // ant design code to render to page - NEEDS STYLING
+    return (
+        <>
+            <Divider orientation="left">Plants to Water</Divider>
+            <Space.Compact style={{ width: '100%' }}>
+                <Input
+                    addonAfter={<DatePicker placeholder="When?" onChange={handleDateChange} style={{ width: 150 }} />}
+                    placeholder="Which plant?"
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                />
+                <Button type="primary" onClick={handleSave}>
+                    Save
+                </Button>
+            </Space.Compact>
+            <List
+                style={{ width: '100%' }}
+                bordered
+                dataSource={toDos}
+                renderItem={(item, index) => (
+                    <List.Item>
+                        <span>
+                            {/* Uses ternary operator to check if there is a task and/or date before rendering */}
+                            {item.task ? (
+                                <>
+                                    <Typography.Text strong>Plant to water: </Typography.Text>
+                                    {item.task}
+                                </>
+                            ) : null}
+                            <br />
+                            {item.date ? (
+                                <>
+                                    <Typography.Text strong>Date to water: </Typography.Text>
+                                    {new Date(item.date).toLocaleDateString()}
+                                    <br />
+                                </>
+                            ) : null}
+                        </span>
+                        {item.task ? (
+                            <>
+                                <Flex align="flex-end" justify="center">
+                                    <Checkbox onChange={() => handleRemove(index)}>Watered?</Checkbox>
+                                </Flex>
+                            </>
+                        ) : null}
+                    </List.Item>
+                )}
+            />
+        </>
+    );
+};
 
-            <Button type="primary" onClick={handleSave}>Save task</Button>
-        </Space.Compact>
-        <List style={{width: '100%'}}
-            bordered
-            dataSource={toDos}
-            renderItem={(item, i) => (
-                <List.Item>
-                    <Typography.Text mark>- </Typography.Text> {item}
-                    <Checkbox value={item} onChange={(e) => onChange(e, i)} />
-                </List.Item>
-            )}
-        />
-</>
-)
-}
-
-export default TaskList
+export default TaskList;
