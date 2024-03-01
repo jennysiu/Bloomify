@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
 // todo: capitalise name of plant
+// dont think the pet-friendly property renders correctly
 
 
 function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
@@ -16,21 +17,6 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
   const handleClose = () => {
     onClose();    
   };
-  
-  // const onChange = (date, dateString) => {
-    //   console.log(date, dateString);
-    // };
-    
-    // todo: function to render   "maintenance": "Low", tag
-    // todo: function to render indoor/outdoor tag - magenta
-    // todo: function to render is pet friendly tag
-    function renderIsIndoorTag() {
-      return (
-        <Tag bordered={false} color="success">
-      {isIndoor}
-      </Tag>
-    )
-  }
   
   return (
     <>
@@ -60,13 +46,50 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             key: '1',
             children: 
             (<div>
-              <p>Indoor: {plantData.indoor}</p> 
-              <p>Maintennace: {plantData.maintenance}</p> 
-              <p>Watering: {plantData.watering}, every {plantData.watering_general_benchmark.value} {plantData.watering_general_benchmark.unit}</p>
+              {/* indoor tag */}
+              {plantData.indoor && (
+                <Tag bordered={false} color="green">
+                  {isIndoor}
+                </Tag>
+              )}
+              {/* maintenance tags */}
+              {plantData.maintenance === "Low" ? (
+                <Tag bordered={false} color="green">
+                  Low maintenance
+                </Tag>
+              ) : plantData.maintenance === "Moderate" ? (
+                <Tag bordered={false} color="orange"> 
+                  Moderate maintenance 
+                </Tag> 
+              ) : plantData.maintenance === "High" ? (
+                <Tag bordered={false} color="red"> 
+                  High maintenance
+                </Tag>
+              ) : null}   
+              {/* watering tag */}
+              {plantData.watering === "None" ? (
+                <Tag bordered={false} color="green">
+                  No watering
+                </Tag>
+              ) : plantData.watering === "Minimum" ? (
+                <Tag bordered={false} color="green"> 
+                  Minimum watering 
+                </Tag> 
+              ) : 
+              plantData.watering === "Average" ? (
+                <Tag bordered={false} color="blue"> 
+                  Average watering 
+                </Tag> 
+              ) : plantData.watering === "Frequent" ? (
+                <Tag bordered={false} color="red"> 
+                  Frequent watering
+                </Tag>
+              ) : null}   
+
+              <p>Watering: every {plantData.watering_general_benchmark.value} {plantData.watering_general_benchmark.unit}</p>
               <p>Sunlight: {plantData.sunlight}</p> 
               <p>Cycle: {plantData.cycle}</p> 
               <p>Origin: {plantData.origin}</p>
-              <p>Description: {plantData.description}</p>
             </div>),
           },
           {
@@ -97,29 +120,13 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
                 <p>Scientific name: {plantData.scientific_name}</p> 
                 <p>Family: {plantData.family}</p>
                 <p>Type: {plantData.type}</p> 
-
-
+                <p>Description: {plantData.description}</p>
               </div>
             )
           }
         ]}
         />
-      <p></p>
-
-
     </Modal>
-    
-    <Divider />
-    <Space size={[0, 'small']} wrap>
-
-      <Tag bordered={false} color="magenta">
-        magenta
-      </Tag>
-      <Tag bordered={false} color="geekblue">
-        geekblue
-      </Tag>
-
-    </Space>
     </>
 
   );
