@@ -26,7 +26,8 @@ const items = [
     getItem(<Link to='watering-log'>Watering Log</Link>, '4', <CalendarOutlined />),
     getItem('Settings', '5', <SettingOutlined />),
     getItem('FAQ', '6', <SoundOutlined />),
-    getItem('Sign Out', '7', <LogoutOutlined />),
+    getItem('Sign Out', '7', <LogoutOutlined />)
+    
 ];
 const App = () => {
     const [collapsed, setCollapsed] = useState(false);
