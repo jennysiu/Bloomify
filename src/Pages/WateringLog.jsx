@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TaskList from '../components/TaskList';
-import Calendar from '../components/Calendar';
+// import Calendar from '../components/Calendar';
 
 function WateringLog() {
 
-    const [toDos, setToDos] = useState([
-        {
-            task: '',
-            date: null,
-        }
-    ]);
-
 return (
     <>
-    <TaskList toDos={toDos} setToDos={setToDos} />
-    <Calendar toDos={toDos} setToDos={setToDos} />
+    <TaskList />
+    {/* <Calendar toDos={toDos} setToDos={setToDos} /> */}
+
+    {/* TO DO: add calendar component in to this page (if possible with state) */}
+
     </>
 )
 }

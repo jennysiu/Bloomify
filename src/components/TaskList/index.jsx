@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
 import { Typography } from 'antd';
 
-// set initial task list array with blank values for task & date
-const TaskList = ({ toDos, setToDos }) => {
-
-    // set state for user input value and date selected value
+const TaskList = () => {
+    const [toDos, setToDos] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
 
+    useEffect(() => {
+        // render existing todos from local storage/state
+        const storedToDos = JSON.parse(localStorage.getItem('toDos')) || [];
+        setToDos(storedToDos);
+    }, []);
+
+    // handle user's inputs
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
@@ -17,28 +22,32 @@ const TaskList = ({ toDos, setToDos }) => {
         setSelectedDate(date);
     };
 
-    // take the user input, trim it, and if it's not blank, add the value as a task and the date as a date (if one has been selected) to the toDos array (add to state). Then reset the user input value and date back to nothing.
+    // save user inputs to toDos array in local storage & state, then empty out the input & date fields
     const handleSave = () => {
         if (inputValue.trim() !== '') {
-            setToDos([...toDos, { task: inputValue, date: selectedDate }]);
+            const newToDos = [...toDos, { task: inputValue, date: selectedDate }];
+            setToDos(newToDos);
+            localStorage.setItem('toDos', JSON.stringify(newToDos));
             setInputValue('');
             setSelectedDate(null);
         }
     };
 
-    // Take the index of the item that had the corresponding checkbox checked, and remove that item from state therefore removing it from the list
+    // when box is checked, remove the relevant task from the toDos array (local storage & state)
     const handleRemove = (index) => {
         const updatedToDos = [...toDos];
         updatedToDos.splice(index, 1);
         setToDos(updatedToDos);
+        localStorage.setItem('toDos', JSON.stringify(updatedToDos));
     };
 
+    // ant design code to render to page - NEEDS STYLING
     return (
         <>
             <Divider orientation="left">Plants to Water</Divider>
-            <Space.Compact style={{ width: '40%' }}>
+            <Space.Compact style={{ width: '100%' }}>
                 <Input
-                    addonAfter={<DatePicker placeholder="When?" onChange={handleDateChange} style={{width: 150}}/>}
+                    addonAfter={<DatePicker placeholder="When?" onChange={handleDateChange} style={{ width: 150 }} />}
                     placeholder="Which plant?"
                     type="text"
                     value={inputValue}
@@ -49,24 +58,24 @@ const TaskList = ({ toDos, setToDos }) => {
                 </Button>
             </Space.Compact>
             <List
-                style={{ width: '40%' }}
+                style={{ width: '100%' }}
                 bordered
                 dataSource={toDos}
                 renderItem={(item, index) => (
                     <List.Item>
                         <span>
-                            {/* Ternary operator so it only displays 'date:' 'task:' and 'checkbox:' if there is a task submitted */}
+                            {/* Uses ternary operator to check if there is a task and/or date before rendering */}
                             {item.task ? (
                                 <>
                                     <Typography.Text strong>Plant to water: </Typography.Text>
                                     {item.task}
                                 </>
                             ) : null}
-                            <br></br>
+                            <br />
                             {item.date ? (
                                 <>
                                     <Typography.Text strong>Date to water: </Typography.Text>
-                                    {item.date.format('DD-MM-YYYY')} 
+                                    {new Date(item.date).toLocaleDateString()}
                                     <br />
                                 </>
                             ) : null}

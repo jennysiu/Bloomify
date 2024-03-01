@@ -23,6 +23,7 @@ const App = ({ toDos }) => {
                 {tasksForDate.map((item, index) => (
                     <li key={index}>
                         {item.content}
+                        {/* Add in waterdrop icon here? */}
                     </li>
                 ))}
             </ul>
