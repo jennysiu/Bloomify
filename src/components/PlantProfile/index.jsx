@@ -38,12 +38,28 @@ import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
 
 
-function PlantProfile(plantData) {
-  console.log(plantData)
+function PlantProfile({ selectedPlantModalVisible, toggleAddPlantModal, selectedPlantModalPlant }) {
+  console.log(selectedPlantModalVisible)
+  console.log(selectedPlantModalPlant)
+
+  let plantData = selectedPlantModalPlant;
+
   const [open, setOpen] = useState(false); 
   const isIndoor = "Indoor";
   
-  const plantName = "Monstera";
+  const handleOk = () => {
+    toggleAddPlantModal(false);
+    // todo: function to add new plant to collection
+
+  };
+
+  const handleCancel = () => {
+    toggleAddPlantModal(false);
+  };
+
+  // const onChange = (date, dateString) => {
+  //   console.log(date, dateString);
+  // };
 
   // todo: render water levels
   // todo: function to render   "maintenance": "Low", tag
@@ -68,7 +84,7 @@ function PlantProfile(plantData) {
     
     title="Modal 1000px width"
     centered
-    open={open}
+    open={selectedPlantModalVisible}
     onOk={() => setOpen(false)}
     onCancel={() => setOpen(false)}
     width={1000}

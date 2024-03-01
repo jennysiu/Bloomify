@@ -99,8 +99,11 @@ function MyPlants() {
     // use state for plants collection array of Objects - this state needs to be in a global area to be accessed by other components (iff added from explore area)
     const [myPlants, setMyPlants] = useState(initialPlants);
     const [addPlantModal, setaddPlantModal] = useState(false);
-      // State to hold the currently selected plant for display in the modal
-    const [selectedPlant, setSelectedPlant] = useState(null);
+    // store currently selected plant
+
+     // State to hold the currently selected plant for display in the modal
+    const [selectedPlantModal, setSelectedPlantModal] = useState(
+        {isVisible: false, plant: null});
 
 
     function renderPlantCards() {
@@ -110,37 +113,42 @@ function MyPlants() {
             <>
             {myPlants.map((plant, index) => {
                 return (
-                <PlantCard 
-                plant={plant} 
-                key={index} 
-                onClick={() => handlePlantClick(plant)}>
-                </PlantCard>
+                <a type="link" onClick={() => handlePlantClick(plant)} key={index} style={{ cursor: 'pointer' }}>
+                    <PlantCard plant={plant}></PlantCard>
+                </a>
+
                 );
             })}            
             </>
         )
     }
 
-    // todo: when card is clicked on - display plant profile with that data
-    const handlePlantClick = (plant) => {
-        setSelectedPlant(plant); 
-    };
+
   
-    function toggleModal(newState) {
+    function toggleAddPlantModal(newState) {
         setaddPlantModal(newState);
     }
 
+    // todo: when card is clicked on - display plant profile with that data
+    const handlePlantClick = (plant) => {
+        setSelectedPlantModal({isVisible: true, plant: plant});
+
+        console.log('plant clicked', plant)
+    };
     return (
         <>
         <h1>My Plant Sanctuary</h1>
 
         {/* new plant button */}
         <Flex gap="small" wrap="wrap">
-            <Button onClick={() => toggleModal(true)} >Add New Plant</Button>
+            <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
         </Flex>
 
         {/* add new plant modal */}
-        <AddPlantModal addPlantModal={addPlantModal} toggleModal={toggleModal}/>
+        <AddPlantModal 
+        addPlantModal={addPlantModal} 
+        toggleAddPlantModal={toggleAddPlantModal}/>
+        {/* if no plants in collection then add button to click here to add new plants */}
 
         
         {/* dynamically render plant cards here */}
@@ -152,9 +160,13 @@ function MyPlants() {
 
         {/* plant profile hidden - can be modal or separate page */}
         <PlantProfile 
-        isVisible={!!selectedPlant}
-        plantData={selectedPlant}
-        onClose={() => setSelectedPlant(null)}
+        selectedPlantModalVisible={selectedPlantModal.isVisible}
+        selectedPlantModalPlant={selectedPlantModal.plant}
+        toggleAddPlantModal={toggleAddPlantModal}
+        
+        // isVisible={selectedPlantModal.isVisible}
+        // plant={selectedPlantModal.plant}
+        // onClose={() => setSelectedPlantModal({isVisible: false, plant: null})}
         />
 
         {/* side widget - todays weather , humidity , sunlight? */}
