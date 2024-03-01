@@ -21,7 +21,8 @@ function SearchBar() {
   const [name, setName] = useState('');
   const [watering, setWatering] = useState('');
   const [sunlight, setSunlight] = useState('');
-  const [isIndoors, setIsindoors] = useState('');
+  const [isIndoors, setIndoors] = useState('');
+  const [isOutdoors, setOutdoors] = useState('');
 
   const { Search } = Input;
   const [collapsed, setCollapsed] = useState(false);
@@ -37,9 +38,15 @@ function SearchBar() {
   });
 
   const onChange = (value) => {
-    //console.log(value)
+    console.log(value)
     wateringOption.find((element) => element === value) ? setWatering(value): setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value): setSunlight('');
+
+    // switch  (value.target.name) {
+    //   case "indoorChk":
+    //     setIndoors(1)
+    //     isIndoors
+
     
   }
 
