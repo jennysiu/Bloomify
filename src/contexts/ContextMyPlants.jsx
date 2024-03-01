@@ -4,7 +4,7 @@ import React, { createContext, useState, useEffect } from 'react';
 
 const MyPlantsContext = createContext();
 
-const ToDoProvider = ({ children }) => {
+const MyPlantsProvider = ({ children }) => {
     const [myPlantsArray, setMyPlantsArray] = useState([]);
 
     // Use effect to render existing todos from local storage/state
@@ -20,4 +20,4 @@ const ToDoProvider = ({ children }) => {
     );
 };
 
-export { ToDoProvider, MyPlantsContext };
+export { MyPlantsProvider, MyPlantsContext };
