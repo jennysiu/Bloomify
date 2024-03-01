@@ -1,4 +1,4 @@
-// SearchPageParent.jsx
+
 import React, { useState, useEffect } from 'react';
 import SearchResultsPage from "../components/Results/Results"
 
@@ -6,7 +6,7 @@ function SearchResults() {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    // Dummy data for demonstration
+
     const dummyData = [
       { id: 1, name: 'Fern', type: 'Indoor', wateringFrequency: 'Weekly', image: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'},
       { id: 2, name: 'Cactus', type: 'Indoor', wateringFrequency: 'Monthly', image: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'},
