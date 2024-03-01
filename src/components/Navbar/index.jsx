@@ -24,9 +24,11 @@ const items = [
     getItem(<Link to='/my-plants'>My Plants</Link>, '2', <UserOutlined />),
     getItem(<Link to='/explore'>Explore</Link>, '3', <SearchOutlined />),
     getItem(<Link to='watering-log'>Watering Log</Link>, '4', <CalendarOutlined />),
-    getItem('Settings', '5', <SettingOutlined />),
-    getItem('FAQ', '6', <SoundOutlined />),
-    getItem('Sign Out', '7', <LogoutOutlined />),
+    getItem(<Link to='/search-results'>Results</Link>, '5', <SearchOutlined />),
+    getItem('Settings', '6', <SettingOutlined />),
+    getItem('FAQ', '7', <SoundOutlined />),
+    getItem('Sign Out', '8', <LogoutOutlined />),
+    
 ];
 const App = () => {
     const [collapsed, setCollapsed] = useState(false);
