@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
+import "./style.css"
+
 // dont think the pet-friendly property renders correctly
 
 function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
@@ -15,7 +17,7 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
   return (
     <>
 
-    <Modal
+    <Modal className='plant-profile-modal'
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
     open={selectedPlantModalVisible}
@@ -28,6 +30,9 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     ]}
     >
 
+    <div className='plant-profile-modal-content'>
+
+    
     <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} />
 
     <Tabs
@@ -130,8 +135,11 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             )
           }
         ]}
-        />
+    />
+
+    </div>
     </Modal>
+
     </>
   );
 }
