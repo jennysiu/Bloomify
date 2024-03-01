@@ -42,7 +42,7 @@ function SearchBar({ onSearch }) {
     
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
-    //console.log(value.target.name)
+    
     try {
       checked.target.checked ? setIndoors(1) : setIndoors('')
     } catch (error) {
@@ -51,7 +51,10 @@ function SearchBar({ onSearch }) {
 
   }
 
-
+/**
+ * Passes user search into getPerenualNameResults() function
+ * and returns results as an object
+ */
   const onSearch = (value, _e, info) => {
     if(value){
       perenualFetch.getPerenualNameResults(value)
@@ -66,12 +69,16 @@ function SearchBar({ onSearch }) {
       }
   };
 
+  /**
+ * Passes user search and filters into getPerenualNameResults() function
+ * and returns results as an object
+ */
   const onClick = (value, _e, info) => {
     
     perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
       .then((res) => {
-        //const searchResults = res.data;
-        //console.log(searchResults)
+        const searchResults = res.data;
+        console.log(searchResults)
       })
       .catch((err) => console.log(err));
   }

@@ -11,7 +11,7 @@ const API_KEY = `sk-0TuC65e08d8f166774406`
  * @async
  * @function Retrieves results of a user search.
  * @param {string} search - user search
- * @returns results of the axios call
+ * @returns results of the axios call as object
  */
 export default {
     getPerenualNameResults: async function (search, watering = '', sunlight = '', isIndoors = '') {
@@ -32,10 +32,16 @@ export default {
     }
 }
 
+export {
+    getSpecificPlant{id}
+}
 
 
 /**
  * example calls so you don't have to use your key
+ * 1st is 'plant details' call
+ * 2nd is 'plant list' call
+ * 
  */
 
 testData2 :[{
