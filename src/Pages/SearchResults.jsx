@@ -8,11 +8,35 @@ function SearchResults() {
   useEffect(() => {
 
     const dummyData = [
-      { id: 1, name: 'Fern', type: 'Indoor', wateringFrequency: 'Weekly', image: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'},
-      { id: 2, name: 'Cactus', type: 'Indoor', wateringFrequency: 'Monthly', image: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'},
-      { id: 3, name: 'Monstera', type: 'Indoor', wateringFrequency: 'Weekly', image: 'https://pcfb.gumlet.io/images/articles/small-monstera-in-pot.png?w=640&h=426&mode=crop&crop=smart&s=362b2438ad2bd22d5826fe12b96adf88' }
-     
+      {
+        id: 1,
+        name: 'Fern',
+        type: 'Indoor',
+        wateringFrequency: 'Weekly',
+        default_image: {
+          regular_url: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'
+        }
+      },
+      {
+        id: 2,
+        name: 'Cactus',
+        type: 'Indoor',
+        wateringFrequency: 'Monthly',
+        default_image: {
+          regular_url: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'
+        }
+      },
+      {
+        id: 3,
+        name: 'Monstera',
+        type: 'Indoor',
+        wateringFrequency: 'Weekly',
+        default_image: {
+          regular_url: 'https://pcfb.gumlet.io/images/articles/small-monstera-in-pot.png?w=640&h=426&mode=crop&crop=smart&s=362b2438ad2bd22d5826fe12b96adf88'
+        }
+      }
     ];
+    
 
     setSearchResults(dummyData);
   }, []);

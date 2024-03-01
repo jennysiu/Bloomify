@@ -5,7 +5,7 @@ import PlantCard from '../PlantCard/index';
 function Results({ searchResults }) {
   const renderPlantCards = () => {
     return searchResults.map((plant, index) => (
-      <Col key={index} span={8}>
+      <Col key={index} xs={24} sm={12} md={8} lg={6} xl={4}>
         <PlantCard plant={plant} />
       </Col>
     ));
