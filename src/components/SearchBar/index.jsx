@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOutlined, } from '@ant-design/icons';
+import { FilterOutlined} from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
 /**
  * DAVOU
@@ -23,12 +23,8 @@ function SearchBar({ onSearch }) {
   const [watering, setWatering] = useState('');
   const [sunlight, setSunlight] = useState('');
   const [isIndoors, setIndoors] = useState('');
-  const [isOutdoors, setOutdoors] = useState('');
-  const [data, setData] = useState('');
-
-
   const { Search } = Input;
-  const [collapsed, setCollapsed] = useState(false);
+  
 
   const wateringOption = ['frequent', 'average', 'minimum', 'none']
   const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun']
@@ -43,24 +39,45 @@ function SearchBar({ onSearch }) {
   let navigate = useNavigate();
 
   const onChange = (value) => {
-    console.log(value)
+    
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
-    wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
-    sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
-
-    // switch  (value.target.name) {
-    //   case "indoorChk":
-    //     setIndoors(1)
-    //     isIndoors
-
+    //console.log(value.target.name)
+    try {
+      checked.target.checked ? setIndoors(1) : setIndoors('')
+    } catch (error) {
+      return
+    }
 
   }
 
 
-  const handleSearch = (value) => {
-    onSearch(value)
-    navigate('/search-results')
+  const onSearch = (value, _e, info) => {
+    if(value){
+      perenualFetch.getPerenualNameResults(value)
+        .then((res) => {
+          
+          const searchResults = res.data;
+          console.log(searchResults)
+        })
+        .catch((err) => console.log(err));
+      }else{
+        console.log("enter a name first")
+      }
+  };
+
+  const onClick = (value, _e, info) => {
+    
+    perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
+      .then((res) => {
+        //const searchResults = res.data;
+        //console.log(searchResults)
+      })
+      .catch((err) => console.log(err));
+  }
+
+  const handleInputChange = (event) => {
+    setName(event.target.value)
   };
 
   const filterOption = (input, option) =>
@@ -75,19 +92,19 @@ function SearchBar({ onSearch }) {
       filterOption={filterOption}
       options={[
         {
-          value: sunlightOption[0],
+          value: sunlightOption[3],
           label: 'Full Sun',
         },
         {
-          value: sunlightOption[1],
+          value: sunlightOption[2],
           label: 'Sun/Part Shade',
         },
         {
-          value: sunlightOption[2],
+          value: sunlightOption[1],
           label: 'Part Shade',
         },
         {
-          value: sunlightOption[3],
+          value: sunlightOption[0],
           label: 'Full Shade',
         },
       ]}
@@ -122,11 +139,10 @@ function SearchBar({ onSearch }) {
   const filterItems = [
     {
       key: '1',
-      label: 'More Filters',
+      label: <><FilterOutlined/> More Filters  </> ,
       children:
         <Space direction="vertical">
           <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
-          <Checkbox name='outdoorChk' onChange={onChange}>Outdoor</Checkbox>
           <Space direction="horizontal">
             <p>Watering</p>
             {selectWatering}
@@ -135,7 +151,7 @@ function SearchBar({ onSearch }) {
             <p>Sunlight</p>
             {selectSunlight}
           </Space>
-          <Button type="primary" onClick={onSearch} >Advanced Search</Button>
+          <Button type="primary" onClick={onClick} >Advanced Search</Button>
         </Space>,
     }
   ];
@@ -143,9 +159,9 @@ function SearchBar({ onSearch }) {
   return (
     <Space direction="vertical">
 
-      <Search placeholder="Search for Plant" onSearch={handleSearch} />
+      <Search placeholder="Search for Plant" onSearch={onSearch} onChange={handleInputChange} />
 
-      <Collapse items={filterItems} onChange={onChange} />
+      <Collapse items={filterItems} />
 
 
     </Space>
