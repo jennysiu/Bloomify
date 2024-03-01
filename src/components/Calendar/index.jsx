@@ -4,10 +4,6 @@ import { library, icon } from '@fortawesome/fontawesome-svg-core'
 import { faDroplet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-library.add(faDroplet)
-
-const droplet = icon({ prefix: 'fas', iconName: 'camera' })
-
 const getListData = ({ toDos }) => {
     return toDos.map(item => ({
         date: item.date,
