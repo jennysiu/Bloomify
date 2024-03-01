@@ -2,16 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
 import { Typography } from 'antd';
 
-const TaskList = () => {
-    const [toDos, setToDos] = useState([]);
+const TaskList = ({ toDos, setToDos}) => {
+
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
-
-    useEffect(() => {
-        // render existing todos from local storage/state
-        const storedToDos = JSON.parse(localStorage.getItem('toDos')) || [];
-        setToDos(storedToDos);
-    }, []);
 
     // handle user's inputs
     const handleInputChange = (e) => {
@@ -33,7 +27,8 @@ const TaskList = () => {
         }
     };
 
-    // when box is checked, remove the relevant task from the toDos array (local storage & state)
+    // when box is checked, remove the relevant task from the toDos array (local storage & state) 
+    // TO DO: fix bug that is checking the next list item automatically
     const handleRemove = (index) => {
         const updatedToDos = [...toDos];
         updatedToDos.splice(index, 1);

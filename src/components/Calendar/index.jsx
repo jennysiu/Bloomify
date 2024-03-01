@@ -8,7 +8,7 @@ const getListData = ({ toDos }) => {
     }));
 };
 
-const App = ({ toDos }) => {
+const MyCalendar = ({ toDos }) => {
 
     const dateCellRender = (value) => {
         
@@ -40,4 +40,4 @@ const App = ({ toDos }) => {
     )
 };
 
-export default App;
+export default MyCalendar;
