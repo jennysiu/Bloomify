@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
 
-// todo: capitalise name of plant
 // dont think the pet-friendly property renders correctly
 
-
 function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
-  console.log(selectedPlantModalVisible)
-  console.log(selectedPlantModalPlant)
-  
   let plantData = selectedPlantModalPlant;
   
-  // const [open, setOpen] = useState(false); 
   const isIndoor = "Indoor";
   
   const handleClose = () => {
@@ -22,7 +16,6 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
     <>
 
     <Modal
-    
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
     open={selectedPlantModalVisible}
@@ -110,28 +103,6 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
                   </Tag>
                 )}</p>
 
-
-{/* {plantData.maintenance === "Low" ? (
-                <Tag bordered={false} color="green">
-                  Low maintenance
-                </Tag>
-              ) : plantData.maintenance === "Moderate" ? (
-                <Tag bordered={false} color="orange"> 
-                  Moderate maintenance 
-                </Tag> 
-              ) : plantData.maintenance === "High" ? (
-                <Tag bordered={false} color="red"> 
-                  High maintenance
-                </Tag>
-              ) : null}    */}
-
-
-                {/* {plantData.indoor && (
-                <Tag bordered={false} color="green">
-                  {isIndoor}
-                </Tag>
-              )} */}
-
                 <h4>Growth</h4>
                 <p>Cycle: {plantData.cycle}</p> 
                 <p>Flowering season: {plantData.flowering_season}</p>
@@ -158,7 +129,6 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
         />
     </Modal>
     </>
-
   );
 }
 
