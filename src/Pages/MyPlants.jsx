@@ -119,12 +119,6 @@ function MyPlants() {
         )
     }
 
-
-  
-    // function toggleAddPlantModal(newState) {
-    //     setaddPlantModal(newState);
-    // }
-
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
     };
@@ -132,7 +126,6 @@ function MyPlants() {
     const togglePlantProfileVisibility = (isvisible) => {
         setSelectedPlantModal({...selectedPlantModal, isVisible: isvisible});
     }
-
 
     return (
         <>

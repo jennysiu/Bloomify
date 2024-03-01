@@ -4,8 +4,6 @@ import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 import "./style.css"
 
 // dont think the pet-friendly property renders correctly
-// todo: add remove button
-// todo: add pop up to ask if user is sure she wants to remove this plant 
 // think about how to add plant button on profile modal
 
 function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant }) {
@@ -17,13 +15,11 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
 
   const handleRemovePlant = () => {
     togglePlantProfileVisibility(false);
+    // logic here to remove from plant collection (local storage)
   };
-
-
   
   return (
     <>
-
     <Modal className='plant-profile-modal'
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
@@ -155,7 +151,6 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
     </div>
     </Modal>
  
-
     </>
   );
 }
