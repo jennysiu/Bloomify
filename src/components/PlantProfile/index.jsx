@@ -23,7 +23,7 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
 
     <Modal
     
-    title={plantData.common_name}
+    title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
     open={selectedPlantModalVisible}
     onCancel={handleClose}
