@@ -19,7 +19,7 @@ function App() {
   const [collapsed, setCollapsed] = useState(false); 
 
   // Import Layout components here
-  const { Content, Footer, Sider } = Layout;
+  const { Content, Sider } = Layout;
 
   return (
     <>
