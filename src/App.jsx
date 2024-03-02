@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToDoProvider } from './contexts/ContextsToDos';
+import { LocationProvider } from './contexts/ContextLocation'
 
 function App() {
 
@@ -21,6 +22,7 @@ const { Header, Content, Footer, Sider } = Layout;
       <Router basename={'/'}>
         {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
         <ToDoProvider>
+          <LocationProvider>
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
           <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
@@ -43,6 +45,7 @@ const { Header, Content, Footer, Sider } = Layout;
           <Footer />
         </Layout>
       </Layout>
+          </LocationProvider>
         </ ToDoProvider>
     </Router>
     
