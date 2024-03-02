@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages'
-import SearchResults from "../src/Pages/SearchResults"
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages/index.jsx'
+import SearchResults from './pages/SearchResults.jsx'
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
@@ -28,9 +28,6 @@ const { Header, Content, Footer, Sider } = Layout;
             <MyPlantsProvider>
             <LocationProvider>
       <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-          <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
-        </Sider>
             <Layout style={{ minHeight: '100vh' }}>
               <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
                 <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
