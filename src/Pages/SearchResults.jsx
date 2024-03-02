@@ -1,45 +1,24 @@
 
 import React, { useState, useEffect } from 'react';
 import SearchResultsPage from "../components/Results/Results"
+import { useLocation } from 'react-router-dom'
+import PlantCard from '../components/PlantCard';
+import { Row, Col } from 'antd';
+
 
 function SearchResults() {
+  const location = useLocation()
   const [searchResults, setSearchResults] = useState([]);
+  const searchTerm = location.state?.searchTerm || 'N/A'
 
   useEffect(() => {
 
-    const dummyData = [
-      {
-        id: 1,
-        name: 'Fern',
-        type: 'Indoor',
-        wateringFrequency: 'Weekly',
-        default_image: {
-          regular_url: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'
-        }
-      },
-      {
-        id: 2,
-        name: 'Cactus',
-        type: 'Indoor',
-        wateringFrequency: 'Monthly',
-        default_image: {
-          regular_url: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'
-        }
-      },
-      {
-        id: 3,
-        name: 'Monstera',
-        type: 'Indoor',
-        wateringFrequency: 'Weekly',
-        default_image: {
-          regular_url: 'https://pcfb.gumlet.io/images/articles/small-monstera-in-pot.png?w=640&h=426&mode=crop&crop=smart&s=362b2438ad2bd22d5826fe12b96adf88'
-        }
-      }
-    ];
-    
+    console.log('SearchResults component - location.state:', location.state);
+    const results = location.state && location.state.searchResults ? location.state.searchResults : [];
+    console.log('SearchResults component - Search results:', results); // Add this log statement
 
-    setSearchResults(dummyData);
-  }, []);
+    setSearchResults(results);
+  }, [location.state]);
 
   return (
     <div>
@@ -47,7 +26,7 @@ function SearchResults() {
       <h2>Search Results For:</h2>
       <ul>
         <li>
-          Search = N/A
+          Search = {searchTerm}
         </li>
         <li>
           Hardiness = N/A
@@ -56,7 +35,20 @@ function SearchResults() {
           Indoor or Outdoor/N/A
         </li>
       </ul>
-      <SearchResultsPage searchResults={searchResults} />
+
+      {Array.isArray(searchResults) && searchResults.length > 0 ? (
+        <Row gutter={[16, 16]}>
+          {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
+            .map((result, index) => (
+              <Col key={index} xs={24} sm={12} md={8}>
+                <PlantCard plant={result} />
+              </Col>
+            ))}
+        </Row>
+      ) : (
+        <p>No search results available.</p>
+      )}
+
     </div>
   );
 }

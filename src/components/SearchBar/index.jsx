@@ -8,11 +8,12 @@ import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
  */
 import perenualFetch from '../../utils/perenualFetch'
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   /**
  * setName hooks for storing dynamically changing user input
  * {Search} - ant design?
@@ -37,119 +38,115 @@ function SearchBar() {
     }
   });
 
+  let navigate = useNavigate();
+
   const onChange = (value) => {
     console.log(value)
-    wateringOption.find((element) => element === value) ? setWatering(value): setWatering('');
-    sunlightOption.find((element) => element === value) ? setSunlight(value): setSunlight('');
+    wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
+    sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
 
     // switch  (value.target.name) {
     //   case "indoorChk":
     //     setIndoors(1)
     //     isIndoors
 
-    
+
   }
 
 
-    const onSearch = (value, _e, info) => {
-
-      perenualFetch.getPerenualResults(value)
-        .then((res) => {
-          console.log(res.data)
-            .catch(err => {
-              console.log(err);
-            });
-        });
-    };
-
-    const filterOption = (input, option) =>
-      (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
-
-    const selectSunlight =
-      <Select
-        showSearch
-        placeholder="Sunlight"
-        optionFilterProp="children"
-        onChange={onChange}
-        filterOption={filterOption}
-        options={[
-          {
-            value: sunlightOption[0],
-            label: 'Full Sun',
-          },
-          {
-            value: sunlightOption[1],
-            label: 'Sun/Part Shade',
-          },
-          {
-            value: sunlightOption[2],
-            label: 'Part Shade',
-          },
-          {
-            value: sunlightOption[3],
-            label: 'Full Shade',
-          },
-        ]}
-      />
-    const selectWatering =
-      <Select
-        showSearch
-        placeholder="Watering"
-        optionFilterProp="children"
-        onChange={onChange}
-        filterOption={filterOption}
-        options={[
-          {
-            value: wateringOption[0],
-            label: 'Often',
-          },
-          {
-            value: wateringOption[1],
-            label: 'Average',
-          },
-          {
-            value: wateringOption[2],
-            label: 'Barely',
-          },
-          {
-            value: wateringOption[3],
-            label: 'None',
-          },
-        ]}
-      />
-
-    const filterItems = [
-      {
-        key: '1',
-        label: 'More Filters',
-        children:
-          <Space direction="vertical">
-            <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
-            <Checkbox name='outdoorChk' onChange={onChange}>Outdoor</Checkbox>
-            <Space direction="horizontal">
-              <p>Watering</p>
-              {selectWatering}
-            </Space>
-            <Space direction="horizontal">
-              <p>Sunlight</p>
-              {selectSunlight}
-            </Space>
-            <Button type="primary" onClick={onSearch} >Advanced Search</Button>
-          </Space>,
-      }
-    ];
-
-
-    return (
-      <Space direction="vertical">
-
-        <Search placeholder="Search for Plant" onSearch={onSearch} />
-
-        <Collapse items={filterItems} onChange={onChange} />
-
-
-      </Space>
-    )
+  const handleSearch = (value) => {
+    onSearch(value)
+    navigate('/search-results')
   };
 
-  export default SearchBar;
+  const filterOption = (input, option) =>
+    (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
+
+  const selectSunlight =
+    <Select
+      showSearch
+      placeholder="Sunlight"
+      optionFilterProp="children"
+      onChange={onChange}
+      filterOption={filterOption}
+      options={[
+        {
+          value: sunlightOption[0],
+          label: 'Full Sun',
+        },
+        {
+          value: sunlightOption[1],
+          label: 'Sun/Part Shade',
+        },
+        {
+          value: sunlightOption[2],
+          label: 'Part Shade',
+        },
+        {
+          value: sunlightOption[3],
+          label: 'Full Shade',
+        },
+      ]}
+    />
+  const selectWatering =
+    <Select
+      showSearch
+      placeholder="Watering"
+      optionFilterProp="children"
+      onChange={onChange}
+      filterOption={filterOption}
+      options={[
+        {
+          value: wateringOption[0],
+          label: 'Often',
+        },
+        {
+          value: wateringOption[1],
+          label: 'Average',
+        },
+        {
+          value: wateringOption[2],
+          label: 'Barely',
+        },
+        {
+          value: wateringOption[3],
+          label: 'None',
+        },
+      ]}
+    />
+
+  const filterItems = [
+    {
+      key: '1',
+      label: 'More Filters',
+      children:
+        <Space direction="vertical">
+          <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
+          <Checkbox name='outdoorChk' onChange={onChange}>Outdoor</Checkbox>
+          <Space direction="horizontal">
+            <p>Watering</p>
+            {selectWatering}
+          </Space>
+          <Space direction="horizontal">
+            <p>Sunlight</p>
+            {selectSunlight}
+          </Space>
+          <Button type="primary" onClick={onSearch} >Advanced Search</Button>
+        </Space>,
+    }
+  ];
+
+
+  return (
+    <Space direction="vertical">
+
+      <Search placeholder="Search for Plant" onSearch={handleSearch} />
+
+      <Collapse items={filterItems} onChange={onChange} />
+
+
+    </Space>
+  )
+};
+
+export default SearchBar;
