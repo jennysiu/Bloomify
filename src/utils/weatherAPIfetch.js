@@ -1,7 +1,7 @@
 const APIkey = "a69ab5ecb3b3c6e1ed7ac0baa202eabb";
 
 // uses location prop passeed down from weatherwidget
-const weatherAPIfetch = ({ location }) => {
+const weatherAPIfetch = ({ location, setLocation }) => {
 
     const latitude = location[0].latitude
     const longitude = location[0].longitude
@@ -13,8 +13,7 @@ const weatherAPIfetch = ({ location }) => {
                 return response.json();
             })
             .then(function (data) {
-                console.log(data);
-                // setWeather(data)
+                localStorage.setItem('weather', JSON.stringify(data))
             })
 
             .catch((error) => {
