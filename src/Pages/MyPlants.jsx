@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Space, Card, Button, Flex } from 'antd';
 
+import { usePlants } from '../contexts/PlantContext.jsx';
+
 // internal component imports
-import AddPlantModal from '../components/AddPlantModal';
-import PlantCard from '../components/PlantCard';
-import PlantProfile from '../components/PlantProfile';
+import AddPlantModal from '../components/AddPlantModal/index.jsx';
+import PlantCard from '../components/PlantCard/index.jsx';
+import PlantProfile from '../components/PlantProfile/index.jsx';
 
 function MyPlants() {
     // plants array for development testing:
@@ -101,6 +103,9 @@ function MyPlants() {
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
 
+        // useEffect(() => {
+        //     setPlants(initialPlants);
+        // }, [setPlants, initialPlants]);
 
     function renderPlantCards() {
         return (

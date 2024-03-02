@@ -30,7 +30,7 @@ const items = [
     getItem('Sign Out', '8', <LogoutOutlined />),
     
 ];
-const App = () => {
+const CustomNavBar = () => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
@@ -41,5 +41,5 @@ const App = () => {
                 items={items} />
     );
 };
-export default App;
+export default CustomNavBar;
 

@@ -1,28 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'antd';
-import './style.css';
 
-const DashPlantCard = ({ images }) => {
-return (
-    <div className="dash-plant-scroll-container">
-        {images.map((image, index) => (
-        <Card
-            title=" My Plant"
-            key={index}
-            hoverable
-            style={{ width: 150, display: 'inline-block', marginRight: 12 }}
-            cover={<img alt={`Plant ${index}`} src={image} />}
-        >
-            {/*TODO: Additional content for each card if any*/}
+const DashPlantCard = ({ plant , index}) => {
+    // Display logic using plant data
+    return (
+    <>
+        <Card title={plant.common_name}> {/* Display plant details here */} 
+            <img src={plant.default_image.regular_url} alt={plant.common_name} style={{ width: 200, height: 200 }} />
+            <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.common_name}</div>
         </Card>
-        ))}
-    </div>
-    );
+    </>
+    )
 };
 
-DashPlantCard.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// DashPlantCard.propTypes = {
+//     plant: PropTypes.object.isRequired,
+// };  
 
 export default DashPlantCard;
