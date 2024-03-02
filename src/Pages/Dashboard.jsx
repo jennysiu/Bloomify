@@ -7,6 +7,8 @@ import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 import DashWaterLog from '../components/DashWaterLog';
 import SearchBar from '../components/SearchBar';
 import PlantOfTheDay from '../components/PlantOfTheDay';
+import { LocationProvider } from '../contexts/ContextLocation';
+import WeatherWidget from '../components/WeatherWidget';
 import DashPlantCard from '../components/DashPlantCard'
 
 const Dashboard = () => {
@@ -118,6 +120,10 @@ const Dashboard = () => {
       <ToDoProvider>
         <TaskList toDos={toDos} setToDos={setToDos} />
       </ToDoProvider>
+
+      <LocationProvider>
+<WeatherWidget />
+      </LocationProvider>
 
       <DashWaterLog />
 

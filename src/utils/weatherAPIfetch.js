@@ -19,11 +19,11 @@ const weatherAPIfetch = ({ location, setLocation }) => {
             .catch((error) => {
                 console.log("No searches found!");
             });
-    }
 
     function error() {
         console.log('Not able to retrieve location')
         // TO DO: add in default location to show results from? London?
     }
+}
 
     export default weatherAPIfetch
