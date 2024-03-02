@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Button, Flex } from 'antd';
-import { Avatar, Space } from 'antd';
-import { Card } from 'antd';
+import { Avatar, Space, Card, Button, Flex } from 'antd';
 
 // internal component imports
 import AddPlantModal from '../components/AddPlantModal';
@@ -118,6 +116,11 @@ function MyPlants() {
             </>
         )
     }
+
+  
+    // function toggleAddPlantModal(newState) {
+    //     setaddPlantModal(newState);
+    // }
 
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
