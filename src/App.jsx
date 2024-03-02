@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 
+// internal imports
 import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages/index.jsx'
 import SearchResults from './pages/SearchResults.jsx'
 import './App.css'
-import Navbar from './components/CustomNavbar/index.jsx'
+import CustomNavBar from './components/CustomNavbar/index.jsx'
 import CustomHeader from './components/CustomHeader'
-import Footer from './components/Footer'
+import CustomFooter from './components/CustomFooter/index.jsx'
 import { ToDoProvider } from './contexts/ContextsToDos';
 import { LocationProvider } from './contexts/ContextLocation'
 import { MyPlantsContext } from './contexts/ContextMyPlants';
@@ -25,38 +26,34 @@ function App() {
       <Router basename={'/'}>
         {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
         <ToDoProvider>
-            <MyPlantsProvider>
-              <LocationProvider>
+          <MyPlantsProvider>
+            <LocationProvider>
+              <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                      <Layout style={{ minHeight: '100vh' }}>
-                          <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-                            <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
-                          </Sider>
-
-                          <Layout>
-                            <CustomHeader />
-
-                            <Content style={{ margin: '16px', padding: 24, background: '#fff', minHeight: 360 }}>
-                              <Routes>
-                                <Route path='' element={< Dashboard />} />
-                                <Route path='/dashboard' element={< Dashboard />} />
-                                <Route path='/explore' element={< Explore />} />
-                                <Route path='/my-plants' element={< MyPlants />} />
-                                <Route path='/watering-log' element={< WateringLog />} />
-                                <Route path='/search-results' element={< SearchResults/>} />
-                                <Route path='/404' element={< Custom404 />} />
-                              </Routes>
-                            </Content>
-
-                            <Footer />
-                          </Layout>
+                  <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
+                    <CustomNavBar collapsed={collapsed} setCollapsed={setCollapsed}/>
+                  </Sider>
+                  <Layout>
+                    <CustomHeader />
+                      <Content style={{ margin: '16px', padding: 24, background: '#fff', minHeight: 360 }}>
+                        <Routes>
+                          <Route path='' element={< Dashboard />} />
+                          <Route path='/dashboard' element={< Dashboard />} />
+                          <Route path='/explore' element={< Explore />} />
+                          <Route path='/my-plants' element={< MyPlants />} />
+                          <Route path='/watering-log' element={< WateringLog />} />
+                          <Route path='/search-results' element={< SearchResults/>} />
+                          <Route path='/404' element={< Custom404 />} />
+                        </Routes>
+                      </Content>
+                    <CustomFooter />
                   </Layout>
-                  </Layout>
-              </LocationProvider>
-            </MyPlantsProvider>
+                </Layout>
+              </Layout>
+            </LocationProvider>
+          </MyPlantsProvider>
         </ ToDoProvider>
-    </Router>
-    
+      </Router>
     </>
   )
 }
