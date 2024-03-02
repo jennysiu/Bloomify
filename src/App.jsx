@@ -31,8 +31,8 @@ function App() {
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                  <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-                    <CustomNavBar collapsed={collapsed} setCollapsed={setCollapsed}/>
+                  <Sider collapsible>
+                    <CustomNavBar/>
                   </Sider>
                   <Layout>
                     <CustomHeader />

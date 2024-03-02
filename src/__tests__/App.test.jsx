@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent} from '@testing-library/react';
 import * as userEvent from '@testing-library/user-event';
 import App from '../App';
 
@@ -8,6 +8,9 @@ import { ToDoProvider } from '../contexts/ContextsToDos.jsx';
 import { LocationProvider } from '../contexts/ContextLocation'
 import { MyPlantsProvider } from '../contexts/ContextMyPlants';
 import { PlantProvider } from '../contexts/PlantContext.jsx';
+import Navbar from '../components/CustomNavbar';
+import Header from '../components/CustomHeader';
+import Footer from '../components/CustomFooter';
 
 // test that checks to see if our `App` component renders without throwing an error.
 // NOTE: this will need updfating when we add new context files
@@ -78,33 +81,31 @@ it("renders the Watering Log page for the root path", async () => {
 })
 
 // COMPONENT RENDERING
+// test that checks to see if our Navbar component renders without throwing an error.
+it('Navbar Component Renders Without Error', () => {
+  render(
+    <BrowserRouter>
+      <Navbar />;
+    </BrowserRouter>
+  )
+});
 
-// STATE MANAGEMENT
-// test to see if sidebar collapses and expands correctly
-// describe('App component state management', () => {
-//   it('toggles the collapsed state of the Sider when the collapse button is clicked', () => {
-//     // option: Render the App component within the MemoryRouter to avoid router-related errors
-//       render(<App />);
+// header
+it('Header Component Renders Without Error', () => {
+  render(
+    <BrowserRouter>
+      <Header />;
+    </BrowserRouter>
+  )
+});
 
-
-//     // Assuming the collapse/expand button has a test ID or role, we can target it
-//     const collapseButton = screen.querySelector('.ant-layout-sider-trigger');
-//     // check for something that's only visible when the Sider is not collapsed
-//     expect(screen.getByText('Dashboard')).toBeInTheDocument();
-
-//     // Simulate clicking the collapse button
-//     fireEvent.click(collapseButton);
-
-//     // You could alternatively check for a class or style change
-//     expect(screen.queryByText('Dashboard')).not.toBeInTheDocument();
-
-//     // stimulate the expand button again to test expanding the Sider
-//     fireEvent.click(collapseButton);
-
-//     // And perform the checks again for the expanded state
-//     expect(screen.getByText('Dashboard')).toBeInTheDocument();
-//   });
-// });
-
+// footer
+it('Footer Component Renders Without Error', () => {
+  render(
+    <BrowserRouter>
+      <Footer />;
+    </BrowserRouter>
+  )
+});
 
 // STYLE AND APPEARANCE
