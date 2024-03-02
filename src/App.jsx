@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 
 // internal imports
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages/index.jsx'
-import SearchResults from './pages/SearchResults.jsx'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages/index.jsx'
+import SearchResults from './Pages/SearchResults.jsx'
 import './App.css'
 import CustomNavBar from './components/CustomNavbar/index.jsx'
 import CustomHeader from './components/CustomHeader'
@@ -14,7 +14,6 @@ import { LocationProvider } from './contexts/ContextLocation'
 import { MyPlantsContext } from './contexts/ContextMyPlants';
 import { MyPlantsProvider } from './contexts/ContextMyPlants';
 import { PlantProvider } from './contexts/PlantContext.jsx';
-
 
 function App() {
 
@@ -37,7 +36,7 @@ function App() {
                   </Sider>
                   <Layout>
                     <CustomHeader />
-                      <Content style={{ margin: '16px', padding: 24, background: '#fff', minHeight: 360 }}>
+                      <Content style={{ margin: '12px', padding: 18, background: '#fff' }}>
                         <Routes>
                           <Route path='' element={< Dashboard />} />
                           <Route path='/dashboard' element={< Dashboard />} />
