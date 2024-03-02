@@ -11,12 +11,15 @@ it('App Component Renders Without Error', () => {
 });
 
 // routing testing
+// need to remove router from app.jsx and wrao BrowserRouter around the app
+// component in main.jsx to do routing testing here
 it("renders the dashboard component for the root path", () => {
   render(
     <MemoryRouter initialEntries={["/"]}>
-      <App />
+      <App router={MemoryRouter}/>
     </MemoryRouter>
   );
 
   expect(screen.getByText("Dashboard Content")).toBeInTheDocument();
 })
+
