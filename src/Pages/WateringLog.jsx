@@ -14,13 +14,9 @@ function WateringLog() {
 return (
     <>
     {/* Wrap the components in the Providers */}
-    <ToDoProvider>
-    <LocationProvider>
         <TaskList toDos={toDos} setToDos={setToDos} />
         <Calendar toDos={toDos} setToDos={setToDos} />
         <WeatherWidget location={location} setLocation={setLocation}/>
-        </LocationProvider>
-    </ToDoProvider>
     </>
 )
 }
