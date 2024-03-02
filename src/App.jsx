@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages/index.jsx'
-import SearchResults from './Pages/SearchResults.jsx'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages/index.jsx'
+import SearchResults from './pages/SearchResults.jsx'
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'

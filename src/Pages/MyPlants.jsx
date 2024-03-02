@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Space, Card, Button, Flex } from 'antd';
 
@@ -103,9 +103,9 @@ function MyPlants() {
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
 
-        useEffect(() => {
-            setPlants(initialPlants);
-        }, [setPlants, initialPlants]);
+        // useEffect(() => {
+        //     setPlants(initialPlants);
+        // }, [setPlants, initialPlants]);
 
     function renderPlantCards() {
         return (
