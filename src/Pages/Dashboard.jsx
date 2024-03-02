@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import DashPlantCard from '../components/DashPlantCard';
 import TaskList from '../components/TaskList';
 import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
+import DashWaterLog from '../components/DashWaterLog';
+import SearchBar from '../components/SearchBar';
+import PlantOfTheDay from '../components/PlantOfTheDay';
 
 const Dashboard = () => {
   const images = [
@@ -25,6 +28,10 @@ const Dashboard = () => {
       <ToDoProvider>
         <TaskList toDos={toDos} setToDos={setToDos} />
       </ToDoProvider>
+
+      <DashWaterLog />
+      <SearchBar /> 
+      <PlantOfTheDay />
       
     </div>
   );
