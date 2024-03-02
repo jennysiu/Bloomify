@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
 import { Typography } from 'antd';
 
-const TaskList = ({ toDos, setToDos}) => {
+const TaskList = ({ toDos, setToDos }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);

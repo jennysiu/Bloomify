@@ -9,10 +9,9 @@ import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToDoProvider } from './contexts/ContextsToDos';
+import { LocationProvider } from './contexts/ContextLocation'
 import { MyPlantsContext } from './contexts/ContextMyPlants';
 import { MyPlantsProvider } from './contexts/ContextMyPlants';
-
-// can uncomment after merge request has been approved --> Uncommented it and changed the file path to the correct one
 
 function App() {
 
@@ -26,7 +25,12 @@ const { Header, Content, Footer, Sider } = Layout;
       <Router basename={'/'}>
         {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
         <ToDoProvider>
-          <MyPlantsProvider>
+            <MyPlantsProvider>
+            <LocationProvider>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
+          <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
+        </Sider>
             <Layout style={{ minHeight: '100vh' }}>
               <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
                 <Navbar collapsed={collapsed} setCollapsed={setCollapsed}/>
@@ -47,9 +51,11 @@ const { Header, Content, Footer, Sider } = Layout;
                   </Routes>
                 </Content>
 
-                <Footer />
-              </Layout>
-            </Layout>
+          <Footer />
+        </Layout>
+      </Layout>
+      </Layout>
+          </LocationProvider>
             </MyPlantsProvider>
         </ ToDoProvider>
     </Router>

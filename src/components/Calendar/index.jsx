@@ -1,5 +1,8 @@
 import React from 'react';
 import { Calendar } from 'antd';
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { faDroplet } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const getListData = ({ toDos }) => {
     return toDos.map(item => ({
@@ -19,11 +22,11 @@ const MyCalendar = ({ toDos }) => {
         });
 
         return (
-            <ul className="events">
+            <ul className="events" style={{ listStyleType: 'none' }}>
                 {tasksForDate.map((item, index) => (
                     <li key={index}>
+                        <FontAwesomeIcon icon={faDroplet} />
                         {item.content}
-                        {/* Add in waterdrop icon here? */}
                     </li>
                 ))}
             </ul>
