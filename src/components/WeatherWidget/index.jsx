@@ -7,21 +7,6 @@ const WeatherWidget = ({ location, setLocation }) => {
 
     const [isWeatherFetched, setIsWeatherFetched] = useState(false)
 
-// Modal code for location
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
-
     // Function to get user's location. Upon successfully retrieving location, calls the weatherAPI to fetch weather for that location. 
     const getUserLocation = () => {
         if (navigator.geolocation) {
@@ -32,7 +17,6 @@ const WeatherWidget = ({ location, setLocation }) => {
     }
 
     function success(position) {
-        showModal();
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
@@ -61,7 +45,7 @@ const WeatherWidget = ({ location, setLocation }) => {
             <LocationProvider>
                 <Button onClick={() => setIsWeatherFetched(true)}>Show Latest Weather</Button>
                 <span>
-                    {isWeatherFetched ? (
+                    {weather ? (
                         <>
                             <h1>Showing weather in {weather.name}</h1>
                             <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}></img>
@@ -73,13 +57,6 @@ const WeatherWidget = ({ location, setLocation }) => {
                     ) : null}
                 </span>
                 <Button onClick={getUserLocation}>Change/set current location</Button>
-                <Modal
-                    title="Location Set!"
-                    open={isModalOpen}
-                    onOk={handleOk}
-                    onCancel={handleCancel}>
-                    <p>Now hit 'Show Latest Weather' to see weather in your area.</p>
-                </Modal>
             </LocationProvider>
         </>
     )
