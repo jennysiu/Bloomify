@@ -2,26 +2,41 @@ import { render, screen } from '@testing-library/react';
 import * as userEvent from '@testing-library/user-event';
 import App from '../App';
 
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
+import { ToDoProvider } from '../contexts/ContextsToDos.jsx';
+import { LocationProvider } from '../contexts/ContextLocation'
+import { MyPlantsProvider } from '../contexts/ContextMyPlants';
+import { PlantProvider } from '../contexts/PlantContext.jsx';
 
 // test that checks to see if our `App` component renders without throwing an error.
+// NOTE: this will need updfating when we add new context files
 it('App Component Renders Without Error', () => {
-  render(<App />);
+  render(
+    <BrowserRouter>
+      <ToDoProvider>
+        <MyPlantsProvider>
+          <LocationProvider>
+            <App />
+          </LocationProvider>
+        </MyPlantsProvider>
+      </ToDoProvider>
+    </BrowserRouter>
+  )
 });
 
 // ROUTING TESTING
 // need to remove router from app.jsx and wrap BrowserRouter around the app
 // component in main.jsx to do routing testing here
-// it("renders the dashboard component for the root path", () => {
-//   render(
-//     <MemoryRouter initialEntries={["/"]}>
-//       <App router={MemoryRouter}/>
-//     </MemoryRouter>
-//   );
+it("renders the dashboard component for the root path", () => {
+  render(
+    <BrowserRouter initialEntries={["/"]}>
+      <App router={BrowserRouter}/>
+    </BrowserRouter>
+  );
 
-//   expect(screen.getByText("Dashboard Content")).toBeInTheDocument();
-// })
+  expect(screen.getByText("Dashboard")).toBeInTheDocument();
+})
 
 // COMPONENT RENDERING
 
