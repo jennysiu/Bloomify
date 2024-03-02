@@ -5,10 +5,9 @@ import weatherAPIfetch from '../../utils/weatherAPIfetch';
 
 const WeatherWidget = ({ location, setLocation }) => {
 
-    // CHECK IF WEATHER IS FETCHED BEFORE RENDERING IT
     const [isWeatherFetched, setIsWeatherFetched] = useState(false)
 
-    // MODAL CODE -- currently unable to get modal to work
+// Modal code for location
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -23,18 +22,7 @@ const WeatherWidget = ({ location, setLocation }) => {
         setIsModalOpen(false);
     };
 
-    // const [weatherData, setWeatherData] = useState('')
-
-    // useEffect(() => {
-    //     if (location) {
-    //         weatherAPIfetch({ location, setLocation })
-    //         .then(data => {setWeatherData(data)
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching weather data', error)
-    //         });
-    //     }}, [location]);
-
+    // Function to get user's location. Upon successfully retrieving location, calls the weatherAPI to fetch weather for that location. 
     const getUserLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(success, error);
@@ -59,9 +47,11 @@ const WeatherWidget = ({ location, setLocation }) => {
 
     }
 
+    // Stores weather data to local storage
     const storedWeather = localStorage.getItem('weather')
     const weather = JSON.parse(storedWeather)
 
+    // If user location cannot be retrieved
     function error() {
         console.log('Not able to retrieve location')
     }

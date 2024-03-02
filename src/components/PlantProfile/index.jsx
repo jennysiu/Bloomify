@@ -1,42 +1,52 @@
 import React, { useState } from 'react';
-import { Tabs, Divider, Space, Tag, Button, Modal } from 'antd';
+import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
-// todo: capitalise name of plant
+import "./style.css"
+
 // dont think the pet-friendly property renders correctly
+// think about how to add plant button on profile modal
 
-
-function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onClose }) {
-  console.log(selectedPlantModalVisible)
-  console.log(selectedPlantModalPlant)
-  
+function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant }) {
   let plantData = selectedPlantModalPlant;
-  
-  // const [open, setOpen] = useState(false); 
-  const isIndoor = "Indoor";
-  
+    
   const handleClose = () => {
-    onClose();    
+    togglePlantProfileVisibility(false);
+  };
+
+  const handleRemovePlant = () => {
+    togglePlantProfileVisibility(false);
+    // logic here to remove from plant collection (local storage)
   };
   
   return (
     <>
-
-    <Modal
-    
+    <Modal className='plant-profile-modal'
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
     open={selectedPlantModalVisible}
     onCancel={handleClose}
     width={1000}
     footer={[
+      <Popconfirm
+      key="remove-plant"
+      title="Remove plant"
+      description="Are you sure to remove this plant from your sanctuary?"
+      onConfirm={handleRemovePlant}
+      onCancel={() => console.log("Canceled removal")}
+      okText="Yes, remove plant"
+      cancelText="No"
+      >
+      <Button key="popconfirm" danger>Remove Plant</Button>
+      </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
-        Close
-      </Button>,
+      Close
+      </Button>
+
     ]}
     >
 
+    <div className='plant-profile-modal-content'>
     <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} />
-
     <Tabs
         defaultActiveKey="1"
         centered
@@ -47,11 +57,15 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             children: 
             (<div>
               {/* indoor tag */}
-              {plantData.indoor && (
-                <Tag bordered={false} color="green">
-                  {isIndoor}
-                </Tag>
-              )}
+              {plantData.indoor === true ? (
+              <Tag bordered={false} color="green">
+                Indoor
+              </Tag>) 
+              : plantData.indoor === false ? (
+              <Tag bordered={false} color="magenta">
+                Outdoor
+              </Tag>)
+              : null}
               {/* maintenance tags */}
               {plantData.maintenance === "Low" ? (
                 <Tag bordered={false} color="green">
@@ -93,14 +107,22 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             </div>),
           },
           {
-            label: 'Growth & care',
+            label: 'Care & growth',
             key: '2',
             children: (
               <div>
                 <h4>Care</h4>
                 <p>Hardiness: {plantData.hardiness.min} - {plantData.hardiness.max}</p>
                 <p>Best watering period: {plantData.watering_period ? plantData.watering_period : "n/a"}</p>
-                <p>Tropical: {plantData.tropical}</p>
+                <p>Tropical: {plantData.tropical === "true" ? (
+                  <Tag>
+                    Yes
+                  </Tag>
+                  ) : 
+                  (<Tag>
+                    No
+                  </Tag>
+                )}</p>
 
                 <h4>Growth</h4>
                 <p>Cycle: {plantData.cycle}</p> 
@@ -125,10 +147,11 @@ function PlantProfile({ selectedPlantModalVisible, selectedPlantModalPlant, onCl
             )
           }
         ]}
-        />
+    />
+    </div>
     </Modal>
+ 
     </>
-
   );
 }
 
