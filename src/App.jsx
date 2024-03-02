@@ -10,10 +10,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToDoProvider } from './contexts/ContextsToDos';
 import { LocationProvider } from './contexts/ContextLocation'
-// import { MyPlantsContext } from './contexts/ContextMyPlants';
-
-// can uncomment after merge request has been approved
-// import { MyPlantsProvider } from './contexts/ContextsMyPlants';
+import { MyPlantsContext } from './contexts/ContextMyPlants';
+import { MyPlantsProvider } from './contexts/ContextMyPlants';
 
 function App() {
 
