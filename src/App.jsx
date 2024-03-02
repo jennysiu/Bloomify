@@ -10,9 +10,9 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToDoProvider } from './contexts/ContextsToDos';
 import { MyPlantsContext } from './contexts/ContextMyPlants';
+import { MyPlantsProvider } from './contexts/ContextMyPlants';
 
-// can uncomment after merge request has been approved
-// import { MyPlantsProvider } from './contexts/ContextsMyPlants';
+// can uncomment after merge request has been approved --> Uncommented it and changed the file path to the correct one
 
 function App() {
 
