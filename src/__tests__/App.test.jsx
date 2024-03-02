@@ -1,9 +1,7 @@
-import { render, screen, fireEvent} from '@testing-library/react';
-import * as userEvent from '@testing-library/user-event';
-import App from '../App';
-
+import { render, screen} from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+import App from '../App';
 import { ToDoProvider } from '../contexts/ContextsToDos.jsx';
 import { LocationProvider } from '../contexts/ContextLocation'
 import { MyPlantsProvider } from '../contexts/ContextMyPlants';

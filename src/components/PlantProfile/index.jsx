@@ -21,6 +21,7 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
   return (
     <>
     <Modal className='plant-profile-modal'
+    id="plant-profile-modal"
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
     centered
     open={selectedPlantModalVisible}

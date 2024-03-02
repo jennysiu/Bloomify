@@ -17,7 +17,7 @@ import { PlantProvider } from './contexts/PlantContext.jsx';
 
 function App() {
 
-  const [collapsed, setCollapsed] = useState(false); 
+  // const [collapsed, setCollapsed] = useState(false); 
 
   // Import Layout components here
   const { Content, Sider } = Layout;
