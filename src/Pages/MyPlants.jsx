@@ -99,16 +99,12 @@ function MyPlants() {
     // use state for plants collection array of Objects - this state needs to be in a global area to be accessed by other components (iff added from explore area)
     const [myPlants, setMyPlants] = useState(initialPlants);
     const [addPlantModal, setaddPlantModal] = useState(false);
-    // store currently selected plant
-
-     // State to hold the currently selected plant for display in the modal
+    // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
 
 
     function renderPlantCards() {
-        
-
         return (
             <>
             {myPlants.map((plant, index) => {
@@ -123,16 +119,13 @@ function MyPlants() {
         )
     }
 
-
-  
-    // function toggleAddPlantModal(newState) {
-    //     setaddPlantModal(newState);
-    // }
-
-    // todo: when card is clicked on - display plant profile with that data
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
     };
+
+    const togglePlantProfileVisibility = (isvisible) => {
+        setSelectedPlantModal({...selectedPlantModal, isVisible: isvisible});
+    }
 
     return (
         <>
@@ -161,6 +154,7 @@ function MyPlants() {
         {selectedPlantModal.isVisible && selectedPlantModal.plant && (
             <PlantProfile 
             selectedPlantModalVisible={selectedPlantModal.isVisible}
+            togglePlantProfileVisibility={togglePlantProfileVisibility}
             selectedPlantModalPlant={selectedPlantModal.plant}
             onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
             />
