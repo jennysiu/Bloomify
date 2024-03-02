@@ -26,9 +26,8 @@ it('App Component Renders Without Error', () => {
 });
 
 // ROUTING TESTING
-// need to remove router from app.jsx and wrap BrowserRouter around the app
-// component in main.jsx to do routing testing here
-it("renders the dashboard component for the root path", () => {
+// add settings if we end up having a setting page
+it("renders the dashboard page for the root path", () => {
   render(
     <BrowserRouter initialEntries={["/"]}>
       <App router={BrowserRouter}/>
@@ -36,6 +35,46 @@ it("renders the dashboard component for the root path", () => {
   );
 
   expect(screen.getByText("Dashboard")).toBeInTheDocument();
+})
+
+it("renders the My Plants page for the root path", async () => {
+  render(
+    <BrowserRouter initialEntries={["/my-plants"]}>
+      <App router={BrowserRouter}/>
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("My Plants")).toBeInTheDocument();
+})
+
+it("renders the Explore page for the root path", async () => {
+  render(
+    <BrowserRouter initialEntries={["/explore"]}>
+      <App router={BrowserRouter}/>
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("Explore")).toBeInTheDocument();
+})
+
+it("renders the Waterin Log page for the root path", async () => {
+  render(
+    <BrowserRouter initialEntries={["/watering-log"]}>
+      <App router={BrowserRouter}/>
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("Watering Log")).toBeInTheDocument();
+})
+
+it("renders the Watering Log page for the root path", async () => {
+  render(
+    <BrowserRouter initialEntries={["/search-results"]}>
+      <App router={BrowserRouter}/>
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("Results")).toBeInTheDocument();
 })
 
 // COMPONENT RENDERING
