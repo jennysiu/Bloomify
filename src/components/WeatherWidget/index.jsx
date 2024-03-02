@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
 import { LocationProvider, LocationContext } from '../../contexts/ContextLocation'
+import weatherAPIfetch from '../../utils/weatherAPIfetch';
 
 const WeatherWidget = ({ location, setLocation }) => {
-
-    // const { location, setLocation } = useContext(LocationContext)
 
     const getUserLocation = () => {
         if (navigator.geolocation) {
@@ -27,6 +26,9 @@ const WeatherWidget = ({ location, setLocation }) => {
         function error() {
             console.log('Not able to retrieve location')
         }
+
+        weatherAPIfetch({ location })
+
     }
 
     return (
