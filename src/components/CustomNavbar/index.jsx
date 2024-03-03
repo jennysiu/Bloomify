@@ -19,6 +19,7 @@ function getItem(label, key, icon, children) {
         label,
     };
 }
+
 const items = [
     getItem(<Link to='/dashboard'>Dashboard</Link >, '1', <HomeOutlined />),
     getItem(<Link to='/my-plants'>My Plants</Link>, '2', <UserOutlined />),
@@ -30,9 +31,8 @@ const items = [
     getItem('Sign Out', '8', <LogoutOutlined />),
     
 ];
-const CustomNavBar = () => {
-    const [collapsed, setCollapsed] = useState(false);
 
+const CustomNavBar = () => {
     return (
                 <Menu 
                 theme="dark" 
