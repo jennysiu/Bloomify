@@ -11,6 +11,8 @@ import WeatherWidget from '../components/WeatherWidget';
 import DashPlantCard from '../components/DashPlantCard'
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 
+import '../../src/index.css'
+
 const Dashboard = () => {
   const { toDos, setToDos } = useContext(ToDoContext); 
   const { location, setLocation } = useContext(LocationContext)
@@ -110,27 +112,28 @@ const Dashboard = () => {
 
   return (
     <>
-      <h1>Welcome back, Joan!</h1>
+      <h1>Welcome back!</h1>
+      <div className="gridContainerDashboard">
+        {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
+        {/* Pass plants data to DashPlantCard */}
+        {myPlants.map((plant, index) => (
+          <DashPlantCard key={index} plant={plant} />
+        ))}
 
-      {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
-      {/* Pass plants data to DashPlantCard */}
-      {myPlants.map((plant, index) => (
-        <DashPlantCard key={index} plant={plant} />
-      ))}
+        <ToDoProvider>
+          <TaskList toDos={toDos} setToDos={setToDos} />
+        </ToDoProvider>
 
-      <ToDoProvider>
-        <TaskList toDos={toDos} setToDos={setToDos} />
-      </ToDoProvider>
+        <LocationProvider>
+          <WeatherWidget location={location} setLocation={setLocation} />
+        </LocationProvider>
 
-      <LocationProvider>
-        <WeatherWidget location={location} setLocation={setLocation} />
-      </LocationProvider>
+        <DashWaterLog />
 
-      <DashWaterLog />
+        <SearchBar /> 
 
-      <SearchBar /> 
-
-      <PlantOfTheDay />
+        <PlantOfTheDay />
+      </div>
     </>
   );
 };

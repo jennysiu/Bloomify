@@ -36,12 +36,14 @@ function App() {
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                  <Sider collapsible>
+                  <Sider 
+                  collapsible
+                  style={{ backgroundColor: '#FEFEFE' }}>
                     <CustomNavBar />
                   </Sider>
                   <Layout>
                     <CustomHeader />
-                    <Content style={{ margin: '12px', padding: 18, background: '#fff' }}>
+                    <Content>
                       <Routes>
                         <Route path='' element={< Dashboard />} />
                         <Route path='/dashboard' element={< Dashboard />} />

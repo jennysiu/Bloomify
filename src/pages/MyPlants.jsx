@@ -14,6 +14,8 @@ import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants.j
 import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 
+import '../../src/index.css'
+
 function MyPlants() {
     // plants array for development testing:
     const initialPlants = [
