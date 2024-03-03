@@ -9,13 +9,13 @@ import { Row, Col } from 'antd';
 function SearchResults() {
   const location = useLocation()
   const [searchResults, setSearchResults] = useState([]);
-  const searchTerm = location.state?.searchTerm || 'N/A'
+  
 
   useEffect(() => {
 
-    console.log('SearchResults component - location.state:', location.state);
+    
     const results = location.state && location.state.searchResults ? location.state.searchResults : [];
-    console.log('SearchResults component - Search results:', results); // Add this log statement
+    
 
     setSearchResults(results);
   }, [location.state]);
@@ -26,7 +26,7 @@ function SearchResults() {
       <h2>Search Results For:</h2>
       <ul>
         <li>
-          Search = {searchTerm}
+          Search = N/A
         </li>
         <li>
           Hardiness = N/A

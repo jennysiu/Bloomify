@@ -15,7 +15,7 @@ function Explore() {
             console.log('Search results:', results.data);
 
             const resultsArray = Array.isArray(results.data) ? results.data : []
-            navigate('/search-results', { state: { searchResults: resultsArray ,  searchTerm: value} })
+            navigate('/search-results', { state: { searchResults: resultsArray} })
             // Handle the results as needed
         } catch (error) {
             console.error('Error fetching search results:', error);
