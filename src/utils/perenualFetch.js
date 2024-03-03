@@ -32,9 +32,9 @@ export default {
     }
 }
 
-export {
-    getSpecificPlant{id}
-}
+// export {
+//     getSpecificPlant{id}
+// }
 
 
 /**

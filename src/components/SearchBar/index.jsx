@@ -1,4 +1,5 @@
 import React from 'react';
+import { redirect } from "react-router-dom";
 import { FilterOutlined} from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
 /**
@@ -62,6 +63,7 @@ function SearchBar({ onSearch }) {
           
           const searchResults = res.data;
           console.log(searchResults)
+          redirect("/search-results")
         })
         .catch((err) => console.log(err));
       }else{
@@ -79,6 +81,7 @@ function SearchBar({ onSearch }) {
       .then((res) => {
         const searchResults = res.data;
         console.log(searchResults)
+        
       })
       .catch((err) => console.log(err));
   }
