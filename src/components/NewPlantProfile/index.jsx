@@ -1,22 +1,44 @@
-import React, { useState } from 'react';
-import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
+import React, { useState, useContext } from 'react';
+import { Tabs, message, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
+// internal imports
+import { MyPlantsProvider,  MyPlantsContext} from '../../contexts/ContextMyPlants';
 import "./style.css"
 
-function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfileVisibility, selectedPlantModalPlant }) {
+function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, selectedPlantModalPlant }) {
+  const { myPlants, setMyPlants } = useContext(MyPlantsContext);
+  
   let plantData = selectedPlantModalPlant;
-    
-  const handleClose = () => {
-    toggleNewPlantProfileVisibility(false);
-  };
 
-  const handleAddPlant = () => {
-    toggleNewPlantProfileVisibility(false);
-    // logic here to add from plant collection (local storage)
+  
+  const handleClose = () => {
+    toggleNewPlantProfVisi(false);
   };
   
+  const handleAddPlant = (plantData) => {
+    // save to local storage 
+    const newMyPlants = [...myPlants || [], plantData]
+    setMyPlants(newMyPlants);
+    localStorage.setItem("myPlants", JSON.stringify(newMyPlants));
+    // const mySavedPlants = JSON.parse(localStorage.getItem("myPlants")) || [];
+    // console.log(mySavedPlants)
+    
+    // once saved - close modal
+    toggleNewPlantProfVisi(false);
+    
+    // display message to confirm addition
+    success();
+  };
+  
+  const success = () => {
+    message.success('Plant successfully added to your sanctuary', 4);
+  };
+
   return (
     <>
+    {/* contextholder is for the success message */}
+    {contextHolder}
+
     <Modal className='plant-profile-modal'
     id="plant-profile-modal"
     title={plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}
@@ -25,21 +47,20 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfileVisib
     onCancel={handleClose}
     width={1000}
     footer={[
-      <Popconfirm
-      key="add-plant"
-      title="Add plant to santuary"
-      description="Are you sure to remove this plant from your sanctuary?"
-      onConfirm={handleAddPlant}
-      onCancel={() => console.log("Canceled removal")}
-      okText="Yes, remove plant"
-      cancelText="No"
-      >
-      <Button key="popconfirm" danger>Add Plant to Santuary</Button>
-      </Popconfirm>,
+      // <Popconfirm
+      // key="add-plant"
+      // title="Add Plant"
+      // description="Do you want to add this plant to your sanctuary?"
+      // onConfirm={handleAddPlant}
+      // onCancel={() => console.log("Canceled removal")}
+      // okText="Yes, add plant"
+      // cancelText="No"
+      // >
+      <Button key="popconfirm" type="primary" onClick={() => handleAddPlant(plantData)}>Add plant to My Sanctuary </Button>,
+      // </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
       Close
       </Button>
-
     ]}
     >
 
