@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, Space, Card, Button, Flex } from 'antd';
+import { Space, Card, Button, Flex } from 'antd';
 
 import { usePlants } from '../contexts/PlantContext.jsx';
 
@@ -103,10 +103,6 @@ function MyPlants() {
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
 
-        // useEffect(() => {
-        //     setPlants(initialPlants);
-        // }, [setPlants, initialPlants]);
-
     function renderPlantCards() {
         return (
             <>
@@ -121,11 +117,10 @@ function MyPlants() {
             </>
         )
     }
-
   
-    // function toggleAddPlantModal(newState) {
-    //     setaddPlantModal(newState);
-    // }
+    function toggleAddPlantModal(newState) {
+        setaddPlantModal(newState);
+    }
 
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
@@ -140,14 +135,14 @@ function MyPlants() {
         <h1>My Plant Sanctuary</h1>
 
         {/* new plant button */}
-        {/* <Flex gap="small" wrap="wrap">
+        <Flex gap="small" wrap="wrap">
             <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
-        </Flex> */}
+        </Flex>
 
         {/* add new plant modal */}
-        {/* <AddPlantModal 
+        <AddPlantModal 
         addPlantModal={addPlantModal} 
-        toggleAddPlantModal={toggleAddPlantModal}/> */}
+        toggleAddPlantModal={toggleAddPlantModal}/>
         {/* if no plants in collection then add button to click here to add new plants */}
 
         
@@ -174,5 +169,5 @@ function MyPlants() {
     )
 }
 
-export default MyPlants
+export default MyPlants;
 
