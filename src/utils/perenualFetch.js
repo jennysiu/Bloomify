@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = `sk-2KiZ65dfa09c6ebac4396`
+const API_KEY = `sk-2KiZ65dfa09c6ebac4396`;
 
 
 /**
@@ -16,21 +16,23 @@ export default {
         const sunlightStr = `&sunlight=${this.sunlight}`;
         const isIndoorsStr = `&indoor=${this.indoors}`;
         const searchStr = `&q=${this.search}`;
-        
-        if(watering === '' && sunlight === '' && isIndoors === ''){
+
+        if (watering === '' && sunlight === '' && isIndoors === '') {
             console.log(`results for ${search}`);
-            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
-        }else{
-            
-            console.log(`results for ${search ? search : 'anything'}, that need ${watering === ''? 'any type of' : watering } watering, ${sunlight === ''? 'any amount of sunlight':sunlight} and live ${isIndoors === 1 ?  'indoors': 'indoors and outdoors' }`);
-            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`)
-            }
+            return data
+            //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
+        } else {
+
+            console.log(`results for ${search ? search : 'anything'}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
+            return data
+            //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`)
+        }
     }
 }
 
-// export {
-//     getSpecificPlant{id}
-// }
+
+
+
 
 
 /**
@@ -40,29 +42,29 @@ export default {
  * 
  */
 
-testData2 :[{
+testData2: [{
     id: 1530,
     common_name: 'camellia',
-    scientific_name: [ "Camellia japonica 'April Rose'" ],
+    scientific_name: ["Camellia japonica 'April Rose'"],
     other_name: [],
     family: 'Theaceae',
-    origin: [ 'Japan' ],
+    origin: ['Japan'],
     type: 'Broadleaf evergreen',
     dimension: '5.00 to 8.00 feet',
     dimensions: { type: null, min_value: 5, max_value: 8, unit: 'feet' },
     cycle: 'Perennial',
     attracts: [],
     propagation: [
-      'Layering Propagation',
-      'Grafting Propagation',
-      'Cutting',
-      'Division',
-      'Seed Propagation'
+        'Layering Propagation',
+        'Grafting Propagation',
+        'Cutting',
+        'Division',
+        'Seed Propagation'
     ],
     hardiness: { min: '6', max: '9' },
     hardiness_location: {
-      full_url: 'https://perenual.com/api/hardiness-map?species_id=1530&size=og&key=sk-0TuC65e08d8f166774406',
-      full_iframe: "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=1530&size=og&key=sk-0TuC65e08d8f166774406'></iframe>"
+        full_url: 'https://perenual.com/api/hardiness-map?species_id=1530&size=og&key=sk-0TuC65e08d8f166774406',
+        full_iframe: "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=1530&size=og&key=sk-0TuC65e08d8f166774406'></iframe>"
     },
     watering: 'Average',
     depth_water_requirement: [],
@@ -70,15 +72,15 @@ testData2 :[{
     watering_period: null,
     watering_general_benchmark: { value: '7-10', unit: 'days' },
     plant_anatomy: [
-      { part: 'flower', color: [Array] },
-      { part: 'petals', color: [Array] },
-      { part: 'stamens', color: [Array] },
-      { part: 'leaves', color: [Array] },
-      { part: 'branch', color: [Array] },
-      { part: 'trunk', color: [Array] }
+        { part: 'flower', color: [Array] },
+        { part: 'petals', color: [Array] },
+        { part: 'stamens', color: [Array] },
+        { part: 'leaves', color: [Array] },
+        { part: 'branch', color: [Array] },
+        { part: 'trunk', color: [Array] }
     ],
-    sunlight: [ 'Part shade' ],
-    pruning_month: [ 'April', 'February', 'March', 'April' ],
+    sunlight: ['Part shade'],
+    pruning_month: ['April', 'February', 'March', 'April'],
     pruning_count: [],
     seeds: 0,
     maintenance: 'Moderate',
@@ -105,7 +107,7 @@ testData2 :[{
     fruit_color: [],
     harvest_season: null,
     leaf: true,
-    leaf_color: [ 'green' ],
+    leaf_color: ['green'],
     edible_leaf: false,
     cuisine: false,
     medicinal: false,
@@ -113,20 +115,20 @@ testData2 :[{
     poisonous_to_pets: 0,
     description: "Camellia japonica 'April Rose' is an amazing plant species for many reasons. This gorgeous shrub has large, full, slightly-fragrant, white flowers with a pink blush that blossom in early spring, making a stunning addition to any garden. It is evergreen, making it a great choice for many climates and is a low maintenance plant. Not only that, but it is also known for its medicinal properties. Its leaves are used in tea and can be used to promote healthy skin, hair, and nails. Its flowers are also said to have detoxifying and mood-lifting qualities.",
     default_image: {
-      license: 5,
-      license_name: 'Attribution-ShareAlike License',
-      license_url: 'https://creativecommons.org/licenses/by-sa/2.0/',
-      original_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/og/52456500562_32f0b718f8_b.jpg',
-      regular_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/regular/52456500562_32f0b718f8_b.jpg',
-      medium_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/medium/52456500562_32f0b718f8_b.jpg',
-      small_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/small/52456500562_32f0b718f8_b.jpg',
-      thumbnail: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/thumbnail/52456500562_32f0b718f8_b.jpg'
+        license: 5,
+        license_name: 'Attribution-ShareAlike License',
+        license_url: 'https://creativecommons.org/licenses/by-sa/2.0/',
+        original_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/og/52456500562_32f0b718f8_b.jpg',
+        regular_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/regular/52456500562_32f0b718f8_b.jpg',
+        medium_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/medium/52456500562_32f0b718f8_b.jpg',
+        small_url: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/small/52456500562_32f0b718f8_b.jpg',
+        thumbnail: 'https://perenual.com/storage/species_image/1530_camellia_japonica_april_rose/thumbnail/52456500562_32f0b718f8_b.jpg'
     },
     other_images: 'Upgrade Plan To Supreme For Access https://perenual.com/subscription-api-pricing. Im sorry'
-  }
+}
 ]
 
-const testData = {
+const data = {
     "data": [
         {
             "id": 24,
@@ -849,4 +851,6 @@ const testData = {
     "from": 1,
     "last_page": 13,
     "total": 374
+    
+
 }
