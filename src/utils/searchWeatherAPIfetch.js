@@ -33,6 +33,7 @@ const searchWeatherAPIfetch = ({ value }) => {
             })
             .then(function (data) {
                 localStorage.setItem('weather', JSON.stringify(data))
+                window.dispatchEvent(new Event('storage'))
             })
     }
 

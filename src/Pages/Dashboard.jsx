@@ -7,12 +7,13 @@ import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 import DashWaterLog from '../components/DashWaterLog';
 import SearchBar from '../components/SearchBar';
 import PlantOfTheDay from '../components/PlantOfTheDay';
-import { LocationProvider } from '../contexts/ContextLocation';
 import WeatherWidget from '../components/WeatherWidget';
 import DashPlantCard from '../components/DashPlantCard'
+import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 
 const Dashboard = () => {
   const { toDos, setToDos } = useContext(ToDoContext); 
+  const { location, setLocation } = useContext(LocationContext)
 
   // commented this state out untiol context is ready (after search results)
   // const { myPlantsArray, setMyPlantsArray } = useContext(MyPlantsContext); 
@@ -122,7 +123,7 @@ const Dashboard = () => {
       </ToDoProvider>
 
       <LocationProvider>
-<WeatherWidget />
+        <WeatherWidget location={location} setLocation={setLocation} />
       </LocationProvider>
 
       <DashWaterLog />
