@@ -2,7 +2,7 @@ import { Card } from 'antd';
 
 
 function PlantCard( {plant, index} ) {
-    console.log(plant)
+    // console.log(plant)
     if (!plant) {
         console.error('Plant data is undefined.', { index });
         return null;

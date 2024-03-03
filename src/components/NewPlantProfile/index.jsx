@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
+// internal imports
+import { MyPlantsProvider,  MyPlantsContext} from '../../contexts/ContextMyPlants';
 import "./style.css"
 
 function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, selectedPlantModalPlant }) {
+  const { myPlants, setMyPlants } = useContext(MyPlantsContext);
+  
   let plantData = selectedPlantModalPlant;
 
   console.log(plantData);
+  // console.log(typeof plantData);
     
   const handleClose = () => {
     toggleNewPlantProfVisi(false);
   };
 
-  const handleAddPlant = () => {
-    toggleNewPlantProfVisi(false);
-    // logic here to add from plant collection (local storage)
+  const handleAddPlant = (plantData) => {
+    console.log(plantData)
+
+    const newMyPlants = [...myPlants || [], plantData]
+    setMyPlants(newMyPlants)
+    localStorage.setItem("myPlants", JSON.stringify(newMyPlants));
+    console.log("plants added to santuary - at least code got to here")
+    const myPlants2 = JSON.parse(localStorage.getItem("myPlants")) || [];
+    console.log(myPlants2)
   };
   
   return (
@@ -27,21 +38,20 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     onCancel={handleClose}
     width={1000}
     footer={[
-      <Popconfirm
-      key="add-plant"
-      title="Add plant to santuary"
-      description="Are you sure to remove this plant from your sanctuary?"
-      onConfirm={handleAddPlant}
-      onCancel={() => console.log("Canceled removal")}
-      okText="Yes, remove plant"
-      cancelText="No"
-      >
-      <Button key="popconfirm" danger>Add Plant to Santuary</Button>
-      </Popconfirm>,
+      // <Popconfirm
+      // key="add-plant"
+      // title="Add plant to santuary"
+      // description="Are you sure to remove this plant from your sanctuary?"
+      // onConfirm={handleAddPlant}
+      // onCancel={() => console.log("Canceled removal")}
+      // okText="Yes, remove plant"
+      // cancelText="No"
+      // >
+      <Button key="popconfirm" type="primary" onClick={() => handleAddPlant(plantData)}>Add plant to My Sanctuary </Button>,
+      // </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
       Close
       </Button>
-
     ]}
     >
 

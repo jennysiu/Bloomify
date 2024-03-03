@@ -14,7 +14,7 @@ import plantDetailsFetch from '../utils/plantDetailsFetch.js';
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
 
-  console.log(searchResults)
+  // console.log(searchResults)
 
   // State to hold the currently selected plant for display in the modal
   const [selectedPlantModal, setSelectedPlantModal] = useState(
@@ -28,7 +28,6 @@ function SearchResults() {
     setSelectedPlantModal({isVisible: true, plant: plantData});      
     })
     .catch((err) => console.log(err))
-    
 };
 
 const toggleNewPlantProfVisi = (isvisible) => {
@@ -55,8 +54,8 @@ const toggleNewPlantProfVisi = (isvisible) => {
         <Row gutter={[16, 16]}>
           {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
             .map((result, index) => (
-              <Col xs={24} sm={12} md={8}>
-                <a type="link" onClick={() => handlePlantClick(result)} key={index} style={{ cursor: 'pointer' }}>
+              <Col xs={24} sm={12} md={8} key={index}>
+                <a type="link" onClick={() => handlePlantClick(result)} style={{ cursor: 'pointer' }}>
                   <PlantCard plant={result} />
                 </a>
               </Col>
