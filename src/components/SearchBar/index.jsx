@@ -1,33 +1,40 @@
-import React from 'react';
-import { redirect } from "react-router-dom";
-import { FilterOutlined} from '@ant-design/icons';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { FilterOutlined } from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
 /**
  * DAVOU
  * import_perenualFetch: Imports the js file for fetching data from the perenual API 
  * import_{_useState,_useEffect_}: Allows us to manage state
  */
 import perenualFetch from '../../utils/perenualFetch'
-import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 
-function SearchBar({ onSearch }) {
+function SearchBar() {
   /**
- * setName hooks for storing dynamically changing user input
+ * calling hooks from context file for storing dynamically changing user input
  * {Search} - ant design?
  * setCollapsed - ant design hook for  collapsible filter
  */
+
+  const { searchResults, setSearchResults} = useContext(SearchResultsContext);
   const [name, setName] = useState('');
   const [watering, setWatering] = useState('');
   const [sunlight, setSunlight] = useState('');
   const [isIndoors, setIndoors] = useState('');
   const { Search } = Input;
+  //const [searchResults, setSearchResults] = useState([])
+
+  // const { nameVal, wateringVal, sunlightVal, isIndoorsVal } = useContext(searchResultsContext);
+  // const [name, setName] = nameVal;
+  // const [watering, setWatering] = wateringVal;
+  // const [sunlight, setSunlight] = sunlightVal;
+  // const [isIndoors, setIndoors] = isIndoorsVal;
   
+
   let navigate = useNavigate();
 
   const wateringOption = ['frequent', 'average', 'minimum', 'none']
@@ -40,13 +47,11 @@ function SearchBar({ onSearch }) {
     }
   });
 
-  let navigate = useNavigate();
-
   const onChange = (value) => {
-    
+
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
-    
+
     try {
       checked.target.checked ? setIndoors(1) : setIndoors('')
     } catch (error) {
@@ -55,23 +60,23 @@ function SearchBar({ onSearch }) {
 
   }
 
-/**
- * Passes user search into getPerenualNameResults() function
- * and returns results as an object
- */
+  /**
+   * Passes user search into getPerenualNameResults() function
+   * and returns results as an object
+   */
   const onSearch = (value, _e, info) => {
-    if(value){
+    if (value) {
       perenualFetch.getPerenualNameResults(value)
         .then((res) => {
-          
-          const searchResults = res.data;
-          console.log(searchResults)
+
+           setSearchResults(res.data.data)
+          //console.log(searchResults)
           navigate('/search-results')
         })
         .catch((err) => console.log(err));
-      }else{
-        console.log("enter a name first")
-      }
+    } else {
+      console.log("enter a name first")
+    }
   };
 
   /**
@@ -79,15 +84,16 @@ function SearchBar({ onSearch }) {
  * and returns results as an object
  */
   const onClick = (value, _e, info) => {
-    
+
     perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
       .then((res) => {
-        const searchResults = res.data;
-        console.log(searchResults)
-        
+         setSearchResults(res.data.data)
+        //console.log(searchResults)
+
       })
       .catch((err) => console.log(err));
   }
+
 
   const handleInputChange = (event) => {
     setName(event.target.value)
@@ -152,7 +158,7 @@ function SearchBar({ onSearch }) {
   const filterItems = [
     {
       key: '1',
-      label: <><FilterOutlined/> More Filters  </> ,
+      label: <><FilterOutlined /> More Filters  </>,
       children:
         <Space direction="vertical">
           <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
@@ -169,6 +175,8 @@ function SearchBar({ onSearch }) {
     }
   ];
 
+  //console.log(searchResults)
+
   return (
     <Space direction="vertical">
 
@@ -181,5 +189,5 @@ function SearchBar({ onSearch }) {
   )
 };
 
+
 export default SearchBar;
-//export {searchResults};
