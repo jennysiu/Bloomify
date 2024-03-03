@@ -1,16 +1,23 @@
 import PropTypes from 'prop-types';
 import { Card } from 'antd';
+import './style.css'
+import placeholderImg from '/src/assets/images/placeholder-img.png';
 
 const DashPlantCard = ({ plant , index}) => {
-    // Display logic using plant data
     return (
-    <>
-        <Card title={plant.common_name}> {/* Display plant details here */} 
-            <img src={plant.default_image.regular_url} alt={plant.common_name} style={{ width: 200, height: 200 }} />
-            <div key={index} style={{ marginTop: '20px', fontWeight: 'bold' }}>{plant.common_name}</div>
-        </Card>
-    </>
-    )
+        <div className="dashPlantCardContainer">
+            <Card title="My Plants">
+                <div className="dashPlantCardContent">
+                    <img src={placeholderImg} alt={plant.common_name} />
+                    <img src={placeholderImg} alt={plant.common_name} />
+                    <img src={placeholderImg} alt={plant.common_name} />
+                    <img src={placeholderImg} alt={plant.common_name} />
+                    <img src={placeholderImg} alt={plant.common_name} />
+                    <img src={placeholderImg} alt={plant.common_name} />
+                </div>    
+            </Card>
+        </div>
+    );
 };
 
 // DashPlantCard.propTypes = {
