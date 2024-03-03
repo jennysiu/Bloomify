@@ -15,7 +15,6 @@ function AddPlantModal( {addPlantModal, toggleAddPlantModal} ) {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
   } 
 
-
   const visitExplorePage = () => {
     toggleAddPlantModal(false);
     // redirect to Explore page
@@ -29,7 +28,6 @@ function AddPlantModal( {addPlantModal, toggleAddPlantModal} ) {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
-
 
   return (
     <>

@@ -3,16 +3,16 @@ import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
 import "./style.css"
 
-function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant }) {
+function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfileVisibility, selectedPlantModalPlant }) {
   let plantData = selectedPlantModalPlant;
     
   const handleClose = () => {
-    togglePlantProfileVisibility(false);
+    toggleNewPlantProfileVisibility(false);
   };
 
-  const handleRemovePlant = () => {
-    togglePlantProfileVisibility(false);
-    // logic here to remove from plant collection (local storage)
+  const handleAddPlant = () => {
+    toggleNewPlantProfileVisibility(false);
+    // logic here to add from plant collection (local storage)
   };
   
   return (
@@ -26,15 +26,15 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
     width={1000}
     footer={[
       <Popconfirm
-      key="remove-plant"
-      title="Remove plant"
+      key="add-plant"
+      title="Add plant to santuary"
       description="Are you sure to remove this plant from your sanctuary?"
-      onConfirm={handleRemovePlant}
+      onConfirm={handleAddPlant}
       onCancel={() => console.log("Canceled removal")}
       okText="Yes, remove plant"
       cancelText="No"
       >
-      <Button key="popconfirm" danger>Remove Plant</Button>
+      <Button key="popconfirm" danger>Add Plant to Santuary</Button>
       </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
       Close
@@ -148,9 +148,8 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
     />
     </div>
     </Modal>
- 
     </>
   );
 }
 
-export default PlantProfile;
+export default NewPlantProfile;
