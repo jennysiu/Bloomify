@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Space, Card, Button, Flex } from 'antd';
 
@@ -8,6 +8,9 @@ import { usePlants } from '../contexts/PlantContext.jsx';
 import AddPlantModal from '../components/AddPlantModal/index.jsx';
 import PlantCard from '../components/PlantCard/index.jsx';
 import PlantProfile from '../components/PlantProfile/index.jsx';
+import WeatherWidget from "../components/WeatherWidget"
+import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
+
 
 function MyPlants() {
     // plants array for development testing:
@@ -102,6 +105,9 @@ function MyPlants() {
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
+    // state to retreive the location of the user
+    const { location, setLocation } = useContext(LocationContext)
+
 
     function renderPlantCards() {
         return (
@@ -153,7 +159,7 @@ function MyPlants() {
             </Space>
         </Space>
 
-        {/* plant profile hidden - can be modal or separate page */}
+        {/* plant profile hidden */}
         {selectedPlantModal.isVisible && selectedPlantModal.plant && (
             <PlantProfile 
             selectedPlantModalVisible={selectedPlantModal.isVisible}
@@ -164,7 +170,12 @@ function MyPlants() {
         )
         }
 
+        {/* SIDE WIDGETS */}
         {/* side widget - todays weather , humidity , sunlight? */}
+        {/* weather */}
+        <LocationProvider>
+            <WeatherWidget location={location} setLocation={setLocation} />
+        </LocationProvider>
         </>
     )
 }
