@@ -1,24 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
-import SearchResultsPage from "../components/Results/Results"
-import { useLocation } from 'react-router-dom'
-import PlantCard from '../components/PlantCard';
-import { Row, Col } from 'antd';
 
+import React, { useState, useEffect, useContext} from 'react';
+import SearchResultsPage from "../components/Results/Results"
+import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
+import { Row, Col} from 'antd';
+import PlantCard from '../components/PlantCard';
 
 function SearchResults() {
-  const location = useLocation()
-  const [searchResults, setSearchResults] = useState([]);
-  
+  const {searchResults, setSearchResults} = useContext(SearchResultsContext);
 
-  useEffect(() => {
+  console.log(searchResults)
 
-    
-    const results = location.state && location.state.searchResults ? location.state.searchResults : [];
-    
-
-    setSearchResults(results);
-  }, [location.state]);
 
   return (
     <div>
