@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
 import { Typography } from 'antd';
+import './style.css';
 
 const TaskList = ({ toDos, setToDos }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
+
+    const { Title } = Typography;
 
     // handle user's inputs
     const handleInputChange = (e) => {
@@ -36,56 +39,54 @@ const TaskList = ({ toDos, setToDos }) => {
         localStorage.setItem('toDos', JSON.stringify(updatedToDos));
     };
 
-    // ant design code to render to page - NEEDS STYLING
     return (
-        <>
-            <Divider orientation="left">Plants to Water</Divider>
-            <Space.Compact style={{ width: '100%' }}>
-                <Input
-                    addonAfter={<DatePicker placeholder="When?" onChange={handleDateChange} style={{ width: 150 }} />}
-                    placeholder="Which plant?"
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                />
-                <Button type="primary" onClick={handleSave}>
-                    Save
-                </Button>
-            </Space.Compact>
+        <div className="taskListContainer">
+            <Title level={4} className="taskListTitle">Plants to Water</Title>
+            <Space direction="vertical">
+                <div className="inputSection">
+                    <Input
+                        placeholder="Which plant?"
+                        type="text"
+                        value={inputValue}
+                        onChange={handleInputChange}
+                    />
+                    <DatePicker
+                        placeholder="When?"
+                        onChange={handleDateChange}
+                    />
+                    <Button 
+                        type="primary"
+                        onClick={handleSave}>
+                        Save
+                    </Button>
+                </div>
+            </Space>
             <List
-                style={{ width: '100%' }}
+                className="todoList"
                 bordered
                 dataSource={toDos}
                 renderItem={(item, index) => (
                     <List.Item>
-                        <span>
-                            {/* Uses ternary operator to check if there is a task and/or date before rendering */}
-                            {item.task ? (
+                        <div className="listItemContent">
+                            {item.task && (
                                 <>
                                     <Typography.Text strong>Plant to water: </Typography.Text>
                                     {item.task}
+                                    <br />
                                 </>
-                            ) : null}
-                            <br />
-                            {item.date ? (
+                            )}
+                            {item.date && (
                                 <>
                                     <Typography.Text strong>Date to water: </Typography.Text>
                                     {new Date(item.date).toLocaleDateString()}
-                                    <br />
                                 </>
-                            ) : null}
-                        </span>
-                        {item.task ? (
-                            <>
-                                <Flex align="flex-end" justify="center">
-                                    <Checkbox onChange={() => handleRemove(index)}>Watered?</Checkbox>
-                                </Flex>
-                            </>
-                        ) : null}
+                            )}
+                        </div>
+                        <Checkbox onChange={() => handleRemove(index)}>Watered?</Checkbox>
                     </List.Item>
                 )}
             />
-        </>
+        </div>
     );
 };
 

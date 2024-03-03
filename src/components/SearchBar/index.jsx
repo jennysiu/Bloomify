@@ -9,8 +9,7 @@ import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
 import perenualFetch from '../../utils/perenualFetch'
 import { useState, useEffect } from 'react';
 
-
-
+import './style.css'
 
 function SearchBar() {
   /**
@@ -144,12 +143,8 @@ function SearchBar() {
 
   return (
     <Space direction="vertical">
-
-      <Search placeholder="Search for Plant" onSearch={onSearch} />
-
+      <Search placeholder="Search for Plant" onSearch={onSearch} className="search"/>
       <Collapse items={filterItems} onChange={onChange} />
-
-
     </Space>
   )
 };
