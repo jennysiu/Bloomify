@@ -3,7 +3,7 @@ import Calendar from '../components/Calendar'
 import TaskList from '../components/TaskList';
 import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
 import WeatherWidget from '../components/WeatherWidget';
-import { Button } from 'antd';
+import { Row, Col } from 'antd';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation'
 
 function WateringLog() {
@@ -13,10 +13,16 @@ function WateringLog() {
 
 return (
     <>
-    {/* Wrap the components in the Providers */}
-        <TaskList toDos={toDos} setToDos={setToDos} />
-        <Calendar toDos={toDos} setToDos={setToDos} />
-        <WeatherWidget location={location} setLocation={setLocation}/>
+        <Row>
+            <Col span={24}>
+                <TaskList toDos={toDos} setToDos={setToDos} />
+            </Col>
+        </Row>
+        <Row justify="space=around" align="middle">
+            <Col span={16}><Calendar toDos={toDos} setToDos={setToDos} /></Col>
+            <Col className="gutter-row" span={1}></Col>
+            <Col span={6}><WeatherWidget location={location} setLocation={setLocation} /></Col>
+        </Row>
     </>
 )
 }
