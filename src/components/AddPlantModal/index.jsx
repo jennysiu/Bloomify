@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { Modal, DatePicker, Space } from 'antd';
 
 // internal imports
 import SearchBar from "../SearchBar";
 import PlantCard from '../PlantCard';
 
-function AddPlantModal( {addPlantModal, toggleModal} ) {
+function AddPlantModal( {addPlantModal, toggleAddPlantModal} ) {
+
+  const navigate = useNavigate();
 
   // plant variable for dev testing
   const plant = {
@@ -12,38 +15,38 @@ function AddPlantModal( {addPlantModal, toggleModal} ) {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
   } 
 
-
-  const handleOk = () => {
-    toggleModal(false);
-    // todo: function to add new plant to collection
-
+  const visitExplorePage = () => {
+    toggleAddPlantModal(false);
+    // redirect to Explore page
+    navigate('/explore');
   };
 
   const handleCancel = () => {
-    toggleModal(false);
+    toggleAddPlantModal(false);
   };
 
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
 
-
   return (
     <>
       <Modal title="Add New Plant" 
       open={addPlantModal} 
-      onOk={handleOk} 
+      onOk={visitExplorePage} 
       onCancel={handleCancel}
-      okText="Add Plant">
+      okText="Visit Explore Paget">
         {/* insert SEARCH BAR here */}
-        <SearchBar />
+        {/* <SearchBar />
 
         <p>Date of collection</p>
         <Space direction="vertical">
           <DatePicker onChange={onChange} />
-        </Space>
+        </Space> */}
 
-        <PlantCard plant={plant} key="1" />
+        {/* <PlantCard plant={plant}/>  */}
+
+        <p>Visit the Explore page to add new plants!</p>
 
       </Modal>
     </>

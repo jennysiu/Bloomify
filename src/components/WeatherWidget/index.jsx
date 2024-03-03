@@ -1,26 +1,50 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'antd';
 import { LocationProvider, LocationContext } from '../../contexts/ContextLocation'
 import weatherAPIfetch from '../../utils/weatherAPIfetch';
+import { Input, Space, Card } from 'antd';
+import { AudioOutlined } from '@ant-design/icons';
+import searchWeatherAPIfetch from '../../utils/searchWeatherAPIfetch';
+const { Search } = Input;
+
+const suffix = (
+    <AudioOutlined
+        style={{
+            fontSize: 16,
+            color: '#1677ff',
+        }}
+    />
+);
 
 const WeatherWidget = ({ location, setLocation }) => {
 
-    const [isWeatherFetched, setIsWeatherFetched] = useState(false)
+const [weatherData, setWeatherData] = useState(null)
 
-// Modal code for location
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const onSearch = (value) => {
+        if (value.trim !== '') {
+        searchWeatherAPIfetch({ location: { location }, setLocation: { setLocation }, value })
+        }
+}
 
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
+// useEffect listens for changes in local storage and updates state accordingly. This in turn re-renders the component, so shows the data from the correct location
+    useEffect(() => {
+        const handleStorage = () => {
+            // Gets weather data from local storage
+            const location = JSON.parse(localStorage.getItem('location'))
+            // Puts data from local storage into state
+            setLocation(location)
+            
+            const weatherData = JSON.parse(localStorage.getItem('weather'))
+            setWeatherData(weatherData)
+        }
 
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
+        window.addEventListener('storage', handleStorage);
 
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+        handleStorage(); 
+
+        return () => window.removeEventListener('storage', handleStorage);
+    }, []);
+
 
     // Function to get user's location. Upon successfully retrieving location, calls the weatherAPI to fetch weather for that location. 
     const getUserLocation = () => {
@@ -32,24 +56,18 @@ const WeatherWidget = ({ location, setLocation }) => {
     }
 
     function success(position) {
-        showModal();
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
         const storedLocation = [{ latitude: latitude, longitude: longitude }]
         setLocation({ storedLocation });
 
-        console.log(`Latitude: ${latitude} Longitude: ${longitude}`);
+        // save to local storage
         localStorage.setItem('location', JSON.stringify(storedLocation));
 
+        // call the API with the stored location
         weatherAPIfetch({ location: storedLocation, setLocation })
-            .then(setIsWeatherFetched(true));
-
     }
-
-    // Stores weather data to local storage
-    const storedWeather = localStorage.getItem('weather')
-    const weather = JSON.parse(storedWeather)
 
     // If user location cannot be retrieved
     function error() {
@@ -59,27 +77,25 @@ const WeatherWidget = ({ location, setLocation }) => {
     return (
         <>
             <LocationProvider>
-                <Button onClick={() => setIsWeatherFetched(true)}>Show Latest Weather</Button>
-                <span>
-                    {isWeatherFetched ? (
+                <Card
+                    title="Weather"
+                    style={{
+                        width: 300
+                    }}
+                >
+                    <Search placeholder="Search for a location" onSearch={onSearch} style={{ width: 200 , marginBottom: 5}} />
+                    <Button onClick={getUserLocation}>Use current location</Button>
+                    {weatherData ? (
                         <>
-                            <h1>Showing weather in {weather.name}</h1>
-                            <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}></img>
-                            <p>Description: {weather.weather[0].description}</p>
-                            <p>Temperature: {weather.main.temp}</p>
-                            <p>Humidity: {weather.main.humidity} %</p>
-                            <p>Rain: {weather.rain}</p>
+                            <h4>Showing weather in {weatherData.name}</h4>
+                            <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}></img>
+                            <p>Description: {weatherData.weather[0].description}</p>
+                            <p>Temperature: {weatherData.main.temp}</p>
+                            <p>Humidity: {weatherData.main.humidity} %</p>
+                            <p>Rain: {weatherData.rain}</p>
                         </>
                     ) : null}
-                </span>
-                <Button onClick={getUserLocation}>Change/set current location</Button>
-                <Modal
-                    title="Location Set!"
-                    open={isModalOpen}
-                    onOk={handleOk}
-                    onCancel={handleCancel}>
-                    <p>Now hit 'Show Latest Weather' to see weather in your area.</p>
-                </Modal>
+                </Card>
             </LocationProvider>
         </>
     )

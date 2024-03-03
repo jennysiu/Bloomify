@@ -1,45 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useContext} from 'react';
 import SearchResultsPage from "../components/Results/Results"
+import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
+import { Row, Col} from 'antd';
+import PlantCard from '../components/PlantCard';
 
 function SearchResults() {
-  const [searchResults, setSearchResults] = useState([]);
+  const {searchResults, setSearchResults} = useContext(SearchResultsContext);
 
-  useEffect(() => {
+  console.log(searchResults)
 
-    const dummyData = [
-      {
-        id: 1,
-        name: 'Fern',
-        type: 'Indoor',
-        wateringFrequency: 'Weekly',
-        default_image: {
-          regular_url: 'https://hortology.co.uk/cdn/shop/files/Nephrolepis-exaltata-Bostoniensis-Boston-Fern-12x30cm-2_5000x.jpg?v=1706017928'
-        }
-      },
-      {
-        id: 2,
-        name: 'Cactus',
-        type: 'Indoor',
-        wateringFrequency: 'Monthly',
-        default_image: {
-          regular_url: 'https://www.beardsanddaisies.co.uk/cdn/shop/products/B_D_Dried2_057.jpg?v=1676904285'
-        }
-      },
-      {
-        id: 3,
-        name: 'Monstera',
-        type: 'Indoor',
-        wateringFrequency: 'Weekly',
-        default_image: {
-          regular_url: 'https://pcfb.gumlet.io/images/articles/small-monstera-in-pot.png?w=640&h=426&mode=crop&crop=smart&s=362b2438ad2bd22d5826fe12b96adf88'
-        }
-      }
-    ];
-    
-
-    setSearchResults(dummyData);
-  }, []);
 
   return (
     <div>
@@ -56,7 +27,19 @@ function SearchResults() {
           Indoor or Outdoor/N/A
         </li>
       </ul>
-      <SearchResultsPage searchResults={searchResults} />
+
+      {Array.isArray(searchResults) && searchResults.length > 0 ? (
+        <Row gutter={[16, 16]}>
+          {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
+            .map((result, index) => (
+              <Col key={index} xs={24} sm={12} md={8}>
+                <PlantCard plant={result} />
+              </Col>
+            ))}
+        </Row>
+      ) : (
+        <p>No search results available.</p>
+      )}
     </div>
   );
 }

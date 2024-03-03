@@ -1,32 +1,40 @@
-import React from 'react';
-import { FilterOutlined, } from '@ant-design/icons';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { FilterOutlined } from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
 /**
  * DAVOU
  * import_perenualFetch: Imports the js file for fetching data from the perenual API 
  * import_{_useState,_useEffect_}: Allows us to manage state
  */
 import perenualFetch from '../../utils/perenualFetch'
-import { useState, useEffect } from 'react';
 
 import './style.css'
 
 function SearchBar() {
   /**
- * setName hooks for storing dynamically changing user input
+ * calling hooks from context file for storing dynamically changing user input
  * {Search} - ant design?
  * setCollapsed - ant design hook for  collapsible filter
  */
+
+  const { searchResults, setSearchResults} = useContext(SearchResultsContext);
   const [name, setName] = useState('');
   const [watering, setWatering] = useState('');
   const [sunlight, setSunlight] = useState('');
   const [isIndoors, setIndoors] = useState('');
-  const [isOutdoors, setOutdoors] = useState('');
-  const [data, setData] = useState('');
-
-
   const { Search } = Input;
-  const [collapsed, setCollapsed] = useState(false);
+  //const [searchResults, setSearchResults] = useState([])
+
+  // const { nameVal, wateringVal, sunlightVal, isIndoorsVal } = useContext(searchResultsContext);
+  // const [name, setName] = nameVal;
+  // const [watering, setWatering] = wateringVal;
+  // const [sunlight, setSunlight] = sunlightVal;
+  // const [isIndoors, setIndoors] = isIndoorsVal;
+  
+
+  let navigate = useNavigate();
 
   const wateringOption = ['frequent', 'average', 'minimum', 'none']
   const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun']
@@ -39,28 +47,55 @@ function SearchBar() {
   });
 
   const onChange = (value) => {
-    console.log(value)
+
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
 
-    // switch  (value.target.name) {
-    //   case "indoorChk":
-    //     setIndoors(1)
-    //     isIndoors
-
+    try {
+      checked.target.checked ? setIndoors(1) : setIndoors('')
+    } catch (error) {
+      return
+    }
 
   }
 
-
+  /**
+   * Passes user search into getPerenualNameResults() function
+   * and returns results as an object
+   */
   const onSearch = (value, _e, info) => {
+    if (value) {
+      perenualFetch.getPerenualNameResults(value)
+        .then((res) => {
 
-    perenualFetch.getPerenualResults(value)
+           setSearchResults(res.data.data)
+          //console.log(searchResults)
+          navigate('/search-results')
+        })
+        .catch((err) => console.log(err));
+    } else {
+      console.log("enter a name first")
+    }
+  };
+
+  /**
+ * Passes user search and filters into getPerenualNameResults() function
+ * and returns results as an object
+ */
+  const onClick = (value, _e, info) => {
+
+    perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
       .then((res) => {
-        console.log(res.data)
-        setData(res.data);
+         setSearchResults(res.data.data)
+        //console.log(searchResults)
+
       })
-      .catch((err) => setError(err));
-    
+      .catch((err) => console.log(err));
+  }
+
+
+  const handleInputChange = (event) => {
+    setName(event.target.value)
   };
 
   const filterOption = (input, option) =>
@@ -75,19 +110,19 @@ function SearchBar() {
       filterOption={filterOption}
       options={[
         {
-          value: sunlightOption[0],
+          value: sunlightOption[3],
           label: 'Full Sun',
         },
         {
-          value: sunlightOption[1],
+          value: sunlightOption[2],
           label: 'Sun/Part Shade',
         },
         {
-          value: sunlightOption[2],
+          value: sunlightOption[1],
           label: 'Part Shade',
         },
         {
-          value: sunlightOption[3],
+          value: sunlightOption[0],
           label: 'Full Shade',
         },
       ]}
@@ -122,11 +157,10 @@ function SearchBar() {
   const filterItems = [
     {
       key: '1',
-      label: 'More Filters',
+      label: <><FilterOutlined /> More Filters  </>,
       children:
         <Space direction="vertical">
           <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
-          <Checkbox name='outdoorChk' onChange={onChange}>Outdoor</Checkbox>
           <Space direction="horizontal">
             <p>Watering</p>
             {selectWatering}
@@ -135,18 +169,22 @@ function SearchBar() {
             <p>Sunlight</p>
             {selectSunlight}
           </Space>
-          <Button type="primary" onClick={onSearch} >Advanced Search</Button>
+          <Button type="primary" onClick={onClick} >Advanced Search</Button>
         </Space>,
     }
   ];
 
+  //console.log(searchResults)
 
   return (
     <Space direction="vertical">
-      <Search placeholder="Search for Plant" onSearch={onSearch} className="search"/>
-      <Collapse items={filterItems} onChange={onChange} />
+
+      <Search placeholder="Search for Plant" onSearch={onSearch} onChange={handleInputChange} className="search"/>
+      <Collapse items={filterItems}  />
+
     </Space>
   )
 };
+
 
 export default SearchBar;
