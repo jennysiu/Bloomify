@@ -9,6 +9,9 @@ import AddPlantModal from '../components/AddPlantModal/index.jsx';
 import PlantCard from '../components/PlantCard/index.jsx';
 import PlantProfile from '../components/PlantProfile/index.jsx';
 import WeatherWidget from "../components/WeatherWidget"
+import TaskList from '../components/TaskList';
+import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
+
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 
 
@@ -169,13 +172,12 @@ function MyPlants() {
             />
         )
         }
-
         {/* SIDE WIDGETS */}
-        {/* side widget - todays weather , humidity , sunlight? */}
         {/* weather */}
-        <LocationProvider>
-            <WeatherWidget location={location} setLocation={setLocation} />
-        </LocationProvider>
+        <WeatherWidget location={location} setLocation={setLocation} />
+
+        {/* task list */}
+            <TaskList />
         </>
     )
 }
