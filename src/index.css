@@ -4,3 +4,30 @@ body {
     font-weight: 300;
     color: #000001;
 }
+
+/* .gridContainerDashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns of equal width */
+    /* gap: 20px; /* Adjusts the gap between grid items */
+    /* padding: 20px; Optional: Adds some padding around the grid */
+
+.gridContainerWateringLog {
+    display: grid;
+    grid-template-columns: 50vw 30vw;
+    grid-gap: 3vw;
+    justify-content: center;
+    align-items: start;
+}
+
+.flexContainerExplore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexContainerExplore h1 {
+    font-size: 34px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
