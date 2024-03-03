@@ -103,17 +103,17 @@ function MyPlants() {
             other_images: 'Upgrade Plan To Supreme For Access https://perenual.com/subscription-api-pricing. Im sorry'},
     ];
     
-    // use state for plants collection array of Objects - this state needs to be in a global area to be accessed by other components (iff added from explore area)
-    const [myPlants, setMyPlants] = useState(initialPlants);
     const [addPlantModal, setaddPlantModal] = useState(false);
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
     // state to retreive data for side widgets
-    const { location, setLocation } = useContext(LocationContext)
+    const { location, setLocation } = useContext(LocationContext);
     const { toDos, setToDos } = useContext(ToDoContext); 
+    const { myPlants, setmyPlants } = useContext(MyPlantsContext); 
 
     function renderPlantCards() {
+        console.log(myPlants);
         return (
             <>
             {myPlants.map((plant, index) => {

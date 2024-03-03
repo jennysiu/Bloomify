@@ -9,7 +9,7 @@ const MyPlantsProvider = ({ children }) => {
 
     // Use effect to render existing todos from local storage/state
     useEffect(() => {
-        const storedMyPlants = JSON.parse(localStorage.getItem('myPlantsInLocal')) || [];
+        const storedMyPlants = JSON.parse(localStorage.getItem('myPlants')) || [];
         setMyPlants(storedMyPlants);
     }, []);
 
