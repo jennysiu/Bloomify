@@ -2,6 +2,8 @@ import React from 'react';
 import { redirect } from "react-router-dom";
 import { FilterOutlined} from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 /**
  * DAVOU
  * import_perenualFetch: Imports the js file for fetching data from the perenual API 
@@ -26,6 +28,7 @@ function SearchBar({ onSearch }) {
   const [isIndoors, setIndoors] = useState('');
   const { Search } = Input;
   
+  let navigate = useNavigate();
 
   const wateringOption = ['frequent', 'average', 'minimum', 'none']
   const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun']
@@ -63,7 +66,7 @@ function SearchBar({ onSearch }) {
           
           const searchResults = res.data;
           console.log(searchResults)
-          redirect("/search-results")
+          navigate('/search-results')
         })
         .catch((err) => console.log(err));
       }else{
@@ -179,3 +182,4 @@ function SearchBar({ onSearch }) {
 };
 
 export default SearchBar;
+//export {searchResults};

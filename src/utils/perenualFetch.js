@@ -15,6 +15,7 @@ export default {
         const wateringStr = `&watering=${this.watering}`;
         const sunlightStr = `&sunlight=${this.sunlight}`;
         const isIndoorsStr = `&indoor=${this.indoors}`;
+        const searchStr = `&q=${this.search}`;
         
         if(watering === '' && sunlight === '' && isIndoors === ''){
             console.log(`results for ${search}`);
@@ -22,7 +23,7 @@ export default {
         }else{
             
             console.log(`results for ${search ? search : 'anything'}, that need ${watering === ''? 'any type of' : watering } watering, ${sunlight === ''? 'any amount of sunlight':sunlight} and live ${isIndoors === 1 ?  'indoors': 'indoors and outdoors' }`);
-            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}${wateringStr}${sunlightStr}${isIndoorsStr}`)
+            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`)
             }
     }
 }
