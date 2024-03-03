@@ -17,21 +17,22 @@ import { PlantProvider } from './contexts/PlantContext.jsx';
 
 function App() {
 
-  const [collapsed, setCollapsed] = useState(false); 
+  // const [collapsed, setCollapsed] = useState(false); 
 
   // Import Layout components here
   const { Content, Sider } = Layout;
 
   return (
     <>
-      <Router basename={'/'}>
+      {/* <Router basename={'/'}> */}
+        {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
         <ToDoProvider>
           <MyPlantsProvider>
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                  <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-                    <CustomNavBar collapsed={collapsed} setCollapsed={setCollapsed}/>
+                  <Sider collapsible>
+                    <CustomNavBar/>
                   </Sider>
                   <Layout>
                     <CustomHeader />
@@ -53,7 +54,7 @@ function App() {
             </LocationProvider>
           </MyPlantsProvider>
         </ ToDoProvider>
-      </Router>
+      {/* </Router> */}
     </>
   )
 }
