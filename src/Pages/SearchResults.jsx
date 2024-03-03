@@ -48,7 +48,6 @@ function SearchResults() {
       ) : (
         <p>No search results available.</p>
       )}
-
     </div>
   );
 }
