@@ -140,9 +140,6 @@ function SearchBar({ onSearch }) {
     }
   ];
 
-
-  return (
-    <Space direction="vertical">
   return (
     <Space direction="vertical">
 
