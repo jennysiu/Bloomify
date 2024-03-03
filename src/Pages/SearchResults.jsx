@@ -4,8 +4,12 @@ import React, { useState, useEffect, useContext} from 'react';
 import SearchResultsPage from "../components/Results/Results"
 import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
 import { Row, Col} from 'antd';
+
+// internal imports
 import PlantCard from '../components/PlantCard';
 import NewPlantProfile from '../components/NewPlantProfile/index.jsx';
+
+import plantDetailsFetch from '../utils/plantDetailsFetch.js';
 
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
@@ -17,7 +21,14 @@ function SearchResults() {
     {isVisible: false, plant: null});
 
   const handlePlantClick = (plant) => {
-    setSelectedPlantModal({isVisible: true, plant: plant});
+    plantDetailsFetch.getPlantDetails(plant.id)
+    .then((res) => {
+      console.log(res.data);
+      let plantData = res.data;
+    setSelectedPlantModal({isVisible: true, plant: plantData});      
+    })
+    .catch((err) => console.log(err))
+    
 };
 
 const toggleNewPlantProfVisi = (isvisible) => {
