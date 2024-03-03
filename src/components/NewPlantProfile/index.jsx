@@ -3,15 +3,17 @@ import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
 import "./style.css"
 
-function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfileVisibility, selectedPlantModalPlant }) {
+function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, selectedPlantModalPlant }) {
   let plantData = selectedPlantModalPlant;
+
+  console.log(plantData);
     
   const handleClose = () => {
-    toggleNewPlantProfileVisibility(false);
+    toggleNewPlantProfVisi(false);
   };
 
   const handleAddPlant = () => {
-    toggleNewPlantProfileVisibility(false);
+    toggleNewPlantProfVisi(false);
     // logic here to add from plant collection (local storage)
   };
   
