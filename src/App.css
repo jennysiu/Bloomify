@@ -1,0 +1,23 @@
+.ant-layout-sider-trigger {
+    background-color: #285521 !important;
+}
+
+.anticon {
+    color: #FEFEFE;
+}
+
+.ant-layout {
+    background-color: #FEFEFE;
+}
+
+.ant-layout-content {
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin: 16px;
+    color: #000001;
+}
+
+.ant-card {
+    font-family: 'Poppins';
+    font-weight: 300;
+}

@@ -23,7 +23,6 @@ function App() {
   const { Content, Sider } = Layout;
 
   return (
-    <>
       <Router basename={'/'}>
         {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
         <ToDoProvider>
@@ -31,12 +30,20 @@ function App() {
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                  <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-                    <CustomNavBar collapsed={collapsed} setCollapsed={setCollapsed}/>
+                  <Sider 
+                  collapsible 
+                  collapsed={collapsed} 
+                  onCollapse={setCollapsed}
+                  style={{ backgroundColor: '#FEFEFE' }}
+                  >
+                    <CustomNavBar 
+                    collapsed={collapsed} 
+                    setCollapsed={setCollapsed}
+                    />
                   </Sider>
                   <Layout>
                     <CustomHeader />
-                      <Content style={{ margin: '12px', padding: 18, background: '#fff' }}>
+                      <Content>
                         <Routes>
                           <Route path='' element={< Dashboard />} />
                           <Route path='/dashboard' element={< Dashboard />} />
@@ -55,7 +62,6 @@ function App() {
           </MyPlantsProvider>
         </ ToDoProvider>
       </Router>
-    </>
   )
 }
 
