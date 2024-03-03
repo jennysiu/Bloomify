@@ -5,6 +5,7 @@ import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
 import WeatherWidget from '../components/WeatherWidget';
 import { Row, Col } from 'antd';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation'
+import '../../src/index.css'
 
 function WateringLog() {
 
@@ -13,16 +14,16 @@ function WateringLog() {
 
 return (
     <>
-        <Row>
-            <Col span={24}>
-                <TaskList toDos={toDos} setToDos={setToDos} />
-            </Col>
-        </Row>
-        <Row justify="space=around" align="middle">
-            <Col span={16}><Calendar toDos={toDos} setToDos={setToDos} /></Col>
-            <Col className="gutter-row" span={1}></Col>
-            <Col span={6}><WeatherWidget location={location} setLocation={setLocation} /></Col>
-        </Row>
+    {/* Wrap the components in the Providers */}
+    <ToDoProvider>
+    <LocationProvider>
+        <div className="gridContainerWateringLog">
+            <Calendar toDos={toDos} setToDos={setToDos} />
+            <TaskList toDos={toDos} setToDos={setToDos} />
+        </div>
+        <WeatherWidget location={location} setLocation={setLocation}/>
+        </LocationProvider>
+    </ToDoProvider>
     </>
 )
 }
