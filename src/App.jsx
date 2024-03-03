@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 
 // internal imports
-import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './pages/index.jsx'
-import SearchResults from './pages/SearchResults.jsx'
+import { Dashboard, Explore, MyPlants, WateringLog, Custom404 } from './Pages/index.jsx'
+import SearchResults from './Pages/SearchResults.jsx'
 import './App.css'
 import CustomNavBar from './components/CustomNavbar/index.jsx'
 import CustomHeader from './components/CustomHeader'

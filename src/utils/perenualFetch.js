@@ -1,9 +1,6 @@
-//import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
-
-const API_KEY = `sk-0TuC65e08d8f166774406`
-
-
+const API_KEY = `sk-2KiZ65dfa09c6ebac4396`
 
 
 /**
@@ -21,13 +18,11 @@ export default {
         
         if(watering === '' && sunlight === '' && isIndoors === ''){
             console.log(`results for ${search}`);
-            return testData
-            //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
+            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
         }else{
             
             console.log(`results for ${search ? search : 'anything'}, that need ${watering === ''? 'any type of' : watering } watering, ${sunlight === ''? 'any amount of sunlight':sunlight} and live ${isIndoors === 1 ?  'indoors': 'indoors and outdoors' }`);
-            return testData2
-            //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}${wateringStr}${sunlightStr}${isIndoorsStr}`)
+            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}${wateringStr}${sunlightStr}${isIndoorsStr}`)
             }
     }
 }
