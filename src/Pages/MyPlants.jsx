@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Button, Flex } from 'antd';
-import { Avatar, Space } from 'antd';
-import { Card } from 'antd';
+import { Avatar, Space, Card, Button, Flex } from 'antd';
+
+import { usePlants } from '../contexts/PlantContext.jsx';
 
 // internal component imports
-import AddPlantModal from '../components/AddPlantModal';
-import PlantCard from '../components/PlantCard';
-import PlantProfile from '../components/PlantProfile';
+import AddPlantModal from '../components/AddPlantModal/index.jsx';
+import PlantCard from '../components/PlantCard/index.jsx';
+import PlantProfile from '../components/PlantProfile/index.jsx';
 
 function MyPlants() {
     // plants array for development testing:
@@ -99,16 +99,15 @@ function MyPlants() {
     // use state for plants collection array of Objects - this state needs to be in a global area to be accessed by other components (iff added from explore area)
     const [myPlants, setMyPlants] = useState(initialPlants);
     const [addPlantModal, setaddPlantModal] = useState(false);
-    // store currently selected plant
-
-     // State to hold the currently selected plant for display in the modal
+    // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
 
+        // useEffect(() => {
+        //     setPlants(initialPlants);
+        // }, [setPlants, initialPlants]);
 
     function renderPlantCards() {
-        
-
         return (
             <>
             {myPlants.map((plant, index) => {
@@ -123,16 +122,18 @@ function MyPlants() {
         )
     }
 
-
   
     // function toggleAddPlantModal(newState) {
     //     setaddPlantModal(newState);
     // }
 
-    // todo: when card is clicked on - display plant profile with that data
     const handlePlantClick = (plant) => {
         setSelectedPlantModal({isVisible: true, plant: plant});
     };
+
+    const togglePlantProfileVisibility = (isvisible) => {
+        setSelectedPlantModal({...selectedPlantModal, isVisible: isvisible});
+    }
 
     return (
         <>
@@ -161,6 +162,7 @@ function MyPlants() {
         {selectedPlantModal.isVisible && selectedPlantModal.plant && (
             <PlantProfile 
             selectedPlantModalVisible={selectedPlantModal.isVisible}
+            togglePlantProfileVisibility={togglePlantProfileVisibility}
             selectedPlantModalPlant={selectedPlantModal.plant}
             onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
             />

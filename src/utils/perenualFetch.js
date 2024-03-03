@@ -9,8 +9,7 @@ const API_KEY = `sk-0TuC65e08d8f166774406`
  * @async
  * @function Retrieves results of a user search.
  * @param {string} search - user search
- * @file stores search results as JSON
- * @returns {string} path to JSON file
+ * @returns results of the axios call
  */
 // export default {
 //     getPerenualResults: function (search) {

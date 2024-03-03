@@ -24,6 +24,8 @@ function SearchBar({ onSearch }) {
   const [sunlight, setSunlight] = useState('');
   const [isIndoors, setIndoors] = useState('');
   const [isOutdoors, setOutdoors] = useState('');
+  const [data, setData] = useState('');
+
 
   const { Search } = Input;
   const [collapsed, setCollapsed] = useState(false);
@@ -42,6 +44,8 @@ function SearchBar({ onSearch }) {
 
   const onChange = (value) => {
     console.log(value)
+    wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
+    sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
 
@@ -137,6 +141,8 @@ function SearchBar({ onSearch }) {
   ];
 
 
+  return (
+    <Space direction="vertical">
   return (
     <Space direction="vertical">
 
