@@ -1,13 +1,20 @@
 .footer {
-  text-align: center;
   margin: 10px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .link {
   color: #000001;
+  margin: 1em 1.2em ;
 }
 
 .link:hover {
   color: #285521;
   font-weight: 600;
+}
+
+.text {
+  align-self: flex-start;
+  margin: 0;
 }
