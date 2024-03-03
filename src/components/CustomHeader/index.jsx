@@ -9,15 +9,7 @@ const { Header, Content } = Layout;
 
 const CustomHeader = () => {
     return (
-
         <h1 className="dashboardTitle">Bloomify</h1> 
-
-//         <div className="page-header">
-
-//         <h1 style={{ color: 'white', textAlign: 'center' }}>Bloomify</h1> 
-
-//         </div>
-
     );
 };
 
