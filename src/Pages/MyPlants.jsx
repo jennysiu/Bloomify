@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Space, Card, Button, Flex } from 'antd';
+import { Space, Card, Button, Flex, Row, Col } from 'antd';
 
 import { usePlants } from '../contexts/PlantContext.jsx';
 
@@ -10,10 +10,9 @@ import PlantCard from '../components/PlantCard/index.jsx';
 import PlantProfile from '../components/PlantProfile/index.jsx';
 import WeatherWidget from "../components/WeatherWidget"
 import TaskList from '../components/TaskList';
+import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants.jsx';
 import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
-
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
-
 
 function MyPlants() {
     // plants array for development testing:
@@ -120,7 +119,6 @@ function MyPlants() {
                 <a type="link" onClick={() => handlePlantClick(plant)} key={index} style={{ cursor: 'pointer' }}>
                     <PlantCard plant={plant}></PlantCard>
                 </a>
-
                 );
             })}            
             </>
@@ -148,36 +146,39 @@ function MyPlants() {
             <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
         </Flex>
 
-        {/* add new plant modal */}
-        <AddPlantModal 
-        addPlantModal={addPlantModal} 
-        toggleAddPlantModal={toggleAddPlantModal}/>
-        {/* if no plants in collection then add button to click here to add new plants */}
+        <Row>
+            {/* add new plant modal */}
+            <AddPlantModal 
+            addPlantModal={addPlantModal} 
+            toggleAddPlantModal={toggleAddPlantModal}/>
+            {/* if no plants in collection then add button to click here to add new plants */}
+            <Col lg={18} xl={18}>
+                {/* dynamically render plant cards here */}
+                <Space direction="vertical" size={16}>
+                    <Space wrap size={16}>
+                        {renderPlantCards()}
+                    </Space>
+                </Space>
+            </Col>
 
-        
-        {/* dynamically render plant cards here */}
-        <Space direction="vertical" size={16}>
-            <Space wrap size={16}>
-                {renderPlantCards()}
-            </Space>
-        </Space>
-
-        {/* plant profile hidden */}
-        {selectedPlantModal.isVisible && selectedPlantModal.plant && (
-            <PlantProfile 
-            selectedPlantModalVisible={selectedPlantModal.isVisible}
-            togglePlantProfileVisibility={togglePlantProfileVisibility}
-            selectedPlantModalPlant={selectedPlantModal.plant}
-            onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
-            />
-        )
-        }
-        {/* SIDE WIDGETS */}
-        {/* weather */}
-        <WeatherWidget location={location} setLocation={setLocation} />
-
-        {/* task list */}
-            <TaskList />
+            {/* plant profile hidden */}
+            {selectedPlantModal.isVisible && selectedPlantModal.plant && (
+                <PlantProfile 
+                selectedPlantModalVisible={selectedPlantModal.isVisible}
+                togglePlantProfileVisibility={togglePlantProfileVisibility}
+                selectedPlantModalPlant={selectedPlantModal.plant}
+                onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
+                />
+            )
+            }
+            <Col lg={6} xl={6}>
+                {/* SIDE WIDGETS */}
+                {/* weather */}
+                <WeatherWidget location={location} setLocation={setLocation} />
+                {/* task list */}
+                <TaskList />
+            </Col>
+        </Row>
         </>
     )
 }
