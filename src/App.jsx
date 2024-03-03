@@ -25,14 +25,15 @@ function App() {
   const { Content, Sider } = Layout;
 
   return (
+
     <>
       {/* <Router basename={'/'}> */}
       {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
       <SearchResultsProvider>
+
         <ToDoProvider>
           <MyPlantsProvider>
             <LocationProvider>
-
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider collapsible>
@@ -55,7 +56,6 @@ function App() {
                   </Layout>
                 </Layout>
               </Layout>
-
             </LocationProvider>
           </MyPlantsProvider>
         </ ToDoProvider>

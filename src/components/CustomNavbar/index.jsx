@@ -9,7 +9,8 @@ import {
     SoundOutlined,
     LogoutOutlined,
 } from '@ant-design/icons';
-import { Menu, theme } from 'antd';
+import { Menu } from 'antd';
+import './index.css'
 
 function getItem(label, key, icon, children) {
     return {
@@ -35,10 +36,10 @@ const items = [
 const CustomNavBar = () => {
     return (
                 <Menu 
-                theme="dark" 
                 defaultSelectedKeys={['1']} 
                 mode="inline" 
-                items={items} />
+                items={items}
+                style={{ backgroundColor: '#FEFEFE'}} />
     );
 };
 export default CustomNavBar;

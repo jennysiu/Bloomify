@@ -10,8 +10,7 @@ import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
  */
 import perenualFetch from '../../utils/perenualFetch'
 
-
-
+import './style.css'
 
 function SearchBar() {
   /**
@@ -180,10 +179,8 @@ function SearchBar() {
   return (
     <Space direction="vertical">
 
-      <Search placeholder="Search for Plant" onSearch={onSearch} onChange={handleInputChange} />
-
-      <Collapse items={filterItems} />
-
+      <Search placeholder="Search for Plant" onSearch={onSearch} onChange={handleInputChange} className="search"/>
+      <Collapse items={filterItems}  />
 
     </Space>
   )
