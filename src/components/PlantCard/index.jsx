@@ -5,7 +5,7 @@ function PlantCard( {plant, index} ) {
     console.log(plant)
     if (!plant) {
         console.error('Plant data is undefined.', { index });
-        return null; 
+        return null;
     }
 
     return (
@@ -18,4 +18,4 @@ function PlantCard( {plant, index} ) {
     )
 }
 
-export default PlantCard
+export default PlantCard;

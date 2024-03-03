@@ -8,11 +8,12 @@ import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
  */
 import perenualFetch from '../../utils/perenualFetch'
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   /**
  * setName hooks for storing dynamically changing user input
  * {Search} - ant design?
@@ -39,8 +40,12 @@ function SearchBar() {
     }
   });
 
+  let navigate = useNavigate();
+
   const onChange = (value) => {
     console.log(value)
+    wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
+    sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
     wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
     sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
 
@@ -53,15 +58,9 @@ function SearchBar() {
   }
 
 
-  const onSearch = (value, _e, info) => {
-
-    perenualFetch.getPerenualResults(value)
-      .then((res) => {
-        console.log(res.data)
-        setData(res.data);
-      })
-      .catch((err) => setError(err));
-    
+  const handleSearch = (value) => {
+    onSearch(value)
+    navigate('/search-results')
   };
 
   const filterOption = (input, option) =>
@@ -141,11 +140,10 @@ function SearchBar() {
     }
   ];
 
-
   return (
     <Space direction="vertical">
 
-      <Search placeholder="Search for Plant" onSearch={onSearch} />
+      <Search placeholder="Search for Plant" onSearch={handleSearch} />
 
       <Collapse items={filterItems} onChange={onChange} />
 
