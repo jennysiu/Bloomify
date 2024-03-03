@@ -107,9 +107,9 @@ function MyPlants() {
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(
         {isVisible: false, plant: null});
-    // state to retreive the location of the user
+    // state to retreive data for side widgets
     const { location, setLocation } = useContext(LocationContext)
-
+    const { toDos, setToDos } = useContext(ToDoContext); 
 
     function renderPlantCards() {
         return (
@@ -173,10 +173,10 @@ function MyPlants() {
             }
             <Col lg={6} xl={6}>
                 {/* SIDE WIDGETS */}
+                {/* task list */}
+                <TaskList toDos={toDos} setToDos={setToDos}/>
                 {/* weather */}
                 <WeatherWidget location={location} setLocation={setLocation} />
-                {/* task list */}
-                <TaskList />
             </Col>
         </Row>
         </>
