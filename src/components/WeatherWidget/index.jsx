@@ -20,7 +20,10 @@ const WeatherWidget = ({ location, setLocation }) => {
 
 const [weatherData, setWeatherData] = useState(null)
 
-    const onSearch = (value) => {searchWeatherAPIfetch({ location: { location }, setLocation: {       setLocation }, value })
+    const onSearch = (value) => {
+        if (value.trim !== '') {
+        searchWeatherAPIfetch({ location: { location }, setLocation: { setLocation }, value })
+        }
 }
 
 // useEffect listens for changes in local storage and updates state accordingly. This in turn re-renders the component, so shows the data from the correct location
