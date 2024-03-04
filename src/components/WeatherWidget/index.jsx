@@ -79,9 +79,6 @@ const [weatherData, setWeatherData] = useState(null)
             <LocationProvider>
                 <Card
                     title="Weather"
-                    style={{
-                        width: 300
-                    }}
                 >
                     <Search placeholder="Search for a location" onSearch={onSearch} style={{ width: 200 , marginBottom: 5}} />
                     <Button onClick={getUserLocation}>Use current location</Button>

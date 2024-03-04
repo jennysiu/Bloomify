@@ -7,9 +7,10 @@
 }
 
 .ant-layout {
-    /* background-color: #FEFEFE; */
-    /* background-image: url(./assets/images/background.svg);
-    background-repeat: no-repeat; */
+    /* background-color: #fff; */
+    /* background-image: url(./assets/images/plant-bckg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .ant-layout-content {
@@ -22,4 +23,46 @@
 .ant-card {
     font-family: 'Poppins';
     font-weight: 300;
+    background-color: #FEFEFE;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ant-btn,
+.ant-btn span {
+    background-color: #6F936A;
+    color: #FEFEFE;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ant-btn:hover,
+.ant-btn:hover span {
+    background-color: #285521 !important;
+    color: #FEFEFE;
+    border: none;
+}
+
+/*TODO: Identify and remove the glow effect/animation*/
+
+.ant-input,
+.ant-picker {
+    background-color: #FEFEFE !important;
+    border: 1px solid #DAE7D9 !important;
+}
+
+.ant-input:hover,
+.ant-picker:hover {
+    background-color: #FEFEFE;
+    border: 1px solid #6F936A !important;
+    color: #333333;
+}
+
+
+.ant-picker-calendar {
+
+}
+
+.ant-select-selector {
+    background-color: #285521;
 }
