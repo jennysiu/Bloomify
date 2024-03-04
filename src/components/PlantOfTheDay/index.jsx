@@ -7,6 +7,9 @@ import perenualFetch from '../../utils/perenualFetch'
 
 
 const PlantOfTheDay = () => {
+
+    //const
+
     // Static placeholder data for now
     const plant = {
         name: "Placeholder Plant",
@@ -24,11 +27,12 @@ const PlantOfTheDay = () => {
     }
 
 
-// some function which should run once a day
+
 function runOncePerDay() {
     if (!hasOneDayPassed()) return false;
 
     
+    alert('Good morning!');
 }
 
 
