@@ -7,28 +7,35 @@ import perenualFetch from '../../utils/perenualFetch.js'
 
 import './style.css'
 
-function AdvancedSearch({ name}) {
+function AdvancedSearch({ name }) {
     const { searchResults, setSearchResults } = useContext(SearchResultsContext);
-    
+
     const [watering, setWatering] = useState('');
     const [sunlight, setSunlight] = useState('');
     const [isIndoors, setIndoors] = useState('');
     const { Search } = Input;
     let navigate = useNavigate();
 
-    const wateringOption = ['frequent', 'average', 'minimum', 'none', '']
-    const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun', '']
+    const wateringOption = ['frequent', 'average', 'minimum', 'none', '1']
+    const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun', '1']
 
+    useEffect(() => {
+        if (!name) {
+            return;
+        }
+    });
 
     const onChange = (value) => {
 
-        wateringOption.find((element) => element === value) ? setWatering(value) : setWatering('');
-        sunlightOption.find((element) => element === value) ? setSunlight(value) : setSunlight('');
-
-        try {
-            checked.target.checked ? setIndoors(1) : setIndoors('')
-        } catch (error) {
-            return
+        if (sunlightOption.find((element) => element === value)) {
+            setSunlight(value)
+            console.log(sunlight)
+        } else if (wateringOption.find((element) => element === value)) {
+            setWatering(value)
+            console.log(watering)
+        } else if (value.target.checked) {
+            setIndoors(1)
+            console.log(isIndoors)
         }
 
     }
@@ -39,9 +46,20 @@ function AdvancedSearch({ name}) {
    */
     const onClick = (value, _e, info) => {
 
+        console.log(name)
+        console.log(watering)
+        console.log(sunlight)
+        console.log(isIndoors)
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
-                setSearchResults(res.data.data)
+                const data = res.data.data
+                console.log(data)
+                //If plant ID is more than 3000, remove it from array
+                const filteredResults = data.filter(function (i) {
+                    return i.id < 3000
+                })
+                console.log(filteredResults)
+                setSearchResults(filteredResults)
                 navigate('/search-results')
 
             })
@@ -135,8 +153,8 @@ function AdvancedSearch({ name}) {
 
 
     return (
-        
-            <Collapse items={filterItems} />
+
+        <Collapse items={filterItems} />
 
     )
 };

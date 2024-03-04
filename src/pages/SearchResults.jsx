@@ -8,6 +8,7 @@ import { Row, Col} from 'antd';
 // internal imports
 import PlantCard from '../components/PlantCard';
 import NewPlantProfile from '../components/NewPlantProfile/index.jsx';
+import perenualFetch from '../utils/perenualFetch'
 
 import plantDetailsFetch from '../utils/plantDetailsFetch.js';
 import SearchBar from '../components/SearchBar/index.jsx';
@@ -21,7 +22,7 @@ function SearchResults() {
     }
   });
 
- 
+  console.log(perenualFetch.string)
   
   
 
@@ -47,7 +48,8 @@ const toggleNewPlantProfVisi = (isvisible) => {
     <div>
       <SearchBar name={name} setName={setName}/>
       <h1>Search Page</h1>
-      <h2>Search Results For:</h2>
+      <h2>Search Results For:{perenualFetch.string}</h2>
+
 
       {Array.isArray(searchResults) && searchResults.length > 0 ? (
         <Row gutter={[16, 16]}>
@@ -62,7 +64,7 @@ const toggleNewPlantProfVisi = (isvisible) => {
             ))}
         </Row>
       ) : (
-        <p>No search results available.</p>
+        <h2>No search results found!.</h2>
       )}
 
       {/* plant profile modal (hidden at first) */}
