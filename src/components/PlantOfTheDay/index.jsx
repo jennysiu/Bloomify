@@ -2,6 +2,9 @@ import React from 'react';
 import { Card } from 'antd';
 import placeholderPlantImage from '../../assets/images/placeholder-img.png';
 import './style.css'
+import perenualFetch from '../../utils/perenualFetch'
+
+
 
 const PlantOfTheDay = () => {
     // Static placeholder data for now
@@ -10,18 +13,24 @@ const PlantOfTheDay = () => {
         imageUrl: placeholderPlantImage
     };
 
-    // Commented out - to be used to fetch plant data from an API later
-    // useEffect(() => {
-    //     fetch('https://api.example.com/plantoftheday')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             setPlant({
-    //                 name: data.name,
-    //                 imageUrl: data.imageUrl
-    //             });
-    //         })
-    //         .catch(error => console.error("Failed to fetch plant of the day:", error));
-    // }, []);
+    function hasOneDayPassed(){
+    var date = new Date().toLocaleDateString();
+    
+    if (localStorage.yourapp_date == date)
+        return false;
+
+    localStorage.yourapp_date = date;
+    return true;
+    }
+
+
+// some function which should run once a day
+function runOncePerDay() {
+    if (!hasOneDayPassed()) return false;
+
+    
+}
+
 
     return (
         <Card

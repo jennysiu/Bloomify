@@ -16,8 +16,8 @@ function AdvancedSearch({ name}) {
     const { Search } = Input;
     let navigate = useNavigate();
 
-    const wateringOption = ['frequent', 'average', 'minimum', 'none']
-    const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun']
+    const wateringOption = ['frequent', 'average', 'minimum', 'none', '']
+    const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun', '']
 
 
     const onChange = (value) => {
@@ -41,8 +41,8 @@ function AdvancedSearch({ name}) {
 
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
-                setSearchResults(res.data)
-                
+                setSearchResults(res.data.data)
+                navigate('/search-results')
 
             })
             .catch((err) => console.log(err));
@@ -76,6 +76,10 @@ function AdvancedSearch({ name}) {
                     value: sunlightOption[0],
                     label: 'Full Shade',
                 },
+                {
+                    value: sunlightOption[4],
+                    label: 'Any',
+                },
             ]}
         />
     const selectWatering =
@@ -101,6 +105,10 @@ function AdvancedSearch({ name}) {
                 {
                     value: wateringOption[3],
                     label: 'None',
+                },
+                {
+                    value: wateringOption[4],
+                    label: 'Any',
                 },
             ]}
         />

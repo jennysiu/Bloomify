@@ -42,7 +42,7 @@ function SearchBar({name, setName}) {
       perenualFetch.getPerenualNameResults(value)
         .then((res) => {
 
-          setSearchResults(res.data)
+          setSearchResults(res.data.data)
           navigate('/search-results')
         })
         .catch((err) => console.log(err));
