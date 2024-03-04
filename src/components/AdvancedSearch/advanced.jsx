@@ -41,7 +41,7 @@ function AdvancedSearch({ name}) {
 
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
-                setSearchResults(res.data)
+                setSearchResults(res.data.data)
                 navigate('/search-results')
 
             })
