@@ -20,20 +20,24 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     const newMyPlants = [...myPlants || [], plantData]
     setMyPlants(newMyPlants);
     localStorage.setItem("myPlants", JSON.stringify(newMyPlants));
-    // const mySavedPlants = JSON.parse(localStorage.getItem("myPlants")) || [];
-    // console.log(mySavedPlants)
+    const mySavedPlants = JSON.parse(localStorage.getItem("myPlants")) || [];
+    console.log(mySavedPlants)
     
     // once saved - close modal
-    toggleNewPlantProfVisi(false);
+    // toggleNewPlantProfVisi(false);
     
     // display message to confirm addition
     success();
   };
   
-  const success = () => {
-    message.success('Plant successfully added to your sanctuary', 4);
-  };
+  const [messageApi, contextHolder] = message.useMessage();
 
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Successfully added to your sanctuary',
+    });
+  }
   return (
     <>
     {/* contextholder is for the success message */}
