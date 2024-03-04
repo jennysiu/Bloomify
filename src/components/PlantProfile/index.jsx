@@ -12,23 +12,14 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
   };
   
   const handleRemovePlant = () => {
-    // togglePlantProfileVisibility(false);
+    togglePlantProfileVisibility(false);
     // logic here to remove from plant collection (local storage)
-    // let savedPlantsLocalSt = myPlants;
     if (plantData) {
-        console.log(plantData)
-
-        console.log(plantData.common_name)
-        console.log(myPlants)
-        console.log(myPlants.common_name)
-
         let updatedPlantsArray = myPlants.filter(function(plant) {
           return plant.common_name !== plantData.common_name;
         });
-
         setMyPlants(updatedPlantsArray);
         localStorage.setItem("myPlants", JSON.stringify(updatedPlantsArray));
-        console.log(updatedPlantsArray)
       }
   };
   
