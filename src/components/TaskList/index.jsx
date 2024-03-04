@@ -7,6 +7,7 @@ const TaskList = ({ toDos, setToDos }) => {
 
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
+    
 
     const { Title } = Typography;
 
@@ -54,7 +55,7 @@ const TaskList = ({ toDos, setToDos }) => {
                         placeholder="When?"
                         onChange={handleDateChange}
                     />
-                    <Button 
+                    <Button
                         type="primary"
                         onClick={handleSave}>
                         Save
@@ -82,7 +83,9 @@ const TaskList = ({ toDos, setToDos }) => {
                                 </>
                             )}
                         </div>
-                        <Checkbox onChange={() => handleRemove(index)}>Watered?</Checkbox>
+                        <Checkbox checked={null} onChange={() => handleRemove(index)}>
+                            Watered?
+                        </Checkbox>
                     </List.Item>
                 )}
             />
