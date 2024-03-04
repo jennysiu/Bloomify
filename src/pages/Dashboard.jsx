@@ -114,13 +114,13 @@ const Dashboard = () => {
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
         <Row gutter={16} style={{ marginBottom: 16 }}>
-        <Col span={12}>
+        <Col span={16}>
           {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
           {myPlants.map((plant, index) => (
             <DashPlantCard key={index} plant={plant} />
           ))}
         </Col>
-        <Col span={12}>
+        <Col span={8}>
           <ToDoProvider>
             <TaskList toDos={toDos} setToDos={setToDos} />
           </ToDoProvider>
