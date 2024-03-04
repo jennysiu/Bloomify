@@ -116,25 +116,31 @@ const Dashboard = () => {
       <div className="gridContainerDashboard">
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
-        {myPlants.map((plant, index) => (
-          <DashPlantCard key={index} plant={plant} />
-        ))}
-
-        <ToDoProvider>
-          <TaskList toDos={toDos} setToDos={setToDos} />
-        </ToDoProvider>
-
-        <LocationProvider>
-          <WeatherWidget location={location} setLocation={setLocation} />
-        </LocationProvider>
-
-        <DashWaterLog />
-
-        <SearchBar /> 
-
-        <PlantOfTheDay />
+        <div className="leftColumn">
+          <div className="dashPlantCard">
+          {myPlants.map((plant, index) => (
+            <DashPlantCard key={index} plant={plant} />
+          ))}
+          </div>
+          <div className="weatherWidgetAndPlantOfTheDay">
+            <WeatherWidget location={location} setLocation={setLocation} />
+            <PlantOfTheDay />
+          </div>
       </div>
-    </>
+
+<div className="rightColumn">
+<ToDoProvider>
+  <div className="taskList">
+    <TaskList toDos={toDos} setToDos={setToDos} />
+  </div>
+</ToDoProvider>
+
+<div className="searchBar">
+  <SearchBar /> 
+</div>
+</div>
+</div>
+</>
   );
 };
 

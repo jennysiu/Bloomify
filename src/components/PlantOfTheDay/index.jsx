@@ -26,7 +26,6 @@ const PlantOfTheDay = () => {
     return (
         <Card
             title="Plant of the Day"
-            style={{ width: 240 }}
             cover={<img alt={plant.name} src={plant.imageUrl} />}
         >
             <Card.Meta title={plant.name} description={plant.description} />

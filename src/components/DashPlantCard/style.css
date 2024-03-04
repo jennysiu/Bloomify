@@ -1,17 +1,12 @@
-.dashPlantCardContainer {
+/* .dashPlantCardContainer {
     max-width: 60vw;
-    padding: 12px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    overflow-x: auto;
-    text-align: center;
-}
+} */
 
 .dashPlantCardContent {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    justify-content: center;
     overflow-x: auto; 
     white-space: nowrap; 
     background-color: none !important;
