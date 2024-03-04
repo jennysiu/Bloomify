@@ -43,6 +43,7 @@ function SearchBar({name, setName}) {
         .then((res) => {
 
           setSearchResults(res.data.data)
+          console.log(searchResults)
           navigate('/search-results')
         })
         .catch((err) => console.log(err));

@@ -10,11 +10,14 @@ import PlantCard from '../components/PlantCard';
 import NewPlantProfile from '../components/NewPlantProfile/index.jsx';
 
 import plantDetailsFetch from '../utils/plantDetailsFetch.js';
+import SearchBar from '../components/SearchBar/index.jsx';
 
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
-
-  // console.log(searchResults)
+  const [name, setName] = useState('');
+  //If plant ID is more than 3000, remove it from array
+  //const filteredResults = searchResults.filter((i) => searchResults[i].id > 3000)
+  
 
   // State to hold the currently selected plant for display in the modal
   const [selectedPlantModal, setSelectedPlantModal] = useState(
@@ -36,22 +39,13 @@ const toggleNewPlantProfVisi = (isvisible) => {
 
   return (
     <div>
+      <SearchBar name={name} setName={setName}/>
       <h1>Search Page</h1>
       <h2>Search Results For:</h2>
-      <ul>
-        <li>
-          Search = N/A
-        </li>
-        <li>
-          Hardiness = N/A
-        </li>
-        <li>
-          Indoor or Outdoor/N/A
-        </li>
-      </ul>
 
       {Array.isArray(searchResults) && searchResults.length > 0 ? (
         <Row gutter={[16, 16]}>
+          {/* searchResults now filteredResults */}
           {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
             .map((result, index) => (
               <Col xs={24} sm={12} md={8} key={index}>
