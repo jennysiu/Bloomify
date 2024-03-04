@@ -83,9 +83,9 @@ const TaskList = ({ toDos, setToDos }) => {
                                 </>
                             )}
                         </div>
-                        <Checkbox checked={null} onChange={() => handleRemove(index)}>
-                            Watered?
-                        </Checkbox>
+                        <Button onClick={() => handleRemove(index)}>
+                            Remove - watered!
+                        </Button>
                     </List.Item>
                 )}
             />
