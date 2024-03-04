@@ -1,16 +1,15 @@
 import React, { useState, useContext } from 'react';
+import { Row, Col } from 'antd';
 // import { usePlants } from '../contexts/PlantContext.jsx';
 import TaskList from '../components/TaskList';
-import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
-import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
-
 import DashWaterLog from '../components/DashWaterLog';
 import DashSearchBar from '../components/DashSearchBar';
 import PlantOfTheDay from '../components/PlantOfTheDay';
 import WeatherWidget from '../components/WeatherWidget';
 import DashPlantCard from '../components/DashPlantCard'
+import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
+import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
-
 import '../../src/index.css'
 
 const Dashboard = () => {
@@ -109,38 +108,36 @@ const Dashboard = () => {
 
   const [myPlants, setMyPlants] = useState(initialPlants);
 
-
   return (
     <>
       <h1>Welcome back!</h1>
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
-        <div className="gridContainerDashboard">
-      <div className="leftColumn">
-        <div className="dashPlantCard">
+        <Row gutter={16} style={{ marginBottom: 16 }}>
+        <Col span={12}>
+          {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
           {myPlants.map((plant, index) => (
             <DashPlantCard key={index} plant={plant} />
           ))}
-        </div>
-        <div className="bottomLeftWidgets">
-          <WeatherWidget location={location} setLocation={setLocation} />
-          <PlantOfTheDay />
-        </div>
-      </div>
-
-      <div className="rightColumn">
-        <ToDoProvider>
-          <div className="taskList">
+        </Col>
+        <Col span={12}>
+          <ToDoProvider>
             <TaskList toDos={toDos} setToDos={setToDos} />
-          </div>
-        </ToDoProvider>
-        <div className="searchBar">
+          </ToDoProvider>
+        </Col>
+      </Row>
+      <Row gutter={16}>
+        <Col span={8}>
+          <WeatherWidget location={location} setLocation={setLocation} />
+        </Col>
+        <Col span={8}>
+          <PlantOfTheDay />
+        </Col>
+        <Col span={8}>
           <DashSearchBar />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
   </>
-
   );
 };
 
