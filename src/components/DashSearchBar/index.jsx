@@ -76,5 +76,4 @@ function DashSearchBar({name, setName}) {
   )
 };
 
-
 export default DashSearchBar
