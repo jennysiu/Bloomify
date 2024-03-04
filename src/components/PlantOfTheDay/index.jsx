@@ -28,8 +28,7 @@ const PlantOfTheDay = () => {
 function runOncePerDay() {
     if (!hasOneDayPassed()) return false;
 
-    // your code below
-    alert('Good morning!');
+    
 }
 
 
