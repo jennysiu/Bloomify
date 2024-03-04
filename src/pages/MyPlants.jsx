@@ -25,10 +25,10 @@ function MyPlants() {
     // state to retreive data for side widgets
     const { location, setLocation } = useContext(LocationContext);
     const { toDos, setToDos } = useContext(ToDoContext); 
-    const { myPlants, setmyPlants } = useContext(MyPlantsContext); 
+    const { myPlants, setMyPlants } = useContext(MyPlantsContext); 
 
     function renderPlantCards() {
-        console.log(myPlants);
+        // console.log(myPlants); 
         return (
             <>
             {myPlants.map((plant, index) => {
@@ -84,6 +84,8 @@ function MyPlants() {
                 selectedPlantModalVisible={selectedPlantModal.isVisible}
                 togglePlantProfileVisibility={togglePlantProfileVisibility}
                 selectedPlantModalPlant={selectedPlantModal.plant}
+                myPlants={myPlants}
+                setMyPlants={setMyPlants}
                 onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
                 />
             )

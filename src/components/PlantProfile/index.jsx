@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
 import { Tabs, Divider, Space, Tag, Button, Modal, Popconfirm } from 'antd';
 
+// internal imports
 import "./style.css"
 
-function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant }) {
+function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility, selectedPlantModalPlant, myPlants, setMyPlants }) {
   let plantData = selectedPlantModalPlant;
-    
+  
   const handleClose = () => {
     togglePlantProfileVisibility(false);
   };
-
+  
   const handleRemovePlant = () => {
-    togglePlantProfileVisibility(false);
+    // togglePlantProfileVisibility(false);
     // logic here to remove from plant collection (local storage)
+    // let savedPlantsLocalSt = myPlants;
+    if (plantData) {
+        console.log(plantData)
+
+        console.log(plantData.common_name)
+        console.log(myPlants)
+        console.log(myPlants.common_name)
+
+        let updatedPlantsArray = myPlants.filter(function(plant) {
+          return plant.common_name !== plantData.common_name;
+        });
+
+        setMyPlants(updatedPlantsArray);
+        localStorage.setItem("myPlants", JSON.stringify(updatedPlantsArray));
+        console.log(updatedPlantsArray)
+      }
   };
   
   return (
