@@ -5,11 +5,18 @@ body {
     color: #000001;
 }
 
-/* .gridContainerDashboard {
+.gridContainerDashboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns of equal width */
-    /* gap: 20px; /* Adjusts the gap between grid items */
-    /* padding: 20px; Optional: Adds some padding around the grid */
+    background-color: aquamarine;
+}
+
+.leftColumn {
+    display: grid;
+}
+
+.rightColumn {
+    display: grid;
+}
 
 .gridContainerWateringLog {
     display: grid;

@@ -38,7 +38,7 @@ function App() {
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider 
                   collapsible
-                  style={{ backgroundColor: '#FEFEFE' }}>
+                  style={{ backgroundColor: '#FAFCFA' }}>
                     <CustomNavBar />
                   </Sider>
                   <Layout>

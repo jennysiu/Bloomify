@@ -1,8 +1,7 @@
 .taskListContainer {
-    background-color: #D9D9D9;
+    background-color: #fff;
     border-radius: 10px;
     padding: 10px;
-    width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,3 +14,18 @@
     align-items: center;
     gap: 10px;
 }
+
+.ant-list {
+    margin: 15px 0;
+    border: none;
+}
+
+.ant-input {
+    background-color: blue;
+}
+
+.ant-picker {
+    background-color: blueviolet !important;
+}
+
+/*.ant-btn or .ant-btn-primary*/

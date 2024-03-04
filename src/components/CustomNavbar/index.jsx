@@ -39,7 +39,7 @@ const CustomNavBar = () => {
                 defaultSelectedKeys={['1']} 
                 mode="inline" 
                 items={items}
-                style={{ backgroundColor: '#FEFEFE'}} />
+                style={{ backgroundColor: '#FAFCFA'}} />
     );
 };
 export default CustomNavBar;
