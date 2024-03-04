@@ -130,21 +130,18 @@ const Dashboard = () => {
         </Col>
       </Row>
       <Row gutter={16}>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <WeatherWidget location={location} setLocation={setLocation} />
         </Col>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <PlantOfTheDay />
         </Col>
-      </Row>
-      <Row gutter={16}>
-        <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <DashSearchBar />
         </Col>
       </Row>
     </>
   );
 };
-
 
 export default Dashboard;
