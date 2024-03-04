@@ -8,7 +8,7 @@ import perenualFetch from '../../utils/perenualFetch'
 
 const PlantOfTheDay = () => {
 
-    const
+    //const
 
     // Static placeholder data for now
     const plant = {
