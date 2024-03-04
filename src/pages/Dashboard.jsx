@@ -5,7 +5,7 @@ import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
 import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 
 import DashWaterLog from '../components/DashWaterLog';
-import SearchBar from '../components/SearchBar';
+import DashSearchBar from '../components/DashSearchBar';
 import PlantOfTheDay from '../components/PlantOfTheDay';
 import WeatherWidget from '../components/WeatherWidget';
 import DashPlantCard from '../components/DashPlantCard'
@@ -113,34 +113,34 @@ const Dashboard = () => {
   return (
     <>
       <h1>Welcome back!</h1>
-      <div className="gridContainerDashboard">
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
-        <div className="leftColumn">
-          <div className="dashPlantCard">
+        <div className="gridContainerDashboard">
+      <div className="leftColumn">
+        <div className="dashPlantCard">
           {myPlants.map((plant, index) => (
             <DashPlantCard key={index} plant={plant} />
           ))}
-          </div>
-          <div className="weatherWidgetAndPlantOfTheDay">
-            <WeatherWidget location={location} setLocation={setLocation} />
-            <PlantOfTheDay />
-          </div>
+        </div>
+        <div className="bottomLeftWidgets">
+          <WeatherWidget location={location} setLocation={setLocation} />
+          <PlantOfTheDay />
+        </div>
       </div>
 
-<div className="rightColumn">
-<ToDoProvider>
-  <div className="taskList">
-    <TaskList toDos={toDos} setToDos={setToDos} />
-  </div>
-</ToDoProvider>
+      <div className="rightColumn">
+        <ToDoProvider>
+          <div className="taskList">
+            <TaskList toDos={toDos} setToDos={setToDos} />
+          </div>
+        </ToDoProvider>
+        <div className="searchBar">
+          <DashSearchBar />
+        </div>
+      </div>
+    </div>
+  </>
 
-<div className="searchBar">
-  <SearchBar /> 
-</div>
-</div>
-</div>
-</>
   );
 };
 
