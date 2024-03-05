@@ -3,7 +3,7 @@ import { FilterOutlined } from '@ant-design/icons';
 import { Button, Space, Select, Input, Collapse, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
-import perenualFetch from '../../utils/perenualFetch.js'
+import perenualFetch from '../../utils/perenualFetch'
 
 import './style.css'
 
@@ -15,6 +15,7 @@ function AdvancedSearch({ name }) {
     const [isIndoors, setIndoors] = useState('');
     const { Search } = Input;
     let navigate = useNavigate();
+   
 
     const wateringOption = ['frequent', 'average', 'minimum', 'none', '1']
     const sunlightOption = ['full_shade', 'part_shade', 'sun-part_shade', 'full_sun', '1']
@@ -53,7 +54,7 @@ function AdvancedSearch({ name }) {
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
                 const data = res.data.data
-                console.log(data)
+                
                 //If plant ID is more than 3000, remove it from array
                 const filteredResults = data.filter(function (i) {
                     return i.id < 3000

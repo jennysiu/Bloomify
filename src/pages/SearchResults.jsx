@@ -16,14 +16,17 @@ import SearchBar from '../components/SearchBar/index.jsx';
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
   const [name, setName] = useState('');
+  let resultsString
   useEffect(() => {
     if (!name) {
       return;
     }
   });
 
-  console.log(perenualFetch.string)
-  
+  perenualFetch.getPerenualNameResults('resultsString')
+  .then((res) => {
+    resultsString = res;}
+  )
   
 
   // State to hold the currently selected plant for display in the modal
@@ -48,7 +51,7 @@ const toggleNewPlantProfVisi = (isvisible) => {
     <div>
       <SearchBar name={name} setName={setName}/>
       <h1>Search Page</h1>
-      <h2>Search Results For:{perenualFetch.string}</h2>
+      <h2>Search Results For:{resultsString}</h2>
 
 
       {Array.isArray(searchResults) && searchResults.length > 0 ? (

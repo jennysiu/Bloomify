@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_KEY = `sk-IhFE65e636f07b1824461`;
+const API_KEY = `sk-0TuC65e08d8f166774406`;
 
-let resString;
+let resString = "test"
 /**
  * DAVOU
  * @async
@@ -17,21 +17,21 @@ export default {
         const isIndoorsStr = `&indoor=${isIndoors}`;
         const searchStr = `&q=${search}`;
 
+        
+
         if (watering === '' && sunlight === '' && isIndoors === '' ) {
             console.log(`results for ${search}`);
             return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
-        } else {
-
-            console.log(`results for ${search === '' ? 'anything': search}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
-            resString = `https://perenual.com/api/species-list?key=${API_KEY}${search === '' ? '': searchStr}${watering === ''? '':wateringStr}${sunlight === ''? '':sunlightStr}${isIndoors ==! ''? '':isIndoorsStr}`
-
+        } else if(search === 'resultsString'){
+            return `results for ${search === '' ? 'anything': search}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`
+        }
+        else {
             //console.log(resString)
             return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${search === '' ? '': searchStr}${watering === ''? '':wateringStr}${sunlight === ''? '':sunlightStr}${isIndoors === ''? '':isIndoorsStr}`)
         }
     },
-    string: resString,
+    
 
 }
- 
 
 //export 
