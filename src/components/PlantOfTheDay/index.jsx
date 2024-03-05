@@ -9,7 +9,7 @@ import plantDetailsFetch from '../../utils/plantDetailsFetch'
 
 const PlantOfTheDay = () => {
     
-   runOncePerDay  
+   runOncePerDay() 
 
     useEffect(() => {
        
@@ -33,11 +33,12 @@ const PlantOfTheDay = () => {
 
         plantDetailsFetch.getPlantDetails(Math.floor(Math.random() * 3000))
             .then((data) => {
+                
                 console.log(data)
                 localStorage.setItem("nameKey", data.data.common_name)
                 localStorage.setItem("descKey", data.data.type)
                 localStorage.setItem("imgKey", data.data.default_image.original_url)
-                this.forceUpdate();
+                window.location.reload();
             })
             .catch(() => {
                 console.error();
