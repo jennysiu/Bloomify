@@ -1,7 +1,3 @@
-/* .dashPlantCardContainer {
-    max-width: 60vw;
-} */
-
 .dashPlantCardContent {
     display: flex;
     flex-direction: row;

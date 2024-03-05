@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Input, Divider, List, Checkbox, DatePicker, Space, Flex } from 'antd';
+import { Button, Input, List, Checkbox, DatePicker, Space, Card} from 'antd';
 import { Typography } from 'antd';
 import './style.css';
 
@@ -8,7 +8,6 @@ const TaskList = ({ toDos, setToDos }) => {
     const [inputValue, setInputValue] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     
-
     const { Title } = Typography;
 
     // handle user's inputs
@@ -41,55 +40,56 @@ const TaskList = ({ toDos, setToDos }) => {
     };
 
     return (
-        <div className="taskListContainer">
-            <Title level={4} className="taskListTitle">Plants to Water</Title>
-            <Space direction="vertical">
-                <div className="inputSection">
-                    <Input
-                        placeholder="Which plant?"
-                        type="text"
-                        value={inputValue}
-                        onChange={handleInputChange}
-                    />
-                    <DatePicker
-                        placeholder="When?"
-                        onChange={handleDateChange}
-                    />
-                    <Button
-                        type="primary"
-                        onClick={handleSave}>
-                        Save
-                    </Button>
-                </div>
-            </Space>
+        <Card 
+        title="Tasks List"
+        className="taskListContainer"
+        >
+            <div className="inputSection">
+                <Input
+                    placeholder="Which plant?"
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                />
+                <DatePicker
+                    placeholder="When?"
+                    onChange={handleDateChange}
+                    value={selectedDate}
+                />
+                <Button
+                    type="primary"
+                    onClick={handleSave}>
+                    Save
+                </Button>
+            </div>
             <List
-                className="todoList"
-                bordered
-                dataSource={toDos}
-                renderItem={(item, index) => (
-                    <List.Item>
-                        <div className="listItemContent">
-                            {item.task && (
-                                <>
-                                    <Typography.Text strong>Plant to water: </Typography.Text>
-                                    {item.task}
-                                    <br />
-                                </>
-                            )}
-                            {item.date && (
-                                <>
-                                    <Typography.Text strong>Date to water: </Typography.Text>
-                                    {new Date(item.date).toLocaleDateString()}
-                                </>
-                            )}
-                        </div>
-                        <Checkbox checked={null} onChange={() => handleRemove(index)}>
-                            Watered?
-                        </Checkbox>
-                    </List.Item>
-                )}
-            />
-        </div>
+            className="todoList"
+            bordered
+            dataSource={toDos}
+            renderItem={(item, index) => (
+                <List.Item>
+                    <div className="listItemContent">
+                        {item.task && (
+                            <>
+                                <Typography.Text strong>Plant to water: </Typography.Text>
+                                {item.task}
+                                <br />
+                            </>
+                        )}
+                        {item.date && (
+                            <>
+                                <Typography.Text strong>Date to water: </Typography.Text>
+                                {new Date(item.date).toLocaleDateString()}
+                            </>
+                        )}
+                    </div>
+                    <Checkbox onChange={() => handleRemove(index)}>
+                        Watered?
+                    </Checkbox>
+                </List.Item>
+            )}
+        />
+        </Card>
     );
 };
 

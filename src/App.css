@@ -1,17 +1,44 @@
+/*OVERRIDING ANTD ELEMENTS*/
+
 .ant-layout-sider-trigger {
     background-color: #285521 !important;
+}
+.ant-card-head {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+    border-bottom: none !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
 }
 
 .anticon {
     color: #FEFEFE;
 }
 
-.ant-layout {
+.anticon-filter {
+    color: #285521 !important;
+}
+
+.ant-collapse-expand-icon {
+    color: #333 !important;
+}
+
+.ant-collapse-expand-icon:hover {
+    color: #285521 !important;
+    font-weight: 500 !important;
+}
+
+/*TODO: Decide what to do with the background*/
+/* .ant-layout {
     /* background-color: #fff; */
     /* background-image: url(./assets/images/plant-bckg.jpg);
     background-repeat: no-repeat;
     background-size: cover; */
-}
+/* } */ 
 
 .ant-layout-content {
     font-family: 'Poppins';
@@ -32,7 +59,9 @@
 .ant-btn,
 .ant-btn span {
     background-color: #6F936A;
+    border: #6F936A;
     color: #FEFEFE;
+    font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -40,29 +69,113 @@
 .ant-btn:hover span {
     background-color: #285521 !important;
     color: #FEFEFE;
+    font-weight: 500;
     border: none;
 }
 
 /*TODO: Identify and remove the glow effect/animation*/
 
 .ant-input,
-.ant-picker {
+.ant-picker,
+.ant-select-selector,
+.ant-radio-button-wrapper,
+.ant-collapse {
     background-color: #FEFEFE !important;
     border: 1px solid #DAE7D9 !important;
+    color: #333333 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-select-item,
+.ant-select-selection-item,
+.ant-picker-panel,
+.ant-collapse-content {
+    font-family: 'Poppins', sans-serif;
+    color: #333 !important;
+    text-align: center !important;
+}
+
+.ant-picker-now-btn {
+    color: #6F936A !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-today {
+    border-color: #285521 !important;
+    background-color: #333 !important;
+}
+
+.ant-picker-month-btn:hover,
+.ant-picker-year-btn:hover {
+    color: #285521 !important!
+}
+
+.ant-picker-panel:hover,
+.ant-picker-now-btn:hover {
+    color: #285521 !important;
+    font-weight: 500 !important;
+}
+
+.ant-select-item-option-active,
+.ant-select-item-option-selected {
+    background-color: #6F936A !important;
+    color: #FEFEFE !important;
+}
+
+.ant-select-item-option:hover {
+    background-color: #DAE7D9 !important;
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.ant-select-dropdown-menu-item-active,
+.ant-select-dropdown-menu-item-active:hover {
+    background-color: #6F936A !important;
+    color: #FEFEFE !important;
 }
 
 .ant-input:hover,
-.ant-picker:hover {
+.ant-picker:hover,
+.ant-select-selector:hover {
     background-color: #FEFEFE;
     border: 1px solid #6F936A !important;
-    color: #333333;
+    color: #333333 !important;
 }
 
-
-.ant-picker-calendar {
-
+.ant-radio-button-wrapper:hover {
+    border-color: #6F936A;
+    color: #6F936A;
 }
 
-.ant-select-selector {
-    background-color: #285521;
+.ant-radio-button-wrapper-checked {
+    background-color: #DAE7D9 !important;
+    color: #285521 !important;
+    font-weight: 500;
 }
+
+.ant-radio-button-wrapper::before,
+.ant-radio-button-wrapper-checked::before {
+    background-color: #DAE7D9 !important;
+    border-color: #DAE7D9 !important; 
+}
+
+.ant-radio-button-checked .ant-radio-button-inner {
+    background-color: #DAE7D9 !important;
+    border-color: #DAE7D9 !important;
+}
+
+.ant-collapse-header,
+.ant-collapse-item {
+    border: none !important;
+}
+
+.ant-checkbox-inner {
+    border-color: #285521 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #285521 !important;
+    color: #FEFEFE !important;
+}
+
+/* TODO: Task List component's calendar - finish styling */

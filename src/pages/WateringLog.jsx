@@ -6,7 +6,7 @@ import WeatherWidget from '../components/WeatherWidget';
 import { Row, Col } from 'antd';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation'
 import '../../src/index.css'
-import SearchBar from '../components/SearchBar';
+import DashSearchBar from '../components/DashSearchBar';
 
 function WateringLog() {
 
@@ -19,13 +19,19 @@ return (
     {/* Wrap the components in the Providers */}
     <ToDoProvider>
     <LocationProvider>
-    <SearchBar name={name} setName={setName}/>
-        <div className="gridContainerWateringLog">
-            <Calendar toDos={toDos} setToDos={setToDos} />
-            <TaskList toDos={toDos} setToDos={setToDos} />
-        </div>
-        <WeatherWidget location={location} setLocation={setLocation}/>
-        </LocationProvider>
+
+        <Row gutter={16} style={{ marginBottom: 16 }}>
+            <Col span={16}>
+                <Calendar toDos={toDos} setToDos={setToDos} />
+            </Col>
+            <Col span={8}>
+                <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
+                <DashSearchBar name={name} setName={setName} className="mb-16"/>
+                <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/>
+            </Col>
+        </Row>
+     
+    </LocationProvider>
     </ToDoProvider>
     </>
 )
