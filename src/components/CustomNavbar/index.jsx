@@ -29,9 +29,6 @@ const items = [
     getItem(<Link to='watering-log'>Watering Log</Link>, '4', <CalendarOutlined />),
     getItem(<Link to='/search-results'>Results</Link>, '5', <BookOutlined />),
     getItem(<Link to='settings'>Settings</Link>, '6', <SettingOutlined />),
-    getItem('FAQ', '7', <SoundOutlined />),
-    getItem('Sign Out', '8', <LogoutOutlined />),
-    
 ];
 
 const CustomNavBar = () => {
