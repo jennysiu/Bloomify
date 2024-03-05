@@ -8,6 +8,7 @@ import {
     SettingOutlined,
     SoundOutlined,
     LogoutOutlined,
+    BookOutlined
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import './index.css'
@@ -26,7 +27,7 @@ const items = [
     getItem(<Link to='/my-plants'>My Plants</Link>, '2', <UserOutlined />),
     getItem(<Link to='/explore'>Explore</Link>, '3', <SearchOutlined />),
     getItem(<Link to='watering-log'>Watering Log</Link>, '4', <CalendarOutlined />),
-    getItem(<Link to='/search-results'>Results</Link>, '5', <SearchOutlined />),
+    getItem(<Link to='/search-results'>Results</Link>, '5', <BookOutlined />),
     getItem('Settings', '6', <SettingOutlined />),
     getItem('FAQ', '7', <SoundOutlined />),
     getItem('Sign Out', '8', <LogoutOutlined />),

@@ -69,7 +69,7 @@ function MyPlants() {
             addPlantModal={addPlantModal} 
             toggleAddPlantModal={toggleAddPlantModal}/>
             {/* if no plants in collection then add button to click here to add new plants */}
-            <Col lg={18} xl={18}>
+            <Col span={16}>
                 {/* dynamically render plant cards here */}
                 <Space direction="vertical" size={16}>
                     <Space wrap size={16}>
@@ -90,12 +90,8 @@ function MyPlants() {
                 />
             )
             }
-            <Col lg={6} xl={6}>
-                {/* SIDE WIDGETS */}
-                {/* task list */}
+            <Col span={8}>
                 <TaskList toDos={toDos} setToDos={setToDos}/>
-                {/* weather */}
-                <WeatherWidget location={location} setLocation={setLocation} />
             </Col>
         </Row>
         </>

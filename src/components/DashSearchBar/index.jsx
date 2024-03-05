@@ -62,7 +62,7 @@ function DashSearchBar({name, setName}) {
     <Card 
     className="dashSearchCard" 
     bordered={false} 
-    title="Explore"
+    title="Plant Finder"
     >
       <div className="dashSearch">
         <Search

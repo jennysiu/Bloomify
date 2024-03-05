@@ -113,7 +113,6 @@ const Dashboard = () => {
   return (
     <>
       <h1>Welcome back!</h1>
-
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
         <Row gutter={16} style={{ marginBottom: 16 }}>
