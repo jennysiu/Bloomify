@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useMemo, useContext, useState, useEffect } from 'react';
 import { Button, Divider, InputNumber, notification, Space, Switch } from 'antd';
 import dayjs from 'dayjs';
 
@@ -22,22 +22,28 @@ const WaterReminderNotif = () => {
 
   // uceContext to get toDos list from ContextToDos
   const { toDos, setToDos } = useContext(ToDoContext); 
-  console.log(toDos)
+  // useState to store plants to be watered
+  const [plantsToWaterTodayState, setPlantsToWaterTodayState] = useState([]);
 
-  // Get today's date
-  console.log(dayjs().format('YYYY-MM-DD'));
+  // logic to filter the plant(s) that needs to be watered today
+  useEffect(() => {
+    // Get today's date
+    let todaysDate = dayjs().format('YYYY-MM-DD');
+    
+    let plantToWaterToday = toDos.filter(toDo => {
+    // convert task date into format we want
+    let taskDateOnly = dayjs(toDo.date).format('YYYY-MM-DD');
+    // return tasks only when date matches today's date
+    return todaysDate === taskDateOnly;})
+    // console.log(plantToWaterToday);
 
-  // iterate over toDos object to find the plant that needs to be watered today
-  toDos.forEach(toDo => {
-    console.log(toDo.date, toDo.task)
-    if (toDo.date === new Date().toLocaleDateString({ year: 'numeric', month: 'long', day: 'numeric'})) {
-      console.log(date, task)
-      console.log("water me")
-      // plantToWaterToday = toDo.task
-    }
-  })
+    // now iterate over these tasks to just extract the task
+    .map(toDo => toDo.task)
 
-  let plantToWaterToday = "lily"
+    // set to state
+    setPlantsToWaterTodayState(plantToWaterToday);
+  }, [toDos])
+
 
   const openNotification = () => {
     api.open({
