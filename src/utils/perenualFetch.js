@@ -11,56 +11,56 @@ const API_KEY = `sk-2KiZ65dfa09c6ebac4396`;
  * @returns results of the axios call as object
  */
 
-// export default {
-//     getPerenualNameResults: async function (search, watering = '', sunlight = '', isIndoors = '') {
-//         const wateringStr = `&watering=${this.watering}`;
-//         const sunlightStr = `&sunlight=${this.sunlight}`;
-//         const isIndoorsStr = `&indoor=${this.indoors}`;
-//         const searchStr = `&q=${this.search}`;
-
-//         if (watering === '' && sunlight === '' && isIndoors === '') {
-//             console.log(`results for ${search}`);
-//             return data
-//             //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
-//         } else {
-
-//             console.log(`results for ${search ? search : 'anything'}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
-//             return data
-//             //axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`)
-//         }
-//     }
-// }
-
 export default {
     getPerenualNameResults: async function (search, watering = '', sunlight = '', isIndoors = '') {
-      const wateringStr = `&watering=${this.watering}`;
-      const sunlightStr = `&sunlight=${this.sunlight}`;
-      const isIndoorsStr = `&indoor=${this.isIndoors}`;
-      const searchStr = `&q=${this.search}`;
-  
-      try {
+        const wateringStr = `&watering=${this.watering}`;
+        const sunlightStr = `&sunlight=${this.sunlight}`;
+        const isIndoorsStr = `&indoor=${this.indoors}`;
+        const searchStr = `&q=${this.search}`;
+
         if (watering === '' && sunlight === '' && isIndoors === '') {
-          console.log(`Results for ${search}`);
-          const response = await fetch(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`);
-
-          const data = await response.json();
-          console.log(data);
-          return data;
-
+            console.log(`results for ${search}`);
+            
+           return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`)
         } else {
-          console.log(`Results for ${search ? search : 'anything'}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
-          const response = await fetch(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`);
 
-          const data = await response.json();
-          console.log(data);
-          return data;
+            console.log(`results for ${search ? search : 'anything'}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
+            
+            return axios.get(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`)
         }
-      } catch (error) {
-        console.error(error);
-        throw error;
-      }
-    },
-  };
+    }
+}
+
+// export default {
+//     getPerenualNameResults: async function (search, watering = '', sunlight = '', isIndoors = '') {
+//       const wateringStr = `&watering=${this.watering}`;
+//       const sunlightStr = `&sunlight=${this.sunlight}`;
+//       const isIndoorsStr = `&indoor=${this.isIndoors}`;
+//       const searchStr = `&q=${this.search}`;
+  
+//       try {
+//         if (watering === '' && sunlight === '' && isIndoors === '') {
+//           console.log(`Results for ${search}`);
+//           const response = await fetch(`https://perenual.com/api/species-list?key=${API_KEY}&q=${search}`);
+
+//           const data = await response.json();
+//           console.log(data);
+//           return data;
+
+//         } else {
+//           console.log(`Results for ${search ? search : 'anything'}, that need ${watering === '' ? 'any type of' : watering} watering, ${sunlight === '' ? 'any amount of sunlight' : sunlight} and live ${isIndoors === 1 ? 'indoors' : 'indoors and outdoors'}`);
+//           const response = await fetch(`https://perenual.com/api/species-list?key=${API_KEY}${searchStr}${wateringStr}${sunlightStr}${isIndoorsStr}`);
+
+//           const data = await response.json();
+//           console.log(data);
+//           return data;
+//         }
+//       } catch (error) {
+//         console.error(error);
+//         throw error;
+//       }
+//     },
+//   };
 
 
 
