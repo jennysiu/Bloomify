@@ -1,9 +1,7 @@
-
-
 import React, { useState, useEffect, useContext} from 'react';
 import SearchResultsPage from "../components/Results/Results"
 import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
-import { Row, Col} from 'antd';
+import { Row, Col, Layout, Flex } from 'antd';
 
 // internal imports 
 import PlantCard from '../components/PlantCard';
@@ -12,6 +10,13 @@ import perenualFetch from '../utils/perenualFetch'
 
 import plantDetailsFetch from '../utils/plantDetailsFetch.js';
 import SearchBar from '../components/SearchBar/index.jsx';
+
+// Basic page CSS
+const layoutStyle = {
+  backgroundColor: 'var(--background-color)',
+  padding: 15,
+  borderRadius: '1%'
+}
 
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
@@ -47,7 +52,8 @@ const toggleNewPlantProfVisi = (isvisible) => {
 }
 
   return (
-    <div>
+    <>
+      <Layout style={layoutStyle}>
       <SearchBar name={name} setName={setName}/>
       <h1>Search Page</h1>
       <h2>Search Results For:{resultsString}</h2>
@@ -78,8 +84,9 @@ const toggleNewPlantProfVisi = (isvisible) => {
         onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
         />
       )}
-
-    </div>
+      </Layout>
+    </>
+    
   );
 }
 

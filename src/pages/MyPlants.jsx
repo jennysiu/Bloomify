@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Space, Card, Button, Flex, Row, Col } from 'antd';
+import { Space, Card, Button, Flex, Row, Col, Layout } from 'antd';
 
 import { usePlants } from '../contexts/PlantContext.jsx';
 
@@ -15,6 +15,13 @@ import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 
 import '../../src/index.css'
+
+// Styling
+const layoutStyle = {
+    backgroundColor: 'var(--background-color)',
+    padding: 15,
+    borderRadius: '1%'
+}
 
 function MyPlants() {
     
@@ -37,11 +44,11 @@ function MyPlants() {
                     <PlantCard plant={plant}></PlantCard>
                 </a>
                 );
-            })}            
+            })}        
             </>
         )
     }
-  
+
     function toggleAddPlantModal(newState) {
         setaddPlantModal(newState);
     }
@@ -56,13 +63,16 @@ function MyPlants() {
 
     return (
         <>
+        <Layout style={layoutStyle}>
+            <Row>
+                    <Col span={24}>
         <h1>My Plant Sanctuary</h1>
-
-        {/* new plant button */}
-        <Flex gap="small" wrap="wrap">
+        <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
             <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
         </Flex>
-
+                </Col>
+                </Row>
+<br></br>
         <Row>
             {/* add new plant modal */}
             <AddPlantModal 
@@ -75,7 +85,7 @@ function MyPlants() {
                     <Space wrap size={16}>
                         {renderPlantCards()}
                     </Space>
-                </Space>
+                    </Space>
             </Col>
 
             {/* plant profile hidden */}
@@ -94,6 +104,7 @@ function MyPlants() {
                 <TaskList toDos={toDos} setToDos={setToDos}/>
             </Col>
         </Row>
+        </Layout>
         </>
     )
 }

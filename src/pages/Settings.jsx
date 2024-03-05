@@ -1,12 +1,19 @@
 // show option to retreive user name
 // show option for users to input location 
 
-import { Input, Button, Card } from 'antd';
+import { Input, Button, Card, Layout, Row, Flex } from 'antd';
 import React, { useState, useEffect, useContext } from 'react';
 import { LocationContext, LocationProvider } from '../contexts/ContextLocation';
 import searchWeatherAPIfetch from '../utils/searchWeatherAPIfetch';
 import weatherAPIfetch from '../utils/weatherAPIfetch';
 const { Search } = Input;
+
+// Basic page CSS
+const layoutStyle = {
+  backgroundColor: 'var(--background-color)',
+  padding: 15,
+  borderRadius: '1%'
+}
 
 const userNameSearch = (values) => {
   localStorage.setItem('username', values);
@@ -71,11 +78,15 @@ const Settings = () => {
 
   return (
     <>
-      <Card title="Username" className="weatherCard">
+    <Layout style={layoutStyle}>
+        <Flex align="center" justify="space-evenly">
+      <Row>
+      <Card title="Username" className="weatherCard" style={{marginRight: 20 }}>
         <div className="searchSection">
           <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
         </div>
       </Card>
+        <br></br>
       <LocationProvider>
         <Card title="Location" className="weatherCard">
           <div className="searchSection">
@@ -84,6 +95,9 @@ const Settings = () => {
           </div>
         </Card>
       </LocationProvider>
+          </Row>
+          </Flex>
+      </Layout>
     </>
   );
 };

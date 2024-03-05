@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Layout } from 'antd';
 // import { usePlants } from '../contexts/PlantContext.jsx';
 import TaskList from '../components/TaskList';
 import DashWaterLog from '../components/DashWaterLog';
@@ -11,6 +11,13 @@ import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
 import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 import '../../src/index.css'
+
+// Basic page CSS
+const layoutStyle = {
+  backgroundColor: 'var(--background-color)',
+  padding: 15,
+  borderRadius: '1%'
+}
 
 const Dashboard = () => {
   const { toDos, setToDos } = useContext(ToDoContext);
@@ -120,6 +127,7 @@ useEffect(() => {
 
   return (
     <>
+      <Layout style={layoutStyle}>
       <h1>Welcome back {userName || 'Guest'}!</h1>
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
@@ -147,6 +155,7 @@ useEffect(() => {
           <DashSearchBar />
         </Col>
       </Row>
+      </Layout>
     </>
   );
 };
