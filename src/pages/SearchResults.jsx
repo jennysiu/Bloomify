@@ -5,7 +5,7 @@ import SearchResultsPage from "../components/Results/Results"
 import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
 import { Row, Col} from 'antd';
 
-// internal imports
+// internal imports 
 import PlantCard from '../components/PlantCard';
 import NewPlantProfile from '../components/NewPlantProfile/index.jsx';
 import perenualFetch from '../utils/perenualFetch'
@@ -19,8 +19,7 @@ function SearchResults() {
   let resultsString
   useEffect(() => {
     if (!name) {
-      return;
-    }
+      return; }
   });
 
   perenualFetch.getPerenualNameResults('resultsString')
