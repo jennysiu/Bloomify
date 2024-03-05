@@ -52,10 +52,9 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
     >
 
     <div className='plant-profile-modal-content'>
-    <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%' }} />
+    <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} style={{ maxWidth: '100%', borderRadius: '2%' }} />
     <Tabs
         defaultActiveKey="1"
-        centered
         items={[
           {
             label: 'Basic Overview',
@@ -106,7 +105,7 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
                 </Tag>
               ) : null}   
 
-              <p>Watering: every {plantData.watering_general_benchmark.value} {plantData.watering_general_benchmark.unit}</p>
+              <p>Watering frequency: {plantData.watering_general_benchmark.value} {plantData.watering_general_benchmark.unit}</p>
               <p>Sunlight: {plantData.sunlight}</p> 
               <p>Cycle: {plantData.cycle}</p> 
               <p>Origin: {plantData.origin}</p>
