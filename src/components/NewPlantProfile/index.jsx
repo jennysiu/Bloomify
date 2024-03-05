@@ -49,7 +49,7 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     centered
     open={selectedPlantModalVisible}
     onCancel={handleClose}
-    width={1000}
+    width={600}
     footer={[
       // <Popconfirm
       // key="add-plant"
