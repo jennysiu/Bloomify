@@ -30,7 +30,6 @@ function App() {
 
     <>
       {/* <Router basename={'/'}> */}
-      {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
       <SearchResultsProvider>
         <ToDoProvider>
           <MyPlantsProvider>
