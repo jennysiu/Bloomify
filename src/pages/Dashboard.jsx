@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Row, Col } from 'antd';
 // import { usePlants } from '../contexts/PlantContext.jsx';
 import TaskList from '../components/TaskList';
@@ -109,10 +109,18 @@ const Dashboard = () => {
   ];
 
   const [myPlants, setMyPlants] = useState(initialPlants);
+  const [userName, setUserName] = useState('')
+
+useEffect(() => {
+  const storageUserName = localStorage.getItem('username')
+  if (storageUserName) {
+    setUserName(storageUserName)
+  }
+}, [])
 
   return (
     <>
-      <h1>Welcome back!</h1>
+      <h1>Welcome back {userName || 'Guest'}!</h1>
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
         <Row gutter={16} style={{ marginBottom: 16 }}>
