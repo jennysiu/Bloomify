@@ -17,7 +17,6 @@ import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 import '../../src/index.css'
 
 function MyPlants() {
-    
     const [addPlantModal, setaddPlantModal] = useState(false);
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState(

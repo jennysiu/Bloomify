@@ -10,6 +10,7 @@ import './App.css'
 import CustomNavBar from './components/CustomNavbar/index.jsx'
 import CustomHeader from './components/CustomHeader'
 import CustomFooter from './components/CustomFooter/index.jsx'
+import WaterReminderNotif from './components/WaterReminderNotif/index.jsx';
 import { ToDoProvider } from './contexts/ContextsToDos';
 import { LocationProvider } from './contexts/ContextLocation'
 import { MyPlantsContext } from './contexts/ContextMyPlants';
@@ -31,18 +32,17 @@ function App() {
       {/* <Router basename={'/'}> */}
       {/* The whole app must be wrapped in the ToDoProvider so that the Watering Log page can access it */}
       <SearchResultsProvider>
-
         <ToDoProvider>
           <MyPlantsProvider>
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
-                <Layout style={{ minHeight: '100vh' }}>
                   <Sider 
                   collapsible
                   style={{ backgroundColor: '#FAFCFA' }}>
                     <CustomNavBar />
                   </Sider>
                   <Layout>
+                    <WaterReminderNotif />
                     <CustomHeader />
                     <Content>
                       <Routes>
@@ -58,7 +58,6 @@ function App() {
                     </Content>
                     <CustomFooter />
                   </Layout>
-                </Layout>
               </Layout>
             </LocationProvider>
           </MyPlantsProvider>
