@@ -9,7 +9,9 @@ const { Header, Content } = Layout;
 
 const CustomHeader = () => {
     return (
+        <div className="customHeader">
         <h1 className="dashboardTitle">Bloomify</h1> 
+        </div>
     );
 };
 

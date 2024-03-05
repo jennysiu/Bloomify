@@ -4,5 +4,11 @@
   text-align: center;
   color: #285521;
   letter-spacing: 2px;
-  /*text-shadow: 4px 4px 1px #D9D9D9;*/
+  text-shadow: 4px 4px 1px #D9D9D9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.customHeader {
+  background-image: url(../../assets/images/plant-bckg.jpg)
 }
