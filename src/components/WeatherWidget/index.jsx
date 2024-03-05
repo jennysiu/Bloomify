@@ -93,8 +93,8 @@ return (
                             />
                             <div className="weatherResults">
                                 <p>Description: {weatherData.weather[0].description}</p>
-                                <p>Temperature: {weatherData.main.temp}</p>
-                                <p>Humidity: {weatherData.main.humidity} %</p>
+                            <p>Temperature: {weatherData.main.temp}°C</p>
+                                <p>Humidity: {weatherData.main.humidity}%</p>
                                 <p>Rain: {weatherData.rain}</p>
                             </div>
                         </div>
