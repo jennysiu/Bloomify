@@ -15,13 +15,12 @@
 
 ## Description
 
-xxx
+Bloomify is a web application for both novice and expert plant parents alike. Bloomify allows the user to search plants and flowers by keyword. 
 
 
 ## Features
 
 - Responsive Design: Adapts to any screen size for a seamless viewing experience on desktops, tablets, and smartphones.
-
 
 
 ## Installation
@@ -35,7 +34,7 @@ To view the code files, you can Git Clone by following the instructions below:
 
 ## Usage
 
-To view the webpage, no installation is required you can access the live URL here: xxx
+To view the webpage, no installation is required you can access the live URL here: [https://bloomify-app.netlify.app/]
 
 Once the webpage link is opened, it should look something like this:
 ![Demo image of how the webpage should look like upon opening.](/src/assets/images/)
@@ -48,7 +47,8 @@ Once the webpage link is opened, it should look something like this:
 - Ant Design
 - React
 - Netlify
-
+- Perenual API
+- OpenWeatherMap API
 
 ## License
 
@@ -67,8 +67,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - README template inspired by ChatGPT, an AI language model developed by OpenAI.
   (Note: Portions of this README were generated with assistance from ChatGPT.)
 
+- Perenual API
+- OpenWeatherMap API
 
 ## Contact
 Feel free to reach out to us if you have any questions or feedback.
 
 Jenny Siu / [Email](jenny.siu79@gmail.com) / [LinkedIn](https://www.linkedin.com/in/jenny-siu-534576156/)
+Laura Kane / [Email](laurakanesocials@gmail.com) 
+Davou Jobbi / 
+Ahmed Ibrahim / 
+Adrianna Derkacz / 

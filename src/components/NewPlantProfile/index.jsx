@@ -16,6 +16,14 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
   };
   
   const handleAddPlant = (plantData) => {
+
+    // ensures you can't add 2 of the same plact
+    function isEqual(objA, objB) {
+      return JSON.stringify(objA) === JSON.stringify(objB);
+    }
+
+    if (!myPlants.some(existingPlant => isEqual(existingPlant, plantData))) {
+      
     // save to local storage 
     const newMyPlants = [...myPlants || [], plantData]
     setMyPlants(newMyPlants);
@@ -25,9 +33,12 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     
     // once saved - close modal
     // toggleNewPlantProfVisi(false);
-    
+  
     // display message to confirm addition
     success();
+    } else {
+      error();
+    }
   };
   
   const [messageApi, contextHolder] = message.useMessage();
@@ -38,6 +49,14 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
       content: 'Successfully added to your sanctuary',
     });
   }
+
+  const error = () => {
+    messageApi.open({
+      type: 'error',
+      content: 'Oops! That plant is already in your sanctuary.',
+    });
+  }
+
   return (
     <>
     {/* contextholder is for the success message */}
@@ -176,5 +195,6 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     </>
   );
 }
+
 
 export default NewPlantProfile;

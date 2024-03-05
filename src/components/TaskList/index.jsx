@@ -63,32 +63,32 @@ const TaskList = ({ toDos, setToDos }) => {
                 </Button>
             </div>
             <List
-            className="todoList"
-            bordered
-            dataSource={toDos}
-            renderItem={(item, index) => (
-                <List.Item>
-                    <div className="listItemContent">
-                        {item.task && (
-                            <>
-                                <Typography.Text strong>Plant to water: </Typography.Text>
-                                {item.task}
-                                <br />
-                            </>
-                        )}
-                        {item.date && (
-                            <>
-                                <Typography.Text strong>Date to water: </Typography.Text>
-                                {new Date(item.date).toLocaleDateString()}
-                            </>
-                        )}
-                    </div>
-                    <Checkbox onChange={() => handleRemove(index)}>
-                        Watered?
-                    </Checkbox>
-                </List.Item>
-            )}
-        />
+                className="todoList"
+                bordered
+                dataSource={toDos}
+                renderItem={(item, index) => (
+                    <List.Item>
+                        <div className="listItemContent">
+                            {item.task && (
+                                <>
+                                    <Typography.Text strong>Plant to water: </Typography.Text>
+                                    {item.task}
+                                    <br />
+                                </>
+                            )}
+                            {item.date && (
+                                <>
+                                    <Typography.Text strong>Date to water: </Typography.Text>
+                                    {new Date(item.date).toLocaleDateString()}
+                                </>
+                            )}
+                        </div>
+                        <Button onClick={() => handleRemove(index)}>
+                            Remove - watered!
+                        </Button>
+                    </List.Item>
+                )}
+            />
         </Card>
     );
 };
