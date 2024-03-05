@@ -1,5 +1,5 @@
 import react from 'react'
-import { Row, Col } from 'antd';
+import { Row, Col, Layout } from 'antd';
 import SearchBar from "../components/SearchBar"
 import AdvancedSearch from '../components/AdvancedSearch/advanced.jsx';
 import { useNavigate } from 'react-router-dom'
@@ -7,11 +7,18 @@ import perenualFetch from '../utils/perenualFetch';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import '../../src/index.css'
 
+const layoutStyle = {
+    backgroundColor: 'var(--background-color)',
+    padding: 15,
+    borderRadius: '1%'
+}
+
 function Explore() {
     const [name, setName] = useState('');
 
     return (
         <>
+    <Layout style={layoutStyle}>
             <Row className="exploreContainer">
                 <Col span={16} className="exploreTitles">
                     <h1>Bloom Explorer</h1>
@@ -22,6 +29,7 @@ function Explore() {
                     <AdvancedSearch name={name} />
                 </Col>
             </Row>
+        </Layout>
         </>
     )
 }

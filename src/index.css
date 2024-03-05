@@ -1,8 +1,17 @@
+:root {
+    --background-color: #275522
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: #000001;
+    background-color: var(--background-color);
+}
+
+h1  {
+    color: white;
 }
 
 /* DASHBOARD PAGE */
@@ -20,19 +29,19 @@ body {
     text-align: center;
     flex-direction: column;
 }
-
+/* 
 .exploreTitles h1 {
     font-size: 3em;
     font-weight: 500;
     padding-bottom: 20px;
-    color: #333;
+    color: white;
     margin-bottom: 8px;
-}
+} */
 
 .exploreTitles h2 {
     font-size: 1.75em;
     font-weight: 400;
     padding-bottom: 20px;
-    color: #333;
+    color: white;
     margin-bottom: 20px;
 }
