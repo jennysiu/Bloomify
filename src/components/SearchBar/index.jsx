@@ -41,8 +41,15 @@ function SearchBar({name, setName}) {
     if (value) {
       perenualFetch.getPerenualNameResults(value)
         .then((res) => {
-
-          setSearchResults(res.data.data)
+          const data = res.data.data
+          
+            //If plant ID is more than 3000, remove it from array
+          const filteredResults = data.filter(function (i) {
+            return i.id < 3000
+          })
+          console.log(filteredResults)
+          setSearchResults(filteredResults)
+          
           navigate('/search-results')
         })
         .catch((err) => console.log(err));

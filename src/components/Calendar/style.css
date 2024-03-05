@@ -1,0 +1,40 @@
+.ant-picker-calendar {
+    border-radius: 10px !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-picker-calendar-header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+}
+
+.ant-picker-cell-inner:hover {
+    background-color: #ECF3EC !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: #DAE7D9 !important;
+    
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner .ant-picker-calendar-date-value {
+    color: #285521 !important;
+    font-weight: 500 !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner .ant-picker-calendar-date-value {
+    color: #285521 !important;
+}
+
+.ant-picker-cell-inner.ant-picker-calendar-date-today {
+    border-top: 2px solid #285521 !important;
+}
+
+.ant-picker-calendar-date-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #333 !important;
+}

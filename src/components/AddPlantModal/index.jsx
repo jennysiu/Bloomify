@@ -35,9 +35,10 @@ function AddPlantModal( {addPlantModal, toggleAddPlantModal} ) {
       open={addPlantModal} 
       onOk={visitExplorePage} 
       onCancel={handleCancel}
-      okText="Visit Explore Paget">
+      okText="Visit Explore Page">
         {/* insert SEARCH BAR here */}
-        {/* <SearchBar />
+        
+        {/* 
 
         <p>Date of collection</p>
         <Space direction="vertical">

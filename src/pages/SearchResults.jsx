@@ -5,16 +5,28 @@ import SearchResultsPage from "../components/Results/Results"
 import { SearchResultsContext } from '../contexts/ContextSearchRes.jsx';
 import { Row, Col} from 'antd';
 
-// internal imports
+// internal imports 
 import PlantCard from '../components/PlantCard';
 import NewPlantProfile from '../components/NewPlantProfile/index.jsx';
+import perenualFetch from '../utils/perenualFetch'
 
 import plantDetailsFetch from '../utils/plantDetailsFetch.js';
+import SearchBar from '../components/SearchBar/index.jsx';
 
 function SearchResults() {
   const {searchResults, setSearchResults} = useContext(SearchResultsContext);
+  const [name, setName] = useState('');
+  let resultsString
+  useEffect(() => {
+    if (!name) {
+      return; }
+  });
 
-  // console.log(searchResults)
+  perenualFetch.getPerenualNameResults('resultsString')
+  .then((res) => {
+    resultsString = res;}
+  )
+  
 
   // State to hold the currently selected plant for display in the modal
   const [selectedPlantModal, setSelectedPlantModal] = useState(
@@ -36,22 +48,14 @@ const toggleNewPlantProfVisi = (isvisible) => {
 
   return (
     <div>
+      <SearchBar name={name} setName={setName}/>
       <h1>Search Page</h1>
-      <h2>Search Results For:</h2>
-      <ul>
-        <li>
-          Search = N/A
-        </li>
-        <li>
-          Hardiness = N/A
-        </li>
-        <li>
-          Indoor or Outdoor/N/A
-        </li>
-      </ul>
+      <h2>Search Results For:{resultsString}</h2>
+
 
       {Array.isArray(searchResults) && searchResults.length > 0 ? (
         <Row gutter={[16, 16]}>
+          
           {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
             .map((result, index) => (
               <Col xs={24} sm={12} md={8} key={index}>
@@ -62,7 +66,7 @@ const toggleNewPlantProfVisi = (isvisible) => {
             ))}
         </Row>
       ) : (
-        <p>No search results available.</p>
+        <h2>No search results found!.</h2>
       )}
 
       {/* plant profile modal (hidden at first) */}

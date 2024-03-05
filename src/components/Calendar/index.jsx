@@ -3,6 +3,7 @@ import { Calendar } from 'antd';
 import { library, icon } from '@fortawesome/fontawesome-svg-core'
 import { faDroplet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './style.css'
 
 const getListData = ({ toDos }) => {
     return toDos.map(item => ({
@@ -25,7 +26,7 @@ const MyCalendar = ({ toDos }) => {
             <ul className="events" style={{ listStyleType: 'none' }}>
                 {tasksForDate.map((item, index) => (
                     <li key={index}>
-                        <FontAwesomeIcon icon={faDroplet} />
+                        <FontAwesomeIcon icon={faDroplet} style={{ color: "#74C0FC", marginRight: '0.25em' }} />
                         {item.content}
                     </li>
                 ))}

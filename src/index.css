@@ -8,23 +8,31 @@ body {
 /* DASHBOARD PAGE */
 
 /*WATER LOG PAGE*/
-.gridContainerWateringLog {
-    display: grid;
-    grid-template-columns: 50vw 30vw;
-    grid-gap: 3vw;
-    justify-content: center;
-    align-items: start;
+.mb-16 {
+    margin-bottom: 16px !important;
 }
 
-.flexContainerExplore {
+/*EXPLORE PAGE*/
+.exploreContainer {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-.flexContainerExplore h1 {
-    font-size: 34px;
+.exploreTitles h1 {
+    font-size: 3em;
     font-weight: 500;
     padding-bottom: 20px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.exploreTitles h2 {
+    font-size: 1.75em;
+    font-weight: 400;
+    padding-bottom: 20px;
+    color: #333;
+    margin-bottom: 20px;
 }

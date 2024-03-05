@@ -113,31 +113,29 @@ const Dashboard = () => {
   return (
     <>
       <h1>Welcome back!</h1>
-      {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
-      {/* Pass plants data to DashPlantCard */}
-      <Row gutter={16} >
-        <Col span={16} xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
+        {/* Pass plants data to DashPlantCard */}
+        <Row gutter={16} style={{ marginBottom: 16 }}>
+        <Col span={16}>
           {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
           {myPlants.map((plant, index) => (
             <DashPlantCard key={index} plant={plant} />
           ))}
         </Col>
-        <Col span={8} xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <ToDoProvider>
             <TaskList toDos={toDos} setToDos={setToDos} />
           </ToDoProvider>
         </Col>
       </Row>
       <Row gutter={16}>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <WeatherWidget location={location} setLocation={setLocation} />
         </Col>
-        <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <PlantOfTheDay />
         </Col>
-      </Row>
-      <Row gutter={16}>
-        <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+        <Col span={8}>
           <DashSearchBar />
         </Col>
       </Row>
@@ -145,5 +143,4 @@ const Dashboard = () => {
   );
 };
 
-
-export default Dashboard;
+export default Dashboard; 
