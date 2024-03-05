@@ -47,6 +47,7 @@ function SearchBar({name, setName}) {
           const filteredResults = data.filter(function (i) {
             return i.id < 3000
           })
+          console.log(filteredResults)
           setSearchResults(filteredResults)
           
           navigate('/search-results')
