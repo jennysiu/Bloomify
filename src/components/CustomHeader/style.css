@@ -2,13 +2,16 @@
   font-family: "Pacifico", sans-serif;
   font-size: 84px;
   text-align: center;
-  color: #285521;
+  color: #B5D0B3;
   letter-spacing: 2px;
-  text-shadow: 4px 4px 1px #D9D9D9;
+  text-shadow: 4px 4px 1px #235421;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .customHeader {
-  background-image: url(../../assets/images/plant-bckg.jpg)
+  background-image: url(../../assets/images/plant-bckg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position: bottom;
 }
