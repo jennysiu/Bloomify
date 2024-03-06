@@ -72,7 +72,7 @@ const toggleNewPlantProfVisi = (isvisible) => {
             ))}
         </Row>
       ) : (
-        <h2>No search results found!.</h2>
+        <h2>No search results found!</h2>
       )}
 
       {/* plant profile modal (hidden at first) */}
