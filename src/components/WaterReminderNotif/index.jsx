@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useState, useEffect } from 'react';
+import React, { useMemo, useContext, useState, useEffect, useRef } from 'react';
 import { Button, Divider, InputNumber, notification, Space, Switch } from 'antd';
 import dayjs from 'dayjs';
 
@@ -25,6 +25,9 @@ const WaterReminderNotif = () => {
   // useState to store plants to be watered
   const [plantsToWaterTodayState, setPlantsToWaterTodayState] = useState([]);
 
+  // This useRef hook initializes displayedNotifications with an empty Set
+  // const displayedNotifications = useRef(new Set());
+
   // logic to filter the plant(s) that needs to be watered today
   useEffect(() => {
     // Get today's date
@@ -38,36 +41,40 @@ const WaterReminderNotif = () => {
     // console.log(plantToWaterToday);
 
     // now iterate over these tasks to just extract the task
-    .map(toDo => toDo.task)
+    .map((toDo, index) => {
+      return {id: index, plant: toDo.task}
+    });
 
+    console.log(plantToWaterToday);
     // set to state
     setPlantsToWaterTodayState(plantToWaterToday);
   }, [toDos])
 
+  // trigger notification for wach plant that needs to be watered today
+  useEffect(() => {
+  // tracker for notifs
+  const currentNotifKey = new Set();
 
-  const openNotification = () => {
-    api.open({
-      message: 'Watering Reminder 💧',
-      description: `Your ${plantToWaterToday} is due to be watered today!`,
-      duration: null,
+    plantsToWaterTodayState.forEach(plant => {
+      const key = plant.id;
+
+      api.open({
+        message: 'Watering Reminder 💧',
+        description: `Your ${plant.plant} is due to be watered today!`,
+        duration: null
+      });
     });
 
-  };
-  const contextValue = useMemo(
-    () => ({
-      name: 'Ant Design',
-    }),
-    [],
-  );
+    // close notification once plant is marked as watered (and removed from list)
+    // todo: look into useRef() to keep track of notifs you have displayed, determine which to close and and prevent re-rendering 
+    // Close notifications for plants no longer in the list
+
+  }, [plantsToWaterTodayState]);
+
   return (
-    <Context.Provider value={contextValue}>
-      {contextHolder}
-      <div>
-        <Button type="primary" onClick={openNotification}>
-          Open the notification box
-        </Button>
-      </div>
-    </Context.Provider>
+    <>
+    {contextHolder}
+    </>
   );
 };
 export default WaterReminderNotif;
