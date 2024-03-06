@@ -1,12 +1,11 @@
 # Bloomify
 
-
 ## Table of Contents
-
 - [Description](#description)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tests](#tests)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -14,34 +13,37 @@
 
 
 ## Description
+Bloomify is a web application for both novice and expert plant parents alike. It allows users to explore new plants & flowers and save plants they own, or want to own, to their 'sanctuary'. The application also provides a way to keep track of plant watering schedules. 
 
-Bloomify is a web application for both novice and expert plant parents alike. Bloomify allows the user to search plants and flowers by keyword. 
-
+This application was created over 2 weeks, using React. 
 
 ## Features
+Bloomify allows the user to search for plants and flowers, making use of the Perenual API to return relevant results. 
 
-- Responsive Design: Adapts to any screen size for a seamless viewing experience on desktops, tablets, and smartphones.
+The user can search by keyword, or use the advanced search feature which allows them to search for plants based off of properties such as how much sunlight and watering they need.
 
+The user can view in-depth descriptions and characteristics of each plant that the search returns. 
+
+The user can then add plants to their 'Plant Sanctuary', to keep a log of plants that they own, or want to own. 
+
+The watering log page gives the user a place to keep track of when their plants need watering. When they add a plant to water and corresponding date in the task list, it automatically populates the calendar. The user will also receive a pop-up reminder to water their plant(s) on the relevant days. The weather widget allows users to see current weather, to help them know if/when to water outdoor plants.
+
+The settings page allows users to set their username and location, either using geolocation or via search input. This ensures a personalised experience for the user, with a persistent username. The weather widget will also display weather for their saved location. 
+
+The Dashboard brings together all the features of Bloomify in one handy place, so the user can check on their plants in a quick glance. 
 
 ## Installation
-
-To view the webpage, no installation is required you can access the live URL here: xxx
-
-To view the code files, you can Git Clone by following the instructions below:
-1. Clone the repository: `git clone [xxx]`
-2. Navigate to the project directory: `cd xxx`
-
+None - this is a web application that can be accessed via the browser.
 
 ## Usage
-
 To view the webpage, no installation is required you can access the live URL here: [https://bloomify-app.netlify.app/]
 
-Once the webpage link is opened, it should look something like this:
-![Demo image of how the webpage should look like upon opening.](/src/assets/images/)
+Screenshots:[]
 
+## Tests
+Tests can be found in the src/__test__ folder, and uses React testing.
 
 ## Technologies Used
-
 - HTML5
 - CSS3
 - Ant Design
@@ -49,26 +51,19 @@ Once the webpage link is opened, it should look something like this:
 - Netlify
 - Perenual API
 - OpenWeatherMap API
+- NPM Packages: Axios, Jest(?), FontAwesome Icons, Vite, Vitests, React-Router-Dom
 
 ## License
-
-MIT License
-
-Copyright (c) [2024] [xxx]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+Licensed under the MIT License.
 
 ## Acknowledgments
-- README template inspired by ChatGPT, an AI language model developed by OpenAI.
-  (Note: Portions of this README were generated with assistance from ChatGPT.)
-
-- Perenual API
-- OpenWeatherMap API
+- Perenual API: https://perenual.com/ 
+- OpenWeatherMap API: https://openweathermap.org/
+- Ant Design: https://ant.design/ 
+- shecodes.io
+- freecodecamp.org
+- geeksforgeeks.com
+- stackoverflow.com
 
 ## Contact
 Feel free to reach out to us if you have any questions or feedback.
