@@ -24,8 +24,8 @@ function getItem(label, key, icon, children) {
 
 const items = [
     getItem(<Link to='/dashboard'>Dashboard</Link >, '1', <HomeOutlined />),
-    getItem(<Link to='/my-plants'>My Plants</Link>, '2', <UserOutlined />),
     getItem(<Link to='/explore'>Explore</Link>, '3', <SearchOutlined />),
+    getItem(<Link to='/my-plants'>My Plants</Link>, '2', <UserOutlined />),
     getItem(<Link to='watering-log'>Watering Log</Link>, '4', <CalendarOutlined />),
     getItem(<Link to='settings'>Settings</Link>, '6', <SettingOutlined />),
 ];
