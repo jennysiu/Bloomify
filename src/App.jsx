@@ -17,10 +17,16 @@ import { MyPlantsProvider } from './contexts/ContextMyPlants';
 import { PlantProvider } from './contexts/PlantContext.jsx';
 import { SearchResultsProvider } from './contexts/ContextSearchRes.jsx';
 
+const siderStyle = {
+  backgroundColor: '#FAFCFA',
+  breakpoint: "md",
+  collapsedWidth: "10%",
+  defaultCollapsed: "true"
+}
 
 function App() {
 
-  // const [collapsed, setCollapsed] = useState(false); 
+  const [collapsed, setCollapsed] = useState(false); 
 
   // Import Layout components here
   const { Content, Sider } = Layout;
@@ -36,9 +42,17 @@ function App() {
             <LocationProvider>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
-                  <Sider 
-                  collapsible
-                  style={{ backgroundColor: '#FAFCFA' }}>
+                  <Sider
+                    breakpoint="lg"
+                    collapsedWidth="35px"
+                    onBreakpoint={(broken) => {
+                      // console.log(broken);
+                    }}
+                    onCollapse={(collapsed, type) => {
+                      // console.log(collapsed, type);
+                    }}
+                  collapsible={true} 
+                  style={siderStyle}>
                     <CustomNavBar />
                   </Sider>
                   <Layout>
