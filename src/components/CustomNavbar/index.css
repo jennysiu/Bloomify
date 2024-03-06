@@ -1,4 +1,5 @@
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #285521!important;
     color: #FEFEFE !important;
+    font-weight: bold !important;
 }
