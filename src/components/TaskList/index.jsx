@@ -41,7 +41,7 @@ const TaskList = ({ toDos, setToDos }) => {
 
     return (
         <Card 
-        title="Tasks List"
+        title="Plants to Water"
         className="taskListContainer"
         >
             <div className="inputSection">
