@@ -33,7 +33,6 @@ function App() {
         <ToDoProvider>
           <MyPlantsProvider>
             <LocationProvider>
-              <Layout style={{ minHeight: '100vh' }}>
 
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider
