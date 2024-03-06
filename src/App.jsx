@@ -37,7 +37,7 @@ function App() {
 
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider
-                    style={{backgroundColor: "#FAFCFA"}} 
+                    style={{backgroundColor: 'rgba(255, 255, 255, 0.515)'}} 
                     breakpoint="lg"
                     collapsedWidth="35px"
                   collapsible={true} 
@@ -60,6 +60,7 @@ function App() {
                       </Routes>
                     </Content>
                     <CustomFooter />
+                    </Layout>
                   </Layout>
               </Layout>
             </LocationProvider>

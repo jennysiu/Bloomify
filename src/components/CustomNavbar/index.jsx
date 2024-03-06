@@ -37,8 +37,7 @@ const CustomNavBar = () => {
                 defaultSelectedKeys={['1']} 
                 mode="inline" 
                 items={items}
-                style={{ backgroundColor: '#FAFCFA'}} 
-                />
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0)'}} />
     );
 };
 export default CustomNavBar;

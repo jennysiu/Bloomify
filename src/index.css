@@ -1,5 +1,5 @@
 :root {
-    --background-color: #235421;
+    --background-color: rgba(27, 55, 22, 0.5)
 }
 
 body {
@@ -7,7 +7,10 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: #000001;
-    background-color: var(--background-color);
+    background-image: url(./assets/images/plant-bckg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 h1  {
