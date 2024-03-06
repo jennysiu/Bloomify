@@ -60,6 +60,7 @@ function App() {
                       </Routes>
                     </Content>
                     <CustomFooter />
+                    </Layout>
                   </Layout>
               </Layout>
             </LocationProvider>

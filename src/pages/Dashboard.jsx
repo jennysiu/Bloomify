@@ -17,6 +17,7 @@ const layoutStyle = {
   backgroundColor: 'var(--background-color)',
   padding: 15,
   borderRadius: '1%'
+
 }
 
 const Dashboard = () => {
@@ -37,7 +38,7 @@ useEffect(() => {
     <>
       <Layout style={layoutStyle}>
       <h1>Welcome back {userName || 'Guest'}!</h1>
-      <h1>Welcome back!</h1>
+
         {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
         {/* Pass plants data to DashPlantCard */}
         <Row gutter={16} style={{ marginBottom: 16 }}>
