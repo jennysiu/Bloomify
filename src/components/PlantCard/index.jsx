@@ -18,4 +18,5 @@ function PlantCard( {plant, index} ) {
     )
 }
 
+
 export default PlantCard;
