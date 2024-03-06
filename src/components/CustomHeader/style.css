@@ -1,5 +1,5 @@
 .dashboardTitle {
-  font-family: "Pacifico", sans-serif;
+  font-family: "Pacifico", sans-serif !important;
   font-size: 84px;
   text-align: center;
   color: #B5D0B3;

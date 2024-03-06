@@ -35,10 +35,6 @@ function WateringLog() {
                     <div style={{ marginBottom: 16 }}> 
                     <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
                     </div>
-                    
-                    <div style={{ marginBottom: 16 }}>
-                    <DashSearchBar name={name} setName={setName} className="mb-16"/>
-                    </div>
                     <div style={{ marginBottom: 16 }}>
                     <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/> 
                     </div>
