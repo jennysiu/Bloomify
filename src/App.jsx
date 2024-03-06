@@ -17,13 +17,6 @@ import { MyPlantsProvider } from './contexts/ContextMyPlants';
 import { PlantProvider } from './contexts/PlantContext.jsx';
 import { SearchResultsProvider } from './contexts/ContextSearchRes.jsx';
 
-const siderStyle = {
-  backgroundColor: '#FAFCFA',
-  breakpoint: "md",
-  collapsedWidth: "10%",
-  defaultCollapsed: "true"
-}
-
 function App() {
 
   const [collapsed, setCollapsed] = useState(false); 
@@ -43,16 +36,11 @@ function App() {
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider
+                    style={{backgroundColor: "#FAFCFA"}} 
                     breakpoint="lg"
                     collapsedWidth="35px"
-                    onBreakpoint={(broken) => {
-                      // console.log(broken);
-                    }}
-                    onCollapse={(collapsed, type) => {
-                      // console.log(collapsed, type);
-                    }}
                   collapsible={true} 
-                  style={siderStyle}>
+                  >
                     <CustomNavBar />
                   </Sider>
                   <Layout>
