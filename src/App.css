@@ -1,6 +1,6 @@
 /*OVERRIDING ANTD ELEMENTS*/
 .ant-layout-sider-trigger {
-    background-color: #285521 !important;
+    background-color: #28552195 !important;
 }
 .ant-card-head {
     display: flex !important;
@@ -32,12 +32,10 @@
 }
 
 /*TODO: Decide what to do with the background*/
-/* .ant-layout {
-    /* background-color: #fff; */
-    /* background-image: url(./assets/images/plant-bckg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; */
-/* } */ 
+ .ant-layout {
+     background-color: rgba(255, 255, 255, 0.391); 
+    
+} 
 
 .ant-layout-content {
     font-family: 'Poppins';
@@ -49,7 +47,7 @@
 .ant-card {
     font-family: 'Poppins';
     font-weight: 300;
-    background-color: #FEFEFE;
+    background-color: #fefefebf;
     border: none;
     border-radius: 10px;
     text-align: center;

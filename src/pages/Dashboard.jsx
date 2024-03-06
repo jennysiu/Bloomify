@@ -17,6 +17,7 @@ const layoutStyle = {
   backgroundColor: 'var(--background-color)',
   padding: 15,
   borderRadius: '1%'
+
 }
 
 const Dashboard = () => {
