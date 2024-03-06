@@ -33,11 +33,10 @@ function App() {
         <ToDoProvider>
           <MyPlantsProvider>
             <LocationProvider>
-              <Layout style={{ minHeight: '100vh' }}>
 
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider
-                    style={{backgroundColor: 'rgba(255, 255, 255, 0.515)'}} 
+                    style={{backgroundColor: "#FAFCFA"}} 
                     breakpoint="lg"
                     collapsedWidth="35px"
                   collapsible={true} 
@@ -60,7 +59,6 @@ function App() {
                       </Routes>
                     </Content>
                     <CustomFooter />
-                    </Layout>
                   </Layout>
               </Layout>
             </LocationProvider>
