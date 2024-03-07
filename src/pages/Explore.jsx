@@ -22,7 +22,7 @@ function Explore() {
             <Row className="exploreContainer">
                 <Col span={16} className="exploreTitles">
                     <h1>Bloom Explorer</h1>
-                    <h2>Embark on a journey through the world of flora and find new additions to your plant sanctuary</h2>
+                    <h3>Embark on a journey through the world of flora and find new additions to your plant sanctuary</h3>
                 </Col>
                 <Col span={16} className="exploreSearch">
                     <SearchBar name={name} setName={setName} className="exploreSearchBar" />
