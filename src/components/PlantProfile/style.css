@@ -3,3 +3,27 @@
   max-height: 80vh;
   overflow-y: auto;
 }
+
+
+.plant-name {
+  margin: 0;
+  color: grey;
+}
+.scientific-name {
+  margin: 0;
+  padding: 0;
+}
+
+.plant-img {
+  margin: 3em 0;
+}
+
+.plant-profile-tabs {
+  margin: 2em 0;
+}
+
+.info-sub-label {
+  margin: 0;
+  padding: 0;
+  /* color: grey; */
+}
