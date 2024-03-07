@@ -33,7 +33,12 @@ const PlantOfTheDay = () => {
     }
 
 
-
+/**
+ * 
+ * @returns plant of the day details and stores in localstorage
+ * 
+ * Using recursion to ensure the plant of the day has an image
+ */
     function runOncePerDay() {
         if (!hasOneDayPassed()) return false;
 
