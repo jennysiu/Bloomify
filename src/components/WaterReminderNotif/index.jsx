@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 // internal imports
 import { ToDoContext, ToDoProvider } from '../../contexts/ContextsToDos';
+import "./style.css"
 
 const Context = React.createContext({
   name: 'Default',
