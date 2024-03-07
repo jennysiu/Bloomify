@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Row, Col, Layout } from 'antd';
+import { Row, Col, Layout, Flex } from 'antd';
 
 import TaskList from '../components/TaskList';
 import DashWaterLog from '../components/DashWaterLog';
@@ -35,41 +35,47 @@ const Dashboard = () => {
 
   return (
     <>
-      <Layout style={layoutStyle}>
-        <div
-          id="dashboard-container"
-           className='content-container'
-          >
-          <h1>Welcome back {userName || 'Guest'}!</h1>
+    <div id="dashboard-container"
+        className='content-container'>
+    <h1>Welcome back {userName || 'Guest'}!</h1>
+      <Flex sm={24} md={9} style={layoutStyle}  >
+          <Col sm= {24} md={15} style={{ marginLeft: 8, marginRight: 8 }}>
+            <Row gutter={16} style={{ marginBottom: 16 }}>
+              <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+                {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
 
-          {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
-          {/* Pass plants data to DashPlantCard */}
-          <Row gutter={16} style={{ marginBottom: 16 }}>
-            <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
-              {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
+                <DashPlantCard myPlants={myPlants} />
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+                <DashSearchBar />
+              </Col>
 
-              <DashPlantCard myPlants={myPlants} />
-            </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
-              <ToDoProvider>
-                <TaskList toDos={toDos} setToDos={setToDos} />
-              </ToDoProvider>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
-              <DashSearchBar />
-            </Col>
+              <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+                <PlantOfTheDay />
+              </Col>
 
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
-              <PlantOfTheDay />
-            </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
-              <WeatherWidget location={location} setLocation={setLocation} />
-            </Col>
-          </Row>
-        </div>
-      </Layout>
+            </Row>
+          </Col>
+
+          <Col sm={24} md={9} style={{ marginLeft: 8, marginRight: 8 }}>
+            <Row gutter={16} style={{ marginBottom: 16 }}>
+              <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+                <ToDoProvider>
+                  <TaskList toDos={toDos} setToDos={setToDos} />
+                </ToDoProvider>
+              </Col>
+            </Row>
+            <Row gutter={16}>
+              <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+                <WeatherWidget location={location} setLocation={setLocation} />
+              </Col>
+            </Row>
+          
+        </Col>
+      </Flex>
+      </div>
     </>
   );
 
