@@ -18,6 +18,7 @@ function Explore() {
 
     return (
         <>
+
     <Layout style={layoutStyle}>
             <Row className="exploreContainer">
                 <Col span={16} className="exploreTitles">

@@ -5,16 +5,17 @@
 }
 
 .link {
-  color: #000001;
+  color: var(--accent-yellow);
   margin: 1em 1.2em ;
 }
 
 .link:hover {
-  color: #285521;
+  color: white;
   font-weight: 600;
 }
 
 .text {
   align-self: flex-start;
   margin: 0;
+  color: var(--accent-yellow);
 }

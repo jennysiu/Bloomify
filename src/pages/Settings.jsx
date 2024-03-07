@@ -89,30 +89,32 @@ const Settings = () => {
   return (
     <>
     <Layout style={layoutStyle}>
+      <div className='content-container'>
       
-        <Flex align="center" justify="space-evenly">
-      <Row>
-      {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
-      <Card title={`Username: ${username} `} className="weatherCard" style={{marginRight: 20 }}>
-        <div className="searchSection">
-          <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
-        </div>
-      </Card>
-      {/* </Col> */}
+          <Flex align="center" justify="space-evenly">
+          <Row>
+            {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
+            <Card title={`Username: ${username} `} className="weatherCard" style={{marginRight: 20 }}>
+              <div className="searchSection">
+                <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
+              </div>
+            </Card>
+            {/* </Col> */}
 
-        <br></br>
-        {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
-      <LocationProvider>
-        <Card title={`Location: ${weatherData ? weatherData.name : 'Loading...'}`} className="weatherCard">
-          <div className="searchSection">
-            <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
-            <Button onClick={getUserLocation}>Use current location</Button>
-          </div>
-        </Card>
-      </LocationProvider>
-      {/* </Col> */}
-          </Row>
-          </Flex>
+              <br></br>
+              {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
+              <LocationProvider>
+              <Card title={`Location: ${weatherData ? weatherData.name : 'Loading...'}`} className="weatherCard">
+                <div className="searchSection">
+                  <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
+                  <Button onClick={getUserLocation}>Use current location</Button>
+                </div>
+              </Card>
+            </LocationProvider>
+            {/* </Col> */}
+            </Row>
+            </Flex>
+        </div>
       </Layout>
     </>
   );
