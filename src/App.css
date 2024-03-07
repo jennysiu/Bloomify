@@ -41,7 +41,7 @@
 .content-container {
     padding: 2em;
     border-radius: 1em;
-    background-color: #0707075b;
+    background-color: #2b2b2b74;
 }
 
 /* ANT CARDS */
@@ -57,9 +57,9 @@
 /* buttons */
 .ant-btn,
 .ant-btn span {
-    background-color: var(--main-green);
-    border: #6F936A;
-    color: var(--accent-yellow);
+    background-color: var(--main-green) !important;
+    border: transparent;
+    color: var(--off-white);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
