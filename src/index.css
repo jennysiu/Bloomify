@@ -41,6 +41,18 @@ h2, h3, h4 {
     margin: auto;
 }
 
+/* MY PLANTS PAGE */
+#my-plants-container .add-plant-button {
+    background-color: var(--accent-yellow) !important;
+}
+
+#add-plant-btn-container .ant-btn span {
+    background-color: var(--accent-yellow) !important;
+    color: var(--main-green) !important;
+    font-weight: bold;
+}
+
+
 /*WATER LOG PAGE*/
 /* .mb-16 {
     margin-bottom: 16px !important;
