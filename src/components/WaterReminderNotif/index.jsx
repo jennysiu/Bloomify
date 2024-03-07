@@ -24,9 +24,9 @@ const WaterReminderNotif = () => {
   const { toDos, setToDos } = useContext(ToDoContext); 
   // useState to store plants to be watered
   const [plantsToWaterTodayState, setPlantsToWaterTodayState] = useState([]);
+  // useRef to keep track of notifs to be displayed
+  const displayedNotifsRef = useRef(new Map());
 
-  // This useRef hook initializes displayedNotifications with an empty Set
-  // const displayedNotifications = useRef(new Set());
 
   // logic to filter the plant(s) that needs to be watered today
   useEffect(() => {
@@ -50,26 +50,36 @@ const WaterReminderNotif = () => {
     setPlantsToWaterTodayState(plantToWaterToday);
   }, [toDos])
 
+
   // trigger notification for wach plant that needs to be watered today
   useEffect(() => {
-  // tracker for notifs
-  const currentNotifKey = new Set();
-
     plantsToWaterTodayState.forEach(plant => {
-      const key = plant.id;
-
-      api.open({
-        message: 'Watering Reminder 💧',
-        description: `Your ${plant.plant} is due to be watered today!`,
-        duration: null
-      });
+      if (!displayedNotifsRef.current.has(plant.id)) {
+        const key = `plant_${plant.id}`;
+        api.open({
+          message: 'Watering Reminder 💧',
+          description: `Your ${plant.plant} is due to be watered today!`,
+          duration: null,
+          key: key,
+        });
+        displayedNotifsRef.current.set(plant.id, key);
+      }
     });
+    }, [plantsToWaterTodayState, api]);
 
-    // close notification once plant is marked as watered (and removed from list)
-    // todo: look into useRef() to keep track of notifs you have displayed, determine which to close and and prevent re-rendering 
-    // Close notifications for plants no longer in the list
+  useEffect(() => {
+  // Create a new Set from the current plant IDs for easier comparison
+  const currentPlantIds = new Set(plantsToWaterTodayState.map(plant => plant.id));
 
-  }, [plantsToWaterTodayState]);
+  // Iterate over the keys (plant IDs) in displayedNotifsRef
+  for (let [plantId, notifKey] of displayedNotifsRef.current.entries()) {
+    // If the currentPlantIds does not have a plantId, it means the plant has been watered and removed
+    if (!currentPlantIds.has(plantId)) {
+      api.destroy(notifKey); // Close the notification using Ant Design's API
+      displayedNotifsRef.current.delete(plantId); 
+    }
+  }
+}, [plantsToWaterTodayState, api]); // Depend on plantsToWaterTodayState to trigger this effect
 
   return (
     <>
