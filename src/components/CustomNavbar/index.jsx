@@ -14,7 +14,6 @@ import { Menu } from 'antd';
 
 // internal imports
 import './index.css'
-import image from "../../assets/images/leafe-icon.jpg"
 
 function getItem(label, key, icon, children) {
     return {

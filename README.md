@@ -36,9 +36,11 @@ The Dashboard brings together all the features of Bloomify in one handy place, s
 None - this is a web application that can be accessed via the browser.
 
 ## Usage
-To view the webpage, no installation is required you can access the live URL here: [https://bloomify-app.netlify.app/]
+To view the webpage, no installation is required, you can simply access the live URL here: https://bl00mify.netlify.app/
 
-Screenshots:[]
+Screenshot:
+![](./src/assets/images/screenshot.png)
+
 
 ## Tests
 Tests can be found in the src/__test__ folder, and uses React testing.
@@ -51,6 +53,9 @@ Tests can be found in the src/__test__ folder, and uses React testing.
 - Netlify
 - Perenual API
 - OpenWeatherMap API
+- Figma
+- Node.js
+- Dayjs
 - NPM Packages: Axios, Jest(?), FontAwesome Icons, Vite, Vitests, React-Router-Dom
 
 ## License
