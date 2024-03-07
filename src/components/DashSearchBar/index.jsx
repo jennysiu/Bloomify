@@ -12,7 +12,7 @@ import perenualFetch from '../../utils/perenualFetch'
 
 import './style.css'
 
-function DashSearchBar({name, setName}) {
+function DashSearchBar({ name, setName }) {
   /**
  * calling hooks from context file for storing dynamically changing user input
  * {Search} - ant design?
@@ -20,7 +20,7 @@ function DashSearchBar({name, setName}) {
  */
 
   const { searchResults, setSearchResults } = useContext(SearchResultsContext);
-  
+
   const { Search } = Input;
   let navigate = useNavigate();
 
@@ -32,17 +32,23 @@ function DashSearchBar({name, setName}) {
     }
   });
 
-
-  /**
-   * Passes user search into getPerenualNameResults() function
-   * and returns results as an object
-   */
+  /** 
+    * Passes user search into getPerenualNameResults() function
+    * and returns results as an object
+    */
   const onSearch = (value, _e, info) => {
     if (value) {
       perenualFetch.getPerenualNameResults(value)
         .then((res) => {
+          const data = res.data.data
 
-          setSearchResults(res.data)
+          //If plant ID is more than 3000, remove it from array
+          const filteredResults = data.filter(function (i) {
+            return i.id < 3000
+          })
+          console.log(filteredResults)
+          setSearchResults(filteredResults)
+
           navigate('/search-results')
         })
         .catch((err) => console.log(err));
@@ -59,10 +65,10 @@ function DashSearchBar({name, setName}) {
 
 
   return (
-    <Card 
-    className="dashSearchCard" 
-    bordered={false} 
-    title="Plant Finder"
+    <Card
+      className="dashSearchCard"
+      bordered={false}
+      title="Plant Finder"
     >
       <div className="dashSearch">
         <Search

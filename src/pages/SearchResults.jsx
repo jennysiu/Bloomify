@@ -57,7 +57,7 @@ const toggleNewPlantProfVisi = (isvisible) => {
         <div className='content-container'>
           <SearchBar name={name} setName={setName}/>
           <h1>Search Page</h1>
-          <h2>Search Results For:{resultsString}</h2>
+          
 
 
           {Array.isArray(searchResults) && searchResults.length > 0 ? (
