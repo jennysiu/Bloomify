@@ -63,12 +63,16 @@ function MyPlants() {
     return (
         <>
         <Layout style={layoutStyle}>
-            <div className='content-container'>
-                <Row>
+            <div 
+            id="my-plants-container"
+            className='content-container'>
+                <Row id="add-plant-btn-container" >
                     <Col span={24}>
                     <h1>My Plant Sanctuary</h1>
                     <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
-                        <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
+                        <Button 
+                        className="add-plant-button"
+                        onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
                     </Flex>
                     </Col>
                 </Row>

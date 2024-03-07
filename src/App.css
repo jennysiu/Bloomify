@@ -39,7 +39,7 @@
 
 /* content containers */
 .content-container {
-    padding: 2em;
+    /* padding: 2em; */
     border-radius: 1em;
     /* background-color: #d5d5d528; */
 }
@@ -122,7 +122,7 @@
 
 .ant-select-item-option-active,
 .ant-select-item-option-selected {
-    background-color: #6F936A !important;
+    background-color: var(--main-green) !important;
     color: #FEFEFE !important;
 }
 

@@ -42,6 +42,18 @@ h2, h3, h4 {
     max-width: 1200px;
 }
 
+/* MY PLANTS PAGE */
+#my-plants-container .add-plant-button {
+    background-color: var(--accent-yellow) !important;
+}
+
+#add-plant-btn-container .ant-btn span {
+    background-color: var(--accent-yellow) !important;
+    color: var(--main-green) !important;
+    font-weight: bold;
+}
+
+
 /*WATER LOG PAGE*/
 /* .mb-16 {
     margin-bottom: 16px !important;
@@ -71,4 +83,10 @@ h2, h3, h4 {
     padding-bottom: 20px;
     color: white;
     margin-bottom: 20px;
+}
+
+#search-message {
+    color: white;
+    /* font-size: 1.5em; */
+    font-weight: 400;
 }

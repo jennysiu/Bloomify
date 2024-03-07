@@ -54,7 +54,7 @@ function SearchBar({name, setName}) {
         })
         .catch((err) => console.log(err));
     } else {
-      console.log("enter a name first")
+      console.log("Enter a name first")
     }
   };
 
@@ -67,9 +67,9 @@ function SearchBar({name, setName}) {
 
   return (
     <Space direction="vertical">
-
-      <Search placeholder="Type plant name here..." onSearch={onSearch} onChange={handleInputChange} className="search" />
-      
+      <div id='search-bar-container'>
+        <Search placeholder="Type plant name here..." onSearch={onSearch} onChange={handleInputChange} className="search" />
+      </div>
     </Space>
   )
 };

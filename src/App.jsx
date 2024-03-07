@@ -36,11 +36,11 @@ function App() {
 
                 <Layout style={{ minHeight: '100vh' }}>
                   <Sider
-                    style={{backgroundColor: "#FAFCFA"}} 
+                    // style={{backgroundColor: "#FAFCFA"}} 
                     breakpoint="lg"
                     collapsedWidth="35px"
-                  collapsible={true} 
-                  >
+                    collapsible={true} 
+                    >
                     <CustomNavBar />
                   </Sider>
                   <Layout>
