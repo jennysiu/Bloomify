@@ -38,7 +38,8 @@ const Dashboard = () => {
       <Layout style={layoutStyle}>
         <div
           id="dashboard-container"
-          className='content-container'>
+           className='content-container'
+          >
           <h1>Welcome back {userName || 'Guest'}!</h1>
 
           {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
