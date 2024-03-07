@@ -40,7 +40,7 @@ const Dashboard = () => {
     <>
       <div id="dashboard-container"
         className='content-container'>
-        <h1>Welcome back {userName || 'Guest'}!</h1>
+        <h1 id='dash-header' >Welcome back {userName || 'Guest'}!</h1>
         <Flex style={layoutStyle}  >
           <Row sm={24}  >
             <Col sm={24} md={15} style={{ marginLeft: 8, marginRight: 8 }}>
