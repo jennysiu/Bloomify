@@ -54,36 +54,38 @@ const toggleNewPlantProfVisi = (isvisible) => {
   return (
     <>
       <Layout style={layoutStyle}>
-      <SearchBar name={name} setName={setName}/>
-      <h1>Search Page</h1>
-      <h2>Search Results For:{resultsString}</h2>
+        <div className='content-container'>
+          <SearchBar name={name} setName={setName}/>
+          <h1>Search Page</h1>
+          <h2>Search Results For:{resultsString}</h2>
 
 
-      {Array.isArray(searchResults) && searchResults.length > 0 ? (
-        <Row gutter={[16, 16]}>
-          
-          {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
-            .map((result, index) => (
-              <Col xs={24} sm={12} md={8} key={index}>
-                <a type="link" onClick={() => handlePlantClick(result)} style={{ cursor: 'pointer' }}>
-                  <PlantCard plant={result} />
-                </a>
-              </Col>
-            ))}
-        </Row>
-      ) : (
-        <h2>No search results found!.</h2>
-      )}
+          {Array.isArray(searchResults) && searchResults.length > 0 ? (
+            <Row gutter={[16, 16]}>
+              
+              {searchResults.filter((result) => result.default_image && result.default_image.regular_url && result.common_name)
+                .map((result, index) => (
+                  <Col xs={24} sm={12} md={8} key={index}>
+                    <a type="link" onClick={() => handlePlantClick(result)} style={{ cursor: 'pointer' }}>
+                      <PlantCard plant={result} />
+                  </a>
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <h2>No search results found!</h2>
+          )}
 
-      {/* plant profile modal (hidden at first) */}
-      {selectedPlantModal.isVisible && selectedPlantModal.plant && (
-        <NewPlantProfile 
-        selectedPlantModalVisible={selectedPlantModal.isVisible}
-        toggleNewPlantProfVisi={toggleNewPlantProfVisi}
-        selectedPlantModalPlant={selectedPlantModal.plant}
-        onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
-        />
-      )}
+          {/* plant profile modal (hidden at first) */}
+          {selectedPlantModal.isVisible && selectedPlantModal.plant && (
+            <NewPlantProfile 
+            selectedPlantModalVisible={selectedPlantModal.isVisible}
+            toggleNewPlantProfVisi={toggleNewPlantProfVisi}
+            selectedPlantModalPlant={selectedPlantModal.plant}
+            onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
+            />
+          )}
+        </div>
       </Layout>
     </>
     

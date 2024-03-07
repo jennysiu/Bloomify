@@ -1,3 +1,7 @@
+.task-list-sub-head {
+    margin-bottom: 0.7em;
+}
+
 .inputSection {
     display: flex;
     flex-direction: row;
@@ -7,6 +11,14 @@
 }
 
 .ant-list {
-    margin: 15px 0;
     border: none;
+}
+
+.ant-list-item {
+    display: inline !important;
+    padding: 0 !important;
+}
+
+.list-item {
+    margin: 1em 0;
 }

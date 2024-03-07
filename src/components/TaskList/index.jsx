@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Input, List, Checkbox, DatePicker, Space, Card} from 'antd';
+import { Button, Input, List, Checkbox, DatePicker, Space, Card, Col, Row} from 'antd';
 import { Typography } from 'antd';
 import './style.css';
 
@@ -41,7 +41,7 @@ const TaskList = ({ toDos, setToDos }) => {
 
     return (
         <Card 
-        title="Tasks List"
+        title="Plants to Water"
         className="taskListContainer"
         >
             <div className="inputSection">
@@ -62,30 +62,49 @@ const TaskList = ({ toDos, setToDos }) => {
                     Save
                 </Button>
             </div>
+            <Row>
+                <Col span={8}>
+                <h4 className='task-list-sub-head'>Plant</h4>
+                </Col>
+                <Col span={8}>
+                <h4 className='task-list-sub-head'>Date</h4>
+                </Col>
+                <Col span={8}>
+                <h4 className='task-list-sub-head'>Watered</h4>
+                </Col>
+            </Row>
             <List
                 className="todoList"
                 bordered
                 dataSource={toDos}
                 renderItem={(item, index) => (
                     <List.Item>
-                        <div className="listItemContent">
-                            {item.task && (
-                                <>
-                                    <Typography.Text strong>Plant to water: </Typography.Text>
-                                    {item.task}
-                                    <br />
-                                </>
-                            )}
-                            {item.date && (
-                                <>
-                                    <Typography.Text strong>Date to water: </Typography.Text>
-                                    {new Date(item.date).toLocaleDateString()}
-                                </>
-                            )}
+                        <div className='list-item'>
+                            <Row>
+                                <Col span={8}>
+                                    {item.task && (
+                                        <>
+                                            <Typography.Text strong> </Typography.Text>
+                                            {item.task}
+                                            <br />
+                                        </>
+                                    )}
+                                </Col>
+                                <Col span={8}>
+                                    {item.date && (
+                                        <>
+                                            <Typography.Text strong></Typography.Text>
+                                            {new Date(item.date).toLocaleDateString()}
+                                        </>
+                                    )}
+                                </Col>
+                                <Col span={8}>
+                                    <Button onClick={() => handleRemove(index)}>
+                                        Done
+                                    </Button>
+                                </Col>
+                            </Row>
                         </div>
-                        <Button onClick={() => handleRemove(index)}>
-                            Remove - watered!
-                        </Button>
                     </List.Item>
                 )}
             />
