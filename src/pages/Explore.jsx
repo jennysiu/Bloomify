@@ -18,17 +18,19 @@ function Explore() {
 
     return (
         <>
-    <Layout style={layoutStyle}>
-            <Row className="exploreContainer">
-                <Col span={16} className="exploreTitles">
-                    <h1>Bloom Explorer</h1>
-                    <h2>Embark on a journey through the world of flora and find new additions to your plant sanctuary</h2>
-                </Col>
-                <Col span={16} className="exploreSearch">
-                    <SearchBar name={name} setName={setName} className="exploreSearchBar" />
-                    <AdvancedSearch name={name} />
-                </Col>
-            </Row>
+        <Layout style={layoutStyle}>
+            <div className='content-container'>
+                <Row className="exploreContainer">
+                    <Col span={16} className="exploreTitles">
+                        <h1>Bloom Explorer</h1>
+                        <h2>Embark on a journey through the world of flora and find new additions to your plant sanctuary</h2>
+                    </Col>
+                    <Col span={16} className="exploreSearch">
+                        <SearchBar name={name} setName={setName} className="exploreSearchBar" />
+                        <AdvancedSearch name={name} />
+                    </Col>
+                </Row>
+            </div>
         </Layout>
         </>
     )

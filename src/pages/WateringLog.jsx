@@ -25,23 +25,25 @@ function WateringLog() {
         <>
         {/* Wrap the components in the Providers */}
         <ToDoProvider>
-        <LocationProvider>
-    <Layout style={layoutStyle}>
-            <Row gutter={16} style={{ marginBottom: 16 }}>
-                <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
-                    <Calendar toDos={toDos} setToDos={setToDos} />
-                </Col>
-                <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
-                    <div style={{ marginBottom: 16 }}> 
-                    <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
+            <LocationProvider>
+                <Layout style={layoutStyle}>
+                    <div className='content-container'>
+                        <Row gutter={16} style={{ marginBottom: 16 }}>
+                            <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
+                                <Calendar toDos={toDos} setToDos={setToDos} />
+                            </Col>
+                            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
+                                <div style={{ marginBottom: 16 }}> 
+                                <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
+                                </div>
+                                <div style={{ marginBottom: 16 }}>
+                                <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/> 
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
-                    <div style={{ marginBottom: 16 }}>
-                    <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/> 
-                    </div>
-                </Col>
-            </Row>
-            </Layout>
-        </LocationProvider>
+                </Layout>
+            </LocationProvider>
         </ToDoProvider>
         </>
     )

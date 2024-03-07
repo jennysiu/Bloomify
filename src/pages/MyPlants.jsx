@@ -63,46 +63,48 @@ function MyPlants() {
     return (
         <>
         <Layout style={layoutStyle}>
-            <Row>
+            <div className='content-container'>
+                <Row>
                     <Col span={24}>
-        <h1>My Plant Sanctuary</h1>
-        <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
-            <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
-        </Flex>
-                </Col>
+                    <h1>My Plant Sanctuary</h1>
+                    <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
+                        <Button onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
+                    </Flex>
+                    </Col>
                 </Row>
-<br></br>
-        <Row>
-            {/* add new plant modal */}
-            <AddPlantModal 
-            addPlantModal={addPlantModal} 
-            toggleAddPlantModal={toggleAddPlantModal}/>
-            {/* if no plants in collection then add button to click here to add new plants */}
-            <Col span={16}>
-                {/* dynamically render plant cards here */}
-                <Space direction="vertical" size={16}>
-                    <Space wrap size={16}>
-                        {renderPlantCards()}
-                    </Space>
-                    </Space>
-            </Col>
+                <br></br>
+                <Row>
+                    {/* add new plant modal */}
+                    <AddPlantModal 
+                    addPlantModal={addPlantModal} 
+                    toggleAddPlantModal={toggleAddPlantModal}/>
+                    {/* if no plants in collection then add button to click here to add new plants */}
+                    <Col span={16}>
+                        {/* dynamically render plant cards here */}
+                        <Space direction="vertical" size={16}>
+                        <Space wrap size={16}>
+                            {renderPlantCards()}
+                        </Space>
+                        </Space>
+                    </Col>
 
-            {/* plant profile hidden */}
-            {selectedPlantModal.isVisible && selectedPlantModal.plant && (
-                <PlantProfile 
-                selectedPlantModalVisible={selectedPlantModal.isVisible}
-                togglePlantProfileVisibility={togglePlantProfileVisibility}
-                selectedPlantModalPlant={selectedPlantModal.plant}
-                myPlants={myPlants}
-                setMyPlants={setMyPlants}
-                onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
-                />
-            )
-            }
-            <Col span={8}>
-                <TaskList toDos={toDos} setToDos={setToDos}/>
-            </Col>
-        </Row>
+                    {/* plant profile hidden */}
+                    {selectedPlantModal.isVisible && selectedPlantModal.plant && (
+                        <PlantProfile 
+                        selectedPlantModalVisible={selectedPlantModal.isVisible}
+                        togglePlantProfileVisibility={togglePlantProfileVisibility}
+                        selectedPlantModalPlant={selectedPlantModal.plant}
+                        myPlants={myPlants}
+                        setMyPlants={setMyPlants}
+                        onClose={() => setSelectedPlantModal({...selectedPlantModal, isVisible: false})}
+                        />
+                    )
+                    }
+                    <Col span={8}>
+                        <TaskList toDos={toDos} setToDos={setToDos}/>
+                    </Col>
+                </Row>
+            </div>
         </Layout>
         </>
     )

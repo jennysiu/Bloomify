@@ -37,12 +37,12 @@
     
 } 
 
-/* .ant-layout-content {
-    font-family: 'Karla';
-    font-weight: 400;
-    margin: 16px;
-    color: #000001;
-} */
+/* content containers */
+.content-container {
+    padding: 2em;
+    border-radius: 1em;
+    background-color: #0707075b;
+}
 
 /* ANT CARDS */
 .ant-card {
@@ -59,7 +59,7 @@
 .ant-btn span {
     background-color: var(--main-green);
     border: #6F936A;
-    color: #FEFEFE;
+    color: var(--accent-yellow);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
