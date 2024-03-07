@@ -138,15 +138,20 @@ function AdvancedSearch({ name }) {
             label: <><FilterOutlined /> More Filters  </>,
             children:
                 <Space direction="vertical">
-                    <Checkbox name='indoorChk' onChange={onChange}>Indoor</Checkbox>
-                    <Space direction="horizontal">
-                        <p>Watering</p>
-                        {selectWatering}
-                    </Space>
-                    <Space direction="horizontal">
-                        <p>Sunlight</p>
-                        {selectSunlight}
-                    </Space>
+                    <div id='advanced-search-options'>
+                        <Checkbox className='advanced-option'
+                        name='indoorChk' onChange={onChange}>Indoor</Checkbox>
+                        <Space className='advanced-option'
+                        direction="horizontal">
+                            <p>Watering</p>
+                            {selectWatering}
+                        </Space>
+                        <Space className='advanced-option'
+                        direction="horizontal">
+                            <p>Sunlight</p>
+                            {selectSunlight}
+                        </Space>
+                    </div>
                     <Button type="primary" onClick={onClick} >Advanced Search</Button>
                 </Space>,
         }
