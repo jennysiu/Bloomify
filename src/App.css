@@ -8,7 +8,7 @@
     justify-content: center !important;
     align-items: center;
     border-bottom: none !important;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Karla', sans-serif !important;
     font-size: 20px !important;
     font-weight: 500 !important;
     color: #333 !important;
@@ -33,29 +33,31 @@
 
 /*TODO: Decide what to do with the background*/
  .ant-layout {
-     background-color: rgba(255, 255, 255, 0.391); 
+    background-color: var(--background-color);
     
 } 
 
-.ant-layout-content {
-    font-family: 'Poppins';
+/* .ant-layout-content {
+    font-family: 'Karla';
     font-weight: 400;
     margin: 16px;
     color: #000001;
-}
+} */
 
+/* ANT CARDS */
 .ant-card {
-    font-family: 'Poppins';
+    font-family: 'Karla';
     font-weight: 300;
-    background-color: #fefefebf;
+    background-color: var(--off-white);
     border: none;
     border-radius: 10px;
     text-align: center;
 }
 
+/* buttons */
 .ant-btn,
 .ant-btn span {
-    background-color: #6F936A;
+    background-color: var(--main-green);
     border: #6F936A;
     color: #FEFEFE;
     font-weight: 300;
@@ -64,7 +66,7 @@
 
 .ant-btn:hover,
 .ant-btn:hover span {
-    background-color: #285521 !important;
+    background-color: #104840 !important;
     color: #FEFEFE;
     font-weight: 500;
     border: none;
@@ -80,21 +82,21 @@
     background-color: #FEFEFE !important;
     border: 1px solid #DAE7D9 !important;
     color: #333333 !important;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Karla', sans-serif !important;
 }
 
 .ant-select-item,
 .ant-select-selection-item,
 .ant-picker-panel,
 .ant-collapse-content {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Karla', sans-serif;
     color: #333 !important;
     text-align: center !important;
 }
 
 .ant-picker-now-btn {
     color: #6F936A !important;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Karla', sans-serif !important;
 }
 
 .ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-today {
