@@ -1,10 +1,14 @@
+.dashPlantCardContainer .ant-card-body {
+    padding-bottom: 2em !important;
+}
+
 .dashPlantCardContent {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     overflow-x: auto; 
-    height: 220px;
+    height: 20% !important;
     white-space: nowrap; 
     background-color: none !important;
     height: 200px
@@ -16,4 +20,5 @@
     margin: 0 15px;
     object-fit: cover;
     object-position: center;
+    border-radius: 1em;
 }
