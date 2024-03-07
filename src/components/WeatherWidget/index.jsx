@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'antd';
 import { LocationProvider, LocationContext } from '../../contexts/ContextLocation'
 import weatherAPIfetch from '../../utils/weatherAPIfetch';
-import { Input, Space, Card } from 'antd';
+import { Input, Space, Card, Row, Col } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import searchWeatherAPIfetch from '../../utils/searchWeatherAPIfetch';
 import './style.css'
@@ -87,16 +87,22 @@ return (
                     {weatherData ? (
                         <div className="weatherInfo">
                             <p className="weatherData">Showing weather in {weatherData.name}</p>
-                            <img
-                                src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-                                alt="Weather icon"
-                            />
-                            <div className="weatherResults">
-                                <p>Description: {weatherData.weather[0].description}</p>
-                            <p>Temperature: {weatherData.main.temp}°C</p>
-                                <p>Humidity: {weatherData.main.humidity}%</p>
-                                <p>Rain: {weatherData.rain}</p>
-                            </div>
+                            <Row>
+                                <Col span={12}>
+                                    <img
+                                        src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                                        alt="Weather icon"
+                                    />
+                                </Col>
+                                <Col span={12}>
+                                    <div className="weatherResults">
+                                        <p>Description: {weatherData.weather[0].description}</p>
+                                        <p>Temperature: {weatherData.main.temp}°C</p>
+                                        <p>Humidity: {weatherData.main.humidity}%</p>
+                                        <p>Rain: {weatherData.rain || "N/A"}</p>
+                                    </div>
+                                </Col>
+                            </Row>
                         </div>
                     ) : null}
                 </Card>
