@@ -37,20 +37,26 @@ const PlantOfTheDay = () => {
     function runOncePerDay() {
         if (!hasOneDayPassed()) return false;
 
-        plantDetailsFetch.getPlantDetails(Math.floor(Math.random() * 3000))
-            .then((data) => {
-
-                console.log(data.data)
-                localStorage.setItem("nameKey", data.data.common_name)
-                localStorage.setItem("descKey", data.data.type)
-                localStorage.setItem("imgKey", data.data.default_image.original_url)
-                window.location.reload();
-                localStorage.setItem("plantDataKey", JSON.stringify(data.data));
-                
-            })
-            .catch(() => {
-                console.error();
-            });
+        fetchDataFromServer()
+        function fetchDataFromServer(){
+            plantDetailsFetch.getPlantDetails(Math.floor(Math.random() * 3000))
+                .then((data) => {
+                    if(!data.data.default_image.original_url){
+                        console.log("no image found, trying again")
+                        fetchDataFromServer()
+                    }
+                    console.log(data.data.common_name)
+                    localStorage.setItem("nameKey", data.data.common_name)
+                    localStorage.setItem("descKey", data.data.type)
+                    localStorage.setItem("imgKey", data.data.default_image.original_url)
+                    window.location.reload();
+                    localStorage.setItem("plantDataKey", JSON.stringify(data.data));
+                    
+                })
+                .catch(() => {
+                    console.error();
+                });
+        }
     }
 
     const handlePlantClick = () => {

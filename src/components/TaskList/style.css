@@ -22,3 +22,7 @@
 .list-item {
     margin: 1em 0;
 }
+
+.task-list-container{
+    height: 500px;
+}

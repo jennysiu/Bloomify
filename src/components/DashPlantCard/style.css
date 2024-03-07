@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     overflow-x: auto; 
+    height: 220px;
     white-space: nowrap; 
     background-color: none !important;
     height: 200px

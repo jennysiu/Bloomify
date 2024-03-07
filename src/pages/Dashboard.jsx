@@ -24,7 +24,6 @@ const Dashboard = () => {
   const { toDos, setToDos } = useContext(ToDoContext);
   const { location, setLocation } = useContext(LocationContext)
   const {myPlants, setMyPlants} = useContext(MyPlantsContext);
-  console.log(myPlants)
   const [userName, setUserName] = useState('')
 
 useEffect(() => {

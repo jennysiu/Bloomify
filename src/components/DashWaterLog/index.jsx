@@ -6,6 +6,7 @@ const DashWaterLog = () => {
     const { token } = theme.useToken();
     const wrapperStyle = {
       width: 300,
+      height:500,
       border: `1px solid ${token.colorBorderSecondary}`,
       borderRadius: token.borderRadiusLG,
     };
