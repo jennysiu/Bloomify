@@ -10,4 +10,28 @@
 
 .ant-layout-sider-children {
     background-color: var(--off-white) !important;
+    }
+
+/* navbar img */
+/* #navbar-img {
+    display: block;
+    margin: 0 auto; 
+    width: 45%; 
+    border-radius: 2em;
+} */
+
+#navbar-title-icon {
+    font-family: "Pacifico", sans-serif !important;
+    font-size: 3em;
+    text-align: center;
+    color: #134e44;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 1px var(--accent-yellow);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ant-layout-sider-collapsed #navbar-img,
+.ant-layout-sider-collapsed #navbar-title-icon {
+    display: none;
 }

@@ -11,7 +11,10 @@ import {
     BookOutlined
 } from '@ant-design/icons';
 import { Menu } from 'antd';
+
+// internal imports
 import './index.css'
+import image from "../../assets/images/leafe-icon.jpg"
 
 function getItem(label, key, icon, children) {
     return {
@@ -32,11 +35,16 @@ const items = [
 
 const CustomNavBar = () => {
     return (
+        <>
+                {/* <img id='navbar-img' src={image} ></img> */}
+                <h1 id='navbar-title-icon'>B</h1>
                 <Menu 
                 defaultSelectedKeys={['1']} 
                 mode="inline" 
                 items={items}
                 style={{ backgroundColor: 'rgba(255, 255, 255, 0)'}} />
+            
+        </>
     );
 };
 export default CustomNavBar;
