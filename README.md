@@ -36,10 +36,10 @@ The Dashboard brings together all the features of Bloomify in one handy place, s
 None - this is a web application that can be accessed via the browser.
 
 ## Usage
-To view the webpage, no installation is required, you can simply access the live URL here: https://main--bl00mify.netlify.app/
+To view the webpage, no installation is required, you can simply access the live URL here: https://bl00mify.netlify.app/
 
-Screenshots:
-    Coming soon...
+Screenshot:
+![](./src/assets/images/screenshot.png)
 
 
 ## Tests
