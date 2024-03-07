@@ -16,7 +16,9 @@ import '../../src/index.css'
 const layoutStyle = {
   backgroundColor: 'var(--background-color)',
   padding: 15,
-  borderRadius: '1%'
+  justifyContent: "center",
+  
+
 
 }
 
@@ -38,7 +40,7 @@ const Dashboard = () => {
     <div id="dashboard-container"
         className='content-container'>
     <h1>Welcome back {userName || 'Guest'}!</h1>
-      <Flex sm={24} md={9} style={layoutStyle}  >
+      <Flex  style={layoutStyle}  >
           <Col sm= {24} md={15} style={{ marginLeft: 8, marginRight: 8 }}>
             <Row gutter={16} style={{ marginBottom: 16 }}>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
@@ -48,8 +50,8 @@ const Dashboard = () => {
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
-                <DashSearchBar />
+            <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
+                <WeatherWidget location={location} setLocation={setLocation} />
               </Col>
 
               <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ marginBottom: 16 }}>
@@ -59,7 +61,7 @@ const Dashboard = () => {
             </Row>
           </Col>
 
-          <Col sm={24} md={9} style={{ marginLeft: 8, marginRight: 8 }}>
+          <Col sm={24} md={8} style={{ marginLeft: 8, marginRight: 8 }}>
             <Row gutter={16} style={{ marginBottom: 16 }}>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
                 <ToDoProvider>
@@ -68,8 +70,8 @@ const Dashboard = () => {
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
-                <WeatherWidget location={location} setLocation={setLocation} />
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+                <DashSearchBar />
               </Col>
             </Row>
           
