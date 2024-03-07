@@ -18,3 +18,7 @@
     display: inline !important;
     padding: 0 !important;
 }
+
+.list-item {
+    margin: 1em 0;
+}

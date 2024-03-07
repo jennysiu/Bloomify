@@ -79,30 +79,32 @@ const TaskList = ({ toDos, setToDos }) => {
                 dataSource={toDos}
                 renderItem={(item, index) => (
                     <List.Item>
-                        <Row>
-                            <Col span={8}>
-                                {item.task && (
-                                    <>
-                                        <Typography.Text strong> </Typography.Text>
-                                        {item.task}
-                                        <br />
-                                    </>
-                                )}
-                            </Col>
-                            <Col span={8}>
-                                {item.date && (
-                                    <>
-                                        <Typography.Text strong></Typography.Text>
-                                        {new Date(item.date).toLocaleDateString()}
-                                    </>
-                                )}
-                            </Col>
-                            <Col span={8}>
-                                <Button onClick={() => handleRemove(index)}>
-                                    Done
-                                </Button>
-                            </Col>
-                        </Row>
+                        <div className='list-item'>
+                            <Row>
+                                <Col span={8}>
+                                    {item.task && (
+                                        <>
+                                            <Typography.Text strong> </Typography.Text>
+                                            {item.task}
+                                            <br />
+                                        </>
+                                    )}
+                                </Col>
+                                <Col span={8}>
+                                    {item.date && (
+                                        <>
+                                            <Typography.Text strong></Typography.Text>
+                                            {new Date(item.date).toLocaleDateString()}
+                                        </>
+                                    )}
+                                </Col>
+                                <Col span={8}>
+                                    <Button onClick={() => handleRemove(index)}>
+                                        Done
+                                    </Button>
+                                </Col>
+                            </Row>
+                        </div>
                     </List.Item>
                 )}
             />

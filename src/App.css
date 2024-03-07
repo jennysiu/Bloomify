@@ -1,7 +1,5 @@
 /*OVERRIDING ANTD ELEMENTS*/
-.ant-layout-sider-trigger {
-    background-color: #28552195 !important;
-}
+
 .ant-card-head {
     display: flex !important;
     flex-direction: row !important;
@@ -19,7 +17,7 @@
 }
 
 .anticon-filter {
-    color: #285521 !important;
+    color: var(--main-green) !important;
 }
 
 .ant-collapse-expand-icon {
@@ -27,7 +25,7 @@
 }
 
 .ant-collapse-expand-icon:hover {
-    color: #285521 !important;
+    color: var(--main-green) !important;
     font-weight: 500 !important;
 }
 
@@ -100,18 +98,18 @@
 }
 
 .ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-today {
-    border-color: #285521 !important;
+    border-color: var(--main-green) !important;
     background-color: #333 !important;
 }
 
 .ant-picker-month-btn:hover,
 .ant-picker-year-btn:hover {
-    color: #285521 !important;
+    color: var(--main-green) !important;
 }
 
 .ant-picker-panel:hover,
 .ant-picker-now-btn:hover {
-    color: #285521 !important;
+    color: var(--main-green) !important;
     font-weight: 500 !important;
 }
 
@@ -148,7 +146,7 @@
 
 .ant-radio-button-wrapper-checked {
     background-color: #DAE7D9 !important;
-    color: #285521 !important;
+    color: var(--main-green) !important;
     font-weight: 500;
 }
 
@@ -169,11 +167,11 @@
 }
 
 .ant-checkbox-inner {
-    border-color: #285521 !important;
+    border-color: var(--main-green) !important;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: #285521 !important;
+    background-color: var(--main-green) !important;
     color: #FEFEFE !important;
 }
 

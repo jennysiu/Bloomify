@@ -1,5 +1,13 @@
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: #285521!important;
+    background-color: var(--main-green)!important;
     color: #FEFEFE !important;
     font-weight: bold !important;
+}
+
+.ant-layout-sider-trigger {
+    background-color: #0c4138 !important;
+}
+
+.ant-layout-sider-children {
+    background-color: var(--off-white) !important;
 }
