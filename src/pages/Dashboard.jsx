@@ -17,10 +17,6 @@ const layoutStyle = {
   backgroundColor: 'var(--background-color)',
   padding: 15,
   justifyContent: "center",
-
-
-
-
 }
 
 const Dashboard = () => {
@@ -29,6 +25,7 @@ const Dashboard = () => {
   const { myPlants, setMyPlants } = useContext(MyPlantsContext);
   const [userName, setUserName] = useState('')
   const [name, setName] = useState('')
+  
   useEffect(() => {
     const storageUserName = localStorage.getItem('username')
     if (storageUserName) {
