@@ -68,7 +68,7 @@ function SearchBar({name, setName}) {
   return (
     <Space direction="vertical">
 
-      <Search placeholder="Search for Plant" onSearch={onSearch} onChange={handleInputChange} className="search" />
+      <Search placeholder="Type plant name here..." onSearch={onSearch} onChange={handleInputChange} className="search" />
       
     </Space>
   )
