@@ -33,6 +33,12 @@ h2, h3, h4 {
 }
 
 /* DASHBOARD PAGE */
+
+#dash-header {
+    margin: 0 1.5em;
+}
+
+
 #dashboard-container {
     /* display: flex; */
     /* justify-content: center; */
