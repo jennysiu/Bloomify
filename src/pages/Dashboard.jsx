@@ -28,7 +28,7 @@ const Dashboard = () => {
   const { location, setLocation } = useContext(LocationContext)
   const { myPlants, setMyPlants } = useContext(MyPlantsContext);
   const [userName, setUserName] = useState('')
-
+  const [name, setName] = useState('')
   useEffect(() => {
     const storageUserName = localStorage.getItem('username')
     if (storageUserName) {
@@ -42,7 +42,7 @@ const Dashboard = () => {
         className='content-container'>
         <h1>Welcome back {userName || 'Guest'}!</h1>
         <Flex style={layoutStyle}  >
-          <Row sm={24} md={24} >
+          <Row sm={24}  >
             <Col sm={24} md={15} style={{ marginLeft: 8, marginRight: 8 }}>
               <Row gutter={16} style={{ marginBottom: 16 }}>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
@@ -73,7 +73,7 @@ const Dashboard = () => {
               </Row>
               <Row gutter={16}>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
-                  <DashSearchBar />
+                  <DashSearchBar name={name} setName={setName}/>
                 </Col>
               </Row>
 
