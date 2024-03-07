@@ -70,17 +70,7 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
     onCancel={handleClose}
     width={600}
     footer={[
-      // <Popconfirm
-      // key="add-plant"
-      // title="Add Plant"
-      // description="Do you want to add this plant to your sanctuary?"
-      // onConfirm={handleAddPlant}
-      // onCancel={() => console.log("Canceled removal")}
-      // okText="Yes, add plant"
-      // cancelText="No"
-      // >
       <Button key="popconfirm" type="primary" onClick={() => handleAddPlant(plantData)}>Add plant to My Sanctuary </Button>,
-      // </Popconfirm>,
       <Button key="submit" type="primary" onClick={handleClose}>
       Close
       </Button>

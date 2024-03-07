@@ -9,12 +9,6 @@ function AddPlantModal( {addPlantModal, toggleAddPlantModal} ) {
 
   const navigate = useNavigate();
 
-  // plant variable for dev testing
-  const plant = {
-    name: "Fiddle Leaf Fig Tree",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicvOgUqADLbz5MRj1Xgn0Z-RwzLrc3ZTnyQ&usqp=CAU"
-  } 
-
   const visitExplorePage = () => {
     toggleAddPlantModal(false);
     // redirect to Explore page
