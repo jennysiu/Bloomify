@@ -40,7 +40,7 @@ function MyPlants() {
             {myPlants.map((plant, index) => {
                 return (
                 <a type="link" onClick={() => handlePlantClick(plant)} key={index} style={{ cursor: 'pointer' }}>
-                    <PlantCard plant={plant}></PlantCard>
+                    <PlantCard plant={plant} style={{height: "300px", width: "250px"}}></PlantCard>
                 </a>
                 );
             })}        
@@ -100,7 +100,7 @@ function MyPlants() {
                         />
                     )
                     }
-                    <Col span={8}>
+                    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                         <TaskList toDos={toDos} setToDos={setToDos}/>
                     </Col>
                 </Row>

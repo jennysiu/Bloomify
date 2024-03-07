@@ -40,7 +40,7 @@ const Settings = () => {
   useEffect(() => {
     const handleStorage = () => {
 
-      const storedUsername = localStorage.getItem('username');
+      const storedUsername = localStorage.getItem('username') ?? "";
 
       setUsername(storedUsername)
       
@@ -88,36 +88,43 @@ const Settings = () => {
 
   return (
     <>
-    <Layout style={layoutStyle}>
-      <div className='content-container'>
-      
-          <Flex align="center" justify="space-evenly">
+      <Layout style={layoutStyle}>
+        <Flex align="center" justify="space-evenly">
           <Row>
-            {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
-            <Card title={`Username: ${username} `} className="weatherCard" style={{marginRight: 20 }}>
-              <div className="searchSection">
-                <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
-              </div>
-            </Card>
-            {/* </Col> */}
-
-              <br></br>
-              {/* <Col xs={24} sm={24} md={16} lg={16} xl={16}> */}
-              <LocationProvider>
-              <Card title={`Location: ${weatherData ? weatherData.name : 'Loading...'}`} className="weatherCard">
+           
+              <Card className="weatherCard" style={{ marginRight: 20 }}>
+                <div>
+                  <h3>Username: </h3>
+                  <p>{username}</p>
+                </div>
                 <div className="searchSection">
-                  <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
-                  <Button onClick={getUserLocation}>Use current location</Button>
+                  <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
                 </div>
               </Card>
-            </LocationProvider>
-            {/* </Col> */}
-            </Row>
-            </Flex>
-        </div>
+            
+
+            <br></br>
+
+            
+              <LocationProvider>
+                <Card className="weatherCard">
+                  <div>
+                    <h3>Location: </h3>
+                    <p>{weatherData ? weatherData.name : ''}</p>
+                  </div>
+                  <div className="searchSection">
+                    <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
+                    <Button onClick={getUserLocation}>Use current location</Button>
+                  </div>
+                </Card>
+              </LocationProvider>
+           
+          </Row>
+        </Flex>
       </Layout>
     </>
   );
 };
+
 
 export default Settings;
