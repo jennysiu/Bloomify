@@ -1,11 +1,12 @@
 // show option to retreive user name
 // show option for users to input location 
 
-import { Input, Button, Card, Layout, Row, Flex } from 'antd';
+import { Input, Button, Card, Layout, Row, Col, Flex } from 'antd';
 import React, { useState, useEffect, useContext } from 'react';
 import { LocationContext, LocationProvider } from '../contexts/ContextLocation';
 import searchWeatherAPIfetch from '../utils/searchWeatherAPIfetch';
 import weatherAPIfetch from '../utils/weatherAPIfetch';
+
 const { Search } = Input;
 
 // Basic page CSS
@@ -15,15 +16,20 @@ const layoutStyle = {
   borderRadius: '1%'
 }
 
-const userNameSearch = (values) => {
-  localStorage.setItem('username', values);
-  console.log('Username submitted:', values);
-};
 
 const Settings = () => {
   const { setLocation } = useContext(LocationContext); 
 
   const [weatherData, setWeatherData] = useState(null);
+
+  const [username, setUsername] = useState('')
+
+
+  const userNameSearch = (values) => {
+    localStorage.setItem('username', values);
+    setUsername(values)
+    console.log('Username submitted:', values);
+  };
 
   const onSearch = (value) => {
     if (value.trim !== '') {
@@ -33,6 +39,10 @@ const Settings = () => {
 
   useEffect(() => {
     const handleStorage = () => {
+
+      const storedUsername = localStorage.getItem('username') ?? "";
+
+      setUsername(storedUsername)
       
       const location = JSON.parse(localStorage.getItem('location'));
       
@@ -78,28 +88,43 @@ const Settings = () => {
 
   return (
     <>
-    <Layout style={layoutStyle}>
+      <Layout style={layoutStyle}>
         <Flex align="center" justify="space-evenly">
-      <Row>
-      <Card title="Username" className="weatherCard" style={{marginRight: 20 }}>
-        <div className="searchSection">
-          <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
-        </div>
-      </Card>
-        <br></br>
-      <LocationProvider>
-        <Card title="Location" className="weatherCard">
-          <div className="searchSection">
-            <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
-            <Button onClick={getUserLocation}>Use current location</Button>
-          </div>
-        </Card>
-      </LocationProvider>
+          <Row>
+           
+              <Card className="weatherCard" style={{ marginRight: 20 }}>
+                <div>
+                  <h3>Username: </h3>
+                  <p>{username}</p>
+                </div>
+                <div className="searchSection">
+                  <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
+                </div>
+              </Card>
+            
+
+            <br></br>
+
+            
+              <LocationProvider>
+                <Card className="weatherCard">
+                  <div>
+                    <h3>Location: </h3>
+                    <p>{weatherData ? weatherData.name : ''}</p>
+                  </div>
+                  <div className="searchSection">
+                    <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
+                    <Button onClick={getUserLocation}>Use current location</Button>
+                  </div>
+                </Card>
+              </LocationProvider>
+           
           </Row>
-          </Flex>
+        </Flex>
       </Layout>
     </>
   );
 };
+
 
 export default Settings;

@@ -6,6 +6,7 @@
     overflow-x: auto; 
     white-space: nowrap; 
     background-color: none !important;
+    height: 200px
 }
 
 .dashPlantCardContent img {

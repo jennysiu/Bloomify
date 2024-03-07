@@ -21,29 +21,30 @@ function WateringLog() {
     const { location, setLocation } = useContext(LocationContext)
     const [name, setName] = useState('');
 
-return (
-    <>
-    {/* Wrap the components in the Providers */}
-    <ToDoProvider>
-    <LocationProvider>
-<Layout style={layoutStyle}>
-        <Row gutter={16} style={{ marginBottom: 16 }}>
-            <Col span={16}>
-                <Calendar toDos={toDos} setToDos={setToDos} />
-            </Col>
-            <Col span={8}>
-                <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
-                <br></br>
-                <DashSearchBar name={name} setName={setName} className="mb-16"/>
-                <br></br>
-                <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/>
-            </Col>
-        </Row>
-        </Layout>
-    </LocationProvider>
-    </ToDoProvider>
-    </>
-)
-}
+    return (
+        <>
+        {/* Wrap the components in the Providers */}
+        <ToDoProvider>
+        <LocationProvider>
+    <Layout style={layoutStyle}>
+            <Row gutter={16} style={{ marginBottom: 16 }}>
+                <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
+                    <Calendar toDos={toDos} setToDos={setToDos} />
+                </Col>
+                <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
+                    <div style={{ marginBottom: 16 }}> 
+                    <TaskList toDos={toDos} setToDos={setToDos} className="mb-16" />
+                    </div>
+                    <div style={{ marginBottom: 16 }}>
+                    <WeatherWidget location={location} setLocation={setLocation} className="mb-16"/> 
+                    </div>
+                </Col>
+            </Row>
+            </Layout>
+        </LocationProvider>
+        </ToDoProvider>
+        </>
+    )
+    }
 
 export default WateringLog;
