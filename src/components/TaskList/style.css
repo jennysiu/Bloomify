@@ -22,3 +22,8 @@
 .list-item {
     margin: 1em 0;
 }
+
+.taskListContainer{
+    height: 460px;
+    
+}

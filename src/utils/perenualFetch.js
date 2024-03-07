@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = `sk-IhFE65e636f07b1824461`;
+const API_KEY = `sk-2KiZ65dfa09c6ebac4396`;
 
 let resString = "test"
 /**
