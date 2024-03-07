@@ -18,6 +18,7 @@ const layoutStyle = {
   padding: 15,
   justifyContent: "center",
   
+  
 
 
 }
