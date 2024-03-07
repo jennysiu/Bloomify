@@ -37,32 +37,33 @@ useEffect(() => {
   return (
     <>
       <Layout style={layoutStyle}>
-        <div className='content-container'>
+        <div 
+        id="dashboard-container"
+        className='content-container'>
           <h1>Welcome back {userName || 'Guest'}!</h1>
           
             {/* need to pass plant data from ContextPlantData but we can only set this up once searchResults is ready */}
             {/* Pass plants data to DashPlantCard */}
-            <Row gutter={16} style={{ marginBottom: 16 }}>
+          <Row gutter={16} style={{ marginBottom: 16 }}>
             <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
               {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
               
                 <DashPlantCard myPlants = {myPlants} />
-              
             </Col>
-            <Col xs={24} sm={24} md={12} lg={8} xl={8} style={{ marginBottom: 16 }}>
+            <Col xs={24} sm={24} md={12} lg={6} xl={8} style={{ marginBottom: 16 }}>
               <ToDoProvider>
                 <TaskList toDos={toDos} setToDos={setToDos} />
               </ToDoProvider>
             </Col>
           </Row>
           <Row gutter={16}>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
+            <Col xs={24} sm={24} md={8} lg={6} xl={8} style={{ marginBottom: 16 }}>
               <WeatherWidget location={location} setLocation={setLocation} />
             </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
+            <Col xs={24} sm={24} md={6} lg={6} xl={8} style={{ marginBottom: 16 }}>
               <PlantOfTheDay />
             </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginBottom: 16 }}>
+            <Col xs={24} sm={24} md={6} lg={6} xl={8} style={{ marginBottom: 16 }}>
               <DashSearchBar />
             </Col>
           </Row>
