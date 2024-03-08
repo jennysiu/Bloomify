@@ -1,17 +1,25 @@
-import { render, screen, userEvent} from '@testing-library/react';
+import { render, screen, userEvent, waitFor} from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
 import MyPlants from '../../pages/MyPlants'
 import {MyPlantsProvider} from "../../contexts/ContextMyPlants"
+import { ToDoProvider } from '../../contexts/ContextsToDos'
+import { LocationProvider } from '../../contexts/ContextLocation'
 
 
 // COMPONENTS RENDERING
 describe('MyPlants page', () => {
   it('my plants page renders correctly', () => {
     const { getByText } = render(
-    <BrowserRouter>
-      <MyPlants />;
-    </BrowserRouter>
+      <BrowserRouter>
+        <LocationProvider>
+          <ToDoProvider>
+            <MyPlantsProvider>
+              <MyPlants />
+            </MyPlantsProvider>
+          </ToDoProvider>
+        </LocationProvider>
+      </BrowserRouter>
     );
     expect(getByText('My Plant Sanctuary')).toBeTruthy();
     // Add more assertions here to check for the presence of initial plants
@@ -19,17 +27,24 @@ describe('MyPlants page', () => {
 
   it("does not render PlantCard component when myPlantsArray is empty", () => {
     render(
-      <MyPlantsProvider value={ {myPlantsArray: []} }>
-        <MyPlants />
-      </MyPlantsProvider>
+      <BrowserRouter>
+        <LocationProvider>
+          <ToDoProvider>
+            <MyPlantsProvider value={{ myPlants: [] }}>
+              <MyPlants />
+            </MyPlantsProvider>
+          </ToDoProvider>
+        </LocationProvider>
+      </BrowserRouter>
     );
 
     const PlantCard = screen.queryAllByTestId('plant-card');
     expect(PlantCard).toHaveLength(0);
   });
+})
 
-  // TODO: i think this one is not yet passing because context not fully setup for myPlants
-  // it("PlantCard component renders when plants are added to myPlantsArray", () => {
+  // TODO: not passing yet
+  // it("PlantCard component renders when plants are added to myPlantsArray", async () => {
   //   // create mock plants
   //   const mockPlants = [
   //     {id: 1, commonName: "Rose", scientificName: "Rosa", imageUrl: "https://www.google.com"},
@@ -38,18 +53,23 @@ describe('MyPlants page', () => {
   //   ]
     
   //   render(
-  //     <MyPlantsProvider value={ {myPlantsArray: mockPlants} }>
-  //       <MyPlants />
-  //     </MyPlantsProvider>
+  //     <BrowserRouter>
+  //       <LocationProvider>
+  //         <ToDoProvider>
+  //           <MyPlantsProvider value={ {myPlants: mockPlants}}>
+  //             <MyPlants />
+  //           </MyPlantsProvider>
+  //         </ToDoProvider>
+  //       </LocationProvider>
+  //     </BrowserRouter>
   //   );
 
-  //   const PlantCard = screen.queryAllByTestId('plant-card');
-  //   expect(PlantCard).toHaveLength(mockPlants.length);
-    
+  //   const plantCard =  await screen.findAllByTestId('plant-card');
+  //   expect(plantCard).toHaveLength(mockPlants.length);
   // });
 
   // USER INTERACTION
-  // todo: i think this will only test once context is set up
+  // todo: not passing yet
 //   it("clicking on a PlantCard opens the PlantProfileModal", async () => {
  
 //     // create mock plants

@@ -13,7 +13,7 @@ function PlantCard( {plant, index, style} ) {
 
     return (
         <>
-        <div className='plant-car-container'>
+        <div data-testid="plant-card" className='plant-car-container'>
             <Card className="plant-card" style={style}>
                 <img 
                 className='plant-card-img'
