@@ -60,18 +60,18 @@ After installing the dependencies, you can run the tests with the following comm
 - Ant Design
 - React
 - Netlify
-- Perenual API
+- Perenual APIs
 - OpenWeatherMap API
 - Figma
 - Node.js
 - Dayjs
-- NPM Packages: Axios, Jest(?), FontAwesome Icons, Vite, Vitests, React-Router-Dom
+- NPM Packages: Axios, FontAwesome Icons, Vite, Vitest, React-Router-Dom
 
 ## License
 Licensed under the MIT License.
 
 ## Acknowledgments
-- Perenual API: https://perenual.com/ 
+- Perenual APIs: https://perenual.com/ 
 - OpenWeatherMap API: https://openweathermap.org/
 - Ant Design: https://ant.design/ 
 - shecodes.io
