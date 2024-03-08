@@ -56,10 +56,10 @@ function PlantProfile({ selectedPlantModalVisible, togglePlantProfileVisibility,
         <h1 className='plant-name'>{plantData.common_name.charAt(0).toUpperCase() + plantData.common_name.slice(1)}</h1>
         <h3 className='scientific-name'>({plantData.scientific_name})</h3>
       <Row>
-        <Col span={12}>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <img src={plantData.default_image.small_url} alt={`Picture of ${plantData.common_name} plant`} className="plant-img" style={{ maxWidth: '100%', borderRadius: '2%' }} />
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <Tabs
               className='plant-profile-tabs'
               defaultActiveKey="1"
