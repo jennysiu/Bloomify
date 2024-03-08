@@ -43,7 +43,16 @@ Screenshot:
 
 
 ## Tests
-Tests can be found in the src/__test__ folder, and uses React testing.
+Tests can be found in the src/__test__ folder, and uses Vitest.
+
+To run the test suite, ensure you have all project dependencies installed. If you haven't installed the dependencies yet, run:
+
+(npm install)
+
+After installing the dependencies, you can run the tests with the following command:
+
+(npm run test)
+
 
 ## Technologies Used
 - HTML5
@@ -51,18 +60,18 @@ Tests can be found in the src/__test__ folder, and uses React testing.
 - Ant Design
 - React
 - Netlify
-- Perenual API
+- Perenual APIs
 - OpenWeatherMap API
 - Figma
 - Node.js
 - Dayjs
-- NPM Packages: Axios, Jest(?), FontAwesome Icons, Vite, Vitests, React-Router-Dom
+- NPM Packages: Axios, FontAwesome Icons, Vite, Vitest, React-Router-Dom
 
 ## License
 Licensed under the MIT License.
 
 ## Acknowledgments
-- Perenual API: https://perenual.com/ 
+- Perenual APIs: https://perenual.com/ 
 - OpenWeatherMap API: https://openweathermap.org/
 - Ant Design: https://ant.design/ 
 - shecodes.io
@@ -74,7 +83,11 @@ Licensed under the MIT License.
 Feel free to reach out to us if you have any questions or feedback.
 
 Jenny Siu / [Email](jenny.siu79@gmail.com) / [LinkedIn](https://www.linkedin.com/in/jenny-siu-534576156/)
+
 Laura Kane / [Email](laurakanesocials@gmail.com) 
+
 Davou Jobbi / 
+
 Ahmed Ibrahim / 
+
 Adrianna Derkacz / 
