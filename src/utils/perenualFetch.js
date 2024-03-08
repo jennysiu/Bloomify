@@ -1,10 +1,14 @@
 import axios from 'axios';
 
+
 // js
 // const API_KEY = `sk-BynQ65ea04fbcdce64496`;
 
 // lk
-const API_KEY = `sk-LeEN65eb5b0a9e6064509`;
+// const API_KEY = `sk-LeEN65eb5b0a9e6064509`;
+
+const API_KEY = `sk-wcYG65e1ee80c70214408`;
+
 
 let resString = "test"
 /**
