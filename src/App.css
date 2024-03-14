@@ -62,29 +62,28 @@
 /* buttons */
 .ant-btn,
 .ant-btn span {
-    background-color: var(--main-green) !important;
-    border: transparent;
-    color: var(--off-white);
+    background-color: white !important;
+    /* border: solid (--light-grey); */
+    color: var(--light-grey);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ant-btn:hover,
 .ant-btn:hover span {
-    background-color: #104840 !important;
-    color: #FEFEFE;
+    /* background-color: #104840 !important; */
+    color: var(--accent-green);
     font-weight: 500;
-    border: none;
 }
 
 /*TODO: Identify and remove the glow effect/animation*/
 
-.ant-input,
+/* .ant-input,
 .ant-picker,
 .ant-select-selector,
 .ant-radio-button-wrapper,
 .ant-collapse {
-    background-color: #FEFEFE !important;
+    background-color: var(--off-white) !important;
     border: 1px solid #DAE7D9 !important;
     color: #333333 !important;
     font-family: 'Karla', sans-serif !important;
@@ -96,9 +95,9 @@
 .ant-collapse-content {
     font-family: 'Karla', sans-serif;
     color: #333 !important;
-    text-align: center !important;
+    text-align: center !important; */
 }
-
+/* 
 .ant-picker-now-btn {
     color: #6F936A !important;
     font-family: 'Karla', sans-serif !important;
@@ -107,20 +106,20 @@
 .ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-today {
     border-color: var(--main-green) !important;
     background-color: #333 !important;
-}
+} */
 
 .ant-picker-month-btn:hover,
 .ant-picker-year-btn:hover {
-    color: var(--main-green) !important;
+    /* color: var(--main-green) !important; */
 }
 
 .ant-picker-panel:hover,
 .ant-picker-now-btn:hover {
-    color: var(--main-green) !important;
-    font-weight: 500 !important;
+    /* color: var(--main-green) !important;
+    font-weight: 500 !important; */
 }
 
-.ant-select-item-option-active,
+/* .ant-select-item-option-active,
 .ant-select-item-option-selected {
     background-color: var(--main-green) !important;
     color: #FEFEFE !important;
@@ -136,8 +135,8 @@
 .ant-select-dropdown-menu-item-active:hover {
     background-color: #6F936A !important;
     color: #FEFEFE !important;
-}
-
+} */
+/* 
 .ant-input:hover,
 .ant-picker:hover,
 .ant-select-selector:hover {
@@ -155,9 +154,9 @@
     background-color: #DAE7D9 !important;
     color: var(--main-green) !important;
     font-weight: 500;
-}
+} */
 
-.ant-radio-button-wrapper::before,
+/* .ant-radio-button-wrapper::before,
 .ant-radio-button-wrapper-checked::before {
     background-color: #DAE7D9 !important;
     border-color: #DAE7D9 !important; 
@@ -179,7 +178,7 @@
 
 .ant-checkbox-checked .ant-checkbox-inner {
     background-color: var(--main-green) !important;
-    color: #FEFEFE !important;
+    color: #FEFEFE !important; */
 }
 
 /* TODO: Task List component's calendar - finish styling */

@@ -17,6 +17,7 @@ import { MyPlantsContext } from './contexts/ContextMyPlants';
 import { MyPlantsProvider } from './contexts/ContextMyPlants';
 import { PlantProvider } from './contexts/PlantContext.jsx';
 import { SearchResultsProvider } from './contexts/ContextSearchRes.jsx';
+import DashSearchBar from './components/DashSearchBar/index.jsx';
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
                   </Sider>
                   <Layout>
                     <WaterReminderNotif />
-                    <CustomHeader />
+                    {/* <CustomHeader /> */}
                     <Content>
                       <Routes>
                         <Route path='' element={< Dashboard />} />

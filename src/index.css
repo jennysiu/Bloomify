@@ -1,11 +1,9 @@
 /* define root colours here  */
 :root {
-    /* --background-color: #0a6657; */
-    --main-green: #13695b;
-    --accent-yellow: #ffbb25;
-    --accent-purple: #a4006b;
-    --shadow-grey: #7a6a51;
+    --black:  #212121;
+    --light-grey:  #7b7a7a;
     --off-white: #FAF9F6;
+    --accent-green: #86d170;
     --body-font: "Karla", sans-serif;
 }
 
@@ -13,9 +11,8 @@ body {
     margin: 0;
     font-family: "Karla", sans-serif;
     font-weight: 300;
-    color: #000001;
-    background-color: var(--main-green);
-    /* background-image: url(./assets/images/plant-bckg.jpg); */
+    color: var(--black);
+    background-color: var(--off-white);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -23,20 +20,20 @@ body {
 
 h1  {
     font-family: "Montserrat", sans-serif;
-    /* font-size: 2.5em; */
-    color: var(--accent-yellow);
+    font-weight: 400;
+    color: var(--black);
     
 }
 
 h2, h3, h4 {
     font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: var(--black);
 }
 
 /* DASHBOARD PAGE */
 
-#dash-header {
-    margin: 0 1.5em;
-}
+
 
 
 #dashboard-container {

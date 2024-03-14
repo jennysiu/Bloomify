@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { FilterOutlined } from '@ant-design/icons';
-import { Button, Flex, Space, Select, Input, Collapse, Checkbox, Card } from 'antd';
+import { Button, Flex, Space, Select, Input, Collapse, Checkbox, Card, Row, Col } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
 /**
@@ -65,20 +65,20 @@ function DashSearchBar({ name, setName }) {
 
 
   return (
-    <Card
-      className="dashSearchCard"
-      bordered={false}
-      title="Plant Finder"
-    >
+    <>
       <div className="dashSearch">
-        <Search
-          placeholder="Search for Plant"
-          onSearch={onSearch}
-          onChange={handleInputChange}
-          className="dashSearchInput"
-        />
+        <Row>
+          <Col xs={24} sm={12} md={12} lg={14} xl={14}>
+            <Search
+              placeholder="Search for plant"
+              onSearch={onSearch}
+              onChange={handleInputChange}
+              className="dashSearchInput"
+              />
+          </Col>  
+        </Row>
       </div>
-    </Card>
+    </>
   )
 };
 
