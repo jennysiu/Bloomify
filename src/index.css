@@ -33,7 +33,9 @@ h2, h3, h4 {
 
 /* DASHBOARD PAGE */
 
-
+.vertical-divider {
+    height: 100%;
+}
 
 
 #dashboard-container {

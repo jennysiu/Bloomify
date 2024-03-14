@@ -19,17 +19,12 @@ const DashPlantCard = ({ myPlants, setMyPlants }) => {
 
     return (
         <div className="dashPlantCardContainer">
-            <Card title="My Plants">
+                <h2>My Plants</h2>
                 <div className="dashPlantCardContent" >
                 {plants} 
                 </div>
-            </Card>
         </div>
     );
 };
-
-// DashPlantCard.propTypes = {
-//     plant: PropTypes.object.isRequired,
-// };  
 
 export default DashPlantCard;
