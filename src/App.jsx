@@ -47,7 +47,6 @@ function App() {
                   <Layout>
                     <WaterReminderNotif />
                     {/* <CustomHeader /> */}
-                    <DashSearchBar />
                     <Content>
                       <Routes>
                         <Route path='' element={< Dashboard />} />

@@ -1,5 +1,10 @@
 /* search bar */
 
+#search-bar-container {
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+}
+
 #search-bar-container .ant-btn, 
 #search-bar-container .anticon {
   background-color: var(--accent-yellow)!important;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Row, Col, Layout, Flex } from 'antd';
+import { Row, Col, Layout, Flex, Divider } from 'antd';
 
 import TaskList from '../components/TaskList';
 import DashWaterLog from '../components/DashWaterLog';
@@ -11,6 +11,7 @@ import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos';
 import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants';
 import { LocationProvider, LocationContext } from '../contexts/ContextLocation';
 import '../../src/index.css'
+import SearchBar from '../components/SearchBar';
 
 // Basic page CSS
 const layoutStyle = {
@@ -35,9 +36,12 @@ const Dashboard = () => {
 
   return (
     <>
+      <SearchBar />
+      <Divider />
+
       <div id="dashboard-container"
         className='content-container'>
-        <h1 id='dash-header' >Welcome back {userName || 'Guest'}!</h1>
+        <h1 id='dash-header' >Welcome back, {userName || 'Guest'}!</h1>
         <Flex style={layoutStyle}  >
           <Row sm={24}  >
             <Col sm={24} md={15} style={{ marginLeft: 8, marginRight: 8 }}>
