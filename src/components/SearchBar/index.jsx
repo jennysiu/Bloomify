@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { FilterOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import { Button, Flex, Space, Select, Input, Collapse, Checkbox } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SearchResultsContext } from '../../contexts/ContextSearchRes.jsx';
@@ -66,14 +66,14 @@ function SearchBar({name, setName}) {
 
 
   return (
-    <Space direction="vertical">
-      <div id='search-bar-container'>
-        <Search 
-        placeholder="Type plant name here..." 
-        onSearch={onSearch} onChange={handleInputChange} 
-        className="search" />
-      </div>
-    </Space>
+    <>
+    <Input.Search 
+    size="default size" 
+    placeholder="Type plant name here..." 
+    prefix={<UserOutlined />}
+    onSearch={onSearch} onChange={handleInputChange} 
+    className="search-bar" />
+    </>
   )
 };
 

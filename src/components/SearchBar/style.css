@@ -1,13 +1,19 @@
 /* search bar */
 
-#search-bar-container {
+
+.search-bar {
   margin-top: 1.5em;
   margin-left: 1.5em;
+  width: 80vw;
+  border-radius: 3em ;
+}
+
+.ant-input-group-wrapper {
+  border-radius: 1em;
+  margin: 0;
 }
 
 #search-bar-container .ant-btn, 
 #search-bar-container .anticon {
-  background-color: var(--accent-yellow)!important;
-  color: var(--main-green);
+  display: none;
 }
-
