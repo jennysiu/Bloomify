@@ -4,6 +4,7 @@
     --light-grey:  #7b7a7a;
     --off-white: #FAF9F6;
     --accent-green: #86d170;
+    --background-green: #daf1d3;
     --body-font: "Karla", sans-serif;
 }
 
@@ -31,18 +32,33 @@ h2, h3, h4 {
     color: var(--black);
 }
 
+.divider {
+    margin-bottom: 0;
+}
+
 /* DASHBOARD PAGE */
 
+#dash-title {
+    margin-left: 0.3em;
+}
 
+.vertical-divider {
+    margin-top: 0;
+    height: 100%;
+}
 
+#dash-space {
+    /* padding: 3em; */
+}
 
 #dashboard-container {
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
     flex-direction: column;
-    margin: auto;
+    margin: 0;
     max-width: 1200px;
+
 }
 
 /* MY PLANTS PAGE */

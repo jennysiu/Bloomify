@@ -6,21 +6,16 @@ import NewPlantProfile from '../NewPlantProfile/index.jsx';
 import './style.css'
 import plantDetailsFetch from '../../utils/plantDetailsFetch'
 
-
-
-
 const PlantOfTheDay = () => {
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState({ isVisible: false, plant: null });
     
-
 
     runOncePerDay()
 
     useEffect(() => {
 
     });
-
 
     function hasOneDayPassed() {
         var date = new Date().toLocaleDateString();
@@ -31,7 +26,6 @@ const PlantOfTheDay = () => {
         localStorage.yourapp_date = date;
         return true;
     }
-
 
 /**
  * 
@@ -75,13 +69,21 @@ const PlantOfTheDay = () => {
 
     return (
         <>
+        <h2>Plant of the Day</h2>
         <a type="link" onClick={() => handlePlantClick()} style={{ cursor: 'pointer' }}>
-        <Card
+            <img 
+            className="plant-image-cover"
+            alt={localStorage.getItem("nameKey")} 
+            src={localStorage.getItem("imgKey")} 
+            >
+            
+            </img>
+        {/* <Card
             title="Plant of the Day"
             cover={<img alt={localStorage.getItem("nameKey")} src={localStorage.getItem("imgKey")} className="plant-image-cover" />}
         >
             <Card.Meta title={localStorage.getItem("nameKey")} description={localStorage.getItem("descKey")} />
-        </Card>
+        </Card> */}
         </a> 
         {/* plant profile modal (hidden at first) */}
         {selectedPlantModal.isVisible && selectedPlantModal.plant && (

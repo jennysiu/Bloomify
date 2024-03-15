@@ -1,26 +1,21 @@
-.dashPlantCardContainer .ant-card-body {
-    padding-bottom: 2em !important;
-    
+
+.dashPlantCardContainer {
+    height: fit-content !important;
 }
 
 .dashPlantCardContent {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     overflow-x: auto; 
-    height: 20% !important;
-    white-space: nowrap; 
-    background-color: none !important;
-    height: 200px
+
 }
 
 .dashPlantCardContent img {
-    width: 200px;
-    height: 200px;
-    margin: 0 15px;
+    margin-right: 1em;
     object-fit: cover;
-    object-position: center;
+    width: 70%;
+    height: auto;
+    max-height: 250px;
     border-radius: 1em;
+
 }
 
