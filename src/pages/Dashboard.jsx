@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <SearchBar />
+      <DashSearchBar />
       <Divider className='divider'/>
       {/* PLACEHOLDER _ SMALL LEAF IMAGE */}
 

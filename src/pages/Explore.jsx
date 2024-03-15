@@ -20,15 +20,18 @@ function Explore() {
         <>
 
     <Layout style={layoutStyle}>
-        <div className='content-container'>
+        <div className='content-container' id="explore-section">
 
                 <Row className="exploreContainer">
-                    <Col span={16} className="exploreTitles">
+                    <Col span={24} id="explore-text">
                         <h1>Bloom Explorer</h1>
-                        <h3 id='search-message'>Embark on a journey through the world of flora and find new additions to your plant sanctuary</h3>
+                        <p id='search-message'>Embark on a journey through the world of flora and find new additions to your plant sanctuary</p>
                     </Col>
-                    <Col span={16} className="exploreSearch">
+
+                    <Col xs={24} sm={16} md={16} lg={8} xl={8} id="explore-search">
                         <SearchBar name={name} setName={setName} className="exploreSearchBar" />
+                    </Col>
+                    <Col xs={24} sm={16} md={16} lg={10} xl={6} id="explore-search">
                         <AdvancedSearch name={name} />
                     </Col>
                 </Row>

@@ -47,10 +47,10 @@ function AdvancedSearch({ name }) {
    */
     const onClick = (value, _e, info) => {
 
-        console.log(name)
-        console.log(watering)
-        console.log(sunlight)
-        console.log(isIndoors)
+        // console.log(name)
+        // console.log(watering)
+        // console.log(sunlight)
+        // console.log(isIndoors)
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
                 const data = res.data.data
@@ -139,28 +139,35 @@ function AdvancedSearch({ name }) {
             children:
                 <Space direction="vertical">
                     <div id='advanced-search-options'>
-                        <Checkbox className='advanced-option'
+                        <Checkbox 
+                        className='advanced-option'
                         name='indoorChk' onChange={onChange}>Indoor</Checkbox>
+
                         <Space className='advanced-option'
                         direction="horizontal">
-                            <p>Watering</p>
+                            <p>Watering: </p>
                             {selectWatering}
                         </Space>
                         <Space className='advanced-option'
                         direction="horizontal">
-                            <p>Sunlight</p>
+                            <p>Sunlight: </p>
                             {selectSunlight}
                         </Space>
                     </div>
-                    <Button type="primary" onClick={onClick} >Advanced Search</Button>
-                </Space>,
+                    <Button
+                    id="advanced-button"
+                    type="primary" 
+                    onClick={onClick} >Advanced Search</Button>
+                </Space>
         }
     ];
 
 
     return (
 
-        <Collapse items={filterItems} />
+        <Collapse 
+        id="advanced-search"
+        items={filterItems} />
 
     )
 };

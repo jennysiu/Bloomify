@@ -60,9 +60,9 @@
 /* buttons */
 .ant-btn,
 .ant-btn span {
-    background-color: white !important;
+    background-color: var(--accent-green) !important;
     /* border: solid (--light-grey); */
-    color: var(--light-grey);
+    color: var(--off-white);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -70,22 +70,23 @@
 .ant-btn:hover,
 .ant-btn:hover span {
     /* background-color: #104840 !important; */
-    color: var(--accent-green);
-    font-weight: 500;
+    color: white;
+    border: none;
+    /* font-weight: 500; */
 }
 
 /*TODO: Identify and remove the glow effect/animation*/
 
-/* .ant-input,
-.ant-picker,
+/* .ant-picker,
 .ant-select-selector,
-.ant-radio-button-wrapper,
-.ant-collapse {
+.ant-radio-button-wrapper {
     background-color: var(--off-white) !important;
     border: 1px solid #DAE7D9 !important;
     color: #333333 !important;
     font-family: 'Karla', sans-serif !important;
-}
+} */
+
+/* 
 
 .ant-select-item,
 .ant-select-selection-item,
