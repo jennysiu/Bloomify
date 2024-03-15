@@ -31,9 +31,18 @@ h2, h3, h4 {
     color: var(--black);
 }
 
+.divider {
+    margin-bottom: 0;
+}
+
 /* DASHBOARD PAGE */
 
+#dash-title {
+    margin-left: 0.3em;
+}
+
 .vertical-divider {
+    margin-top: 0;
     height: 100%;
 }
 
@@ -43,8 +52,9 @@ h2, h3, h4 {
     /* justify-content: center; */
     /* align-items: center; */
     flex-direction: column;
-    margin: auto;
+    margin: 0;
     max-width: 1200px;
+
 }
 
 /* MY PLANTS PAGE */
