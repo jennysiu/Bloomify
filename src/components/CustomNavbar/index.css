@@ -1,11 +1,20 @@
+.ant-menu:not(.ant-menu-horizontal) {
+    font-size: 1.1em;
+}
+
+.ant-menu .ant-menu-item {
+    margin: 1em 0;
+
+}
+
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: var(--main-green)!important;
-    color: #FEFEFE !important;
+    color: var(--accent-green) !important;
     font-weight: bold !important;
 }
 
 .ant-layout-sider-trigger {
-    background-color: #0c4138 !important;
+    background-color: var(--accent-green) !important;
 }
 
 .ant-layout-sider-children {
@@ -22,12 +31,12 @@
 
 #navbar-title-icon {
     font-family: "Pacifico", sans-serif !important;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
-    color: #134e44;
+    color: var(--accent-green);
     letter-spacing: 2px;
-    text-shadow: 4px 4px 1px var(--accent-yellow);
-    margin-top: 10px;
+    text-shadow: 4px 4px 1px var(--background-green);
+    margin-top: 1em;
     margin-bottom: 10px;
 }
 

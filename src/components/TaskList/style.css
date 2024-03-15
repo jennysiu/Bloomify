@@ -1,5 +1,10 @@
+#todo-title {
+    text-align: left;
+}
+
 .task-list-sub-head {
     margin-bottom: 0.7em;
+    text-align: left;
 }
 
 .inputSection {

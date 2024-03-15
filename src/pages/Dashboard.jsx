@@ -43,8 +43,8 @@ const Dashboard = () => {
       <div id="dashboard-container"
         className='content-container'>
         <Flex style={layoutStyle}  >
-          <Row sm={24}  >
-            <Col sm={23} md={14} 
+          <Row xs={24} sm={24} md={24} lg={24} xl={24}  >
+            <Col xs={23} sm={23} md={18} lg={16} xl={16} 
             style={{ marginLeft: 8, marginRight: 8 }}>
               <Row gutter={16} style={{ marginBottom: 16 }}>
                 <h1 id='dash-title' >Welcome back, {userName || 'Guest'} 😊</h1>
@@ -52,25 +52,25 @@ const Dashboard = () => {
                 style={{ marginBottom: 16 }}>
                   <PlantOfTheDay />
                 </Col>
-                <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
+                <Col xs={23} sm={23} md={23} lg={23} xl={23} style={{ marginBottom: 16 }}>
                   {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
                   <DashPlantCard myPlants={myPlants} />
                 </Col>
               </Row>
-              <Row gutter={16}>
-
-
-                  
-              </Row>
             </Col>
-            <Col sm={1} md={1}>
+
+            <Col sm={1} md={1} lg={1} xl={1}>
               <Divider 
               className='vertical-divider'
               type="vertical"/>
             </Col>
-            <Col sm={24} md={8} 
+
+            <Col xs={23} sm={23} md={4} lg={6} xl={6} 
             style={{ marginLeft: 8, marginRight: 8 }}>
               <Row gutter={16} style={{ marginBottom: 16 }}>
+                <Col>
+                  <div id="dash-space"></div>
+                </Col>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
                   <WeatherWidget location={location} setLocation={setLocation} />
                 </Col>

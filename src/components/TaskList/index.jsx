@@ -41,9 +41,9 @@ const TaskList = ({ toDos, setToDos }) => {
 
     return (
         <Card 
-        title="Plants to Water"
         className="taskListContainer"
         >
+            <h2 id="todo-title">Plants to Water</h2>
             <div className="inputSection">
                 <Input
                     placeholder="Which plant?"

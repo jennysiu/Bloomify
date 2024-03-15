@@ -79,14 +79,15 @@ const [weatherData, setWeatherData] = useState(null)
 return (
         <>
             <LocationProvider>
-                <Card title="Weather" className="weatherCard">
+                <Card className="weatherCard">
+                <h2 id="weather-title">Weather</h2>
                     <div className="searchSection">
                         <Search placeholder="Search for a location" onSearch={onSearch} style={{ flex: 1 }} />
                         <Button onClick={getUserLocation}>Use current location</Button>
                     </div>
                     {weatherData ? (
                         <div className="weatherInfo">
-                            <p className="weatherData">Showing weather in {weatherData.name}</p>
+                            <p className="weather-location">{weatherData.name}</p>
                             <Row>
                                 <Col span={12}>
                                     <img
@@ -96,8 +97,11 @@ return (
                                 </Col>
                                 <Col span={12}>
                                     <div className="weatherResults">
-                                        <p>Description: {weatherData.weather[0].description}</p>
-                                        <p>Temperature: {weatherData.main.temp}°C</p>
+                                        <p 
+                                        id="weather-desc">
+                                            {weatherData.weather[0].description.charAt(0).toUpperCase()+weatherData.weather[0].description.slice(1)}
+                                        </p>
+                                        <p>Temp: {weatherData.main.temp}°C</p>
                                         <p>Humidity: {weatherData.main.humidity}%</p>
                                         <p>Rain: {weatherData.rain || "N/A"}</p>
                                     </div>

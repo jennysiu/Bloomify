@@ -4,6 +4,7 @@
     --light-grey:  #7b7a7a;
     --off-white: #FAF9F6;
     --accent-green: #86d170;
+    --background-green: #daf1d3;
     --body-font: "Karla", sans-serif;
 }
 
@@ -46,6 +47,9 @@ h2, h3, h4 {
     height: 100%;
 }
 
+#dash-space {
+    padding: 3em;
+}
 
 #dashboard-container {
     /* display: flex; */

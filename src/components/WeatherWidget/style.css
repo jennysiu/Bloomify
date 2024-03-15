@@ -1,3 +1,7 @@
+#weather-title {
+    text-align: left;
+}
+
 .weatherCard {
     display: flex;
     flex-direction: column;
@@ -7,24 +11,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     height: 70px;
 }
 
-.weatherData {
-    margin: 2em 0;
+.weather-location {
+    margin-top: 1em;
+    /* margin-left: 1em; */
+    margin-bottom: 0;
     font-weight: 500;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
 }
 
+
 .weatherResults p {
-    margin: 0;
+    margin: 0.3em;
     text-align: left;
     /* font-weight: 400;
     font-size: 14px; */
 }
 
-.weatherInfo p {
-    margin: 0.5em;
-}
