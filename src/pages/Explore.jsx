@@ -31,7 +31,7 @@ function Explore() {
                     <Col xs={24} sm={16} md={16} lg={8} xl={8} id="explore-search">
                         <SearchBar name={name} setName={setName} className="exploreSearchBar" />
                     </Col>
-                    <Col xs={24} sm={16} md={16} lg={10} xl={6} id="explore-search">
+                    <Col xs={24} sm={16} md={16} lg={10} xl={8} id="explore-search">
                         <AdvancedSearch name={name} />
                     </Col>
                 </Row>

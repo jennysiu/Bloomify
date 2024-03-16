@@ -1,8 +1,15 @@
-.plant-car-container .ant-card {
-  height: fit-content !important;
+.plant-card-container {
+  width: fit-content;
+}
 
+.img-link {
+  display: inline-block;
 }
 
 .plant-card-img {
   border-radius: 1em;
+  width: 170px;
+  /* height: auto; */
+  flex: 0 0 auto; /* Don't grow, don't shrink, and base size on the image size */
+  margin-right: 10px; 
 }
