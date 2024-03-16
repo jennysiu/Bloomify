@@ -46,10 +46,10 @@
 
 /* ANT CARDS */
 .ant-card {
-    padding: 0.5em 1em;
+    /* padding: 0.5em 1em;
     font-weight: 300;
     border-radius: 10px;
-    text-align: center;
+    text-align: center; */
 }
 
 .ant-card-body {
@@ -61,7 +61,6 @@
 .ant-btn,
 .ant-btn span {
     background-color: var(--accent-green) !important;
-    /* border: solid (--light-grey); */
     color: var(--off-white);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -70,8 +69,9 @@
 .ant-btn:hover,
 .ant-btn:hover span {
     /* background-color: #104840 !important; */
-    color: white;
+    color: white !important;
     border: none;
+    text-decoration: underline;
     /* font-weight: 500; */
 }
 
