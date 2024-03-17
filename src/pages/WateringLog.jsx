@@ -28,6 +28,7 @@ function WateringLog() {
             <LocationProvider>
                 <Layout style={layoutStyle}>
                     <div className='content-container'>
+                        <DashSearchBar />
                         <Row gutter={16} style={{ marginBottom: 16 }}>
                             <Col xs={24} sm={24} md={16} lg={16} xl={16} style={{ marginBottom: 16 }}>
                                 <Calendar toDos={toDos} setToDos={setToDos} />

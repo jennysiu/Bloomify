@@ -98,10 +98,10 @@ function MyPlants() {
                     </Col>
 
                     <Col span={1}>
-                        <Divider 
+                        {/* <Divider 
                         className='vertical-divider'
                         type="vertical"
-                        />
+                        /> */}
                     </Col>
                     <Col xs={24} sm={24} md={7} lg={7} xl={7}>
                         <TaskList toDos={toDos} setToDos={setToDos}/>
