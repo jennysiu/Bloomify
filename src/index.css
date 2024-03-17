@@ -96,6 +96,7 @@ h2, h3, h4 {
 
 /* MY PLANTS PAGE */
 #my-plants-container .add-plant-button {
+    margin: 1em 0;
     background-color: var(--accent-green) !important;
     border: none;
 }
@@ -103,7 +104,6 @@ h2, h3, h4 {
 #add-plant-btn-container .ant-btn span {
     background-color: var(--accent-green) !important;
     font-weight: bold;
-
 }
 
 
