@@ -87,8 +87,8 @@ const Settings = () => {
 
   return (
     <>
+      <DashSearchBar />
       <Layout style={layoutStyle}>
-        <DashSearchBar />
         <Flex >
           <Row>
               <Card id="settings-card" style={{ marginRight: 20 }}>

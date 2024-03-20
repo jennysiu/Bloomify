@@ -8,7 +8,7 @@ import { usePlants } from '../contexts/PlantContext.jsx';
 import AddPlantModal from '../components/AddPlantModal/index.jsx';
 import PlantCard from '../components/PlantCard/index.jsx';
 import PlantProfile from '../components/PlantProfile/index.jsx';
-import DashSearchBar from '../components/SearchBar/index.jsx';
+import DashSearchBar from '../components/DashSearchBar/index.jsx';
 import TaskList from '../components/TaskList';
 import { MyPlantsContext, MyPlantsProvider } from '../contexts/ContextMyPlants.jsx';
 import { ToDoContext, ToDoProvider } from '../contexts/ContextsToDos'
@@ -67,16 +67,14 @@ function MyPlants() {
 
     return (
         <>
+        <DashSearchBar />
         <Layout style={layoutStyle}>
-            <DashSearchBar />
+            
             <Divider />
             <div 
             id="my-plants-container"
             className='content-container'>
-                
-                {/* <br></br> */}
-
-                <Row>
+                <Row xs={24} sm={24} md={24} lg={24} xl={24}>
                     <Col xs={24} sm={24} md={16} lg={16} xl={16}>
                         <h1>My Plant Sanctuary</h1>
                         <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
@@ -97,12 +95,6 @@ function MyPlants() {
                         {renderPlantCards()}
                     </Col>
 
-                    <Col span={1}>
-                        {/* <Divider 
-                        className='vertical-divider'
-                        type="vertical"
-                        /> */}
-                    </Col>
                     <Col xs={24} sm={24} md={7} lg={7} xl={7}>
                         <TaskList toDos={toDos} setToDos={setToDos}/>
                     </Col>
