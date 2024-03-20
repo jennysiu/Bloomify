@@ -50,7 +50,7 @@ Bloomify is designed to be your go-to digital gardening companion, offering tool
 None - this is a web application that can be accessed via the browser.
 
 ## Usage
-To view the webpage, no installation is required, you can simply access the live URL here: https://bl00mify.netlify.app/
+To view the webpage, no installation is required, you can simply access the live URL here: https://jennysiu.github.io/Bloomify/
 
 Screenshot:
 ![](./src/assets/images/AppDemo.png)
