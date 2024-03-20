@@ -52,8 +52,8 @@ None - this is a web application that can be accessed via the browser.
 ## Usage
 To view the webpage, no installation is required, you can simply access the live URL here: https://jennysiu.github.io/Bloomify/
 
-Screenshot:
-![](./src/assets/images/AppDemo.png)
+Screenshot of deployed app:
+![](./src/assets/images/demo-screenshot.png)
 
 
 ## Tests
