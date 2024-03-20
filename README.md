@@ -18,19 +18,33 @@ Bloomify is a web application for both novice and expert plant parents alike. It
 This application was created over 2 weeks, using React. 
 
 ## Features
-Bloomify allows the user to search for plants and flowers, making use of the Perenual API to return relevant results. 
+Bloomify offers a suite of features designed to enhance the gardening experience for plant enthusiasts of all levels. With a user-friendly interface and data powered by the Perenual API, Bloomify simplifies the process of discovering and managing your plants. Here's what you can do with Bloomify:
 
-The user can search by keyword, or use the advanced search feature which allows them to search for plants based off of properties such as how much sunlight and watering they need.
+### Plant Search
+- Keyword Search: Easily find plants and flowers using simple keywords. Perfect for when you're looking for a specific plant or just browsing for inspiration.
+- Advanced Search: Utilize the advanced search feature to find plants that match specific care requirements, such as sunlight exposure, watering needs, and more. This tailored search ensures you find plants that thrive in your environment.
 
-The user can view in-depth descriptions and characteristics of each plant that the search returns. 
+### Plant Descriptions
+In-depth Information: For each plant returned by the search, access detailed descriptions and vital characteristics such as scientific name, preferred climate, watering and sunlight needs, and much more. This helps you understand exactly how to care for your plants.
 
-The user can then add plants to their 'Plant Sanctuary', to keep a log of plants that they own, or want to own. 
+### Plant Sanctuary
+Log and Wishlist: Create your own 'Plant Sanctuary' where you can log plants you currently own or wish to acquire in the future. This personal plant collection helps you keep track of your gardening journey.
 
-The watering log page gives the user a place to keep track of when their plants need watering. When they add a plant to water and corresponding date in the task list, it automatically populates the calendar. The user will also receive a pop-up reminder to water their plant(s) on the relevant days. The weather widget allows users to see current weather, to help them know if/when to water outdoor plants.
+### Watering Log
+- Watering Schedule: Keep track of watering schedules with the integrated log and calendar. When you add a plant and its watering date, the information automatically populates your calendar.
+- Reminders: Receive pop-up reminders on the days your plants need watering, ensuring they always receive the care they need.
 
-The settings page allows users to set their username and location, either using geolocation or via search input. This ensures a personalised experience for the user, with a persistent username. The weather widget will also display weather for their saved location. 
+### Weather Widget
+Real-Time Weather Updates: The weather widget displays current weather conditions, assisting you in making informed decisions about watering your outdoor plants. Whether it's a sunny day or a rainy afternoon, you'll know exactly what your garden needs.
 
-The Dashboard brings together all the features of Bloomify in one handy place, so the user can check on their plants in a quick glance. 
+### User Settings
+Personalization: Set your username and location to personalize your Bloomify experience. Choose to use geolocation for automatic updates or enter your location manually. This customization ensures that weather updates and reminders are relevant to your specific locale.
+
+### Dashboard
+Quick Overview: The Dashboard unifies all of Bloomify's features in one convenient place. Check on your plants, view upcoming watering dates, and see the current weather, all at a glance. This central hub makes managing your garden easier than ever.
+
+Bloomify is designed to be your go-to digital gardening companion, offering tools and information to help your plants flourish. Whether you're a seasoned gardener or just starting out, Bloomify simplifies the care process and makes gardening a joy.
+
 
 ## Installation
 None - this is a web application that can be accessed via the browser.
@@ -39,7 +53,7 @@ None - this is a web application that can be accessed via the browser.
 To view the webpage, no installation is required, you can simply access the live URL here: https://bl00mify.netlify.app/
 
 Screenshot:
-![](./src/assets/images/screenshot.png)
+![](./src/assets/images/AppDemo.png)
 
 
 ## Tests
@@ -47,11 +61,11 @@ Tests can be found in the src/__test__ folder, and uses Vitest.
 
 To run the test suite, ensure you have all project dependencies installed. If you haven't installed the dependencies yet, run:
 
-(npm install)
+1. (npm install)
 
 After installing the dependencies, you can run the tests with the following command:
 
-(npm run test)
+2. (npm run test)
 
 
 ## Technologies Used
@@ -86,8 +100,8 @@ Jenny Siu / [Email](jenny.siu79@gmail.com) / [LinkedIn](https://www.linkedin.com
 
 Laura Kane / [Email](laurakanesocials@gmail.com) 
 
-Davou Jobbi / 
+Davou Jobbi 
 
-Ahmed Ibrahim / 
+Ahmed Ibrahim 
 
-Adrianna Derkacz / 
+Adrianna Derkacz 
