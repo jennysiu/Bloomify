@@ -1,11 +1,11 @@
-// show option to retreive user name
-// show option for users to input location 
-
 import { Input, Button, Card, Layout, Row, Col, Flex } from 'antd';
 import React, { useState, useEffect, useContext } from 'react';
+
+// internal imports
 import { LocationContext, LocationProvider } from '../contexts/ContextLocation';
 import searchWeatherAPIfetch from '../utils/searchWeatherAPIfetch';
 import weatherAPIfetch from '../utils/weatherAPIfetch';
+import DashSearchBar  from '../components/DashSearchBar';
 
 const { Search } = Input;
 
@@ -23,7 +23,6 @@ const Settings = () => {
   const [weatherData, setWeatherData] = useState(null);
 
   const [username, setUsername] = useState('')
-
 
   const userNameSearch = (values) => {
     localStorage.setItem('username', values);
@@ -89,36 +88,30 @@ const Settings = () => {
   return (
     <>
       <Layout style={layoutStyle}>
-        <Flex align="center" justify="space-evenly">
+        <DashSearchBar />
+        <Flex >
           <Row>
-           
-              <Card className="weatherCard" style={{ marginRight: 20 }}>
+              <Card id="settings-card" style={{ marginRight: 20 }}>
                 <div>
                   <h3>Username: </h3>
                   <p>{username}</p>
                 </div>
-                <div className="searchSection">
+                <div id="set-username">
                   <Search placeholder="Enter Username" onSearch={userNameSearch} style={{ flex: 1 }} />
                 </div>
+                <LocationProvider>
+                    <div>
+                      <h3>Location: </h3>
+                      <p>{weatherData ? weatherData.name : ''}</p>
+                    </div>
+                    <div className="set-location">
+                      <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
+                      <Button 
+                      id="current-location-btn"
+                      onClick={getUserLocation}>Use current location</Button>
+                    </div>
+                </LocationProvider>
               </Card>
-            
-
-            <br></br>
-
-            
-              <LocationProvider>
-                <Card className="weatherCard">
-                  <div>
-                    <h3>Location: </h3>
-                    <p>{weatherData ? weatherData.name : ''}</p>
-                  </div>
-                  <div className="searchSection">
-                    <Search placeholder="Enter Your Location" onSearch={onSearch} style={{ flex: 1 }} />
-                    <Button onClick={getUserLocation}>Use current location</Button>
-                  </div>
-                </Card>
-              </LocationProvider>
-           
           </Row>
         </Flex>
       </Layout>

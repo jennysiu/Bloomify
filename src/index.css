@@ -113,3 +113,11 @@ h2, h3, h4 {
     margin-bottom: 16px !important;
 } */
 
+/* SETTINGS PAGE */
+#settings-card {
+    margin: 2em;
+}
+
+#current-location-btn {
+    margin: 1.5em 0;
+}
