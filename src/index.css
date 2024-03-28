@@ -6,6 +6,7 @@
     --off-white: #FAF9F6;
     --dark-green: #224722;
     --accent-green: #3b9520;
+    --light-yellow: #F2E6C3;
     --background-green: #E7EDDE;
     --container-background: #D5DFC6;
     --body-font: "Karla", sans-serif;
@@ -109,17 +110,48 @@ a {
 }
 
 /* MY PLANTS PAGE */
-#my-plants-container .add-plant-button {
-    margin: 1em 0;
-    background-color: var(--accent-green) !important;
+
+
+
+.add-plant-btn-div .ant-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 1em; */
+    background-color: var(--light-yellow) !important;
+    border-radius: 3em;
     border: none;
+    color: var(--dark-green);
+    font-size: 1.3em !important;
+    font-weight: 400 !important;
+    width: 240px;
+    height: 60px;
 }
 
-#add-plant-btn-container .ant-btn span {
+
+.add-plant-btn-div .ant-btn:hover {
     background-color: var(--dark-green) !important;
-    font-weight: bold;
+    border: none;
+    color: var(--background-green) !important;
+    font-size: 1.3em !important;
+    font-weight: 400 !important;
 }
 
+
+.plus-sign {
+    padding: 0 0.6em;
+    padding-bottom: 0.1em;
+    background-color: var(--dark-green) !important;
+    border-radius: 1em;
+    color: var(--background-green);
+    font-size: 1.3em;
+    font-weight: 400 !important;
+
+}
+
+.add-plant-text {
+    margin-left: 0.6em;
+}
 
 
 /*WATER LOG PAGE*/

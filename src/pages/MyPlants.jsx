@@ -78,9 +78,13 @@ function MyPlants() {
                     <Col xs={24} sm={24} md={16} lg={16} xl={16}>
                         <h1>My Plant Sanctuary</h1>
                         <Flex gap="small" wrap="wrap" justify="flex-start" align="flex-start">
-                            <Button 
-                            className="add-plant-button"
-                            onClick={() => toggleAddPlantModal(true)} >Add New Plant</Button>
+                            <div className='add-plant-btn-div'>
+                                <Button 
+                                className="add-plant-button"
+                                onClick={() => toggleAddPlantModal(true)} >
+                                    <span className='plus-sign'> + </span>
+                                    <span className='add-plant-text'>Add a plant</span></Button>
+                            </div>
                         </Flex>
                     </Col>
 

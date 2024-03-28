@@ -13,9 +13,9 @@
 
 /* selected menu item */
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: var(--dark-green)!important;
+    background-color: var(--light-yellow)!important;
     font-family: "Karla", sans-serif !important;
-    color: var(--background-green) !important;
+    color: var(--dark-green) !important;
     font-weight: 500 !important;
 }
 
