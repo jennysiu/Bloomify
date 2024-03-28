@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card } from 'antd';
 import './style.css'
@@ -25,7 +26,12 @@ const DashPlantCard = ({ myPlants, setMyPlants }) => {
             <h2>My Plants</h2>
             <Card>
                 <div className="dashPlantCardContent" >
-                {plants} 
+                {plants.length == 0 
+                ? (<p>No plants added yet. Visit {' '}
+                     <Link 
+                    className='explore-link'
+                    to='/explore'>Explore</Link> to add your own plants!</p>) 
+                : plants} 
                 </div>
             </Card>
         </div>

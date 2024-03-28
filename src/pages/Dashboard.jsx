@@ -48,12 +48,13 @@ const Dashboard = () => {
             style={{ marginLeft: 8, marginRight: 8 }}>
               <Row gutter={16} style={{ marginBottom: 16 }}>
                 <h1 id='dash-title' >Welcome back, {userName || 'Guest'} 😊</h1>
+                {/* PLANT OF THE DAY SECTION*/}
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} 
                 style={{ marginBottom: 16 }}>
                   <PlantOfTheDay />
                 </Col>
                 <Col xs={23} sm={23} md={23} lg={23} xl={23} style={{ marginBottom: 16 }}>
-                  {/* Assuming DashPlantCard is to be rendered for each plant. Adjust if it's just one card. */}
+                  {/* MY PLANTS SECTION */}
                   <DashPlantCard myPlants={myPlants} />
                 </Col>
               </Row>
@@ -71,10 +72,12 @@ const Dashboard = () => {
                 <Col>
                   <div id="dash-space"></div>
                 </Col>
+                {/* WEATHER WIDGET */}
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
                   <WeatherWidget location={location} setLocation={setLocation} />
                 </Col>
               
+              {/* TODO WIDGET */}
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} style={{ marginBottom: 16 }}>
                   <ToDoProvider>
                     <TaskList toDos={toDos} setToDos={setToDos} />

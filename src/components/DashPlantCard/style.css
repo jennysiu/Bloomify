@@ -19,3 +19,11 @@
 
 }
 
+.explore-link {
+    color: var(--accent-green);
+}
+
+.explore-link:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
