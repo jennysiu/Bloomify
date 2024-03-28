@@ -9,9 +9,10 @@
     --background-green: #E7EDDE;
     --container-background: #D5DFC6;
     --body-font: "Karla", sans-serif;
+    --secondary-text: #626E55;
 
     /* navbar */
-    --nav-green: #C4DEA9;
+    --nav-green: #D5DFC6;
 
     /* margins */
     --standard-top-margin: 1em;
@@ -29,17 +30,18 @@ body {
 }
 
 h1  {
-    margin: 1em 0;
+    margin: 0.3em 0;
     font-family: "Archivo", sans-serif;
-    font-weight: 400;
-    color: var(--font-green);
+    font-size: 3em;
+    font-weight: 500;
+    color: var(--dark-green) !important;
     
 }
 
 h2, h3, h4 {
     font-family: "Archivo", sans-serif;
     font-weight: 400;
-    color: var(--font-green);
+    color: var(--dark-green);
 }
 
 a {
@@ -76,7 +78,7 @@ a {
 /*EXPLORE PAGE*/
 
 #explore-section {
-    margin-top: 13em;
+    margin-top: 20%;
 }
 
 .exploreContainer {
@@ -103,7 +105,7 @@ a {
 }
 
 #search-message {
-    color: var(--light-grey);
+    color: #626E55;
 }
 
 /* MY PLANTS PAGE */

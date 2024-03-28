@@ -20,7 +20,7 @@
 }
 
 .ant-layout-sider-trigger {
-    background-color: var(--dark-grey) !important;
+    background-color: var(--nav-green) !important;
 }
 
 .ant-layout-sider-children {
@@ -50,4 +50,11 @@
 .ant-layout-sider-collapsed #navbar-img,
 .ant-layout-sider-collapsed #navbar-title-icon {
     display: none;
+}
+
+.anticon-left, 
+.anticon-right {
+ color: var(--dark-green);
+ font-size: 2em;
+ font-weight: 800;
 }

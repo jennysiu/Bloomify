@@ -47,7 +47,7 @@ const Dashboard = () => {
             <Col xs={23} sm={23} md={23} lg={16} xl={16} 
             style={{ marginLeft: 8, marginRight: 8 }}>
               <Row gutter={16} style={{ marginBottom: 16 }}>
-                <h1 id='dash-title' >Welcome back, {userName || 'Guest'} 😊</h1>
+                <h1 id='dash-title' >Welcome back, {userName || 'Guest'}</h1>
                 {/* PLANT OF THE DAY SECTION*/}
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} 
                 style={{ marginBottom: 16 }}>

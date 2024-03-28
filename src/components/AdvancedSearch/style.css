@@ -6,47 +6,64 @@
 
 .ant-collapse-header {
     margin: 0;
-    padding: 0.3em !important;
+    padding: 0.5em !important;
+    border-radius: 2em !important;
+    border: solid 1px var(--dark-green) !important;
+
+    
 }
 
-#advanced-search {
-    /* width: 50% !important; */
+.ant-collapse-header #advanced-search {
+    width: 70vw !important;
+    border-radius: 2em !important;
+
 }
 
 /* drop down */
 .ant-collapse {
-    width: 40vw;
+    margin: 1em;
+    width: 70vw;
     height: 33px;
+    border-radius: 2em !important;
+
 }
 
 .ant-collapse-content {
-    border-bottom: 1px solid var(--background-green);
+    border: 1px solid var(--dark-green);
+    border-radius: 2em !important;
 }
 
 .ant-collapse-content-box {
-    background-color: var(--off-white);
+    background-color: var(--background-green);
     margin: 0;
     display: flex;
-
+    border-radius: 2em !important;
 }
 
 .ant-space-item {
-    width: 250px;
-
+    padding: 0;
+    width: 220px !important;
 }
 
 #advanced-search-options {
     display: flex;
     flex-direction: column;
+    justify-content: start;
 }
 
 .advanced-option {
-    margin: 0 0.7em;
+    margin-left: 0.7em;
 }
 
 .ant-select-selector {
-    width: 150px !important;
+    padding: 0.1 !important;
+    width: 140px !important;
     text-align: left;
+}
+
+/* text inside the selection box */
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+    padding: 0;
 }
 
 #advanced-button {
