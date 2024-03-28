@@ -5,6 +5,14 @@
 .weatherCard {
     display: flex;
     flex-direction: column;
+    padding: 0 1em;
+    padding-bottom: 1em;
+    margin-top: var(--standard-top-margin);
+    /* background-color: rgb(233, 220, 164); */
+    /* background-color: var(--container-background); */
+    background-color: var(--background-green);
+    /* border: transparent; */
+    border: solid 1px rgba(0, 0, 0, 0.088);
 }
 
 .searchSection {
@@ -13,6 +21,10 @@
     justify-content: center;
     align-items: left;
     height: 70px;
+}
+
+.current-location-btn {
+    margin: 0.5em 0;
 }
 
 .weather-location {

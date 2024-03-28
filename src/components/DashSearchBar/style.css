@@ -1,6 +1,23 @@
 .dashSearch {
-  margin: 1em 0 !important;
+  margin: 1em  !important;
   padding: 0 !important;
-
 }
 
+.ant-input-group-wrapper {
+  height: 40px;
+  font-size: 15px;
+}
+
+.ant-input-group-wrapper >
+.ant-input-wrapper, 
+.ant-input-group, 
+.ant-input {
+  height: 40px;
+  font-size: 15px;
+}
+
+.ant-input-group-addon >
+.ant-btn {
+  height: 40px; 
+  font-size: 15px; 
+}

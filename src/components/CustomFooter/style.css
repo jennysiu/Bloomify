@@ -1,26 +1,28 @@
 .footer {
   margin: 1em 0;
-  /* display: flex; */
-  justify-content: center;
   padding: 1.1em;
   margin: 0;
   background-color: var(--accent-green);
+}
 
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .link {
-  color: var(--accent-yellow);
+  color: var(--off-white);
   margin: 1em 1.2em ;
 }
 
 .link:hover {
   color: white;
-  font-weight: 600;
+  text-decoration: underline;
 }
 
 .copy-right-text {
-  align-self: flex-start;
   margin: 0;
-  color: var(--accent-yellow);
-  text-align: left;
+  color: var(--off-white);
+  
 }

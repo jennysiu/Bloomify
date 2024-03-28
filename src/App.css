@@ -60,10 +60,11 @@
 /* buttons */
 .ant-btn,
 .ant-btn span {
-    background-color: var(--accent-green) !important;
+    background-color: var(--dark-green) !important;
     color: var(--off-white);
     font-weight: 300;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border: transparent
 }
 
 .ant-btn:hover,

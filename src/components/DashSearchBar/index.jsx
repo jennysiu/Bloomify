@@ -62,8 +62,6 @@ function DashSearchBar({ name, setName }) {
     setName(event.target.value)
   };
 
-
-
   return (
     <>
       <div className="dashSearch">
