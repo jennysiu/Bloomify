@@ -34,6 +34,7 @@
     /* background-color: var(--container-background); */
     /* border: solid 1px var(--light-grey); */
     background-color: var(--background-green);
-    border: solid 1px rgba(0, 0, 0, 0.088);
+    /* border: solid 1px rgba(0, 0, 0, 0.088); */
+    border: solid 1px var(--dark-green);
     
 }
