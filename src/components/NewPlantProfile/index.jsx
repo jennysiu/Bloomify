@@ -159,15 +159,8 @@ function NewPlantProfile({ selectedPlantModalVisible, toggleNewPlantProfVisi, se
                       <h4 className='info-sub-label'>Care</h4>
                       <p>Hardiness: {plantData.hardiness.min} - {plantData.hardiness.max}</p>
                       <p>Best watering period: {plantData.watering_period ? plantData.watering_period : "n/a"}</p>
-                      <p>Tropical: {plantData.tropical === "true" ? (
-                        <Tag>
-                          Yes
-                        </Tag>
-                        ) : 
-                        (<Tag>
-                          No
-                        </Tag>
-                      )}</p>
+                      <p>Tropical: {plantData.tropical === "true" 
+                      ? (<Tag>Yes</Tag>) : (<Tag>No</Tag>)}</p>
 
                       <h4 className='info-sub-label'>Growth</h4>
                       <p>Cycle: {plantData.cycle}</p> 
