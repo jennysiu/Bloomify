@@ -53,7 +53,7 @@ None - this is a web application that can be accessed via the browser.
 To view the webpage, no installation is required, you can simply access the live URL here: https://bloomifyapp.netlify.app
 
 Screenshot of deployed app:
-![](./src/assets/images/demo-screenshot.png)
+![](./src/assets/images/demo-pic.png)
 
 
 ## Tests
