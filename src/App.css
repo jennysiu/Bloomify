@@ -61,7 +61,7 @@
 .ant-btn {
     margin-bottom: 1em;
     background-color: var(--dark-green) !important;
-    color: var(--off-white);
+    color: var(--light-font);  
     font-size: 1.1em;
     font-weight: 400;
     transition: background-color 0.3s ease, color 0.3s ease;

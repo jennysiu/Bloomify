@@ -5,11 +5,15 @@
     --dark-grey: #1E1F1D;
     --off-white: #FAF9F6;
     --dark-green: #224722;
+    --deep-green: #172C17;
     --accent-green: #3b9520;
     --light-yellow: #F2E6C3;
     --background-green: #E7EDDE;
     --container-background: #D5DFC6;
     --body-font: "Karla", sans-serif;
+    
+    /* fonts */
+    --light-font: #E0FFC0;
     --secondary-text: #626E55;
 
     /* navbar */
@@ -83,6 +87,7 @@ a {
 
 #explore-section {
     margin-top: 20%;
+    margin-bottom: 50%;
 }
 
 .exploreContainer {

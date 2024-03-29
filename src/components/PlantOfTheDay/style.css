@@ -1,6 +1,7 @@
 .plant-image-cover {
     width: 300px;
-    height: auto;
+    /* height: auto; */
+    max-height: 300px;
     object-fit: cover;
     object-position: center;
     border-radius: 1em;
