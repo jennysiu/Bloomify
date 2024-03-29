@@ -36,7 +36,7 @@ const CustomNavBar = () => {
     return (
         <>
                 {/* <img id='navbar-img' src={image} ></img> */}
-                <h1 id='navbar-title-icon'>Bloomify</h1>
+                <h1 id='navbar-title-icon'>bloomify</h1>
                 <Menu 
                 defaultSelectedKeys={['1']} 
                 mode="inline" 
