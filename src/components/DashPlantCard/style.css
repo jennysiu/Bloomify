@@ -21,6 +21,7 @@
 
 .explore-link {
     color: var(--accent-green);
+    font-weight: 400;
 }
 
 .explore-link:hover {

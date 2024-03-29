@@ -46,6 +46,7 @@ const TaskList = ({ toDos, setToDos }) => {
             <h2 id="todo-title">Plants to Water</h2>
             <div className="inputSection">
                 <Input
+                    className='plant-reminder-name'
                     placeholder="Which plant?"
                     type="text"
                     value={inputValue}

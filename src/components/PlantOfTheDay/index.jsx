@@ -10,7 +10,6 @@ const PlantOfTheDay = () => {
     // State to hold the currently selected plant for display in the modal
     const [selectedPlantModal, setSelectedPlantModal] = useState({ isVisible: false, plant: null });
     
-
     runOncePerDay()
 
     useEffect(() => {

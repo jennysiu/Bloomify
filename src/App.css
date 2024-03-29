@@ -58,22 +58,48 @@
 }
 
 /* buttons */
-.ant-btn,
-.ant-btn span {
-    background-color: var(--accent-green) !important;
-    color: var(--off-white);
-    font-weight: 300;
+.ant-btn {
+    margin-bottom: 1em;
+    background-color: var(--dark-green) !important;
+    color: var(--light-font);  
+    font-size: 1.1em;
+    font-weight: 400;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border: transparent
 }
 
-.ant-btn:hover,
-.ant-btn:hover span {
+.ant-btn:hover {
     /* background-color: #104840 !important; */
-    color: white !important;
+    background-color: var(--light-yellow) !important;
+    color: var(--dark-green) !important;
     border: none;
-    text-decoration: underline;
-    /* font-weight: 500; */
+    /* text-decoration: underline; */
+    
+    font-weight: 500;
 }
+
+
+/* search bar */
+
+.ant-input-group-wrapper {
+height: 40px;
+font-size: 15px;
+}
+
+.ant-input-group-wrapper >
+.ant-input-wrapper, 
+.ant-input-group, 
+.ant-input {
+height: 40px;
+font-size: 15px;
+}
+
+.ant-input-group-addon >
+.ant-btn {
+height: 40px; 
+font-size: 15px; 
+}
+
 
 /*TODO: Identify and remove the glow effect/animation*/
 

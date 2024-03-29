@@ -83,7 +83,9 @@ return (
                 <h2 id="weather-title">Weather</h2>
                     <div className="searchSection">
                         <Search placeholder="Search for a location" onSearch={onSearch} style={{ flex: 1 }} />
-                        <Button onClick={getUserLocation}>Use current location</Button>
+                        <Button 
+                        className='current-location-btn'
+                        onClick={getUserLocation}>Use current location</Button>
                     </div>
                     {weatherData ? (
                         <div className="weatherInfo">

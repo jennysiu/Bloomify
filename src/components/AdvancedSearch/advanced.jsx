@@ -27,7 +27,6 @@ function AdvancedSearch({ name }) {
     });
 
     const onChange = (value) => {
-
         if (sunlightOption.find((element) => element === value)) {
             setSunlight(value)
             console.log(sunlight)
@@ -38,7 +37,6 @@ function AdvancedSearch({ name }) {
             setIndoors(1)
             console.log(isIndoors)
         }
-
     }
 
     /**
@@ -46,11 +44,6 @@ function AdvancedSearch({ name }) {
    * and returns results as an object
    */
     const onClick = (value, _e, info) => {
-
-        // console.log(name)
-        // console.log(watering)
-        // console.log(sunlight)
-        // console.log(isIndoors)
         perenualFetch.getPerenualNameResults(name, watering, sunlight, isIndoors)
             .then((res) => {
                 const data = res.data.data
@@ -62,11 +55,9 @@ function AdvancedSearch({ name }) {
                 console.log(filteredResults)
                 setSearchResults(filteredResults)
                 navigate('/search-results')
-
             })
             .catch((err) => console.log(err));
     }
-
 
     const filterOption = (input, option) =>
         (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
@@ -141,23 +132,27 @@ function AdvancedSearch({ name }) {
                     <div id='advanced-search-options'>
                         <Checkbox 
                         className='advanced-option'
-                        name='indoorChk' onChange={onChange}>Indoor</Checkbox>
+                        name='indoorChk' onChange={onChange}>Indoor
+                        </Checkbox>
 
                         <Space className='advanced-option'
                         direction="horizontal">
                             <p>Watering: </p>
                             {selectWatering}
                         </Space>
+
                         <Space className='advanced-option'
                         direction="horizontal">
                             <p>Sunlight: </p>
                             {selectSunlight}
                         </Space>
                     </div>
+
                     <Button
                     id="advanced-button"
                     type="primary" 
-                    onClick={onClick} >Advanced Search</Button>
+                    onClick={onClick} >Advanced Search
+                    </Button>
                 </Space>
         }
     ];
